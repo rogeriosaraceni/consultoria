@@ -1,0 +1,59 @@
+/* ////////////////////////////////////////////////////////////////////
+*
+*  CSS APP login
+*
+* - body-login
+*
+* - media device-width: 1377px
+*
+* //////////////////////////////////////////////////////////////////// */
+
+/* --------------------------------------------------------------------
+* - body-login
+---------------------------------------------------------------------- */
+body.body-login {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url(./bgLogin.jpg);
+}
+body.body-login::after {
+	content: '';
+    position: fixed;
+	z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	opacity: 0.4;
+	background-image: linear-gradient(195deg,#747b8a,#495361);
+}
+
+.body-login .bg-gradient-blue {
+	background: #003057 !important;
+}
+
+.body-login .card-header:first-child {
+	border-radius: 0.75rem;
+}
+.body-login .bg-gradient-primary {
+    background: #003057!important;
+}
+.body-login .shadow-primary {
+	box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(0, 127, 163, 0.4) !important;
+}
+
+.body-login .footer-app {
+	padding-top: 0;
+	padding-bottom: 0;
+	color: #fff;
+	border-top: none;
+	background-color: transparent;
+}
+
+/* --------------------------------------------------------------------
+* - media device-width: 1377px
+* -------------------------------------------------------------------- */
+@media screen and (max-device-width: 1377px){
+    
+}

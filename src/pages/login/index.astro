@@ -1,36 +1,41 @@
 ---
-import Head from '@includes/Head.astro';
-import BoxLeft from './_parts/boxLeft.astro';
-import BoxRight from './_parts/boxRight.astro';
+import Head from "@includes/Head.astro";
+import ContentForm from "./content-form.astro";
+import ContentFooter from "./content-footer.astro";
 
-import '@styles/login.css'
+import "./assets/login.css";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-    <Head />
+  <Head />
 
-    <body class="body-login">
-        <main class="wrapper-grid">
-            <BoxLeft />
-            <BoxRight />
-        </main>
-    </body>
-</html>
+  <body class="body-login">
+    <main class="main-app z-1">
+      <div class="d-flex flex-column justify-content-center h-100">
+        <div class="container my-auto">
+            <ContentForm />
+        </div><!-- .container -->
 
-<script is:inline>
+        <ContentFooter />
+      </div>
+    </main>
+  </body>
+
+  <script is:inline>
     /*! --------------------------------------------------------------------
-    * mostra senha
-    * --------------------------------------------------------------------*/
+     * mostra senha
+     * --------------------------------------------------------------------*/
     let btnShowAllPassword = document.querySelectorAll(".btn-showPass");
 
     btnShowAllPassword.forEach((item) => {
-        item.addEventListener("click", () => {
-            item.children[0].classList.toggle("bi-unlock");
-            const inputPass = item.parentNode.children[0];
-            const type =
-                inputPass.getAttribute("type") === "password" ? "text" : "password";
-            inputPass.setAttribute("type", type);
-        });
+      item.addEventListener("click", () => {
+        item.children[0].classList.toggle("bi-unlock");
+        const inputPass = item.parentNode.children[0];
+        const type =
+          inputPass.getAttribute("type") === "password" ? "text" : "password";
+        inputPass.setAttribute("type", type);
+      });
     });
-</script>
+  </script>
+</html>

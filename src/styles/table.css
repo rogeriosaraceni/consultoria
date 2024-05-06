@@ -20,7 +20,7 @@ table>thead>tr>th / table>tfoot>tr>th
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;
     color: #fff;
-    background-color: var(--color-primary-yellow);
+    background: var(--color-wep-azul-meia-noite);
 }
 
 .table>thead>tr>th,
@@ -33,6 +33,19 @@ table>thead>tr>th / table>tfoot>tr>th
     vertical-align: middle;
     border-color: var(--bs-border-color);
 }
+
+.table.table-borderless>thead>tr>th,
+.table.table-borderless>tfoot>tr>th {
+	color: var(--color-wep-azul-meia-noite);
+	background: #fff;
+}
+
+.table-hover tbody tr:hover {
+	color: #212529;
+	background-color: rgba(0, 0, 0, .030);
+}
+
+.table td label { margin-bottom: 0;}
 
 /* --------------------------------------------------------------------
 table-fixed

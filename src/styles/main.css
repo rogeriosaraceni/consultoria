@@ -16,9 +16,8 @@ section-title
 @import 'table.css';
 @import 'pages.css';
 
-
 /* --------------------------------------------------------------------
-html, body, body-popup
+html, body, body-popup, main-app, container-fluid
 ---------------------------------------------------------------------- */
 html, body{
     height: 100%;
@@ -31,23 +30,132 @@ body{
     font-size: 0.9rem;
     transition: all 0.3s;
     overflow-x: hidden;
-    background-color: var(--app-body-bg);
+    background-color: #f0f2f5;
 }
 .body-popup {
     padding: 1rem;
     height: auto;
 }
 
-/* --------------------------------------------------------------------
-main-app, container-fluid
----------------------------------------------------------------------- */
 .main-app{
     flex: 1;
-    padding: 1rem;
 }
 
 .container-fluid{
     max-width: 1600px;
+}
+
+/* --------------------------------------------------------------------
+* - btns
+---------------------------------------------------------------------- */
+.btn-blue{ background-color: var(--color-wep-azul-meia-noite);}
+.btn-blue:hover{ background-color: #286289;}
+
+/* --------------------------------------------------------------------
+* - breadcrumb
+---------------------------------------------------------------------- */
+.breadcrumb { background-color: transparent;}
+.breadcrumb-item a { color: #6c757d;}
+.breadcrumb-item.active { color: var(--color-pearson-blue);}
+
+/* --------------------------------------------------------------------
+* - card / card-app
+---------------------------------------------------------------------- */
+.card{
+	margin-bottom: 1rem;
+}
+
+.card-app {
+	margin: 0 0 1rem 0;
+	box-shadow: inset 0 0 1px 1px hsla(0, 0%, 100%, .9), 0 20px 27px 0 rgba(0, 0, 0, .05) !important;
+}
+@media (min-width: 768px) {
+	.card-app {
+		margin-right: 1.5rem !important;
+		margin-left: 1.5rem !important;
+	}
+}
+
+@media (min-width: 1200px){
+    .card-app.card-ml-0-xl{ margin-left: 0!important;}
+    .card-app.card-mr-0-xl{ margin-right: 0!important;}
+}
+@media (min-width: 992px){
+    .card-app.card-ml-0-lg{ margin-left: 0!important;}
+    .card-app.card-mr-0-lg{ margin-right: 0!important;}
+}
+@media (min-width: 768px){
+    .card-app.card-ml-0-md{ margin-left: 0!important;}
+    .card-app.card-mr-0-md{ margin-right: 0!important;}
+}
+@media (min-width: 576px){
+    .card-app.card-ml-0-sm{ margin-left: 0!important;}
+    .card-app.card-mr-0-sm{ margin-right: 0!important;}
+}
+
+
+/* --------------------------------------------------------------------
+* - card-body
+---------------------------------------------------------------------- */
+.card-body {
+    padding: 1rem;
+}
+
+/* --------------------------------------------------------------------
+* - input-group-text
+---------------------------------------------------------------------- */
+label {
+	position: relative;
+}
+.input-group-text {
+	font-size: inherit;
+	padding: 0.175rem 0.25rem;
+	font-size: 0.8rem;
+	border-radius: 0.75rem;
+}
+
+/* --------------------------------------------------------------------
+* - modal app
+---------------------------------------------------------------------- */
+.modal .close{ outline: none;}
+
+.modal-content-app{
+	padding: 1rem;
+	border-radius: var(--border-radius-default);
+	background-color: #F0F2F5;
+}
+.modal-content-app .modal-header{
+	padding: 0;
+	margin-bottom: 1rem;
+}
+.modal-content-app .modal-header .modal-title{
+	position: relative;
+}
+.modal-content-app .modal-header .modal-title:after {
+	position: absolute;
+	content: "";
+	left: 0;
+	bottom: -2px;
+	width: 30px;
+	height: 0;
+	border-top: 2px solid var(--blue);
+	transition: height 0.3s, bottom, top ease 0s;
+	z-index: 0;
+}
+
+.modal-content-app .modal-body{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.modal-content-app .modal-footer{
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+}
+
+.modal-max{
+	max-width: 80%!important;
 }
 
 /* --------------------------------------------------------------------
@@ -58,14 +166,27 @@ a {
 }
 
 /* --------------------------------------------------------------------
-heading
+* - page-item.active
 ---------------------------------------------------------------------- */
-/*
-h1,h2,h3,h4,h5,h6,
-.h1,.h2,.h3,.h4,.h5,.h6{
-    font-family: 'Fraunces', serif;
+.page-item.active .page-link {
+    background-color: var(--color-wep-azul-meia-noite);
+    border-color: var(--color-wep-azul-meia-noite);
 }
-*/
+
+/* --------------------------------------------------------------------
+* - titles - h1, h2, h3, h4, h5, h6
+---------------------------------------------------------------------- */
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+	font-weight: 600;
+	font-family: 'Open Sans', sans-serif;
+}
+
+/* --------------------------------------------------------------------
+* - shadows
+* -------------------------------------------------------------------- */
+.shadow-default{ box-shadow: var(--shadow-default);}
+.shadow { box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)!important;}
+.shadow-blur { box-shadow: inset 0 0 1px 1px hsla(0,0%,100%,.9),0 20px 27px 0 rgba(0,0,0,.05)!important;}
 
 /* --------------------------------------------------------------------
 scrollbar CSS v1.2
@@ -95,28 +216,37 @@ Rogerio Saraceni
 /* --------------------------------------------------------------------
 section-title
 ---------------------------------------------------------------------- */
-.section-title {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 10px;
-    border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+.section-title{
+	position: relative;
+	font-weight: 300;
+	padding-bottom: 0.3125rem;
+	margin-bottom: 1rem;
 }
 
-.section-title .title {
-    font-size: 1rem;
-    color: var(--bs-color);
+.section-title ::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 50%;
+	height: 1px;
+	background-color: var(--color-wep-azul-meia-noite);
 }
 
-.section-title:after {
-    position: absolute;
-    content: "";
-    left: 0;
-    bottom: -2px;
-    width: 50px;
-    height: 0;
-    border-top: 2px solid var(--color-primary-red);
-    transition: height 0.3s, bottom, top ease 0s;
-    z-index: 0
+
+
+/* --------------------------------------------------------------------
+* - complementary classes
+---------------------------------------------------------------------- */
+.border-radius-xl { border-radius: 0.75rem;}
+.border-radius-lg { border-radius: 0.5rem;}
+.blur {
+   box-shadow: inset 0 0 2px #fefefed1;
+   -webkit-backdrop-filter: saturate(200%) blur(30px);
+   backdrop-filter: saturate(200%) blur(30px);
+   background-color: hsla(0,0%,100%,.8)!important;
 }
+.bg-cover{ background-size: cover;}
+.bg-gradient-secondary { background-image: linear-gradient(195deg,#747b8a,#495361);}
+
+.z-sticky { z-index: 1020;} 

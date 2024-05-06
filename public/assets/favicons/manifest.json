@@ -1,6 +1,6 @@
 {
-    "name": "PEX Frango Assado",
-    "short_name": "PEX",
+    "name": "Consultoria",
+    "short_name": "Consultoria",
 
     "icons": [
         {
@@ -15,7 +15,7 @@
         }
     ],
     "start_url": "/",
-    "theme_color": "#ffb000",
-    "background_color": "#fff",
+    "theme_color": "#003057",
+    "background_color": "#eff1f4",
     "display": "standalone"
 }
