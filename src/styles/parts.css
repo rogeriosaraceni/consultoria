@@ -13,18 +13,14 @@
 /* --------------------------------------------------------------------
 * - nav
 ---------------------------------------------------------------------- */
-.content-navbar-app {
+.navbar-app-content{
 	display: flex;
 	align-items: center;
+    justify-content: space-between;
 	width: 100%;
 }
 
-.navbar .nav-link,
 .navbar .navbar-brand {
-	color: #344767;
-	font-size: .875rem;
-}
-.navbar .navbar-brand .logo-text{
 	font-size: 1.4rem;
 	color: #344767;
 	font-weight: 600;
@@ -139,6 +135,7 @@
 .footer-app .social-footer {
 	display: flex;
 	align-items: center;
+    gap: 0.5rem;
 	list-style: none;
 	padding: 0;
 	margin: 0;

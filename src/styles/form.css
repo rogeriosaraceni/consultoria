@@ -1,6 +1,5 @@
 /* ////////////////////////////////////////////////////////////////////
 input
-form-control / form-select
 form-check-label
 form-check-input
 form-group
@@ -34,16 +33,6 @@ input[type="number"][readonly]::-webkit-inner-spin-button {
 input[type=number][readonly] {
     appearance: textfield;
     -moz-appearance: textfield;
-}
-
-/* --------------------------------------------------------------------
-form-control / form-select
-* -------------------------------------------------------------------- */
-.form-control,
-.form-select {
-    font-size: 0.9rem;
-    padding: 0.275rem 2.25rem 0.275rem 0.75rem;
-
 }
 
 /* --------------------------------------------------------------------

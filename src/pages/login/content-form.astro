@@ -2,66 +2,58 @@
 
 ---
 
-<div class="row">
-  <div class="col-lg-5 col-md-8 col-12 mx-auto">
-    <div class="slide-in-left">
-      <section class="card blur shadow-blur mb-3 z-0">
-        <div
-          class="card-header mt-n4 mx-3 py-3 border-radius-lg bg-gradient-blue shadow-primary z-1 text-center"
-        >
-          <h2 class="mb-0 text-white">Wepwizard</h2>
+<div class="container-form mx-auto slide-in-left">
+    <section class="card blur shadow-blur mb-3 z-0">
+        <div class="card-header mt-n4 mx-3 py-3 border-radius-lg bg-gradient-blue shadow-primary z-1 text-center">
+            <h2 class="mb-0 text-white">Consultoria</h2>
         </div>
 
         <div class="card-body">
-          <h4>Login</h4>
+            <h4>Login</h4>
 
-          <form method="POST" action="../home/">
-            <div class="mb-4">
-              <label>
-                <select
-                  name="ano"
-                  class="form-select"
-                  required
+            <form method="POST" action="../inicio/">
+                <div class="mb-4">
+                    <label>
+                        <select
+                            name="ano"
+                            class="form-select"
+                            required
+                        >
+                            <option value="2022" selected>2022</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        <input
+                            type="email"
+                            name="email"
+                            class="form-control"
+                            placeholder="e-mail"
+                            required
+                        />
+                    </label>
+
+                    <label>
+                        <input
+                            type="password"
+                            name="senha"
+                            class="form-control"
+                            id="password"
+                            placeholder="senha"
+                            required
+                        />
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 py-2 mb-3">Entrar</button>
+
+                <a
+                    class="d-flex align-items-center justify-content-center text-muted py-2"
+                    href="recuperar.asp"
                 >
-                  <option value="2022" selected>2022</option>
-                </select>
-              </label>
-
-              <label>
-                <input
-                  type="email"
-                  name="email"
-                  class="form-control"
-                  placeholder="e-mail"
-                  required
-                />
-              </label>
-
-              <label>
-                <input
-                  type="password"
-                  name="senha"
-                  class="form-control"
-                  id="password"
-                  placeholder="senha"
-                  required
-                />
-              </label>
-            </div>
-
-            <button
-              type="submit"
-              class="btn btn-primary w-100 py-2 mb-3"
-              >Entrar</button
-            >
-
-            <a
-              class="d-flex align-items-center justify-content-center text-muted py-2"
-              href="recuperar.asp">Esqueceu a senha?</a
-            >
-          </form>
+                    <small>Esqueceu a senha?</small>
+                </a>
+            </form>
         </div>
-      </section>
-    </div><!-- .slide-in-left -->
-  </div><!-- .col -->
-</div><!-- .row -->
+    </section>
+</div>

@@ -1,17 +1,23 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Nav from '@includes/Nav.astro';
+import Carousel from './_Carousel.astro';
 import CardsPrincipal from './_CardsPrincipal.astro';
+
+import "./assets/_styles.css";
 ---
 
 <Layout>
+    <Nav />
     <header class="container-fluid position-fixed top-0 left-0 right-0 z-index-sticky">
-        <Nav />
+
     </header>
 
-    <main data-el="main-app" class="main-app">
+    <Carousel />
+
+    <main class="main-app">
         <section class="container-fluid">
-            <CardsPrincipal />
+
         </section>
     </main>
 </Layout>
