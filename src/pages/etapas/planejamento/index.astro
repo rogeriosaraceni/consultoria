@@ -1,0 +1,42 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Nav from '@includes/Nav.astro';
+
+import ContentSelecao from './_content-selecao.astro';
+import ContentListagem from './_content-listagem.astro';
+import ModalConsultoria from './_modal-consultoria.astro'
+import ModalDiarioBordo from './_modal-diario-bordo.astro'
+---
+
+<Layout>
+    <Nav />
+
+    <header class="page-header">
+        <div class="container-fluid slide-in-left">
+            <div class="page-header-content mx-md-4">
+                <div class="item-icon">
+                    <i class="bi bi-clipboard2-check"></i>
+                </div>
+
+                <div class="item-title">Planejamento</div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-app">
+        <section class="container-fluid">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb p-0 mx-md-4">
+                    <li class="breadcrumb-item"><a href="/inicio/">Início</a></li>
+                    <li class="breadcrumb-item">Etapas</li>
+                    <li class="breadcrumb-item active" aria-current="page">Planejamento</li>
+                </ol>
+            </nav>
+
+            <ContentSelecao />
+            <ContentListagem />
+            <ModalConsultoria />
+            <ModalDiarioBordo />
+        </section>
+    </main>
+</Layout>

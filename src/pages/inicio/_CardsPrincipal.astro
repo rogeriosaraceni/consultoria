@@ -2,46 +2,47 @@
 //import '@styles/card-principal.css'
 
 const cards = [
-    {
-        name: "Dashboard",
-        icon: "bi bi-clipboard-data text-primary-yellow",
-        nameClassColor: "bg-primary-yellow",
-        link: "/dashboard/",
+{
+        name: "Planejamento",
+        img: "background-image: url(http://2022.wepwizard.com.br/assets/images/pages/inicio/performance.jpg);",
+        link: "/etapas/planejamento/",
     },
     {
-        name: "Avaliação",
-        icon: "bi bi-file-earmark-check text-primary-yellow",
-        nameClassColor: "bg-primary-yellow",
-        link: "/avaliacao/",
+        name: "Execução Comercial",
+        img: "background-image: url(http://2022.wepwizard.com.br/assets/images/pages/inicio/autodiagnostico.jpg);",
+        link: "",
     },
     {
-        name: "Relatórios",
-        icon: "bi bi-files text-primary-yellow",
-        nameClassColor: "bg-primary-yellow",
-        link: "/relatorios/",
+        name: "Execução Pedagógica",
+        img: "background-image: url(http://2022.wepwizard.com.br/assets/images/pages/inicio/dashboard.jpg);",
+        link: "",
     },
     {
-        name: "Material de Treinamento",
-        icon: "bi bi-easel2 text-primary-yellow",
-        nameClassColor: "bg-primary-yellow",
-        link: "/material-treinamento/",
+        name: "Acompanhamento",
+        img: "background-image: url(http://2022.wepwizard.com.br/assets/images/pages/inicio/campanhas.jpg);",
+        link: "",
+    },
+    {
+        name: "Fechamento",
+        img: "background-image: url(http://2022.wepwizard.com.br/assets/images/pages/inicio/materiais.jpg);",
+        link: "",
     }
 ];
 ---
 
-<div class="slide-in-blurred-bottom principal-cards">
-    {
-        cards.map(({ link, icon, name, nameClassColor }) => (
-            <div class="col-card">
-                <a class="link-card" href={link}>
-                    <figure>
-                        <div class="content-icon">
-                            <i class={icon}></i>
-                        </div>
-                    </figure>
-                    <h4 class={nameClassColor}>{name}</h4>
-                </a>
-            </div>
-        ))
-    }
+<div class="card blur shadow-blur mx-0 mx-md-4 mt-n5 overflow-hidden">
+    <div class="card-body slide-in-bottom">
+        <div class="title-app">Etapas</div>
+
+        <section class="row row-card-inicio cards-conteudos">
+            {
+                cards.map(({ link, img, name }) => (
+                    <a class="card-inicio" href={link}>
+                        <div class="img" style={img}></div>
+                        <div class="title">{name}</div>
+                    </a>
+                ))
+            }
+        </section>
+    </div>
 </div>

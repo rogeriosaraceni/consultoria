@@ -36,3 +36,132 @@
 		font-size: 2rem;
 	}
 }
+
+
+
+
+
+/* --------------------------------------------------------------------
+* - row-card-inicio
+---------------------------------------------------------------------- */
+.row.row-card-inicio {
+	margin-bottom: 2rem;
+	justify-content: center;
+}
+
+/* --------------------------------------------------------------------
+* - card-inicio
+---------------------------------------------------------------------- */
+.row-card-inicio .card-inicio {
+	position: relative;
+	display: flex;
+	align-items: flex-end;
+	margin: 1rem 1rem;
+	height: 180px;
+	width: 280px;
+	color: #111;
+    text-decoration: none;
+	background-color: #fff;
+	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media(max-width:680px) {
+	.row-card-inicio .card-inicio {
+		width: 100%;
+	}
+}
+
+/* square border */
+.row-card-inicio .card-inicio::before {
+	content: "";
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	width: 20%;
+	height: 40%;
+	background-color: #eee;
+	transition: all 0.3s;
+}
+
+.row-card-inicio .card-inicio:hover {
+	text-decoration: none;
+}
+
+.row-card-inicio .card-inicio:hover::before {
+	top: -15px;
+	right: -15px;
+}
+
+/* mask opacity */
+.row-card-inicio .card-inicio::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	opacity: 0.2;
+	transition: all 0.3s;
+}
+
+.row-card-inicio .card-inicio:hover::after {
+	opacity: 0;
+	background-color: transparent;
+}
+
+/* img */
+.row-card-inicio .card-inicio .img {
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 0.25rem;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #f7f7f7;
+}
+
+/* title */
+.row-card-inicio .card-inicio .title {
+	position: relative;
+	z-index: 1;
+	width: calc(100% - 20%);
+	margin-left: 10px;
+	margin-bottom: 10px;
+	padding: 5px 5px 5px 20px;
+	font-size: 1.1rem;
+	background-color: #fff;
+	transition: all 0.3s;
+}
+
+.row-card-inicio .card-inicio:hover .title {
+	color: #fff;
+}
+
+.row-card-inicio .card-inicio .title::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 5px;
+	height: 100%;
+	background-color: #eee;
+}
+
+/* --------------------------------------------------------------------
+* - themes card-inicio
+* -------------------------------------------------------------------- */
+.row-card-inicio.cards-conteudos .card-inicio::before,
+.row-card-inicio.cards-conteudos .card-inicio .title::after,
+.row-card-inicio.cards-conteudos .card-inicio:hover .title {
+	background-color: var(--color-wep-azul-meia-noite);
+}
+
+.row-card-inicio.cards-consultoria .card-inicio::before,
+.row-card-inicio.cards-consultoria .card-inicio .title::after,
+.row-card-inicio.cards-consultoria .card-inicio:hover .title {
+	background-color: var(--color-wep-azul-meia-noite);
+}

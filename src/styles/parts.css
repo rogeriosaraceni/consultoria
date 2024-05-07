@@ -72,46 +72,40 @@
 /* --------------------------------------------------------------------
 * - header-app
 ---------------------------------------------------------------------- */
-.header-app {
-	padding-top: 6rem;
-	padding-bottom: 1.25rem;
-	margin-bottom: 1rem;
-}
-
 .page-header {
+    padding-top: 6rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1rem;
     background-color: var(--color-wep-azul-meia-noite)!important;
 }
-.page-header .top-page {
-	display: flex;
-	align-items: center;
+.page-header .page-header-content{
+    display: flex;
+    align-items: center;
 }
-.page-header .top-page .item-icon {
-	display: flex;
-	align-items: center;
-	margin-right: 0.95rem;
-	padding: 0.5rem;
-	border-radius: 100%;
-	background-color: #fff;
-}
-.page-header .top-page .item-icon .icon-top-page {
-	font-size: 2.25rem;
+.page-header .page-header-content .item-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 0.5rem;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #fff;
+    font-size: 1.85rem;
     color: var(--color-wep-azul-meia-noite)!important;
 }
-.page-header .top-page .item-text {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-}
-.page-header .top-page .item-text .title-top-page,
-.page-header .top-page .item-text .text-top-page {
-	color: #fff;
-	line-height: 1;
+.page-header .page-header-content .item-title{
+    font-size: 1.5rem;
+    color: #fff;
 }
 
 @media (max-width: 992px){
-	.page-header .top-page .item-icon { padding: 0.2rem;}
-	.page-header .top-page .item-icon .icon-top-page{ font-size: 1.875rem;}
-	.page-header .top-page .item-text p{ display: none;}
+    .page-header .page-header-content .item-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.55rem;
+    }
+    .page-header .page-header-content .item-title{ font-size: 1.2rem;}
 }
 
 /* --------------------------------------------------------------------

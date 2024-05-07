@@ -18,8 +18,6 @@ class bg color
     --shadow-default: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
     --popup-bg-default: #fff;
 
-    --green: #16937a;
-
     --color-wep-azul-meia-noite: #003057;
     --color-wep-vermelho-vivo: #E4002B;
     --color-wep-azul-ceu: #41B6E6;
@@ -37,11 +35,12 @@ class bg color
     --color-grass-green: #008638;
     --color-midnight-blue: #003057;
 
-    --color-flat-orange: #f68223;
-    --color-flat-yellow: #e7e632;
-    --color-flat-red: #f25c25;
-    --color-flat-red-dark: #df1f26;
-    --color-flat-blue: #00c0ff;
+    --color-green: #16937a;
+    --color-orange: #f68223;
+    --color-yellow: #e7e632;
+    --color-red: #f25c25;
+    --color-red-dark: #df1f26;
+    --color-blue: #00c0ff;
 }
 
 /* --------------------------------------------------------------------
@@ -65,13 +64,20 @@ class bg color
 .text-grass-green{ color: var(--color-grass-green)}
 .text-midnight-blue{ color: var(--color-midnight-blue)}
 
-.text-flat-orange{ color: var(--color-flat-orange)}
-.text-flat-yellow{ color: var(--color-flat-yellow)}
-.text-flat-red{ color: var(--color-flat-red)}
-.text-flat-red-dark{ color: var(--color-flat-red-dark)}
-.text-flat-blue{ color: var(--color-flat-blue)}
+.text-green{ color: var(--color-green)}
+.text-orange{ color: var(--color-orange)}
+.text-yellow{ color: var(--color-yellow)}
+.text-red{ color: var(--color-red)}
+.text-red-dark{ color: var(--color-red-dark)}
+.text-blue{ color: var(--color-blue)}
 
-
+/* --------------------------------------------------------------------
+* - class bg color
+---------------------------------------------------------------------- */
+.bg-wep-azul-meia-noite{ background-color: var(--color-wep-azul-meia-noite);}
+.bg-wep-vermelho-vivo  { background-color: var(--color-wep-vermelho-vivo);}
+.bg-wep-azul-ceu       { background-color: var(--color-wep-azul-ceu);}
+.bg-wep-amarelo-luz-sol{ background-color: var(--color-wep-amarelo-luz-sol);}
 
 .bg-pearson-blue{ background-color: var(--color-pearson-blue)}
 .bg-mist-grey{ background-color: var(--color-mist-grey)}
@@ -86,16 +92,9 @@ class bg color
 .bg-grass-green{ background-color: var(--color-grass-green)}
 .bg-wep-azul-meia-noite{ background-color: var(--color-midnight-blue)}
 
-.bg-flat-orange{ background-color: var(--color-flat-orange)}
-.bg-flat-yellow{ background-color: var(--color-flat-yellow)}
-.bg-flat-red{ background-color: var(--color-flat-red)}
-.bg-flat-red-dark{ background-color: var(--color-flat-red-dark)}
-.bg-flat-blue{ background-color: var(--color-flat-blue)}
-
-/* --------------------------------------------------------------------
-* - class bg color
----------------------------------------------------------------------- */
-.bg-wep-azul-meia-noite{ background-color: var(--color-wep-azul-meia-noite);}
-.bg-wep-vermelho-vivo  { background-color: var(--color-wep-vermelho-vivo);}
-.bg-wep-azul-ceu       { background-color: var(--color-wep-azul-ceu);}
-.bg-wep-amarelo-luz-sol{ background-color: var(--color-wep-amarelo-luz-sol);}
+.bg-green{ background-color: var(--color-green)}
+.bg-orange{ background-color: var(--color-orange)}
+.bg-yellow{ background-color: var(--color-yellow)}
+.bg-red{ background-color: var(--color-red)}
+.bg-red-dark{ background-color: var(--color-red-dark)}
+.bg-blue{ background-color: var(--color-blue)}
