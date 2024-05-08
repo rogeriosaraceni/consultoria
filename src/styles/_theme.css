@@ -7,12 +7,17 @@
     body{
         background-color: var(--bs-body-bg);
     }
-    .card{
-        --bs-card-bg: #2B3035;
+
+    .navbar-app .navbar-app-content .navbar-brand {
+        color: #fff;
     }
 
     .footer-app{
         background-color: #1d2125;
+    }
+
+    .card{
+        --bs-card-bg: #2B3035;
     }
 
     .bg-shadow-opacity {
