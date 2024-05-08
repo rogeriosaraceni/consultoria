@@ -1,19 +1,19 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Nav from '@includes/Nav.astro';
-import Carousel from './_Carousel.astro';
-import CardsPrincipal from './_CardsPrincipal.astro';
+import ContentCarousel from './_content-carousel.astro';
+import ContentCards from './_content-cards.astro';
 
-import "./assets/_styles.css";
+import "./styles.css";
 ---
 
 <Layout>
     <Nav />
-    <Carousel />
+    <ContentCarousel />
 
     <main class="main-app">
         <section class="container-fluid">
-            <CardsPrincipal />
+            <ContentCards />
         </section>
     </main>
 </Layout>
