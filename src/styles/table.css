@@ -60,15 +60,13 @@ tr.row-striped td {
 }
 
 /* --------------------------------------------------------------------
-icon-tab
--------------------------------------------------------------------- */
-.icon-tab:hover {
-    color: var(--color-primary-yellow);
-}
-
-/* --------------------------------------------------------------------
 dataTables-custom - dataTable / tbody
 -------------------------------------------------------------------- */
+table.table.dataTable th  {
+    text-align: center;
+    background-color: var(--color-wep-azul-meia-noite);
+}
+
 /* corrigi bug barra de rolagem com bootstrap */
 table.dataTable,
 table.dataTable td,

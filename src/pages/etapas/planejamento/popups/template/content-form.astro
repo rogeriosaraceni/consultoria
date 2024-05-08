@@ -1,0 +1,109 @@
+<div class="card card-app">
+    <div class="card-body">
+        <div class="section-title">Template</div>
+
+        <form method="POST" id="" action="">
+            <label class="w-100">
+                Destinatario (separar e-mails por ponto e virgula):
+                <textarea name="destinatarios" id="destinatarios" class="form-control" rows="2" required></textarea>
+            </label>
+
+            <hr>
+
+            <div class="mb-3">
+                <div class="d-flex align-items-center gap-1">
+                    <input type="text" name="" class="form-control w-auto" placeholder="nome">
+                    <span>, olá!</span>
+                </div>
+                <p>
+                    É com muito prazer que damos início ao nosso trabalho em 2024.
+                    <br>
+                    <div class="d-flex align-items-center gap-1">
+                        <span>Estaremos reunidos no dia</span>
+                        <input type="date" name="" class="form-control w-auto">
+                        <span>das</span>
+                        <input type="time" name="" class="form-control w-auto">
+                        <span>às</span>
+                        <input type="time" name="" class="form-control w-auto">
+                        <input type="text" name="" class="form-control w-auto flex-grow-1" placeholder="local">.
+                    </div>
+                    <br>
+                    Nesse encontro desenharemos nosso Business Plan, o ponto de partida para o desenvolvimento de um negócio lucrativo nesse novo ano. Esse documento reúne as informações importantes da empresa e detalha quais recursos, processos e estratégias serão necessários para alcançar o sucesso.
+                </p>
+
+                <p>
+                    Precisaremos das informações abaixo para que nosso encontro seja produtivo e que possamos finalizá-lo com um robusto e eficaz plano de ação:
+                </p>
+
+                <p>
+                    <ul class="ps-3 ">
+                        <li>
+                            <div class="d-flex align-items-center gap-1 mb-1">
+                                <span class="w-100" style="max-width: 340px;">Número de alunos ativos no início de 2024:</span>
+                                <input type="text" name="" class="form-control w-auto">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="d-flex align-items-center gap-1 mb-1">
+                                <span class="w-100" style="max-width: 340px;">Meta e realizado de matrículas em 2023:</span>
+                                <input type="text" name="" class="form-control w-auto">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="d-flex align-items-center gap-1 mb-1">
+                                <span class="w-100" style="max-width: 340px;">Meta e realizado de rematrículas em 2023:</span>
+                                <input type="text" name="" class="form-control w-auto">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="d-flex align-items-center gap-1 mb-1">
+                                <span class="w-100" style="max-width: 340px;">Evasão em 2023:</span>
+                                <input type="text" name="" class="form-control w-auto">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="d-flex align-items-center gap-1 mb-1">
+                                <span class="w-100" style="max-width: 340px;">Configuração dos times comerciais e pedagógicos:</span>
+                                <input type="text" name="" class="form-control w-auto">
+                            </div>
+                        </li>
+                    </ul>
+                </p>
+
+                <br>
+                <p>Temos certeza que esse será um ano próspero.</p>
+                <p>Até lá!</p>
+            </div>
+
+            <hr>
+
+            <div class="d-flex align-items-end justify-content-between gap-2">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+
+                <button type="button" class="btn btn-success btn-icon" onclick="exibirConfirmacao()">
+                    <i class="bi bi-envelope-arrow-up"></i>
+                    <small>Enviar por Email</small>
+                </button>
+            </div>
+        </form>
+    </div><!-- card body -->
+</div><!-- card -->
+
+<script is:inline>
+    function exibirConfirmacao() {
+        const destinatarios = document.getElementById("destinatarios").value
+
+        if (destinatarios === "") {
+            alert("O campo de destinatários está vazio! Preencha com pelo menos um e-mail.")
+            return false
+        }
+        else {
+            const confirmacao = confirm(`Deseja enviar para os seguintes destinatários?\n\n${destinatarios}`)
+
+            if(confirmacao){
+                console.log('foi')
+                window.location.reload()
+            }
+        }
+    }
+</script>

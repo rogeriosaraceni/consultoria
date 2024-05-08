@@ -1,11 +1,98 @@
+---
+
+---
+
 <div class="card card-app">
 	<div class="card-body">
 		<div class="section-title">Listagem</div>
 
 		<form method="POST" action="">
 			<div class="row">
+                <table class="table table-bordered text-center table-fixed" id="tab-datatable" style="width: 100%;">
+                    <thead>
+                        <th style="width: 070px;">ID</th>
+                        <th style="width: 200px;">Agendamento</th>
+                        <th style="width: 200px;">Tipo Consultoria</th>
+                        <th style="width: 200px;">Modelo</th>
+                        <th style="width: 200px;">Pauta</th>
+                        <th style="width: 200px;">Data Criação</th>
 
+                        <th style="width: 100px;" class="no-sort">Template</th>
+                        <th style="width: 070px;" class="no-sort">Edit</th>
+                        <th style="width: 070px;" class="no-sort">Del</th>
+                    </thead>
+
+                    <tbody>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                        <td>
+                            <a
+                                class="text-secondary fs-5"
+                                data-bs-toggle="tooltip"
+                                data-bs-title="Template"
+                                data-fancybox
+                                data-type="iframe"
+                                data-width="90%"
+                                data-height="800"
+                                href="./popups/template/"
+                            >
+                                <i class="bi bi-card-text"></i>
+                            </a>
+						</td>
+
+                        <td>
+                            <a
+                                class="text-secondary fs-5"
+                                data-bs-toggle="tooltip"
+                                data-bs-title="Edit"
+                                data-fancybox
+                                data-type="iframe"
+                                data-width="90%"
+                                data-height="800"
+                                href="./popups/consultoria/"
+                            >
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
+						</td>
+
+                        <td>
+							<a class="text-secondary fs-5" data-bs-toggle="tooltip" data-bs-title="Del" href="#" data-row="delete">
+								<i class="bi bi-trash icon-tab"></i>
+							</a>
+						</td>
+                    </tbody>
+                </table>
 			</div>
 		</form>
 	</div><!-- card body -->
 </div><!-- card -->
+
+<script is:inline type="module">
+    $("#tab-datatable").DataTable({
+        scrollX: true,
+        scrollCollapse: true,
+
+        columnDefs: [
+            {
+                targets: "no-sort",
+                orderable: false,
+            },
+        ],
+
+        language: {
+            url: "https://cdn.datatables.net/plug-ins/1.13.4/i18n/pt-BR.json",
+        },
+    });
+
+    $('[data-row="delete"]').on('click', function () {
+        if (!confirm("Você tem certeza que deseja excluir?")) {
+            return false;
+        }
+    });
+</script>
+

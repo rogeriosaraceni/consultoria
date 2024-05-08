@@ -8,9 +8,7 @@
  * -
  * - mainAppMarginTop
  * - navigationActive
- * - data-row="delete"
  *
- * - tab-datatable-scroll-x
  * - fancybox
  * - DOMPurif protect xss
  * -
@@ -81,49 +79,6 @@ const navigationActive = () => {
 }
 
 /** --------------------------------------------------------------------
- * data-row="delete"
---------------------------------------------------------------------- */
-
-$('[data-row="delete"]').click(function () {
-    if (!confirm("Você tem certeza que deseja excluir?")) {
-        return false;
-    }
-});
-
-
-/** --------------------------------------------------------------------
- * tab-datatable-scroll-x
---------------------------------------------------------------------- */
-function datatableScrollX() {
-    if ($(".tab-datatable-scroll-x")) {
-        $(".tab-datatable-scroll-x").DataTable({
-            order: [[0, "asc"]],
-            ordering: true,
-            paging: true,
-            info: true,
-            scrollX: true,
-            scrollCollapse: true,
-
-            lengthMenu: [
-                [15, 30, 50, 80, -1],
-                [15, 30, 50, 80, "Tudo"],
-            ],
-
-            columnDefs: [
-                {
-                    targets: "no-sort",
-                    orderable: false,
-                },
-            ],
-
-            language: {
-                url: "https://cdn.datatables.net/plug-ins/1.13.4/i18n/pt-BR.json",
-            },
-        });
-    }
-}
-
-/** --------------------------------------------------------------------
  * fancybox
  * https://fancyapps.com/fancybox/plugins/html/#iframes
 --------------------------------------------------------------------- */
@@ -158,4 +113,3 @@ inputsApp.forEach((item) => {
 mainAppMarginTop()
 showCurrentYear()
 navigationActive()
-datatableScrollX()

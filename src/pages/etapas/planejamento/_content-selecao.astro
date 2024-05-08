@@ -1,18 +1,25 @@
 <div class="card card-app">
 	<div class="card-body">
-		<div class="section-title justify-content-between gap-2 pb-1">
+		<div class="section-title align-items-end justify-content-between gap-2">
             <span>Seleção</span>
 
             <div class="d-flex gap-2">
-                <button type="button" class="btn btn-primary btn-icon" data-bs-toggle="modal" data-bs-target="#diarioBordoModal">
+                <button type="button" class="btn btn-primary btn-icon mb-1" data-bs-toggle="modal" data-bs-target="#diarioBordoModal">
                     <i class="bi bi-journal-check"></i>
                     <span>Diário de Bordo</span>
                 </button>
 
-                <button type="button" class="btn btn-success btn-icon" data-bs-toggle="modal" data-bs-target="#consultoriaModal">
+                <a
+                    class="btn btn-success btn-icon mb-1"
+                    data-fancybox
+                    data-type="iframe"
+                    data-width="90%"
+                    data-height="800"
+                    href="./popups/consultoria/"
+                >
                     <i class="bi bi-clipboard2-check-fill"></i>
                     <span>Criar Nova Consultoria</span>
-                </button>
+                </a>
             </div>
         </div>
 
