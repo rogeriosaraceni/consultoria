@@ -2,21 +2,24 @@
 
 ---
 
-<nav class="navbar navbar-expand-lg sticky-top position-fixed start-0 end-0 blur shadow rounded-4 my-2 py-0 mx-4" aria-label="Main navigation">
+<nav class="navbar navbar-app navbar-expand-xl fixed-top shadow rounded-4 my-2 py-0 mx-4 bg-shadow-opacity blur">
     <div class="container-fluid">
         <section class="navbar-app-content">
-
-            <a class="navbar-brand" href="/inicio/">Consultoria</a>
             <button
-                class="navbar-toggler p-0 border-0"
-                type="button"
                 id="navbarSideCollapse"
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarApp"
+                aria-controls="navbarApp"
+                aria-expanded="false"
                 aria-label="Toggle navigation"
             >
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <a class="navbar-brand" href="/inicio/">Consultoria</a>
 
-            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <div class="navbar-collapse offcanvas-collapse h-100" id="navbarApp">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/inicio/">Início</a>
@@ -24,12 +27,12 @@
 
                     <li class="nav-item dropdown">
                         <a
-                            class="nav-link dropdown-toggle"
+                            class="nav-link dropdown-toggle dropdown-toggle-animation"
                             href="#"
                             data-bs-toggle="dropdown"
                             aria-expanded="false">Etapas</a
                         >
-                        <ul class="dropdown-menu dropdown-menu-end overflow-hidden border-0 py-0">
+                        <ul class="dropdown-menu dropdown-menu-animation dropdown-menu-end overflow-hidden border-0 py-0">
                             <li>
                                 <a class="dropdown-item small py-2 px-4" href="/etapas/planejamento/">Planejamento</a>
                             </li>
@@ -50,12 +53,12 @@
 
                     <li class="nav-item dropdown">
                         <a
-                            class="nav-link dropdown-toggle"
+                            class="nav-link dropdown-toggle dropdown-toggle-animation"
                             href="#"
                             data-bs-toggle="dropdown"
                             aria-expanded="false">Setup</a
                         >
-                        <ul class="dropdown-menu dropdown-menu-end overflow-hidden border-0 py-0">
+                        <ul class="dropdown-menu dropdown-menu-animation dropdown-menu-end overflow-hidden border-0 py-0">
                             <li>
                                 <a class="dropdown-item small py-2 px-4" href="#">Gestão de Acesso</a>
                             </li>
@@ -64,39 +67,49 @@
                 </ul>
             </div>
 
-            <ul class="navbar-nav ps-4">
-				<li class="nav-item dropdown">
-					<a
-                        class="d-flex align-items-center nav-link dropdown-toggle px-1"
+            <ul class="navbar-nav ps-1">
+                <li class="nav-item dropdown">
+                    <a
+                        class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-animation px-1"
                         href="#"
                         role="button"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                     >
-						<i class="bi bi-person-circle fs-5"></i>
-					</a>
+                        <i class="bi bi-person-circle fs-5"></i>
+                    </a>
 
-					<ul class="dropdown-menu dropdown-menu-end overflow-hidden border-0 py-0">
-						<li>
-							<a class="dropdown-item" data-popup="perfil" data-type="iframe" href="">
-								<div class="d-flex align-items-center">
-									<i class="bi bi-person-fill-gear fs-5"></i>
-									<span class="ms-2 small">Perfil</span>
-								</div>
-							</a>
-						</li>
+                    <ul class="dropdown-menu dropdown-menu-animation dropdown-menu-end overflow-hidden border-0 py-0">
+                        <li>
+                            <a class="dropdown-item" data-popup="perfil" data-type="iframe" href="">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-person-fill-gear fs-5"></i>
+                                    <span class="ms-2 small">Perfil</span>
+                                </div>
+                            </a>
+                        </li>
 
-						<li>
-							<a class="dropdown-item" href="/login/">
-								<div class="d-flex align-items-center">
-									<i class="bi bi-box-arrow-right fs-5"></i>
-									<span class="ms-2 small">Sair</span>
-								</div>
-							</a>
-						</li>
-					</ul>
-				</li>
-			</ul>
+                        <li>
+                            <a class="dropdown-item" href="/login/">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-box-arrow-right fs-5"></i>
+                                    <span class="ms-2 small">Sair</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </section>
     </div>
 </nav>
+
+<script>
+    (() => {
+        'use strict'
+        document.querySelector('#navbarSideCollapse').addEventListener('click', () => {
+            document.querySelector('.navbar-app').classList.toggle('blur')
+            document.querySelector('.offcanvas-collapse').classList.toggle('open')
+        })
+    })()
+</script>

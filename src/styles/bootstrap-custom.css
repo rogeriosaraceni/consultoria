@@ -9,13 +9,21 @@ nav-fill
 
 //////////////////////////////////////////////////////////////////// */
 
-:root{
+/* :root{
     --bs-border-radius: 0.95rem;
-}
+} */
 
 .form-control,
-.form-select {
+.form-select{
     padding: 0.275rem 2.25rem 0.275rem 0.75rem;
+    border-radius: 0.95rem;
+}
+.bootstrap-select > .dropdown-toggle{
+    border-radius: 0.95rem;
+}
+
+.card {
+    --bs-card-border-radius: 0.75rem;
 }
 
 /* --------------------------------------------------------------------

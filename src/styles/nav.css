@@ -1,0 +1,81 @@
+/* --------------------------------------------------------------------
+* - nav
+---------------------------------------------------------------------- */
+.navbar-app-content{
+	display: flex;
+	align-items: center;
+    justify-content: space-between;
+	width: 100%;
+}
+
+.navbar .navbar-brand {
+	font-size: 1.4rem;
+	color: #344767;
+	font-weight: 600;
+}
+
+.content-nav-aux{ align-items: center;}
+
+.content-navbar-app .content-nav-aux .nav-item.dropdown:nth-child(2) .nav-link{ padding-right: 0!important;}
+
+@media (max-width: 992px) {
+	.content-navbar-app .navbar-brand {
+		order: 2;
+		margin-left: 1rem;
+		margin-right: 1rem;
+	}
+
+	.content-navbar-app .navbar-toggler {
+		order: 1;
+		width: 2rem;
+		margin-top: 0.25rem;
+	}
+
+	.content-navbar-app .content-nav-aux {
+		flex: 1;
+		flex-direction: row;
+		justify-content: flex-end;
+		padding-left: 0 !important;
+		order: 3;
+	}
+}
+@media (max-width: 991.98px) {
+	.navbar-toggler+.navbar-collapse .dropdown.nav-item .dropdown-menu {
+		overflow: auto;
+	}
+}
+
+@media (max-width: 768px) {
+	.content-navbar-app .navbar-brand .logo {
+		font-size: 1.4rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.content-navbar-app .navbar-brand .logo {
+		font-size: 1.1rem;
+	}
+}
+
+@media (max-width: 991.98px) {
+    .offcanvas-collapse {
+        position: fixed;
+        top: 50px;
+        /* Height of navbar */
+        bottom: 0;
+        left: 100%;
+        width: 100%;
+        height: 100vh;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        overflow-y: auto;
+        visibility: hidden;
+        background-color: #343a40;
+        transition: transform .3s ease-in-out, visibility .3s ease-in-out;
+    }
+
+    .offcanvas-collapse.open {
+        visibility: visible;
+        transform: translateX(-100%);
+    }
+}

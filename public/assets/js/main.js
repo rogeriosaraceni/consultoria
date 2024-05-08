@@ -4,7 +4,6 @@
  * Main JS
  *
  * - enable tooltips Bootstrap
- * - navbarSideCollapse Bootstrap
  * -
  * - mainAppMarginTop
  * - navigationActive
@@ -17,23 +16,11 @@
  *
 --------------------------------------------------------------------- */
 
-
-
 /** --------------------------------------------------------------------
  * enable tooltips Bootstrap
 --------------------------------------------------------------------- */
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
 const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl));
-
-/** --------------------------------------------------------------------
- * navbarSideCollapse Bootstrap
---------------------------------------------------------------------- */
-(() => {
-    document.querySelector("#navbarSideCollapse")?.addEventListener("click", () => {
-        document.querySelector(".offcanvas-collapse").classList.toggle("open")
-    })
-})()
-
 
 /** --------------------------------------------------------------------
  * mainAppMarginTop
