@@ -1,0 +1,41 @@
+/* --------------------------------------------------------------------
+* - dropdown-toggle-animation
+* -------------------------------------------------------------------- */
+.dropdown-toggle.dropdown-toggle-animation::after {
+    border: none;
+    content: "\F282";
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    font-size: 0.75rem;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -0.125em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all 0.3s;
+}
+.dropdown-toggle.dropdown-toggle-animation[data-bs-toggle="dropdown"][aria-expanded="true"]::after {
+    transform: rotate(180deg);
+}
+
+/* --------------------------------------------------------------------
+* - dropdown-menu-animation
+* -------------------------------------------------------------------- */
+.dropdown-menu.dropdown-menu-animation {
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    -webkit-transform: translateY(0.5rem);
+    transform: translateY(0.5rem);
+    opacity: 0;
+}
+.dropdown-menu.dropdown-menu-animation.show {
+    visibility: visible;
+    -webkit-transition: 0.2s ease all;
+    transition: 0.2s ease all;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    opacity: 1;
+}

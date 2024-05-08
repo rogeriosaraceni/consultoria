@@ -89,16 +89,3 @@ dataTables-custom - no-footer / dataTables_scrollBody
 .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody {
     -webkit-overflow-scrolling: auto !important;
 }
-
-/* --------------------------------------------------------------------
-dataTables-custom - page-link
--------------------------------------------------------------------- */
-.dataTables_paginate .active>.page-link,
-.dataTables_paginate .page-link.active {
-    background-color: var(--color-primary-yellow);
-    border-color: var(--color-primary-yellow);
-}
-.dataTables_paginate .disabled>.page-link,
-.dataTables_paginate .page-link.disabled {
-    background-color: transparent;
-}

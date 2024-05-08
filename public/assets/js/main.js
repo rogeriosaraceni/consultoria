@@ -1,15 +1,14 @@
 "use strict";
 
 /** ////////////////////////////////////////////////////////////////////
- * Main JS
  *
+ * - currentYear
+ * - DOMPurif protect xss
  * - enable tooltips Bootstrap
- * -
+ * - fancybox
+ * - floatThead
  * - mainAppMarginTop
  * - navigationActive
- *
- * - fancybox
- * - DOMPurif protect xss
  * -
  *
  * - Active Functions
@@ -17,10 +16,52 @@
 --------------------------------------------------------------------- */
 
 /** --------------------------------------------------------------------
+ * currentYear
+--------------------------------------------------------------------- */
+const showCurrentYear = () => {
+    const currentYear = new Date().getFullYear();
+    const divCurrentYear = document.querySelectorAll('[data-js="currentYear"]')
+    if (divCurrentYear) {
+        divCurrentYear.forEach((item) => {
+            item.textContent = currentYear
+        })
+    }
+}
+
+/** --------------------------------------------------------------------
+ * DOMPurif protect xss
+--------------------------------------------------------------------- */
+const sanitize = (string) => DOMPurify.sanitize(string);
+
+let inputsApp = document.querySelectorAll(".form-control");
+inputsApp.forEach((item) => {
+    item.addEventListener("change", (e) => {
+        const result = sanitize(e.target.value);
+        console.log(result);
+    });
+});
+
+/** --------------------------------------------------------------------
  * enable tooltips Bootstrap
 --------------------------------------------------------------------- */
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
 const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl));
+
+/** --------------------------------------------------------------------
+ * fancybox
+ * https://fancyapps.com/fancybox/plugins/html/#iframes
+--------------------------------------------------------------------- */
+Fancybox.bind("[data-fancybox]", {});
+
+/** --------------------------------------------------------------------
+ * floatThead
+--------------------------------------------------------------------- */
+const $table = $(".fixThead");
+$table.floatThead({
+    scrollContainer: function ($table) {
+        return $table.closest(".table-responsive");
+    },
+});
 
 /** --------------------------------------------------------------------
  * mainAppMarginTop
@@ -34,19 +75,6 @@ const mainAppMarginTop = () => {
         if(mainApp){
             mainApp.style.marginTop = headerHeight
         }
-    }
-}
-
-/** --------------------------------------------------------------------
- * currentYear
---------------------------------------------------------------------- */
-const showCurrentYear = () => {
-    const currentYear = new Date().getFullYear();
-    const divCurrentYear = document.querySelectorAll('[data-js="currentYear"]')
-    if (divCurrentYear) {
-        divCurrentYear.forEach((item) => {
-            item.textContent = currentYear
-        })
     }
 }
 
@@ -66,37 +94,8 @@ const navigationActive = () => {
 }
 
 /** --------------------------------------------------------------------
- * fancybox
- * https://fancyapps.com/fancybox/plugins/html/#iframes
---------------------------------------------------------------------- */
-Fancybox.bind("[data-fancybox]", {});
-
-/** --------------------------------------------------------------------
- * floatThead
---------------------------------------------------------------------- */
-const $table = $(".fixThead");
-$table.floatThead({
-    scrollContainer: function ($table) {
-        return $table.closest(".table-responsive");
-    },
-});
-
-/** --------------------------------------------------------------------
- * DOMPurif protect xss
---------------------------------------------------------------------- */
-const sanitize = (string) => DOMPurify.sanitize(string);
-
-let inputsApp = document.querySelectorAll(".form-control");
-inputsApp.forEach((item) => {
-    item.addEventListener("change", (e) => {
-        const result = sanitize(e.target.value);
-        console.log(result);
-    });
-});
-
-/** --------------------------------------------------------------------
  * Active Functions
 --------------------------------------------------------------------- */
-mainAppMarginTop()
+//mainAppMarginTop()
 showCurrentYear()
 navigationActive()

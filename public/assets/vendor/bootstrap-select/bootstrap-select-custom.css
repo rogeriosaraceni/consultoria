@@ -1,17 +1,17 @@
+/* --------------------------------------------------------------------
+* - .bootstrap-select
+* -------------------------------------------------------------------- */
 .bootstrap-select{
     width: 100% !important;
 }
 
+/* --------------------------------------------------------------------
+* - .bootstrap-select .btn
+* -------------------------------------------------------------------- */
 .bootstrap-select .btn:hover {
     color: var(--bs-btn-hover-color);
     border-color: var(--bs-border-color);
     background-color: transparent;
-}
-.bootstrap-select .dropdown-toggle:focus,
-.bootstrap-select>select.mobile-device:focus+.dropdown-toggle {
-    border-color: #86b7fe;
-    outline: 0 !important;
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 .bootstrap-select .btn-check:checked + .btn, :not(.btn-check) + .btn:active,
 .bootstrap-select .btn:first-child:active, .bootstrap-select .btn.active, .bootstrap-select .btn.show {
@@ -25,7 +25,9 @@ button:not(:disabled),
 [type=submit]:not(:disabled) {
     cursor: pointer;
 }
-
+/* --------------------------------------------------------------------
+* - bootstrap-select.show-tick
+* -------------------------------------------------------------------- */
 .bootstrap-select.show-tick .dropdown-menu li a:before {
     content: "";
     position: absolute;
@@ -36,13 +38,15 @@ button:not(:disabled),
     height: 18px;
     border: 1px solid #ccc;
 }
-
 .bootstrap-select.show-tick .bs-ok-default:after {
     border-width: 0 0.15em 0.15em 0 !important;
     border-color: #4095f1 !important;
     margin-left: -14px;
 }
 
+/* --------------------------------------------------------------------
+* - bootstrap-select > .dropdown-toggle
+* -------------------------------------------------------------------- */
 .bootstrap-select > .dropdown-toggle {
     font-size: 1rem;
     font-weight: 400;
@@ -50,9 +54,8 @@ button:not(:disabled),
     color: var(--bs-body-color);
     background-color: var(--bs-body-bg);
     border: var(--bs-border-width) solid var(--bs-border-color);
-    border-radius: var(--bs-border-radius);
+    border-radius: var(--app-control-select-border-radius);
 }
-
 .bootstrap-select > .dropdown-toggle::after {
     width: 7px;
     height: 7px;
@@ -61,4 +64,10 @@ button:not(:disabled),
     border-top: 0.12rem solid #343a40;
     border-left: 0.12rem solid #343a40;
     transform: rotate(225deg);
+}
+.bootstrap-select .dropdown-toggle:focus,
+.bootstrap-select>select.mobile-device:focus+.dropdown-toggle {
+    border-color: #86b7fe;
+    outline: 0 !important;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }

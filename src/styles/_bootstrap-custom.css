@@ -1,30 +1,34 @@
 /* ////////////////////////////////////////////////////////////////////
-
-btn
+app variables
 breadcrumb-app
-card
-dropdown-toggle-animation
-dropdown-menu-animation
-nav-fill
-
+btn
+card / cadr-body
+container-fluid
+modal
+nav-tabs
+page-item .active/disabled
+tab-content
+hr
 //////////////////////////////////////////////////////////////////// */
 
-/* :root{
-    --bs-border-radius: 0.95rem;
-} */
+/* --------------------------------------------------------------------
+app variables
+* -------------------------------------------------------------------- */
+:root{
+    --app-control-select-border-radius: 0.95rem;
 
-.form-control,
-.form-select{
-    padding: 0.275rem 2.25rem 0.275rem 0.75rem;
-    border-radius: 0.95rem;
-}
-.bootstrap-select > .dropdown-toggle{
-    border-radius: 0.95rem;
 }
 
-.card {
-    --bs-card-border-radius: 0.75rem;
+.dropdown-menu, .dropdown-menu-dark {
+    --bs-dropdown-link-active-bg: var(--color-wep-azul-meia-noite)!important;
 }
+
+/* --------------------------------------------------------------------
+breadcrumb-app
+---------------------------------------------------------------------- */
+.breadcrumb-item,
+.breadcrumb-item a { color: #6c757d;}
+.breadcrumb-item.active { color: var(--color-wep-azul-meia-noite);}
 
 /* --------------------------------------------------------------------
 btn
@@ -66,7 +70,6 @@ btn
     --bs-btn-disabled-bg: var(--color-wep-azul-meia-noite);
     --bs-btn-disabled-border-color: var(--color-wep-azul-meia-noite);
 }
-
 .btn-success {
     --bs-btn-color: #fff;
     --bs-btn-bg: var(--color-green);
@@ -85,105 +88,83 @@ btn
 }
 
 /* --------------------------------------------------------------------
-breadcrumb-app
----------------------------------------------------------------------- */
-.breadcrumb-app{
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-}
-.breadcrumb-app .breadcrumb li,
-.breadcrumb-app .breadcrumb li a,
-.breadcrumb-app .breadcrumb-item+.breadcrumb-item::before{
-    color: #888;
-    font-size: 1rem;
-    letter-spacing: -.025rem;
-    text-decoration: none;
-}
-.breadcrumb-app .breadcrumb-item+.breadcrumb-item.active {
-    color: var(--bs-color)!important;
-    font-weight: bold;
-}
-
-/* --------------------------------------------------------------------
-* - card
+* - card / cadr-body
 ---------------------------------------------------------------------- */
 .card {
     --bs-card-spacer-y: 0.5rem;
     --bs-card-spacer-x: 0.5rem;
+    --bs-card-border-radius: 0.75rem;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
     margin-bottom: 1rem;
     border: 0;
     box-shadow: 0px 2px 1px -2px rgb(0 0 0 / 4%), 0px 1px 1px 0px rgb(0 0 0 / 4%), 0px 1px 5px 0px rgb(0 0 0 / 4%) !important;
 }
+@media (min-width: 768px) {
+	.card {
+		margin-right: 1.5rem !important;
+		margin-left: 1.5rem !important;
+	}
 
+    .body-popup .card{
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+}
+.card-body {
+    padding: 1rem;
+}
 
+/* --------------------------------------------------------------------
+* - container-fluid
+---------------------------------------------------------------------- */
 .container-fluid{
     max-width: 1920px;
 }
 
-hr {
-    opacity: 0.12;
-}
-
 /* --------------------------------------------------------------------
-form-control / form-select
-* -------------------------------------------------------------------- */
-.form-control,
-.form-select {
-    font-size: 0.9rem;
-}
-
-/* --------------------------------------------------------------------
-* - tab
+* - modal
 ---------------------------------------------------------------------- */
-.tab-content {
-    border-left: 1px solid var(--bs-border-color);
-    border-right: 1px solid var(--bs-border-color);
-    border-bottom: 1px solid var(--bs-border-color);
-    padding: 10px;
+.modal .close{ outline: none;}
+
+.modal-content-app{
+	padding: 1rem;
+	border-radius: var(--border-radius-default);
+	background-color: #F0F2F5;
+}
+.modal-content-app .modal-header{
+	padding: 0;
+	margin-bottom: 1rem;
+}
+.modal-content-app .modal-header .modal-title{
+	position: relative;
+}
+.modal-content-app .modal-header .modal-title:after {
+	position: absolute;
+	content: "";
+	left: 0;
+	bottom: -2px;
+	width: 30px;
+	height: 0;
+	border-top: 2px solid var(--blue);
+	transition: height 0.3s, bottom, top ease 0s;
+	z-index: 0;
 }
 
-/* --------------------------------------------------------------------
-* - dropdown-toggle-animation
-* -------------------------------------------------------------------- */
-.dropdown-toggle.dropdown-toggle-animation::after {
-    border: none;
-    content: "\F282";
-    font-family: bootstrap-icons !important;
-    font-style: normal;
-    font-weight: normal !important;
-    font-variant: normal;
-    font-size: 0.75rem;
-    text-transform: none;
-    line-height: 1;
-    vertical-align: -0.125em;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    transition: all 0.3s;
-}
-.dropdown-toggle.dropdown-toggle-animation[data-bs-toggle="dropdown"][aria-expanded="true"]::after {
-    transform: rotate(180deg);
+.modal-content-app .modal-body{
+	padding-left: 0;
+	padding-right: 0;
 }
 
-/* --------------------------------------------------------------------
-* - dropdown-menu-animation
-* -------------------------------------------------------------------- */
-.dropdown-menu.dropdown-menu-animation {
-    display: block;
-    position: absolute;
-    visibility: hidden;
-    -webkit-transform: translateY(0.5rem);
-    transform: translateY(0.5rem);
-    opacity: 0;
-}
-.dropdown-menu.dropdown-menu-animation.show {
-    visibility: visible;
-    -webkit-transition: 0.2s ease all;
-    transition: 0.2s ease all;
-    -webkit-transform: translateY(0px);
-    transform: translateY(0px);
-    opacity: 1;
+.modal-content-app .modal-footer{
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 0;
 }
 
+.modal-max{
+	max-width: 80%!important;
+}
 
 /* --------------------------------------------------------------------
 * - nav-tabs
@@ -200,3 +181,30 @@ form-control / form-select
     color:  var(--color-primary-red);
     background-color: var(--color-primary-yellow);
 }
+
+/* --------------------------------------------------------------------
+* - page-item .active/disabled
+---------------------------------------------------------------------- */
+.page-item.active .page-link {
+    background-color: var(--color-wep-azul-meia-noite);
+    border-color: var(--color-wep-azul-meia-noite);
+}
+.disabled>.page-link,
+.page-link.disabled {
+    background-color: transparent;
+}
+
+/* --------------------------------------------------------------------
+* - tab-content
+---------------------------------------------------------------------- */
+.tab-content {
+    border-left: 1px solid var(--bs-border-color);
+    border-right: 1px solid var(--bs-border-color);
+    border-bottom: 1px solid var(--bs-border-color);
+    padding: 10px;
+}
+
+/* --------------------------------------------------------------------
+* - hr
+---------------------------------------------------------------------- */
+hr { opacity: 0.12;}

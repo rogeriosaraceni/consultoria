@@ -1,0 +1,25 @@
+/* [data-bs-theme=light] {
+
+
+} */
+
+[data-bs-theme=dark] {
+    body{
+        background-color: var(--bs-body-bg);
+    }
+    .card{
+        --bs-card-bg: #2B3035;
+    }
+
+    .footer-app{
+        background-color: #1d2125;
+    }
+
+    .bg-shadow-opacity {
+        box-shadow: inset 0 0 2px #fefefed1;
+        background-color: hsla(0,0%,100%,.1)!important;
+    }
+    .blur {
+        backdrop-filter: blur(75px);
+    }
+}
