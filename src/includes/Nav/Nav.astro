@@ -5,22 +5,33 @@ import ContentBtnUser from "./content-btnUser.astro"
 import ContentBtnTheme from "./content-btnTheme.astro"
 ---
 
-<nav class="navbar navbar-app navbar-expand-xl fixed-top my-2 mx-4">
+<nav class="navbar navbar-app navbar-expand-lg fixed-top my-2 mx-4">
     <div class="container-fluid rounded-4 bg-shadow-opacity blur">
         <section class="navbar-app-content">
-            <ContentBtnToggler />
+            <div class="flex-grow-1x">
+                <ContentBtnToggler />
+                <ContentNav />
+            </div>
 
-            <a class="navbar-brand" href="/inicio/">Consultoria</a>
+            <div class="content-nav-brand">
+                <a class="navbar-brand" href="/inicio/">Consultoria</a>
+            </div>
 
-            <ContentNav />
-
-            <ul class="navbar-nav flex-row ps-1">
-                <ContentBtnUser />
+            <ul class="navbar-nav flex-row flex-grow-1x">
                 <ContentBtnTheme />
+                <ContentBtnUser />
             </ul>
         </section>
     </div>
 </nav>
+
+<style>
+    .content-nav-brand{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+</style>
 
 <script>
     (() => {
