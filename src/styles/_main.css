@@ -39,11 +39,30 @@ body{
 /* --------------------------------------------------------------------
 btns
 ---------------------------------------------------------------------- */
+.btn-clearfix {
+    margin-top: 3px;
+    margin-bottom: 0;
+}
+
 .btn-icon{
     display: flex;
     align-items: center;
     gap: 0.25rem;
 }
+
+.btn-small{
+    padding: .105rem .45rem;
+}
+
+.btn-transparent{
+    border: none;
+    background-color: transparent;
+}
+
+@media(max-width: 1200px){ .btn-last-xl{ float: right;}}
+@media(max-width: 992px) { .btn-last-lg{ float: right;}}
+@media(max-width: 768px) { .btn-last-md{ float: right;}}
+@media(max-width: 576px) { .btn-last-sm{ float: right;}}
 
 /* --------------------------------------------------------------------
 heading

@@ -16,11 +16,8 @@ app variables
 * -------------------------------------------------------------------- */
 :root{
     --app-control-select-border-radius: 0.95rem;
-
-}
-
-.dropdown-menu, .dropdown-menu-dark {
-    --bs-dropdown-link-active-bg: var(--color-wep-azul-meia-noite)!important;
+    --app-active: var(--color-wep-azul-meia-noite);
+    --app-active-border: var(--color-wep-azul-meia-noite);
 }
 
 /* --------------------------------------------------------------------
@@ -28,7 +25,7 @@ breadcrumb-app
 ---------------------------------------------------------------------- */
 .breadcrumb-item,
 .breadcrumb-item a { color: #6c757d;}
-.breadcrumb-item.active { color: var(--color-wep-azul-meia-noite);}
+.breadcrumb-item.active { color: var(--app-active);}
 
 /* --------------------------------------------------------------------
 btn
@@ -38,21 +35,6 @@ btn
     --bs-btn-padding-y: .215rem;
     --bs-btn-font-size: 0.9rem;
 }
-.btn-small{
-    padding: .105rem .45rem;
-}
-.btn-transparent{
-    border: none;
-    background-color: transparent;
-}
-.btn-clearfix {
-    margin-top: 3px;
-    margin-bottom: 0;
-}
-@media(max-width: 1200px){ .btn-last-xl{ float: right;}}
-@media(max-width: 992px) { .btn-last-lg{ float: right;}}
-@media(max-width: 768px) { .btn-last-md{ float: right;}}
-@media(max-width: 576px) { .btn-last-sm{ float: right;}}
 
 .btn-primary {
     --bs-btn-color: #fff;
@@ -123,13 +105,19 @@ btn
 }
 
 /* --------------------------------------------------------------------
+* - menu
+---------------------------------------------------------------------- */
+/* .dropdown-menu, .dropdown-menu-dark {
+    --bs-dropdown-link-active-bg: var(--app-active)!important;
+} */
+
+/* --------------------------------------------------------------------
 * - modal
 ---------------------------------------------------------------------- */
 .modal .close{ outline: none;}
 
 .modal-content-app{
 	padding: 1rem;
-	border-radius: var(--border-radius-default);
 	background-color: #F0F2F5;
 }
 .modal-content-app .modal-header{
@@ -146,7 +134,6 @@ btn
 	bottom: -2px;
 	width: 30px;
 	height: 0;
-	border-top: 2px solid var(--blue);
 	transition: height 0.3s, bottom, top ease 0s;
 	z-index: 0;
 }
@@ -178,16 +165,15 @@ btn
 }
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-link.active:hover{
-    color:  var(--color-primary-red);
-    background-color: var(--color-primary-yellow);
+    background-color: var(--app-active);
 }
 
 /* --------------------------------------------------------------------
 * - page-item .active/disabled
 ---------------------------------------------------------------------- */
 .page-item.active .page-link {
-    background-color: var(--color-wep-azul-meia-noite);
-    border-color: var(--color-wep-azul-meia-noite);
+    background-color: var(--app-active);
+    border-color: var(--app-active-border);
 }
 .disabled>.page-link,
 .page-link.disabled {
