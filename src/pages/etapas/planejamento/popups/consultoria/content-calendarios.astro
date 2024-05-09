@@ -1,0 +1,190 @@
+---
+---
+
+<style is:inline>
+    /* --------------------------------------------------------------------
+    * - wrapper-calendar
+    ---------------------------------------------------------------------- */
+    .wrapper-calendar {
+        position: relative;
+        padding: 0.2rem 0.5rem;
+    }
+
+    .wrapper-loader-processing {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background-color: #fff;
+    }
+
+    /* --------------------------------------------------------------------
+    * - loader-processing
+    ---------------------------------------------------------------------- */
+    .content-loader-processing {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100%;
+    }
+    .content-loader-processing .svg-loader-processing {
+        margin-bottom: 0.5rem;
+    }
+    .content-loader-processing .svg-text-processing {
+        color: #777;
+        font-size: 0.9rem;
+    }
+
+    [data-bs-theme="dark"] .wrapper-loader-processing {
+        background-color: #161515;
+    }
+    [data-bs-theme="dark"] .content-loader-processing .svg-text-processing {
+        color: #ddd;
+    }
+
+    /* --------------------------------------------------------------------
+    * - agenda
+    ---------------------------------------------------------------------- */
+    #calendar {
+        max-width: 1100px;
+        margin: 40px auto;
+    }
+
+    .tag-event {
+        cursor: pointer;
+    }
+    .tag-event.bg-event {
+        color: #fff;
+    }
+    .tag-event.bg-event .fc-daygrid-event-dot {
+        border: calc(var(--fc-daygrid-event-dot-width, 8px) / 2) solid
+            var(--fc-event-border-color, #fff);
+    }
+
+    /* filter */
+    .active-filter{
+        padding: 0.1rem 0.5rem;
+        color: #000;
+        border-radius: 0.5rem;
+        background-color: #eee;
+    }
+
+    /* custom styles callendar */
+    .fc .fc-col-header-cell-cushion {
+        text-decoration: none;
+    }
+    .fc .fc-event.fc-event-custom.fc-daygrid-event {
+        padding: 0.2rem 0.5rem;
+        line-height: 1;
+        transition: all 0.2s;
+    }
+    .fc .fc-daygrid-day-number {
+        padding: 2px;
+        font-size: 0.7rem;
+    }
+    .fc .fc-daygrid-body-natural .fc-daygrid-day-events    { margin-bottom: 0;}
+    .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events { min-height: 1em;}
+
+
+
+    /* v desktop */
+    /* v mobile */
+    .fc .fc-event.fc-event-custom,
+    .fc .fc-list-event td {
+        color: #fff;
+        border-color: #003057;
+        background-color: #003057;
+    }
+    .fc .fc-event.fc-event-custom:hover,
+    .fc .fc-list-event:hover td {
+        border-color: #03447a;
+        background-color: #03447a;
+    }
+    .fc .fc-event.fc-event-intervalo{
+        border-color: #e2efda;
+        background-color: #e2efda;
+    }
+    .fc .fc-event.fc-event-intervalo .fc-event-main-frame{
+        color: #888;
+    }
+
+    #btnViewCalendar{
+        z-index: 1;
+        position: absolute;
+        display: none;
+    }
+
+    @media(max-width: 800px){
+        #btnViewCalendar{ display: block;}
+
+        .fc .fc-toolbar-title {
+            font-size: 1.4em;
+        }
+
+        .fc-header-toolbar{
+            flex-wrap: wrap;
+        }
+        .fc-header-toolbar .fc-toolbar-chunk:nth-child(1){
+            order: 2;
+        }
+        .fc-header-toolbar .fc-toolbar-chunk:nth-child(2){
+            order: 1;
+            flex: 0 1 100%;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .fc-header-toolbar .fc-toolbar-chunk:nth-child(3){
+            order: 3;
+        }
+    }
+</style>
+
+<div class="wrapper-calendar">
+    <div id="calendar"></div>
+</div>
+
+<script is:inline src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+<script is:inline src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.11/locales-all.global.min.js"></script>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", function () {
+        var calendarEl = document.getElementById("calendar");
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            themeSystem: 'bootstrap5',
+            timeZone: "UTC",
+            editable: "true",
+            height: "auto",
+            hiddenDays: [0],
+            locale: "pt-br",
+
+            // Configurações de visualização
+            initialView: 'multiMonth2Month',
+            views: {
+                multiMonth2Month: {
+                type: 'multiMonth',
+                duration: { months: 2 }
+                }
+            },
+
+            // Adicionar eventos ao calendário
+            events: [
+                {
+                    id: "4160",
+                    title: "TESTE.",
+                    description: 'description for Long Event',
+                    start: "2024-05-09T08:00:00",
+                    end: "2024-05-09T09:00:00",
+                    url: "",
+                    className: "fc-event-custom",
+
+                }
+            ]
+        });
+
+        calendar.render();
+    });
+</script>
