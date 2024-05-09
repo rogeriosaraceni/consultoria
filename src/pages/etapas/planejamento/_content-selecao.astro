@@ -6,10 +6,10 @@
             <div class="d-flex gap-2">
                 <a
                     class="btn btn-primary btn-icon mb-1"
-                    data-fancybox
+                    data-fancybox-diario
                     data-type="iframe"
-                    data-width="95%"
-                    data-height="95%"
+                    data-width="1400"
+                    data-height="100%"
                     href="./popups/diario/"
                 >
                     <i class="bi bi-journal-check"></i>
@@ -75,3 +75,9 @@
 		</form>
 	</div><!-- card body -->
 </div><!-- card -->
+
+<script is:inline>
+    Fancybox.bind('[data-fancybox-diario]', {
+        showClass: "p-1",
+    });
+</script>

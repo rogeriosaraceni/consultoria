@@ -2,13 +2,13 @@
 import Processing from '@components/Processing.astro';
 ---
 
-<style>
+<style is:inline>
     /* --------------------------------------------------------------------
     * - wrapper-calendar
     ---------------------------------------------------------------------- */
     .wrapper-calendar {
         position: relative;
-        padding: 0.2rem 0.5rem;
+        padding: 0;
     }
 
     .wrapper-loader-processing {
@@ -26,7 +26,7 @@ import Processing from '@components/Processing.astro';
     ---------------------------------------------------------------------- */
     #calendar {
         max-width: 1100px;
-        margin: 10px auto;
+        margin: 0 auto;
     }
     .tag-event {
         cursor: pointer;
@@ -35,8 +35,20 @@ import Processing from '@components/Processing.astro';
         color: #fff;
     }
     .tag-event.bg-event .fc-daygrid-event-dot {
-        border: calc(var(--fc-daygrid-event-dot-width, 8px) / 2) solid
-            var(--fc-event-border-color, #fff);
+        border: calc(var(--fc-daygrid-event-dot-width, 8px) / 2) solid var(--fc-event-border-color, #fff);
+    }
+
+    .fc .fc-button {
+
+        line-height: 1;
+        padding: 0.2em 0.65em;
+    }
+
+    .fc .fc-toolbar.fc-header-toolbar {
+        margin-bottom: 0.5em;
+    }
+    .fc .fc-toolbar-title {
+        font-size: 1.4em;
     }
 
     /* filter */
@@ -118,8 +130,8 @@ import Processing from '@components/Processing.astro';
     }
 </style>
 
-<div class="card">
-    <div class="card-body">
+<div class="card mb-0">
+    <div class="card-body p-2">
         <div class="title-section">Diário de Bordo</div>
 
         <div class="wrapper-calendar">
@@ -154,8 +166,7 @@ import Processing from '@components/Processing.astro';
             headerToolbar: {
                 left: "prev,next today",
                 center: "title",
-                right: 'timeGridWeek,timeGridDay'
-
+                right: 'dayGridMonth,timeGridWeek,timeGridDay'
             },
 
             // Configurações adicionais
@@ -171,22 +182,15 @@ import Processing from '@components/Processing.astro';
                 }
             },
 
-            // eventContent: function (arg) {
-            //   let eventEl = arg.el;
-            //   eventEl.setAttribute('data-bs-toggle', 'tooltip'); // Adiciona o atributo data-bs-toggle
-            //   eventEl.setAttribute('data-bs-title', arg.event.title); // Adiciona o atributo data-bs-title com o título do evento
-            //   return arg.view.renderIsDayView ? renderEventContentForDayGrid(arg) : renderEventContentForTimeGrid(arg);
-            // },
-
             events: [
-                {
-                    id: "interval",
-                    title: "Intervalo",
-                    startTime: "12:00:00", // Início do intervalo
-                    endTime: "13:00:00", // Fim do intervalo
-                    daysOfWeek: [0, 1, 2, 3, 4, 5, 6], // Todos os dias da semana
-                    className: "fc-event-intervalo",
-                },
+                // {
+                //     id: "interval",
+                //     title: "Intervalo",
+                //     startTime: "12:00:00", // Início do intervalo
+                //     endTime: "13:00:00", // Fim do intervalo
+                //     daysOfWeek: [0, 1, 2, 3, 4, 5, 6], // Todos os dias da semana
+                //     className: "fc-event-intervalo",
+                // },
                 {
                     id: "4160",
                     title: "TESTE.",
@@ -198,31 +202,18 @@ import Processing from '@components/Processing.astro';
 
                 }
             ]
-                //events: 'https://fullcalendar.io/api/demo-feeds/events.json'
         });
 
-        //changeViewCaledar: load, resize e click
+        //changeViewCaledar: load, resize
         //-----------------------------------------
-        // const changeViewCaledar = () => document.body.clientWidth < 800
-        // ? calendar.changeView("listMonth") : calendar.changeView("timeGridWeek")
+        const changeViewCaledar = () => document.body.clientWidth < 800
+        ? calendar.changeView("listMonth") : calendar.changeView("timeGridWeek")
 
-        // changeViewCaledar()
+        changeViewCaledar()
 
-        // window.addEventListener("resize", () => changeViewCaledar())
-
-        // const btnViewCalendar = document.querySelector("#btnViewCalendar")
-        // btnViewCalendar.addEventListener("click", () => calendar.changeView("timeGridWeek"))
+        window.addEventListener("resize", () => changeViewCaledar())
         // -----------------------------------------
 
         calendar.render();
     });
-
-
-    // const events = document.querySelectorAll('.fc-daygrid-event-harness')
-    // console.log(events)
-
-    // events.forEach(function(el) {
-    //   el.setAttribute('data-bs-toggle', 'tooltip');
-    //   el.setAttribute('data-bs-title', 'Tooltip Text');
-    // });
 </script>
