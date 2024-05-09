@@ -1,0 +1,33 @@
+---
+import ContentBtnToggler from "./content-btnToggler.astro"
+import ContentNav from "./content-nav.astro"
+import ContentBtnUser from "./content-btnUser.astro"
+import ContentBtnTheme from "./content-btnTheme.astro"
+---
+
+<nav class="navbar navbar-app navbar-expand-xl fixed-top my-2 mx-4">
+    <div class="container-fluid rounded-4 bg-shadow-opacity blur">
+        <section class="navbar-app-content">
+            <ContentBtnToggler />
+
+            <a class="navbar-brand" href="/inicio/">Consultoria</a>
+
+            <ContentNav />
+
+            <ul class="navbar-nav flex-row ps-1">
+                <ContentBtnUser />
+                <ContentBtnTheme />
+            </ul>
+        </section>
+    </div>
+</nav>
+
+<script>
+    (() => {
+        'use strict'
+        document.querySelector('#navbarSideCollapse').addEventListener('click', () => {
+            document.querySelector('.navbar-app .container-fluid').classList.toggle('blur')
+            document.querySelector('.offcanvas-collapse').classList.toggle('open')
+        })
+    })()
+</script>
