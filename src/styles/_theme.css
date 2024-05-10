@@ -23,4 +23,8 @@
         background-color: hsla(0,0%,100%,.1)!important;
     }
     .blur { backdrop-filter: blur(75px);}
+
+    .navbar-app .bg-shadow-opacity {
+        background-color: rgba(0, 0, 0, 0.2) !important;
+    }
 }
