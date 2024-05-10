@@ -119,7 +119,7 @@
 }
 
 [data-bs-theme="dark"]{
-    --fc-border-color: #666;
+    --fc-border-color: #41454b;
 
     .fc-theme-standard th{
         color: #6295e1;
