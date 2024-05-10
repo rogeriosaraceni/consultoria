@@ -4,10 +4,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+        "@assets/*": ["src/assets/*"],
+        "@data/*": ["src/data/*"],
         "@layouts/*": ["src/layouts/*"],
         "@includes/*": ["src/includes/*"],
         "@components/*": ["src/components/*"],
-        "@assets/*": ["src/assets/*"],
         "@styles/*": ["src/styles/*"],
     }
   }

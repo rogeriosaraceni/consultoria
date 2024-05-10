@@ -1,33 +1,5 @@
 ---
-//import '@styles/card-principal.css'
-
-const cards = [
-{
-        name: "Planejamento",
-        img: "background-image: url(/assets/images/pages/inicio/planejamento.jpg);",
-        link: "/etapas/planejamento/",
-    },
-    {
-        name: "Execução Comercial",
-        img: "background-image: url(/assets/images/pages/inicio/execucao-comercial.jpg);",
-        link: "",
-    },
-    {
-        name: "Execução Pedagógica",
-        img: "background-image: url(/assets/images/pages/inicio/execucao-pedagogica.jpg);",
-        link: "",
-    },
-    {
-        name: "Acompanhamento",
-        img: "background-image: url(/assets/images/pages/inicio/acompanhamento.jpg);",
-        link: "",
-    },
-    {
-        name: "Fechamento",
-        img: "background-image: url(/assets/images/pages/inicio/fechamento.jpg);",
-        link: "",
-    }
-];
+import { inicioCards } from '@data/inicioCards.js';
 ---
 
 <div class="card bg-shadow-opacity blur mx-0 mx-md-4 mt-n5 overflow-hidden">
@@ -36,10 +8,10 @@ const cards = [
 
         <section class="row row-card-inicio cards-conteudos">
             {
-                cards.map(({ link, img, name }) => (
-                    <a class="card-inicio" href={link}>
-                        <div class="img" style={img}></div>
-                        <div class="title">{name}</div>
+                inicioCards.map((item) => (
+                    <a class="card-inicio" href={item.link}>
+                        <div class="img" style={item.img}></div>
+                        <div class="title">{item.name}</div>
                     </a>
                 ))
             }

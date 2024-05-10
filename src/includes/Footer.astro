@@ -1,3 +1,6 @@
+---
+import { footerSocialMedia } from '@data/footerSocialMedia.js';
+---
 <footer class="footer-app">
     <div class="container-fluid">
         <section class="py-3 mb-4 mx-md-5">
@@ -5,46 +8,13 @@
                 <h4 class="logo-footer mb-4 mb-lg-0">Consultoria</h4>
 
                 <ul class="social-footer">
-                    <li>
-                        <a rel="tooltip" title="" target="_blank" href="https://www.instagram.com/wizardbrasil.oficial/" data-original-title="instagram">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a rel="tooltip" title="" target="_blank" href="https://www.facebook.com/wizard.oficial" data-original-title="facebook">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a rel="tooltip" title="" target="_blank" href="https://twitter.com/wizardbrazil" data-original-title="twitter">
-                            <i class="bi bi-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a rel="tooltip" title="" target="_blank" href="https://www.youtube.com/c/WizardbyPearson" data-original-title="youtube">
-                            <i class="bi bi-youtube"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a rel="tooltip" title="" target="_blank" href="https://www.tiktok.com/@wizardbypearson" data-original-title="tiktok">
-                            <i class="bi bi-tiktok"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a rel="tooltip" title="" target="_blank" href="https://t.me/wizardbypearson" data-original-title="telegram">
-                            <i class="bi bi-telegram"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a rel="tooltip" title="" target="_blank" href="https://br.pinterest.com/wizardbrasil/_created/" data-original-title="pinterest">
-                            <i class="bi bi-pinterest"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a rel="tooltip" title="" target="_blank" href="https://www.linkedin.com/company/wizard" data-original-title="linkedin">
-                            <i class="bi bi-linkedin"></i>
-                        </a>
-                    </li>
+                    {footerSocialMedia.map((item) => (
+                        <li>
+                            <a data-bs-toggle="tooltip" data-bs-title={item.title} target="_blank" href={item.href}>
+                                <i class={item.icon}></i>
+                            </a>
+                        </li>
+                    ))}
                 </ul>
             </article>
         </section>
