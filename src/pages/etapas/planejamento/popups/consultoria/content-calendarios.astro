@@ -163,7 +163,7 @@
 
             // Configurações de visualização
             initialView: 'multiMonth2Month',
-            multiMonthMinWidth: 240,
+            multiMonthMinWidth: 200,
             views: {
                 multiMonth2Month: {
                     type: 'multiMonth',
@@ -179,11 +179,23 @@
                     description: 'description for Long Event',
                     start: "2024-05-09T08:00:00",
                     end: "2024-05-09T09:00:00",
-                    url: "",
                     className: "fc-event-custom",
 
                 }
-            ]
+            ],
+
+            eventClick: function(info) {
+                const iframeUrl = '../consultoria/popup-diario-bordo/?id=' + info.event.id;
+
+                // Abre o Fancybox com o iframe
+                Fancybox.show([{
+                    src: iframeUrl,
+                    type: 'iframe',
+                    preload: false,
+                    width: "100%",
+                    height: "100%",
+                }]);
+			}
         });
 
         calendar.render();

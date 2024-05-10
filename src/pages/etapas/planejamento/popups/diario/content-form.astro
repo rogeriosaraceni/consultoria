@@ -197,11 +197,22 @@ import Processing from '@components/Processing.astro';
                     description: 'description for Long Event',
                     start: "2024-05-09T08:00:00",
                     end: "2024-05-09T09:00:00",
-                    url: "",
                     className: "fc-event-custom",
-
                 }
-            ]
+            ],
+
+            eventClick: function(info) {
+                const iframeUrl = '../diario/popup-info-evento/?id=' + info.event.id;
+
+                // Abre o Fancybox com o iframe
+                Fancybox.show([{
+                    src: iframeUrl,
+                    type: 'iframe',
+                    preload: false,
+                    width: "80%",
+                    height: 500,
+                }]);
+			}
         });
 
         //changeViewCaledar: load, resize
