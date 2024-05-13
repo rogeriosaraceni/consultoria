@@ -8,13 +8,15 @@ import { footerSocialMedia } from '@data/footerSocialMedia.js';
                 <h4 class="logo-footer mb-4 mb-lg-0">Consultoria</h4>
 
                 <ul class="social-footer">
-                    {footerSocialMedia.map((item) => (
-                        <li>
-                            <a data-bs-toggle="tooltip" data-bs-title={item.title} target="_blank" href={item.href}>
-                                <i class={item.icon}></i>
-                            </a>
-                        </li>
-                    ))}
+                    {
+                        footerSocialMedia.map((item) => (
+                            <li>
+                                <a data-bs-toggle="tooltip" data-bs-title={item.title} target="_blank" href={item.href}>
+                                    <i class={item.icon}></i>
+                                </a>
+                            </li>
+                        ))
+                    }
                 </ul>
             </article>
         </section>
