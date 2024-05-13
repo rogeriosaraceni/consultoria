@@ -1,0 +1,55 @@
+<div class="card">
+	<div class="card-body">
+		<div class="title-section align-items-end justify-content-between gap-2">
+            <span>Seleção</span>
+
+            <div class="d-flex gap-2">
+                <a
+                    class="btn btn-success btn-icon mb-1"
+                    data-fancybox
+                    data-type="iframe"
+                    data-width="90%"
+                    data-height="800"
+                    href="./popups/registro/"
+                >
+                    <i class="bi bi-plus-circle"></i>
+                    <span>Criar Novo Registro</span>
+                </a>
+            </div>
+        </div>
+
+		<form method="POST" action="">
+			<div class="row">
+				<label class="col-xl-2 col-lg-3 col-md-6 col-sm-6">Tipo de Relatório:
+					<select name="tipo" class="selectpicker" multiple required>
+                        <option value='1'>FUP</option>
+                        <option value='2'>FUP Fechamento Mensal</option>
+                        <option value='3'>Fechamento Mensal</option>
+                        <option value='4'>Fechamento Trimestral</option>
+                        <option value='5'>Fechamento Semestral</option>
+					</select>
+				</label>
+
+				<label class="col-xl-2 col-lg-3 col-md-6 col-sm-6">Modelo:
+					<select name="modelo" class="selectpicker" multiple required>
+                        <option value='1'>PPT (apresentação)</option>
+                        <option value='2'>PPT (Book/One Page)</option>
+					</select>
+				</label>
+
+				<label class="col-xl-2 col-lg-3 col-md-6 col-sm-6">Público:
+					<select name="publico" class="selectpicker" multiple required>
+                        <option value='1'>Franqueado</option>
+                        <option value='2'>Time Comercial</option>
+                        <option value='3'>Time Pedagógico</option>
+					</select>
+				</label>
+
+				<div class="col-xl-1 col-lg-12 col-md-12 col-sm-12">
+					<div class="label-clearfix last-xl"></div>
+					<button type="submit" class="btn btn-primary btn-clearfix btn-last-xl">Ok</button>
+				</div>
+			</div>
+		</form>
+	</div><!-- card body -->
+</div><!-- card -->

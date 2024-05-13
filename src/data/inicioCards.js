@@ -17,7 +17,7 @@ export const inicioCards = [
     {
         name: "Acompanhamento",
         img: "background-image: url(/assets/images/pages/inicio/acompanhamento.jpg);",
-        link: "",
+        link: "/etapas/acompanhamento/",
     },
     {
         name: "Fechamento",
