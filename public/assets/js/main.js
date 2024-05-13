@@ -51,17 +51,26 @@ const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => new bootst
  * fancybox
  * https://fancyapps.com/fancybox/plugins/html/#iframes
 --------------------------------------------------------------------- */
-Fancybox.bind("[data-fancybox]", {});
+const fancyboxElement = document.querySelector("[data-fancybox]")
+
+if (fancyboxElement) {
+    Fancybox.bind("[data-fancybox]", {});
+}
 
 /** --------------------------------------------------------------------
  * floatThead
 --------------------------------------------------------------------- */
-const $table = $(".fixThead");
-$table.floatThead({
-    scrollContainer: function ($table) {
-        return $table.closest(".table-responsive");
-    },
-});
+//const $table = $(".fixThead");
+
+const floatTheadElement = document.querySelector(".fixThead");
+
+if (floatTheadElement) {
+    $table.floatThead({
+        scrollContainer: function ($table) {
+            return $table.closest(".table-responsive")
+        },
+    })
+}
 
 /** --------------------------------------------------------------------
  * mainAppMarginTop
