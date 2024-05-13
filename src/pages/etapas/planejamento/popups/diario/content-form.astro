@@ -4,7 +4,23 @@ import Processing from '@components/Processing.astro';
 
 <div class="card mb-0">
     <div class="card-body p-2">
-        <div class="title-section">Diário de Bordo</div>
+        <div class="title-section align-items-end justify-content-between gap-2">
+            <span>Diário de Bordo</span>
+
+            <div class="d-flex gap-2">
+                <a
+                    class="btn btn-success btn-icon mb-1"
+                    data-fancybox
+                    data-type="iframe"
+                    data-width="800"
+                    data-height="450"
+                    href="/etapas/planejamento/popups/diario/novo-evento/"
+                >
+                    <i class="bi bi-plus"></i>
+                    <span>Cadastrar Novo Evento</span>
+                </a>
+            </div>
+        </div>
 
         <div class="wrapper-calendar">
             <Processing />
@@ -67,14 +83,14 @@ import Processing from '@components/Processing.astro';
                     id: "4160",
                     title: "TESTE.",
                     description: 'description for Long Event',
-                    start: "2024-05-09T08:00:00",
-                    end: "2024-05-09T09:00:00",
+                    start: "2024-05-13T08:00:00",
+                    end: "2024-05-13T09:00:00",
                     className: "fc-event-custom",
                 }
             ],
 
             eventClick: function(info) {
-                const iframeUrl = '../diario/popup-info-evento/?id=' + info.event.id;
+                const iframeUrl = '/etapas/planejamento/popups/diario/info-evento/?id=' + info.event.id;
 
                 // Abre o Fancybox com o iframe
                 Fancybox.show([{

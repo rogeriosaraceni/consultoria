@@ -1,3 +1,7 @@
+---
+import ContentTemplate from "./content-template.astro"
+---
+
 <div class="card">
     <div class="card-body">
         <div class="title-section">Template</div>
@@ -5,74 +9,10 @@
         <form method="POST" id="" action="">
             <label class="w-100">
                 Destinatario (separar e-mails por ponto e virgula):
-                <textarea name="destinatarios" id="destinatarios" class="form-control" rows="2" required></textarea>
+                <textarea name="destinatarios" id="destinatarios" class="form-control" rows="1" required></textarea>
             </label>
 
-            <hr>
-
-            <div class="mb-3">
-                <div class="d-flex align-items-center gap-1">
-                    <input type="text" name="" class="form-control" style="max-width: 300px;" placeholder="Insira um ou mais nomes">
-                    <span>, olá!</span>
-                </div>
-                <p>
-                    É com muito prazer que damos início ao nosso trabalho em 2024.
-                    <br>
-                    <div class="d-flex align-items-center gap-1">
-                        <span>Estaremos reunidos no dia</span>
-                        <input type="date" name="" class="form-control w-auto">
-                        <span>das</span>
-                        <input type="time" name="" class="form-control w-auto">
-                        <span>às</span>
-                        <input type="time" name="" class="form-control w-auto">
-                        <input type="text" name="" class="form-control w-auto flex-grow-1" placeholder="Insira o local">.
-                    </div>
-                    <br>
-                    Nesse encontro desenharemos nosso Business Plan, o ponto de partida para o desenvolvimento de um negócio lucrativo nesse novo ano. Esse documento reúne as informações importantes da empresa e detalha quais recursos, processos e estratégias serão necessários para alcançar o sucesso.
-                </p>
-
-                <p>
-                    Precisaremos das informações abaixo para que nosso encontro seja produtivo e que possamos finalizá-lo com um robusto e eficaz plano de ação:
-                </p>
-
-                <p>
-                    <ul class="ps-3 ">
-                        <li>
-                            <div class="d-flex align-items-center gap-1 mb-1">
-                                <span class="w-100" style="max-width: 340px;">Número de alunos ativos no início de 2024:</span>
-                                <input type="text" name="" class="form-control w-auto py-0">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="d-flex align-items-center gap-1 mb-1">
-                                <span class="w-100" style="max-width: 340px;">Meta e realizado de matrículas em 2023:</span>
-                                <input type="text" name="" class="form-control w-auto py-0">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="d-flex align-items-center gap-1 mb-1">
-                                <span class="w-100" style="max-width: 340px;">Meta e realizado de rematrículas em 2023:</span>
-                                <input type="text" name="" class="form-control w-auto py-0">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="d-flex align-items-center gap-1 mb-1">
-                                <span class="w-100" style="max-width: 340px;">Evasão em 2023:</span>
-                                <input type="text" name="" class="form-control w-auto py-0">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="d-flex align-items-center gap-1 mb-1">
-                                <span class="w-100" style="max-width: 340px;">Configuração dos times comerciais e pedagógicos:</span>
-                                <input type="text" name="" class="form-control w-autox">
-                            </div>
-                        </li>
-                    </ul>
-                </p>
-
-                <p>Temos certeza que esse será um ano próspero.</p>
-                <p>Até lá!</p>
-            </div>
+            <ContentTemplate />
 
             <hr>
 

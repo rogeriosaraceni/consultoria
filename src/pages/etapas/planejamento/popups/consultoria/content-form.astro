@@ -11,15 +11,24 @@ import ContentCalendarios from "./content-calendarios.astro";
                 <div class="col-lg-7">
                     <div class="row">
                         <label class="col-sm-4">Data de Agendamento:
-                            <input type="date" name="" class="form-control" required/>
+                            <div class="d-flex flex-column">
+                                <input type="date" name="data" class="form-control" required/>
+                                <small class="text-center text-wep-azul-meia-noite">Data de criação: 13/05/2024</small>
+                            </div>
                         </label>
 
                         <label class="col-sm-4">Horário Inicio
-                            <input type="time" name="" class="form-control" required/>
+                            <div class="d-flex flex-column">
+                                <input type="time" name="horario_inicio" class="form-control" required/>
+                                <small class="text-center text-wep-azul-meia-noite">Horário criação (Inicio): 15:00:00</small>
+                            </div>
                         </label>
 
                         <label class="col-sm-4">Horário Término
-                            <input type="time" name="" class="form-control" required/>
+                            <div class="d-flex flex-column">
+                                <input type="time" name="horario_termino" class="form-control" required/>
+                                <small class="text-center text-wep-azul-meia-noite">Horário criação (Término): 16:00:00</small>
+                            </div>
                         </label>
                     </div>
 
@@ -45,12 +54,12 @@ import ContentCalendarios from "./content-calendarios.astro";
 
                     <div class="d-flex gap-3">
                         <label class="form-check-label gap-1">
-                            <input type="checkbox" name="modelo" value="agil"/>
+                            <input type="radio" name="modelo" value="agil" required/>
                             <span>Ágil</span>
                         </label>
 
                         <label class="form-check-label gap-1">
-                            <input type="checkbox" name="modelo" value="360"/>
+                            <input type="radio" name="modelo" value="360" required/>
                             <span>360</span>
                         </label>
                     </div>
@@ -59,22 +68,22 @@ import ContentCalendarios from "./content-calendarios.astro";
 
                     <p class="mb-1 fw-bold">Pautas a serem abordadas:</p>
                     <label class="form-check-label gap-1">
-                        <input type="checkbox" name="pautas" value="pauta_comercial"/>
+                        <input type="checkbox" name="pautas" value="pauta_comercial" data-checkbox="pautas"/>
                         <span>Comercial</span>
                     </label>
 
                     <label class="form-check-label gap-1">
-                        <input type="checkbox" name="pautas" value="pauta_financeiro"/>
+                        <input type="checkbox" name="pautas" value="pauta_financeiro" data-checkbox="pautas"/>
                         <span>Financeiro</span>
                     </label>
 
                     <label class="form-check-label gap-1">
-                        <input type="checkbox" name="pautas" value="pauta_marketing"/>
+                        <input type="checkbox" name="pautas" value="pauta_marketing" data-checkbox="pautas"/>
                         <span>Marketing</span>
                     </label>
 
                     <label class="form-check-label gap-1">
-                        <input type="checkbox" name="pautas" value="pauta_estrutura_fisica"/>
+                        <input type="checkbox" name="pautas" value="pauta_estrutura_fisica" data-checkbox="pautas"/>
                         <span>Estrutura Física</span>
                     </label>
                 </div>
@@ -92,27 +101,19 @@ import ContentCalendarios from "./content-calendarios.astro";
 </div><!-- card -->
 
 <script is:inline type="module">
-    function validCheckboxes(nameCheckboxs) {
-        const checkboxes = document.querySelectorAll(`input[name="${nameCheckboxs}"]`);
-        return Array.from(checkboxes).some(checkbox => checkbox.checked);
+    const checkboxes = document.querySelectorAll('[data-checkbox="pautas"]')
+
+    function verificar() {
+        return [].filter.call(checkboxes, (checkbox) => {
+            return checkbox.checked
+        }).length
     }
 
     document.getElementById('formNovaConsultoria').addEventListener('submit', function(event) {
-        const grupos = ['Pautas', 'Modelo'];
-        let formularioValido = true;
-        let grupoInvalido = '';
-
-        grupos.forEach(grupo => {
-            const valido = validCheckboxes(grupo);
-            if (!valido) {
-                formularioValido = false;
-                grupoInvalido = grupo;
-            }
-        });
-
-        if (!formularioValido) {
-            event.preventDefault();
-            alert(`Por favor, selecione pelo menos uma opção de "${grupoInvalido}".`);
+        var valido = verificar();
+        if (!valido) {
+            event.preventDefault()
+            alert('Selecione ao menos uma opção das Pautas!')
         }
-    });
+    })
 </script>

@@ -1,0 +1,96 @@
+<div class="m-auto" style="max-width: 900px;">
+    <div class="d-flex align-items-center bg-wep-azul-meia-noite text-white position-relative py-2 px-2">
+        <div class="flex-1">
+            <img class="img-fluid h-100 logo-wizard" src="/assets/images/logo-wizard.png">
+        </div>
+
+        <div class="text-center mx-3">
+            <h5 class="mb-0 title-desafio"></h5>
+        </div>
+
+        <div class="flex-1">
+            <div class="fx-red"></div>
+        </div>
+    </div>
+
+    <div class="border-start border-end">
+        <div class="p-2 mb-3">
+            <div class="d-flex align-items-center gap-1 mb-1">
+                <input type="text" name="" class="form-control" style="max-width: 400px;" placeholder="Insira um ou mais nomes">
+                <span>, olá!</span>
+            </div>
+
+            <div class="mb-1">É com muito prazer que damos início ao nosso trabalho em 2024.</div>
+
+            <div class="d-flex align-items-center gap-1 mb-1">
+                <span>Estaremos reunidos no dia</span>
+                <input type="date" name="" class="form-control w-auto">
+                <span>das</span>
+                <input type="time" name="" class="form-control w-auto">
+                <span>às</span>
+                <input type="time" name="" class="form-control w-auto">
+            </div>
+
+            <input type="text" name="" class="form-control w-xauto flex-grow-1x" placeholder="Insira o local">.
+
+<textarea name="" id="" class="form-control" rows="8">
+Nesse encontro desenharemos nosso Business Plan, o ponto de partida para o desenvolvimento de um negócio lucrativo nesse novo ano. Esse documento reúne as informações importantes da empresa e detalha quais recursos, processos e estratégias serão necessários para alcançar o sucesso.
+
+Precisaremos das informações abaixo para que nosso encontro seja produtivo e que possamos finalizá-lo com um robusto e eficaz plano de ação:
+
+Número de alunos ativos no início de 2024:
+Meta e realizado de matrículas em 2023:
+Meta e realizado de rematrículas em 2023:
+Evasão em 2023:
+Configuração dos times comerciais e pedagógicos:
+
+Temos certeza que esse será um ano próspero.
+
+Até lá!
+</textarea>
+
+        </div>
+
+        <div class="d-flex align-items-center justify-content-end p-2 bg-wep-azul-meia-noite">
+            <img class="img-fluid" src="/assets/images/logo-pearson.png">
+        </div>
+    </div>
+</div>
+
+<style is:inline>
+    .logo-wizard{
+        max-height: 35px;
+    }
+    .title-desafio{
+        font-size: 1.75rem;
+    }
+    .fx-red{
+        --size: 45px;
+    }
+    .fx-red {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: var(--size);
+        height: var(--size);
+    }
+    .fx-red::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        height: 0;
+        border-top: var(--size) solid #ff343a;
+        border-left: var(--size) solid transparent;
+    }
+
+    .item{ width: 120px;}
+
+    @media (max-width: 800px){
+        .title-desafio{ font-size: 1.35rem;}
+    }
+    @media (max-width: 600px){
+        .logo-wizard{ max-height: 25px;}
+        .title-desafio{ font-size: 1rem;}
+    }
+</style>
