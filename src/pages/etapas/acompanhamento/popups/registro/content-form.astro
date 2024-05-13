@@ -1,24 +1,20 @@
 ---
 ---
 
-<div class="card">
-    <div class="card-body">
-        <div class="title-section">Novo Agendamento de Consultoria</div>
+<form method="POST" id="form-novo-registro" action="">
+    <div class="row">
+        <label class="col-xl-2 col-lg-3 col-md-6 col-sm-12">Tipo de Relatório:
+            <select name="tipo" class="form-select" required>
+                <option value=''></option>
+                <option value='1'>FUP</option>
+                <option value='2'>FUP Fechamento Mensal</option>
+                <option value='3'>Fechamento Mensal</option>
+                <option value='4'>Fechamento Trimestral</option>
+                <option value='5'>Fechamento Semestral</option>
+            </select>
+        </label>
 
-        <form method="POST" action="">
-            <div class="row">
-                <label class="col-xl-2 col-lg-3 col-md-6 col-sm-6">Tipo de Relatório:
-                    <select name="tipo" class="form-select" required>
-                        <option value=''></option>
-                        <option value='1'>FUP</option>
-                        <option value='2'>FUP Fechamento Mensal</option>
-                        <option value='3'>Fechamento Mensal</option>
-                        <option value='4'>Fechamento Trimestral</option>
-                        <option value='5'>Fechamento Semestral</option>
-                    </select>
-                </label>
-            </div>
-
+        <div class="col-xl-10 col-lg-9 col-md-6 col-sm-12">
             <p class="mb-1 fw-bold">Modelo:</p>
             <div class="d-flex gap-3">
                 <label class="form-check-label gap-1">
@@ -31,20 +27,78 @@
                     <span>PPT (Book/One Page)</span>
                 </label>
             </div>
+        </div>
+    </div>
 
-            <div class="row">
-                <label class="col-xl-2 col-lg-3 col-md-6 col-sm-6">Público:
-                    <select name="publico" class="form-select" required>
-                        <option value='1'>Franqueado</option>
-                        <option value='2'>Time Comercial</option>
-                        <option value='3'>Time Pedagógico</option>
-                    </select>
-                </label>
-            </div>
+    <div class="row">
+        <label class="col-xl-2 col-lg-3 col-md-6 col-sm-6">Público:
+            <select name="publico" class="form-select" required>
+                <option value='1'>Franqueado</option>
+                <option value='2'>Time Comercial</option>
+                <option value='3'>Time Pedagógico</option>
+            </select>
+        </label>
 
-            <div class="d-flex align-items-end justify-content-end">
-                <button type="submit" class="btn btn-primary">Salvar</button>
-            </div>
-        </form>
-    </div><!-- card body -->
-</div><!-- card -->
+        <label class="col-xl-3 col-lg-4 col-md-6 col-sm-6">Anexo Arquivo:
+            <input
+                type="file"
+                name="arquivo"
+                id="input-1"
+                class="form-control"
+                required
+                accept=".ppt, .pptx"
+                onchange="checkAttachment(1)"
+            >
+        </label>
+    </div>
+
+    <hr>
+
+    <div class="d-flex align-items-end justify-content-end">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+</form>
+
+<script is:inline>
+    window.addEventListener('load', () => {
+        $("#form-novo-registro").submit(function() {
+            window.parent.$.magnificPopup.close();
+        })
+    })
+
+    var fileSizeText = '100 MB'
+    var fileSizeBite = '104857600'
+    var extensionsText = '.ppt, .pptx'
+
+    function checkAttachment(item) {
+        let fileInput = document.querySelector('#input-' + item)
+        let label = document.querySelector('#label-' + item)
+
+        const extensions = /(.ppt|.pptx)$/i
+        const filePath = fileInput.value || $('#input-' + item).attr("value")
+        const fileSize = fileSizeBite
+
+        if (filePath === "") {
+            alert(`Insira um anexo`)
+            fileInput.value = ''
+            label.innerText = ''
+            return false
+        }
+
+        if (!extensions.exec(filePath) && filePath !== "") {
+            alert(`Fora das extensões permitidas: ${extensionsText}`)
+            fileInput.value = ''
+            label.innerText = ''
+            return false
+        }
+
+        if (fileInput.files && fileInput.files[0] && fileInput.files[0].size > fileSize) {
+            alert(`Execede o tamanho máximo de: ${fileSizeText}!`)
+            fileInput.value = ''
+            label.innerText = ''
+            return false
+        }
+
+        return true;
+    }
+</script>

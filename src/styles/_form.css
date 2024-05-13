@@ -66,11 +66,6 @@ form-group
 /* --------------------------------------------------------------------
 input
 * -------------------------------------------------------------------- */
-input[type="file"].form-control {
-    padding-top: 2px;
-    padding-left: 4px;
-}
-
 /* Chrome, Safari, Edge, Opera */
 input[type="number"][readonly]::-webkit-outer-spin-button,
 input[type="number"][readonly]::-webkit-inner-spin-button {
