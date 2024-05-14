@@ -2,105 +2,99 @@
 import ContentCalendarios from "./content-calendarios.astro";
 ---
 
-<div class="card">
-    <div class="card-body">
-        <div class="title-section">Novo Agendamento de Consultoria</div>
-
-        <form method="POST" id="formNovaConsultoria" action="">
-            <section class="row">
-                <div class="col-lg-7">
-                    <div class="row">
-                        <label class="col-sm-4">Data de Agendamento:
-                            <div class="d-flex flex-column">
-                                <input type="date" name="data" class="form-control" required/>
-                                <small class="text-center text-wep-azul-meia-noite">Data de criação: 13/05/2024</small>
-                            </div>
-                        </label>
-
-                        <label class="col-sm-4">Horário Inicio
-                            <div class="d-flex flex-column">
-                                <input type="time" name="horario_inicio" class="form-control" required/>
-                                <small class="text-center text-wep-azul-meia-noite">Horário criação (Inicio): 15:00:00</small>
-                            </div>
-                        </label>
-
-                        <label class="col-sm-4">Horário Término
-                            <div class="d-flex flex-column">
-                                <input type="time" name="horario_termino" class="form-control" required/>
-                                <small class="text-center text-wep-azul-meia-noite">Horário criação (Término): 16:00:00</small>
-                            </div>
-                        </label>
+<form method="POST" id="formNovaConsultoria" action="">
+    <section class="row">
+        <div class="col-lg-7">
+            <div class="row">
+                <label class="col-sm-4">Data de Agendamento:
+                    <div class="d-flex flex-column">
+                        <input type="date" name="data" class="form-control" required/>
+                        <small class="text-center text-wep-azul-meia-noite">Data de criação: 13/05/2024</small>
                     </div>
+                </label>
 
-                    <hr />
-
-                    <p class="mb-1 fw-bold">Tipo Consultoria:</p>
-
-                    <div class="d-flex gap-3">
-                        <label class="form-check-label gap-1">
-                            <input type="radio" name="consultoria" value="presencial" required/>
-                            <span>Consultoria Presencial</span>
-                        </label>
-
-                        <label class="form-check-label gap-1">
-                            <input type="radio" name="consultoria" value="online" required/>
-                            <span>Consultoria Online</span>
-                        </label>
+                <label class="col-sm-4">Horário Inicio
+                    <div class="d-flex flex-column">
+                        <input type="time" name="horario_inicio" class="form-control" required/>
+                        <small class="text-center text-wep-azul-meia-noite">Horário criação (Inicio): 15:00:00</small>
                     </div>
+                </label>
 
-                    <hr />
-
-                    <p class="mb-1 fw-bold">Modelo:</p>
-
-                    <div class="d-flex gap-3">
-                        <label class="form-check-label gap-1">
-                            <input type="radio" name="modelo" value="agil" required/>
-                            <span>Ágil</span>
-                        </label>
-
-                        <label class="form-check-label gap-1">
-                            <input type="radio" name="modelo" value="360" required/>
-                            <span>360</span>
-                        </label>
+                <label class="col-sm-4">Horário Término
+                    <div class="d-flex flex-column">
+                        <input type="time" name="horario_termino" class="form-control" required/>
+                        <small class="text-center text-wep-azul-meia-noite">Horário criação (Término): 16:00:00</small>
                     </div>
+                </label>
+            </div>
 
-                    <hr>
+            <hr />
 
-                    <p class="mb-1 fw-bold">Pautas a serem abordadas:</p>
-                    <label class="form-check-label gap-1">
-                        <input type="checkbox" name="pautas" value="pauta_comercial" data-checkbox="pautas"/>
-                        <span>Comercial</span>
-                    </label>
+            <p class="mb-1 fw-bold">Tipo Consultoria:</p>
 
-                    <label class="form-check-label gap-1">
-                        <input type="checkbox" name="pautas" value="pauta_financeiro" data-checkbox="pautas"/>
-                        <span>Financeiro</span>
-                    </label>
+            <div class="d-flex gap-3">
+                <label class="form-check-label gap-1">
+                    <input type="radio" name="consultoria" value="presencial" required/>
+                    <span>Consultoria Presencial</span>
+                </label>
 
-                    <label class="form-check-label gap-1">
-                        <input type="checkbox" name="pautas" value="pauta_marketing" data-checkbox="pautas"/>
-                        <span>Marketing</span>
-                    </label>
+                <label class="form-check-label gap-1">
+                    <input type="radio" name="consultoria" value="online" required/>
+                    <span>Consultoria Online</span>
+                </label>
+            </div>
 
-                    <label class="form-check-label gap-1">
-                        <input type="checkbox" name="pautas" value="pauta_estrutura_fisica" data-checkbox="pautas"/>
-                        <span>Estrutura Física</span>
-                    </label>
-                </div>
+            <hr />
 
-                <div class="col-lg-5">
-                    <ContentCalendarios />
-                </div>
-            </section>
+            <p class="mb-1 fw-bold">Modelo:</p>
+
+            <div class="d-flex gap-3">
+                <label class="form-check-label gap-1">
+                    <input type="radio" name="modelo" value="agil" required/>
+                    <span>Ágil</span>
+                </label>
+
+                <label class="form-check-label gap-1">
+                    <input type="radio" name="modelo" value="360" required/>
+                    <span>360</span>
+                </label>
+            </div>
 
             <hr>
 
-            <div class="d-flex align-items-end justify-content-end">
-                <button type="submit" class="btn btn-primary">Salvar</button>
-            </div>
-        </form>
-    </div><!-- card body -->
-</div><!-- card -->
+            <p class="mb-1 fw-bold">Pautas a serem abordadas:</p>
+            <label class="form-check-label gap-1">
+                <input type="checkbox" name="pautas" value="pauta_comercial" data-checkbox="pautas"/>
+                <span>Comercial</span>
+            </label>
+
+            <label class="form-check-label gap-1">
+                <input type="checkbox" name="pautas" value="pauta_financeiro" data-checkbox="pautas"/>
+                <span>Financeiro</span>
+            </label>
+
+            <label class="form-check-label gap-1">
+                <input type="checkbox" name="pautas" value="pauta_marketing" data-checkbox="pautas"/>
+                <span>Marketing</span>
+            </label>
+
+            <label class="form-check-label gap-1">
+                <input type="checkbox" name="pautas" value="pauta_estrutura_fisica" data-checkbox="pautas"/>
+                <span>Estrutura Física</span>
+            </label>
+        </div>
+
+        <div class="col-lg-5">
+            <ContentCalendarios />
+        </div>
+    </section>
+
+    <hr>
+
+    <div class="d-flex align-items-end justify-content-end">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+</form>
 
 <script is:inline type="module">
     const checkboxes = document.querySelectorAll('[data-checkbox="pautas"]')
