@@ -70,24 +70,7 @@ import Processing from '@components/Processing.astro';
                 }
             },
 
-            events: [
-                // {
-                //     id: "interval",
-                //     title: "Intervalo",
-                //     startTime: "12:00:00", // Início do intervalo
-                //     endTime: "13:00:00", // Fim do intervalo
-                //     daysOfWeek: [0, 1, 2, 3, 4, 5, 6], // Todos os dias da semana
-                //     className: "fc-event-intervalo",
-                // },
-                {
-                    id: "4160",
-                    title: "TESTE.",
-                    description: 'description for Long Event',
-                    start: "2024-05-13T08:00:00",
-                    end: "2024-05-13T09:00:00",
-                    className: "fc-event-custom",
-                }
-            ],
+            events: '/data/events.json',
 
             eventClick: function(info) {
                 const iframeUrl = '/etapas/planejamento/popups/diario/info-evento/?id=' + info.event.id;
@@ -116,3 +99,5 @@ import Processing from '@components/Processing.astro';
         calendar.render();
     });
 </script>
+
+

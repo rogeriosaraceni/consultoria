@@ -30,17 +30,8 @@
             },
 
             // Adicionar eventos ao calendário
-            events: [
-                {
-                    id: "4160",
-                    title: "TESTE.",
-                    description: 'description for Long Event',
-                    start: "2024-05-13T08:00:00",
-                    end: "2024-05-13T09:00:00",
-                    className: "fc-event-custom",
+            events: '/data/events.json',
 
-                }
-            ],
 
             eventClick: function(info) {
                 const iframeUrl = '../popup-diario-bordo/?id=' + info.event.id;
