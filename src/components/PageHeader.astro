@@ -1,0 +1,20 @@
+---
+interface Props{
+    icon: string;
+    name: string;
+}
+
+const {icon, name} = Astro.props
+---
+
+<header class="page-header">
+    <div class="container-fluid slide-in-left">
+        <div class="page-header-content mx-md-4">
+            <div class="item-icon">
+                <i class={icon}></i>
+            </div>
+
+            <div class="item-title">{name}</div>
+        </div>
+    </div>
+</header>
