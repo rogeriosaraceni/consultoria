@@ -1,0 +1,28 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Nav from '@includes/Nav/Nav.astro';
+import PageHeader from '@components/PageHeader.astro';
+
+---
+
+<Layout>
+    <Nav />
+
+    <PageHeader
+        icon='bi bi-person-gear',
+        name='Perfil'
+    />
+
+    <main class="main-app">
+        <section class="container-fluid">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb p-0 mx-md-4">
+                    <li class="breadcrumb-item"><a href="/inicio/">Início</a></li>
+                    <li class="breadcrumb-item">Setup</li>
+                    <li class="breadcrumb-item active" aria-current="page">Perfil</li>
+                </ol>
+            </nav>
+
+        </section>
+    </main>
+</Layout>
