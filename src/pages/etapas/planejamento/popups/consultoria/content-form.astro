@@ -1,84 +1,99 @@
 ---
+import ContentCalendarios from "./content-calendarios.astro";
+
 ---
 
+
+
+
+
+
 <form method="POST" id="formNovaConsultoria" action="">
-    <div class="row">
-        <label class="col-sm-4">Data de Agendamento:
-            <div class="d-flex flex-column">
-                <input type="date" name="data" class="form-control" required/>
-                <small class="text-center text-wep-azul-meia-noite">Data de criação: 13/05/2024</small>
+    <section class="row">
+        <div class="col-lg-7">
+            <div class="row">
+                <label class="col-sm-4">Data de Agendamento:
+                    <div class="d-flex flex-column">
+                        <input type="date" name="data" class="form-control" required/>
+                        <small class="text-center text-wep-azul-meia-noite">Data de criação: 13/05/2024</small>
+                    </div>
+                </label>
+
+                <label class="col-sm-4">Horário Inicio
+                    <div class="d-flex flex-column">
+                        <input type="time" name="horario_inicio" class="form-control" required/>
+                        <small class="text-center text-wep-azul-meia-noite">Horário criação (Inicio): 15:00:00</small>
+                    </div>
+                </label>
+
+                <label class="col-sm-4">Horário Término
+                    <div class="d-flex flex-column">
+                        <input type="time" name="horario_termino" class="form-control" required/>
+                        <small class="text-center text-wep-azul-meia-noite">Horário criação (Término): 16:00:00</small>
+                    </div>
+                </label>
             </div>
-        </label>
 
-        <label class="col-sm-4">Horário Inicio
-            <div class="d-flex flex-column">
-                <input type="time" name="horario_inicio" class="form-control" required/>
-                <small class="text-center text-wep-azul-meia-noite">Horário criação (Inicio): 15:00:00</small>
+            <hr />
+
+            <p class="mb-1 fw-bold">Tipo Consultoria:</p>
+
+            <div class="d-flex gap-3">
+                <label class="form-check-label gap-1">
+                    <input type="radio" name="consultoria" value="presencial" required/>
+                    <span>Consultoria Presencial</span>
+                </label>
+
+                <label class="form-check-label gap-1">
+                    <input type="radio" name="consultoria" value="online" required/>
+                    <span>Consultoria Online</span>
+                </label>
             </div>
-        </label>
 
-        <label class="col-sm-4">Horário Término
-            <div class="d-flex flex-column">
-                <input type="time" name="horario_termino" class="form-control" required/>
-                <small class="text-center text-wep-azul-meia-noite">Horário criação (Término): 16:00:00</small>
+            <hr />
+
+            <p class="mb-1 fw-bold">Modelo:</p>
+
+            <div class="d-flex gap-3">
+                <label class="form-check-label gap-1">
+                    <input type="radio" name="modelo" value="agil" required/>
+                    <span>Ágil</span>
+                </label>
+
+                <label class="form-check-label gap-1">
+                    <input type="radio" name="modelo" value="360" required/>
+                    <span>360</span>
+                </label>
             </div>
-        </label>
-    </div>
 
-    <hr />
+            <hr>
 
-    <p class="mb-1 fw-bold">Tipo Consultoria:</p>
+            <p class="mb-1 fw-bold">Pautas a serem abordadas:</p>
+            <label class="form-check-label gap-1">
+                <input type="checkbox" name="pautas" value="pauta_comercial" data-checkbox="pautas"/>
+                <span>Comercial</span>
+            </label>
 
-    <div class="d-flex gap-3">
-        <label class="form-check-label gap-1">
-            <input type="radio" name="consultoria" value="presencial" required/>
-            <span>Consultoria Presencial</span>
-        </label>
+            <label class="form-check-label gap-1">
+                <input type="checkbox" name="pautas" value="pauta_financeiro" data-checkbox="pautas"/>
+                <span>Financeiro</span>
+            </label>
 
-        <label class="form-check-label gap-1">
-            <input type="radio" name="consultoria" value="online" required/>
-            <span>Consultoria Online</span>
-        </label>
-    </div>
+            <label class="form-check-label gap-1">
+                <input type="checkbox" name="pautas" value="pauta_marketing" data-checkbox="pautas"/>
+                <span>Marketing</span>
+            </label>
 
-    <hr />
+            <label class="form-check-label gap-1">
+                <input type="checkbox" name="pautas" value="pauta_estrutura_fisica" data-checkbox="pautas"/>
+                <span>Estrutura Física</span>
+            </label>
+        </div>
 
-    <p class="mb-1 fw-bold">Modelo:</p>
-
-    <div class="d-flex gap-3">
-        <label class="form-check-label gap-1">
-            <input type="radio" name="modelo" value="agil" required/>
-            <span>Ágil</span>
-        </label>
-
-        <label class="form-check-label gap-1">
-            <input type="radio" name="modelo" value="360" required/>
-            <span>360</span>
-        </label>
-    </div>
-
-    <hr>
-
-    <p class="mb-1 fw-bold">Pautas a serem abordadas:</p>
-    <label class="form-check-label gap-1">
-        <input type="checkbox" name="pautas" value="pauta_comercial" data-checkbox="pautas"/>
-        <span>Comercial</span>
-    </label>
-
-    <label class="form-check-label gap-1">
-        <input type="checkbox" name="pautas" value="pauta_financeiro" data-checkbox="pautas"/>
-        <span>Financeiro</span>
-    </label>
-
-    <label class="form-check-label gap-1">
-        <input type="checkbox" name="pautas" value="pauta_marketing" data-checkbox="pautas"/>
-        <span>Marketing</span>
-    </label>
-
-    <label class="form-check-label gap-1">
-        <input type="checkbox" name="pautas" value="pauta_estrutura_fisica" data-checkbox="pautas"/>
-        <span>Estrutura Física</span>
-    </label>
+        <div class="col-lg-5">
+            <ContentCalendarios />
+        </div>
+    </section>
     <hr>
 
     <div class="d-flex align-items-end justify-content-end">

@@ -2,7 +2,6 @@
 import Head from '@includes/Head.astro';
 import ContentSelecao from './content-selecao.astro';
 import ContentForm from './content-form.astro';
-import ContentCalendarios from "./content-calendarios.astro";
 ---
 
 <!DOCTYPE html>
@@ -15,16 +14,7 @@ import ContentCalendarios from "./content-calendarios.astro";
         <div class="card">
             <div class="card-body">
                 <div class="title-section">Editar Agendamento de Consultoria</div>
-
-                <section class="row">
-                    <div class="col-lg-7">
-                        <ContentForm />
-                    </div>
-
-                    <div class="col-lg-5">
-                        <ContentCalendarios />
-                    </div>
-                </section>
+                <ContentForm />
             </div><!-- card body -->
         </div><!-- card -->
     </body>
