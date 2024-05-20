@@ -1,0 +1,130 @@
+---
+
+---
+
+<div class="card">
+	<div class="card-body">
+		<div class="title-section">Listagem</div>
+
+		<form method="POST" action="">
+			<div class="row">
+                <table class="table table-bordered table-hover text-center table-fixed" id="tab-datatable" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th style="width: 150px;">Conta Cliente</th>
+                            <th style="width: 150px;">Conta Crédito</th>
+                            <th style="width: 100px;">DC</th>
+                            <th style="width: 140px;">Código Sponte</th>
+                            <th style="width: 150px;">Nome Ajustado</th>
+                            <th style="width: 100px;">UF</th>
+                            <th style="width: 120px;">Regional</th>
+                            <th style="width: 150px;">Município</th>
+                            <th style="width: 150px;">Gerente</th>
+                            <th style="width: 180px;">Consultor Comercial</th>
+                            <th style="width: 120px;">Situação</th>
+                            <th style="width: 200px;">Endereço da Unidade</th>
+                            <th style="width: 200px;">Nome do Franqueado</th>
+                            <th style="width: 150px;">Nome Sócio</th>
+                            <th style="width: 200px;">Email Franqueado</th>
+                            <th style="width: 200px;">Email Sócio</th>
+                            <th style="width: 200px;">Aniversário Franqueado</th>
+                            <th style="width: 200px;">Aniversário Sócio</th>
+                            <th style="width: 200px;">Tempo da franquia</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2</td>
+                        </tr>
+                    </tbody>
+                </table>
+			</div>
+		</form>
+	</div><!-- card body -->
+</div><!-- card -->
+
+<script is:inline type="module">
+    $("#tab-datatable").DataTable({
+        scrollX: true,
+        scrollCollapse: true,
+
+        columnDefs: [
+            {
+                targets: "no-sort",
+                orderable: false,
+            },
+        ],
+
+        language: {
+            url: "https://cdn.datatables.net/plug-ins/1.13.4/i18n/pt-BR.json",
+        },
+    });
+
+    $('[data-row="delete"]').on('click', function () {
+        if (!confirm("Você tem certeza que deseja excluir?")) {
+            return false;
+        }
+    });
+</script>
+

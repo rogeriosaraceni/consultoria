@@ -1,0 +1,46 @@
+<div class="card">
+	<div class="card-body">
+		<div class="title-section align-items-end justify-content-between gap-2">
+            <span>Seleção</span>
+
+            <div class="d-flex gap-2">
+                <a
+                    class="btn btn-success btn-icon mb-1"
+                    data-fancybox
+                    data-type="iframe"
+                    data-width="700"
+                    data-height="400"
+                    href="./popups/import_base/"
+                >
+                    <i class="bi bi-upload"></i>
+                    <span>Importar Base</span>
+                </a>
+            </div>
+        </div>
+
+		<form method="POST" action="">
+			<div class="row">
+				<label class="col-xl-2 col-lg-3 col-md-6 col-sm-6">GE:
+					<select name="ge" class="selectpicker" multiple data-live-search="true" required>
+                        <option value='DC00049211'>DC00049211</option>
+                        <option value='DC00048967'>DC00048967</option>
+                        <option value='DC00700039'>DC00700039</option>
+                        <option value='DC00700036'>DC00700036</option>
+					</select>
+				</label>
+
+				<label class="col-xl-3 col-lg-4 col-md-6 col-sm-6">Unidade:
+					<select name="unidade" class="selectpicker" multiple data-live-search="true" required>
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+					</select>
+				</label>
+
+				<div class="col-xl-1 col-lg-1 col-md-12 col-sm-12">
+					<div class="label-clearfix last-lg"></div>
+					<button type="submit" class="btn btn-primary btn-clearfix btn-last-xl">Ok</button>
+				</div>
+			</div>
+		</form>
+	</div><!-- card body -->
+</div><!-- card -->
