@@ -18,9 +18,9 @@
             </div>
         </div>
 
-		<form method="POST" action="">
-			<div class="row">
-				<label class="col-xl-2 col-lg-3 col-md-6 col-sm-6">GE:
+		<form method="POST" action="" id="form">
+			<section class="row">
+                <label class="col-xl-2 col-lg-3 col-md-6 col-sm-6">GE:
 					<select name="ge" class="selectpicker" multiple data-live-search="true" required>
                         <option value='DC00049211'>DC00049211</option>
                         <option value='DC00048967'>DC00048967</option>
@@ -40,7 +40,21 @@
 					<div class="label-clearfix last-lg"></div>
 					<button type="submit" class="btn btn-primary btn-clearfix btn-last-xl">Ok</button>
 				</div>
-			</div>
+			</section>
 		</form>
 	</div><!-- card body -->
 </div><!-- card -->
+
+<script is:inline>
+    window.addEventListener('load', () => {
+        const form         = document.querySelector('#form')
+        const tableContent = document.querySelector('[data-content="listagem"]')
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault()
+            tableContent.style.display = 'block'
+            //ajusta datatables com scroll dentro da div display none / block
+            $.fn.dataTable.tables({ visible: true, api: true }).columns.adjust()
+        })
+    })
+</script>
