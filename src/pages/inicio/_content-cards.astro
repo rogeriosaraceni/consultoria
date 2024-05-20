@@ -1,14 +1,66 @@
 ---
-import { inicioCards } from '@data/inicioCards.js';
+const inicioCardsEtapas = [
+    {
+        name: "Planejamento",
+        img: "background-image: url(/assets/images/pages/inicio/planejamento.jpg);",
+        link: "/etapas/planejamento/",
+    },
+    {
+        name: "Execução Comercial",
+        img: "background-image: url(/assets/images/pages/inicio/execucao-comercial.jpg);",
+        link: "/etapas/execucao_comercial/",
+    },
+    {
+        name: "Execução Pedagógica",
+        img: "background-image: url(/assets/images/pages/inicio/execucao-pedagogica.jpg);",
+        link: "/etapas/execucao_pedagogica/",
+    },
+    {
+        name: "Acompanhamento",
+        img: "background-image: url(/assets/images/pages/inicio/acompanhamento.jpg);",
+        link: "/etapas/acompanhamento/",
+    },
+    {
+        name: "Fechamento",
+        img: "background-image: url(/assets/images/pages/inicio/fechamento.jpg);",
+        link: "/etapas/fechamento/",
+    }
+]
+
+const inicioCardsDadosGerais = [
+    {
+        name: "Links Integrados",
+        img: "background-image: url(/assets/images/pages/inicio/planejamento.jpg);",
+        link: "/dados_gerais/links_integrados/",
+    },
+    {
+        name: "Dados da Carteira",
+        img: "background-image: url(/assets/images/pages/inicio/execucao-comercial.jpg);",
+        link: "/dados_gerais/dados_carteira/",
+    },
+]
+
 ---
 
 <div class="card bg-shadow-opacity blur mx-0 mx-md-4 mt-n5 overflow-hidden">
     <div class="card-body slide-in-bottom">
-        <div class="title-app">Etapas</div>
 
+        <div class="title-app">Etapas</div>
         <section class="row row-card-inicio cards-conteudos">
             {
-                inicioCards.map((item) => (
+                inicioCardsEtapas.map((item) => (
+                    <a class="card-inicio" href={item.link}>
+                        <div class="img" style={item.img}></div>
+                        <div class="title">{item.name}</div>
+                    </a>
+                ))
+            }
+        </section>
+
+        <div class="title-app">Dados Gerais</div>
+        <section class="row row-card-inicio cards-conteudos">
+            {
+                inicioCardsDadosGerais.map((item) => (
                     <a class="card-inicio" href={item.link}>
                         <div class="img" style={item.img}></div>
                         <div class="title">{item.name}</div>
