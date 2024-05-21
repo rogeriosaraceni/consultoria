@@ -38,33 +38,6 @@ const links = [
 ]
 ---
 
-<div class="card">
-	<div class="card-body">
-		<div class="title-section">
-            <span>Links</span>
-        </div>
-	</div><!-- card body -->
-</div><!-- card -->
-
-<section class="row-cards-links">
-    {
-        links.map(item => (
-            <div class="item">
-                <a class="card" href={item.link} target="_blank">
-                    <div class="card-body">
-                        <div class="content">
-                            <div class="icon">
-                                <i class={item.icon}></i>
-                            </div>
-                            <div class="title">{item.title}</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        ))
-    }
-</section>
-
 <style is:inline>
     .row-cards-links{
         position: relative;
@@ -74,12 +47,22 @@ const links = [
         justify-content: space-between;
     }
     .row-cards-links .item{
-        flex: 0 0 220px;
+        flex: 1 0 180px;
     }
-
     .row-cards-links .card{
         text-decoration: none;
         box-shadow: var(--bs-box-shadow) !important;
+    }
+
+    @media (min-width: 768px) {
+        .row-cards-links{
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+        }
+        .row-cards-links .card {
+            margin-right: 0!important;
+            margin-left: 0 !important;
+        }
     }
     .row-cards-links .card-body{
         padding: 0.5rem;
@@ -142,3 +125,31 @@ const links = [
         color: #fff;
     }
 </style>
+
+<!-- <div class="card">
+	<div class="card-body">
+		<div class="title-section">
+            <span>Links</span>
+        </div>
+	</div>
+</div> -->
+
+<section class="row-cards-links">
+    {
+        links.map(item => (
+            <div class="item">
+                <a class="card" href={item.link} target="_blank">
+                    <div class="card-body">
+                        <div class="content">
+                            <div class="icon">
+                                <i class={item.icon}></i>
+                            </div>
+                            <div class="title">{item.title}</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        ))
+    }
+</section>
+
