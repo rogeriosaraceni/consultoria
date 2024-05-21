@@ -28,6 +28,16 @@
     background-color: #f1f1f1;
 }
 
+[data-bs-theme="dark"] {
+    .select-icons-bs-wrapper .list-items {
+        background-color: #36393b;
+    }
+    .select-icons-bs-wrapper .list-items .item:hover {
+        background-color: #201f1f;
+    }
+}
+
+
 @media (max-width: 460px) {
     .select-icons-bs-wrapper .list-items {
         width: 250px;
