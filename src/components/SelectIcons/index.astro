@@ -1,0 +1,50 @@
+---
+import './styles.css'
+import { listSelectIconsBs } from "./data/data-icons.js";
+---
+
+<div class="select-icons-bs-wrapper">
+    <div data-selectIcons="button" class="form-select">
+        <span>&nbsp;</span>
+    </div>
+
+    <div data-selectIcons="content" class="list-items">
+        {
+            listSelectIconsBs.map( item => (
+                <div class="item" data-content="icon" data-value={item.icon} data-icon={item.icon}>
+                    <i class={item.icon}></i>
+                </div>
+            ))
+        }
+    </div>
+</div>
+
+<script is:inline>
+    const selectIconButton = document.querySelector('[data-selectIcons="button"]')
+    const selectIconContent = document.querySelector('[data-selectIcons="content"]')
+    const displayShow = "d-flex"
+
+    selectIconButton.addEventListener("click", (event) => {
+        event.stopPropagation()
+        selectIconContent.classList.toggle(displayShow)
+    });
+
+    const selectItems = document.querySelectorAll('[data-content="icon"]')
+    selectItems.forEach((item) => {
+        item.addEventListener("click", () => {
+            const iconClass = item.getAttribute("data-icon")
+            const selectedValue = item.getAttribute('data-value')
+            selectIconButton.innerHTML = `<i class="${iconClass}"></i>`
+            selectIconContent.classList.remove(displayShow)
+
+            console.log(iconClass)
+            console.log(selectedValue)
+        });
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!selectIconButton.contains(event.target) && !selectIconContent.contains(event.target)) {
+            selectIconContent.classList.remove(displayShow)
+        }
+    })
+</script>
