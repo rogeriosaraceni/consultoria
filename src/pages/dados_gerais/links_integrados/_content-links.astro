@@ -1,0 +1,144 @@
+---
+const links = [
+{
+        link: "https://portalwizard.pearson.com.br",
+        icon: "bi bi-card-list",
+        title: "PORTAL DO FRANQUEADO"
+    },
+    {
+        link: "https://www.pefpearson.com.br/",
+        icon: "bi bi-easel2",
+        title: "PEF"
+    },
+    {
+        link: "https://wizmember.wizard.com.br/login",
+        icon: "bi bi-people",
+        title: "DASH WIZMEMBER"
+    },
+    {
+        link: "#",
+        icon: "bi bi-cloudy",
+        title: "Sales Force"
+    },
+    {
+        link: "https://ecommerce.pearson.com.br/AcessoEmulado.aspx",
+        icon: "bi bi-cart",
+        title: "ECOMMERCE"
+    },
+    {
+        link: "https://pedidos.pearson.com.br/Default.aspx",
+        icon: "bi bi-clipboard2-check",
+        title: "MONIRORAMENTO DE PEDIDOS"
+    },
+    {
+        link: "https://www.sponteweb.com.br/",
+        icon: "bi bi-columns",
+        title: "SPONTE WEB"
+    },
+]
+---
+
+<div class="card">
+	<div class="card-body">
+		<div class="title-section">
+            <span>Links</span>
+        </div>
+	</div><!-- card body -->
+</div><!-- card -->
+
+<section class="row-cards-links">
+    {
+        links.map(item => (
+            <div class="item">
+                <a class="card" href={item.link} target="_blank">
+                    <div class="card-body">
+                        <div class="content">
+                            <div class="icon">
+                                <i class={item.icon}></i>
+                            </div>
+                            <div class="title">{item.title}</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        ))
+    }
+</section>
+
+<style is:inline>
+    .row-cards-links{
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: space-between;
+    }
+    .row-cards-links .item{
+        flex: 0 0 220px;
+    }
+
+    .row-cards-links .card{
+        text-decoration: none;
+        box-shadow: var(--bs-box-shadow) !important;
+    }
+    .row-cards-links .card-body{
+        padding: 0.5rem;
+    }
+
+    .row-cards-links .content{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        text-align: center;
+        height: 200px;
+        border-radius: var(--bs-card-border-radius);
+        transition: all 0.2s;
+        background-color: #fff;
+        overflow: hidden;
+    }
+    .row-cards-links .icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3.3rem;
+        height: 3.3rem;
+        border-radius: 50%;
+        font-size: 2.1rem;
+        transition: all 0.2s;
+        box-shadow: var(--bs-box-shadow) !important;
+        color: #fff;
+        background-color: var(--color-wep-azul-meia-noite);
+    }
+    .row-cards-links .title{
+        font-size: 1rem;
+        text-transform: uppercase;
+        padding: 0 0.5rem;
+        color: var(--color-wep-azul-meia-noite);
+        border-radius: 0.25rem;
+        transition: all 0.2s;
+        background-color: transparent;
+    }
+
+    /* hover */
+    .row-cards-links a:hover .content{
+        transform: translateY(-20px);
+        box-shadow:
+        inset 0 0 60px #003057,
+        inset 0px 0 80px #003057,
+        inset 0px 0 80px #003057,
+        inset 0px 0 10px #003057,
+        inset 0px 0 200px #003057,
+        0 0 50px #003057,
+        0px 0 0px #003057,
+        0px 0 0px #003057;
+    }
+    .row-cards-links a:hover .icon{
+        color: var(--color-wep-azul-meia-noite);
+        background-color: #fff;
+    }
+    .row-cards-links a:hover .title{
+        background-color: #fff;
+    }
+</style>
