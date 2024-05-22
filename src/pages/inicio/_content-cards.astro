@@ -39,26 +39,28 @@ const inicioCardsDadosGerais = [
         link: "/dados_gerais/dados_carteira/",
     },
 ]
-
 ---
 
 <div class="card bg-shadow-opacity blur mx-0 mx-md-4 mt-n5 overflow-hidden">
     <div class="card-body slide-in-bottom">
 
         <div class="title-app">Etapas</div>
-        <section class="row row-card-inicio cards-conteudos">
-            {
-                inicioCardsEtapas.map((item) => (
-                    <a class="card-inicio" href={item.link}>
-                        <div class="img" style={item.img}></div>
-                        <div class="title">{item.name}</div>
-                    </a>
-                ))
-            }
-        </section>
+
+        <div>
+            <section class="row-card-inicio">
+                {
+                    inicioCardsEtapas.map((item) => (
+                        <a class="card-inicio" href={item.link}>
+                            <div class="img" style={item.img}></div>
+                            <div class="title">{item.name}</div>
+                        </a>
+                    ))
+                }
+            </section>
+        </div>
 
         <div class="title-app">Dados Gerais</div>
-        <section class="row row-card-inicio cards-conteudos">
+        <section class="row-card-inicio">
             {
                 inicioCardsDadosGerais.map((item) => (
                     <a class="card-inicio" href={item.link}>
