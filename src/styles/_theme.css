@@ -16,6 +16,10 @@
     .breadcrumb-item, .breadcrumb-item a { color: #6c757d;}
     .breadcrumb-item.active { color: #fff;}
 
+    .title-app::after {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
     .card{ --bs-card-bg: #2B3035;}
 
     .bg-shadow-opacity {

@@ -71,3 +71,12 @@ button:not(:disabled),
     outline: 0 !important;
     box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
+
+[data-bs-theme=dark] {
+    .bootstrap-select .btn-check:checked + .btn, :not(.btn-check) + .btn:active,
+    .bootstrap-select .btn:first-child:active,
+    .bootstrap-select .btn.active,
+    .bootstrap-select .btn.show {
+        color: #fff;
+    }
+}
