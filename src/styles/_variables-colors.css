@@ -30,65 +30,68 @@ class bg color
     --color-midnight-blue: #003057;
 
     --color-green: #16937a;
-    --color-orange: #f68223;
+    --color-orange: #f1862e;
     --color-yellow: #e7e632;
     --color-red: #f25c25;
     --color-red-dark: #df1f26;
     --color-blue: #00c0ff;
+    --color-grey: #9fa5a7;
 }
 
 /* --------------------------------------------------------------------
 * - class text color
 ---------------------------------------------------------------------- */
-.text-wep-azul-meia-noite{ color: var(--color-wep-azul-meia-noite);}
-.text-wep-vermelho-vivo  { color: var(--color-wep-vermelho-vivo);}
-.text-wep-azul-ceu       { color: var(--color-wep-azul-ceu);}
-.text-wep-amarelo-luz-sol{ color: var(--color-wep-amarelo-luz-sol);}
+.text-wep-azul-meia-noite{ color: var(--color-wep-azul-meia-noite)!important;}
+.text-wep-vermelho-vivo  { color: var(--color-wep-vermelho-vivo)!important;}
+.text-wep-azul-ceu       { color: var(--color-wep-azul-ceu)!important;}
+.text-wep-amarelo-luz-sol{ color: var(--color-wep-amarelo-luz-sol)!important;}
 
-.text-pearson-blue{ color: var(--color-pearson-blue)}
-.text-mist-grey{ color: var(--color-mist-grey)}
-.text-graphite-grey{ color: var(--color-graphite-grey)}
-.text-bright-orange{ color: var(--color-bright-orange)}
-.text-lime-green{ color: var(--color-lime-green)}
-.text-sky-blue{ color: var(--color-sky-blue)}
-.text-coral-pink{ color: var(--color-coral-pink)}
-.text-fresh-green{ color: var(--color-fresh-green)}
-.text-marine-turquoise{ color: var(--color-marine-turquoise)}
-.text-royal-purple{ color: var(--color-royal-purple)}
-.text-grass-green{ color: var(--color-grass-green)}
-.text-midnight-blue{ color: var(--color-midnight-blue)}
+.text-pearson-blue{ color: var(--color-pearson-blue)!important}
+.text-mist-grey{ color: var(--color-mist-grey)!important}
+.text-graphite-grey{ color: var(--color-graphite-grey)!important}
+.text-bright-orange{ color: var(--color-bright-orange)!important}
+.text-lime-green{ color: var(--color-lime-green)!important}
+.text-sky-blue{ color: var(--color-sky-blue)!important}
+.text-coral-pink{ color: var(--color-coral-pink)!important}
+.text-fresh-green{ color: var(--color-fresh-green)!important}
+.text-marine-turquoise{ color: var(--color-marine-turquoise)!important}
+.text-royal-purple{ color: var(--color-royal-purple)!important}
+.text-grass-green{ color: var(--color-grass-green)!important}
+.text-midnight-blue{ color: var(--color-midnight-blue)!important}
 
-.text-green{ color: var(--color-green)}
-.text-orange{ color: var(--color-orange)}
-.text-yellow{ color: var(--color-yellow)}
-.text-red{ color: var(--color-red)}
-.text-red-dark{ color: var(--color-red-dark)}
-.text-blue{ color: var(--color-blue)}
+.text-green{ color: var(--color-green)!important}
+.text-orange{ color: var(--color-orange)!important}
+.text-yellow{ color: var(--color-yellow)!important}
+.text-red{ color: var(--color-red)!important}
+.text-red-dark{ color: var(--color-red-dark)!important}
+.text-blue{ color: var(--color-blue)!important}
+.text-grey{ color: var(--color-grey)!important}
 
 /* --------------------------------------------------------------------
 * - class bg color
 ---------------------------------------------------------------------- */
-.bg-wep-azul-meia-noite{ background-color: var(--color-wep-azul-meia-noite);}
-.bg-wep-vermelho-vivo  { background-color: var(--color-wep-vermelho-vivo);}
-.bg-wep-azul-ceu       { background-color: var(--color-wep-azul-ceu);}
-.bg-wep-amarelo-luz-sol{ background-color: var(--color-wep-amarelo-luz-sol);}
+.bg-wep-azul-meia-noite{ background-color: var(--color-wep-azul-meia-noite)!important}
+.bg-wep-vermelho-vivo  { background-color: var(--color-wep-vermelho-vivo)!important}
+.bg-wep-azul-ceu       { background-color: var(--color-wep-azul-ceu)!important}
+.bg-wep-amarelo-luz-sol{ background-color: var(--color-wep-amarelo-luz-sol)!important}
 
-.bg-pearson-blue{ background-color: var(--color-pearson-blue)}
-.bg-mist-grey{ background-color: var(--color-mist-grey)}
-.bg-graphite-grey{ background-color: var(--color-graphite-grey)}
-.bg-bright-orange{ background-color: var(--color-bright-orange)}
-.bg-lime-green{ background-color: var(--color-lime-green)}
-.bg-sky-blue{ background-color: var(--color-sky-blue)}
-.bg-coral-pink{ background-color: var(--color-coral-pink)}
-.bg-fresh-green{ background-color: var(--color-fresh-green)}
-.bg-marine-turquoise{ background-color: var(--color-marine-turquoise)}
-.bg-royal-purple{ background-color: var(--color-royal-purple)}
-.bg-grass-green{ background-color: var(--color-grass-green)}
-.bg-wep-azul-meia-noite{ background-color: var(--color-midnight-blue)}
+.bg-pearson-blue{ background-color: var(--color-pearson-blue)!important}
+.bg-mist-grey{ background-color: var(--color-mist-grey)!important}
+.bg-graphite-grey{ background-color: var(--color-graphite-grey)!important}
+.bg-bright-orange{ background-color: var(--color-bright-orange)!important}
+.bg-lime-green{ background-color: var(--color-lime-green)!important}
+.bg-sky-blue{ background-color: var(--color-sky-blue)!important}
+.bg-coral-pink{ background-color: var(--color-coral-pink)!important}
+.bg-fresh-green{ background-color: var(--color-fresh-green)!important}
+.bg-marine-turquoise{ background-color: var(--color-marine-turquoise)!important}
+.bg-royal-purple{ background-color: var(--color-royal-purple)!important}
+.bg-grass-green{ background-color: var(--color-grass-green)!important}
+.bg-wep-azul-meia-noite{ background-color: var(--color-midnight-blue)!important}
 
-.bg-green{ background-color: var(--color-green)}
-.bg-orange{ background-color: var(--color-orange)}
-.bg-yellow{ background-color: var(--color-yellow)}
-.bg-red{ background-color: var(--color-red)}
-.bg-red-dark{ background-color: var(--color-red-dark)}
-.bg-blue{ background-color: var(--color-blue)}
+.bg-green{ background-color: var(--color-green)!important}
+.bg-orange{ background-color: var(--color-orange)!important}
+.bg-yellow{ background-color: var(--color-yellow)!important}
+.bg-red{ background-color: var(--color-red)!important}
+.bg-red-dark{ background-color: var(--color-red-dark)!important}
+.bg-blue{ background-color: var(--color-blue)!important}
+.bg-grey{ background-color: var(--color-grey)!important}

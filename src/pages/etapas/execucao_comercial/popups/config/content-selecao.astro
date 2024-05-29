@@ -1,0 +1,98 @@
+---
+const etapas = [
+    {
+        value: "1",
+        name: "ANÁLISE SWOT",
+    },
+    {
+        value: "2",
+        name: "Eq. Coml QLP",
+    },
+    {
+        value: "3",
+        name: "UC/Treinamentos",
+    },
+    {
+        value: "4",
+        name: "Wiz.Member",
+    },
+    {
+        value: "5",
+        name: "Funil de Vendas",
+    },
+    {
+        value: "6",
+        name: "5 Passos da Venda",
+    },
+    {
+        value: "7",
+        name: "Análise Concorrência",
+    },
+    {
+        value: "8",
+        name: "Parcerias",
+    },
+    {
+        value: "9",
+        name: "Definição Metas",
+    },
+    {
+        value: "10",
+        name: "Redes Socias",
+    },
+    {
+        value: "11",
+        name: "Gestão a Vista",
+    },
+    {
+        value: "11",
+        name: "Controle de Ações",
+    },
+    {
+        value: "12",
+        name: "Plano de Ação Comercial",
+    },
+]
+---
+
+<form method="POST" id="formEtapas" action="">
+    <div class="row">
+        {
+            etapas.map(etapa => (
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <label class="form-check-label gap-1">
+                        <input type="checkbox" name="etapa" value={etapa.value} data-checkbox="etapas"/>
+                        <span class="text-nowrap">{etapa.name}</span>
+                    </label>
+                </div>
+            ))
+        }
+    </div>
+
+    <hr>
+
+    <div class="d-flex align-items-end justify-content-end">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+</form>
+
+<script is:inline>
+    const form = document.getElementById('formEtapas')
+    let checkboxes = document.querySelectorAll('[data-checkbox="etapas"]')
+
+    function verify() {
+        return [].filter.call(checkboxes, (checkbox) => {
+            return checkbox.checked
+        }).length
+    }
+
+    form.addEventListener('submit', function(event) {
+        const valid = verify();
+
+        if (!valid) {
+            event.preventDefault()
+            alert('Selecione ao menos uma opção das Etapas!')
+        }
+        //window.parent.$.magnificPopup.close();
+    })
+</script>

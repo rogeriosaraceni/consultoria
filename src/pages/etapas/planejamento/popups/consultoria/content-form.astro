@@ -3,11 +3,6 @@ import ContentCalendarios from "./content-calendarios.astro";
 
 ---
 
-
-
-
-
-
 <form method="POST" id="formNovaConsultoria" action="">
     <section class="row">
         <div class="col-lg-7">
@@ -101,20 +96,22 @@ import ContentCalendarios from "./content-calendarios.astro";
     </div>
 </form>
 
-<script is:inline type="module">
-    const checkboxes = document.querySelectorAll('[data-checkbox="pautas"]')
+<script is:inline>
+    const form = document.getElementById('formNovaConsultoria')
+    let checkboxes = document.querySelectorAll('[data-checkbox="pautas"]')
 
-    function verificar() {
+    function verify() {
         return [].filter.call(checkboxes, (checkbox) => {
             return checkbox.checked
         }).length
     }
 
-    document.getElementById('formNovaConsultoria').addEventListener('submit', function(event) {
-        var valido = verificar();
-        if (!valido) {
+    form.addEventListener('submit', function(event) {
+        const valid = verify();
+        if (!valid) {
             event.preventDefault()
             alert('Selecione ao menos uma opção das Pautas!')
         }
+        //window.parent.$.magnificPopup.close();
     })
 </script>
