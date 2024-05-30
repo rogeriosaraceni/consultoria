@@ -1,0 +1,198 @@
+---
+
+---
+
+<div class="card">
+	<div class="card-body">
+		<div class="title-section">Listagem</div>
+
+		<form method="POST" action="">
+			<div class="row">
+                <table class="table table-bordered table-hover text-center table-fixed" id="tab-datatable" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th style="width: 070px;">ID</th>
+                            <th style="width: 200px;">Agendamento</th>
+                            <th style="width: 200px;">Tipo Consultoria</th>
+                            <th style="width: 200px;">Modelo</th>
+                            <th style="width: 200px;">Pauta</th>
+                            <th style="width: 150px;">Usuário</th>
+                            <th style="width: 140px;">Data Criação</th>
+                            <th style="width: 130px;">Horário Inicial</th>
+                            <th style="width: 130px;">Horário Término</th>
+
+                            <th style="width: 130px;" class="no-sort">Iniciar / Visualizar</th>
+                            <th style="width: 120px;" class="no-sort">Status</th>
+                            <th style="width: 070px;" class="no-sort">Del</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td></td>
+                            <td>Consultoria Online</td>
+                            <td>Ágil</td>
+                            <td>Financeiro</td>
+                            <td>José Silva</td>
+                            <td>13/05/2024</td>
+                            <td>12:30</td>
+                            <td>13:30</td>
+
+                            <td>
+                                <div class="d-flex justify-content-center gap-3">
+                                    <a
+                                        class="text-secondary fs-5"
+                                        data-bs-toggle="tooltip"
+                                        data-bs-title="Iniciar"
+                                        data-fancybox
+                                        data-type="iframe"
+                                        data-width="900"
+                                        data-height="400"
+                                        href="./popups/config/"
+                                    >
+                                        <i class="bi bi-play-circle"></i>
+                                    </a>
+
+                                    <a
+                                        class="text-secondary fs-5"
+                                        data-bs-toggle="tooltip"
+                                        data-bs-title="Visualizar"
+                                        href="./execucao/"
+                                    >
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a>
+                                </div>
+                            </td>
+
+                            <td class="bg-grey text-white">Não Iniciada</td>
+
+                            <td>
+                                <a class="text-secondary fs-5" data-bs-toggle="tooltip" data-bs-title="Del" href="#" data-row="delete">
+                                    <i class="bi bi-trash icon-tab"></i>
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>02</td>
+                            <td></td>
+                            <td>Consultoria Presencial</td>
+                            <td>Ágil, 360</td>
+                            <td>Comercial, Financeiro, Marketing, Estrutura Física</td>
+                            <td>Maria Siva</td>
+                            <td>13/05/2024</td>
+                            <td>14:30</td>
+                            <td>15:30</td>
+
+                            <td>
+                                <div class="d-flex justify-content-center gap-3">
+                                    <a
+                                        class="text-secondary fs-5"
+                                        data-bs-toggle="tooltip"
+                                        data-bs-title="Iniciar"
+                                        data-fancybox
+                                        data-type="iframe"
+                                        data-width="900"
+                                        data-height="400"
+                                        href="./popups/config/"
+                                    >
+                                        <i class="bi bi-play-circle"></i>
+                                    </a>
+
+                                    <a
+                                        class="text-secondary fs-5"
+                                        data-bs-toggle="tooltip"
+                                        data-bs-title="Visualizar"
+                                        href="./execucao/"
+                                    >
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a>
+                                </div>
+                            </td>
+
+                            <td class="bg-orange text-white">Em Andamento</td>
+
+                            <td>
+                                <a class="text-secondary fs-5" data-bs-toggle="tooltip" data-bs-title="Del" href="#" data-row="delete">
+                                    <i class="bi bi-trash icon-tab"></i>
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>03</td>
+                            <td></td>
+                            <td>Consultoria Online</td>
+                            <td>360</td>
+                            <td>Comercial, Financeiro, Marketing</td>
+                            <td>Pedro José</td>
+                            <td>13/05/2024</td>
+                            <td>16:00</td>
+                            <td>17:00</td>
+
+                            <td>
+                                <div class="d-flex justify-content-center gap-3">
+                                    <a
+                                        class="text-secondary fs-5"
+                                        data-bs-toggle="tooltip"
+                                        data-bs-title="Iniciar"
+                                        data-fancybox
+                                        data-type="iframe"
+                                        data-width="900"
+                                        data-height="400"
+                                        href="./popups/config/"
+                                    >
+                                        <i class="bi bi-play-circle"></i>
+                                    </a>
+
+                                    <a
+                                        class="text-secondary fs-5"
+                                        data-bs-toggle="tooltip"
+                                        data-bs-title="Visualizar"
+                                        href="./execucao/"
+                                    >
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a>
+                                </div>
+                            </td>
+
+                            <td class="bg-green text-white">Finalizada</td>
+
+                            <td>
+                                <a class="text-secondary fs-5" data-bs-toggle="tooltip" data-bs-title="Del" href="#" data-row="delete">
+                                    <i class="bi bi-trash icon-tab"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+			</div>
+		</form>
+	</div><!-- card body -->
+</div><!-- card -->
+
+<script is:inline type="module">
+    $("#tab-datatable").DataTable({
+        scrollX: true,
+        scrollCollapse: true,
+
+        columnDefs: [
+            {
+                targets: "no-sort",
+                orderable: false,
+            },
+        ],
+
+        language: {
+            url: "https://cdn.datatables.net/plug-ins/1.13.4/i18n/pt-BR.json",
+        },
+    });
+
+    $('[data-row="delete"]').on('click', function () {
+        if (!confirm("Você tem certeza que deseja excluir?")) {
+            return false;
+        }
+    });
+</script>
+

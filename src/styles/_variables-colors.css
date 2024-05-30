@@ -36,6 +36,7 @@ class bg color
     --color-red-dark: #df1f26;
     --color-blue: #00c0ff;
     --color-grey: #9fa5a7;
+    --color-grey-300: #eee;
 }
 
 /* --------------------------------------------------------------------
@@ -66,6 +67,7 @@ class bg color
 .text-red-dark{ color: var(--color-red-dark)!important}
 .text-blue{ color: var(--color-blue)!important}
 .text-grey{ color: var(--color-grey)!important}
+.text-grey-300{ color: var(--color-grey-300)!important}
 
 /* --------------------------------------------------------------------
 * - class bg color
@@ -95,3 +97,4 @@ class bg color
 .bg-red-dark{ background-color: var(--color-red-dark)!important}
 .bg-blue{ background-color: var(--color-blue)!important}
 .bg-grey{ background-color: var(--color-grey)!important}
+.bg-grey-300{ background-color: var(--color-grey-300)!important}
