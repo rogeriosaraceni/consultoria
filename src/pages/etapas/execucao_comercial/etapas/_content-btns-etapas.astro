@@ -1,0 +1,151 @@
+---
+const btnsEtapas = [
+    {
+        link: "./tabs/swot/",
+        dataBsTarget: "#pageSwot",
+        ariaControls: "pageSwot",
+        name: "ANÁLISE SWOT",
+    },
+    {
+        link: "./tabs/equipe/",
+        dataBsTarget: "#pills-qlp",
+        ariaControls: "pills-qlp",
+        name: "Eq. Coml QLP",
+    },
+    {
+        link: "./tabs/treinamentos/",
+        dataBsTarget: "#pills-treinamentos",
+        ariaControls: "pills-treinamentos",
+        name: "UC/Treinamentos",
+    },
+    {
+        link: "./tabs/wiz/",
+        dataBsTarget: "#pills-wiz",
+        ariaControls: "pills-wiz",
+        name: "Wiz.Member",
+    },
+    {
+        link: "./tabs/funil/",
+        dataBsTarget: "#pills-funil",
+        ariaControls: "pills-funil",
+        name: "Funil de Vendas",
+    },
+    {
+        link: "./tabs/passos/",
+        dataBsTarget: "#pills-passos",
+        ariaControls: "pills-passos",
+        name: "5 Passos da Venda",
+    },
+    {
+        link: "./tabs/analise/",
+        dataBsTarget: "#pills-analise",
+        ariaControls: "pills-analise",
+        name: "Análise Concorrência",
+    },
+    {
+        link: "./tabs/parcerias/",
+        dataBsTarget: "#pills-parcerias",
+        ariaControls: "pills-parcerias",
+        name: "Parcerias",
+    },
+    {
+        link: "./tabs/metas/",
+        dataBsTarget: "#pills-defMetas",
+        ariaControls: "pills-defMetas",
+        name: "Definição Metas",
+    },
+    {
+        link: "./tabs/redes/",
+        dataBsTarget: "#pills-redesSocial",
+        ariaControls: "pills-redesSocial",
+        name: "Redes Socias",
+    },
+    {
+        link: "./tabs/gestao/",
+        dataBsTarget: "#pills-gestaoVista",
+        ariaControls: "pills-gestaoVista",
+        name: "Gestão a Vista",
+    },
+    {
+        link: "./tabs/controle/",
+        dataBsTarget: "#pills-controleAcao",
+        ariaControls: "pills-controleAcao",
+        name: "Controle de Ações",
+    },
+]
+---
+
+<div class="card">
+    <div class="card-body">
+        <ul class="row nav nav-pills nav-pills-app" id="pills-tab" role="tablist">
+            {
+                btnsEtapas.map((etapa) => (
+                    <li class="nav-item col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-2" role="presentation">
+                        <a
+                            href={etapa.link}
+                            class="nav-link"
+                            data-bs-target={etapa.dataBsTarget}
+                            aria-controls={etapa.ariaControls}
+                            role="tab"
+                            data-bs-toggle="tab"
+                        >
+                            {etapa.name}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</div>
+
+<section class="tab-content p-0 border-0 position-relative">
+    {
+        btnsEtapas.map((content) => (
+            <article role="tabpanel" class="tab-pane fade" id={content.ariaControls}></article>
+        ))
+    }
+</section>
+
+<script is:inline type="module">
+    $('a[data-bs-toggle="tab"]').on('click', function (e) {
+        e.preventDefault()
+        const url = $(this).attr("href")
+        const target = $(this).data("bs-target")
+
+        console.log(url, target);
+
+        // Verifica se a aba já foi carregada
+        if (!$(target).hasClass('loaded')) {
+            $(target).load(url, function() {
+                // Marca a aba como carregada
+                $(target).addClass('loaded')
+                // Inicializa o bootstrap-select para os elementos select dentro da aba
+			    $('.selectpicker').selectpicker()
+
+                $(this).tab('show')
+            });
+        } else {
+            // Mostra a aba se já estiver carregada
+            $(this).tab('show')
+        }
+
+        //https://datatables.net/examples/api/tabs_and_scrolling.html
+        //corrige ajuste de largura definidas com scroll automatido do datatables, apartir da 2 tab
+        $.fn.dataTable.tables({ visible: true, api: true }).columns.adjust()
+
+        //https://www.amcharts.com/docs/v4/tutorials/chart-was-not-disposed/
+		//limpa objetos e manipuladores estanciados e corrige os avisos no console quando reabre uma Tab
+		//Para esta tarefa simples, o amCharts 4 vem com uma função global integrada:
+		am4core.options.autoDispose = true
+    });
+
+    // Carrega e mostra a aba inicial
+    const initialTagert = "#pageSwot" //só alterar aqui
+    const initialTab = $(`[data-bs-target="${initialTagert}"]`)
+    const initialUrl = initialTab.attr("href");
+
+    $(initialTagert).load(initialUrl, function() {
+        $(initialTagert).addClass('loaded')
+        initialTab.tab('show')
+    })
+</script>

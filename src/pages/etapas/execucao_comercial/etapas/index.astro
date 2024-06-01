@@ -3,9 +3,8 @@ import Layout from '@layouts/Layout.astro';
 import Nav from '@includes/Nav/Nav.astro';
 import PageHeader from '@components/PageHeader.astro';
 
-
-import ContentSelecao from './_content-selecao.astro';
-import ContentListagem from './_content-listagem.astro';
+import BtnsEtapas from './_content-btns-etapas.astro'
+import BarGerenteConsultor from './_content-bar-gerente-consultor.astro'
 ---
 
 <Layout>
@@ -22,12 +21,17 @@ import ContentListagem from './_content-listagem.astro';
                 <ol class="breadcrumb breadcrumb p-0 mx-md-4">
                     <li class="breadcrumb-item"><a href="/inicio/">Início</a></li>
                     <li class="breadcrumb-item">Etapas</li>
-                    <li class="breadcrumb-item active" aria-current="page">Execução Comercial</li>
+                    <li class="breadcrumb-item"><a href="/etapas/execucao_comercial/">Execução Comercial</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Etapas Execução Comercial</li>
                 </ol>
             </nav>
 
-            <ContentSelecao />
-            <ContentListagem />
+            <BarGerenteConsultor />
+            <BtnsEtapas />
         </section>
     </main>
 </Layout>
+
+<script is:inline type="module" src="/assets/vendor/amcharts4/core.js"></script>
+<script is:inline type="module" src="/assets/vendor/amcharts4/charts.js"></script>
+<script is:inline type="module" src="/assets/vendor/amcharts4/animated.js"></script>
