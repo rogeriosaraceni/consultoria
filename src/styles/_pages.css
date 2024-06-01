@@ -6,7 +6,12 @@
 /* --------------------------------------------------------------------
 nav-pills-app
 ---------------------------------------------------------------------- */
+.nav-pills-app .nav-item{
+    margin-bottom: 0.25rem;
+}
+
 .nav-pills-app .nav-link{
+    padding: 0.25rem 0.5rem;
     width: 100%;
     color: #000;
     border: 1px solid var(--bs-border-color);

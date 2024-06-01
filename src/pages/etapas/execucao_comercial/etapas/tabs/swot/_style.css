@@ -1,0 +1,42 @@
+/* --------------------------------------------------------------------
+* - Análise SWOT
+* -------------------------------------------------------------------- */
+.table-swot{
+	--size-textarea-rotation-rotation-text: 10.75rem;
+	--width-rotation: calc(var(--size-textarea-rotation-rotation-text) / 2 - 2.0rem);
+	--width-textarea: 25rem;
+}
+
+.table-swot{ width: auto;}
+.table-swot td{ border: none;}
+
+.table-swot .name{
+    margin: 0;
+    padding: .5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
+    border-radius: var(--bs-border-radius);
+    background-color: var(--color-bright-orange);
+}
+.table-swot textarea{
+	width: var(--width-textarea);
+	height: var(--size-textarea-rotation-rotation-text);
+}
+.table-swot .rotation{
+	position: relative;
+	width: var(--width-rotation);
+	height: var(--size-textarea-rotation-rotation-text);
+}
+.table-swot .rotation .text-rotation {
+	position: absolute;
+	top: calc(var(--width-rotation) + 20px);
+	left: calc(-1 * var(--width-rotation));
+	width: var(--size-textarea-rotation-rotation-text);
+	text-align: center;
+	transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+}

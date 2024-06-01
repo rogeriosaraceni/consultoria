@@ -4,7 +4,7 @@ const btnsEtapas = [
         link: "./tabs/swot/",
         dataBsTarget: "#pageSwot",
         ariaControls: "pageSwot",
-        name: "ANÁLISE SWOT",
+        name: "Análise SWOT",
     },
     {
         link: "./tabs/equipe/",
@@ -80,7 +80,7 @@ const btnsEtapas = [
         <ul class="row nav nav-pills nav-pills-app" id="pills-tab" role="tablist">
             {
                 btnsEtapas.map((etapa) => (
-                    <li class="nav-item col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-2" role="presentation">
+                    <li class="nav-item col-xl-2 col-lg-3 col-md-4 col-sm-6" role="presentation">
                         <a
                             href={etapa.link}
                             class="nav-link"
@@ -119,9 +119,6 @@ const btnsEtapas = [
             $(target).load(url, function() {
                 // Marca a aba como carregada
                 $(target).addClass('loaded')
-                // Inicializa o bootstrap-select para os elementos select dentro da aba
-			    $('.selectpicker').selectpicker()
-
                 $(this).tab('show')
             });
         } else {
@@ -138,6 +135,11 @@ const btnsEtapas = [
 		//Para esta tarefa simples, o amCharts 4 vem com uma função global integrada:
 		am4core.options.autoDispose = true
     });
+
+    $('a[data-bs-toggle="tab"]').on('show.bs.tab', function (e) {
+        // Inicializa o bootstrap-select para os elementos select dentro da aba
+        $('.selectpicker').selectpicker()
+    })
 
     // Carrega e mostra a aba inicial
     const initialTagert = "#pageSwot" //só alterar aqui
