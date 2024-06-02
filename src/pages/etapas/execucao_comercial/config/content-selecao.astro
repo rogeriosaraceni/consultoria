@@ -1,54 +1,67 @@
 ---
 const etapas = [
     {
+        id: "etapa_swot",
         value: "1",
         name: "ANÁLISE SWOT",
     },
     {
+        id: "etapa_equipe",
         value: "2",
         name: "Eq. Coml QLP",
     },
     {
+        id: "",
         value: "3",
         name: "UC/Treinamentos",
     },
     {
+        id: "",
         value: "4",
         name: "Wiz.Member",
     },
     {
+        id: "",
         value: "5",
         name: "Funil de Vendas",
     },
     {
+        id: "",
         value: "6",
         name: "5 Passos da Venda",
     },
     {
+        id: "",
         value: "7",
         name: "Análise Concorrência",
     },
     {
+        id: "",
         value: "8",
         name: "Parcerias",
     },
     {
+        id: "",
         value: "9",
         name: "Definição Metas",
     },
     {
+        id: "",
         value: "10",
         name: "Redes Socias",
     },
     {
+        id: "",
         value: "11",
         name: "Gestão a Vista",
     },
     {
+        id: "",
         value: "11",
         name: "Controle de Ações",
     },
     {
+        id: "",
         value: "12",
         name: "Plano de Ação Comercial",
     },
@@ -61,7 +74,7 @@ const etapas = [
             etapas.map(etapa => (
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <label class="form-check-label gap-1">
-                        <input type="checkbox" name="etapa" value={etapa.value} data-checkbox="etapas"/>
+                        <input type="checkbox" name="etapa" id={etapa.id} value={etapa.value} data-checkbox="etapas"/>
                         <span class="text-nowrap">{etapa.name}</span>
                     </label>
                 </div>
@@ -94,5 +107,19 @@ const etapas = [
             alert('Selecione ao menos uma opção das Etapas!')
         }
         //window.parent.$.magnificPopup.close();
+    })
+</script>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", function() {
+        const checkboxEquipe = document.getElementById("etapa_equipe");
+
+        //Na marcação do checkbox (change)
+        checkboxEquipe.addEventListener("change", function() {
+            checkboxEquipe.checked ? localStorage.setItem("checkboxEquipe", "true") : localStorage.setItem("checkboxEquipe", "false")
+        })
+
+        //Regra para manter na localStorage
+        localStorage.getItem("checkboxEquipe") === "true" ? checkboxEquipe.checked = true : checkboxEquipe.checked = false
     })
 </script>

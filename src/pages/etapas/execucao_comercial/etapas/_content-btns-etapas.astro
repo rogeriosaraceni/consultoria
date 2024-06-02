@@ -1,75 +1,99 @@
 ---
 const btnsEtapas = [
     {
+        idLi: "pageSwotLi",
+        show: "display:block",
         link: "./tabs/swot/",
         dataBsTarget: "#pageSwot",
         ariaControls: "pageSwot",
         name: "Análise SWOT",
     },
     {
+        idLi: "pageEquipeLi",
+        show: "display:none",
         link: "./tabs/equipe/",
-        dataBsTarget: "#pills-qlp",
-        ariaControls: "pills-qlp",
+        dataBsTarget: "#pageEquipe",
+        ariaControls: "pageEquipe",
         name: "Eq. Coml QLP",
     },
     {
+        idLi: "pageTreinamentosLi",
+        show: "display:none",
         link: "./tabs/treinamentos/",
-        dataBsTarget: "#pills-treinamentos",
-        ariaControls: "pills-treinamentos",
+        dataBsTarget: "#pageTreinamentos",
+        ariaControls: "pageTreinamentos",
         name: "UC/Treinamentos",
     },
     {
+        idLi: "pageWizLi",
+        show: "display:none",
         link: "./tabs/wiz/",
-        dataBsTarget: "#pills-wiz",
-        ariaControls: "pills-wiz",
+        dataBsTarget: "#pageWiz",
+        ariaControls: "pageWiz",
         name: "Wiz.Member",
     },
     {
+        idLi: "pageFunilLi",
+        show: "display:none",
         link: "./tabs/funil/",
-        dataBsTarget: "#pills-funil",
-        ariaControls: "pills-funil",
+        dataBsTarget: "#pageFunil",
+        ariaControls: "pageFunil",
         name: "Funil de Vendas",
     },
     {
+        idLi: "pagePassosLi",
+        show: "display:none",
         link: "./tabs/passos/",
-        dataBsTarget: "#pills-passos",
-        ariaControls: "pills-passos",
+        dataBsTarget: "#pagePassos",
+        ariaControls: "pagePassos",
         name: "5 Passos da Venda",
     },
     {
+        idLi: "pageAnaliseLi",
+        show: "display:none",
         link: "./tabs/analise/",
-        dataBsTarget: "#pills-analise",
-        ariaControls: "pills-analise",
+        dataBsTarget: "#pageAnalise",
+        ariaControls: "pageAnalise",
         name: "Análise Concorrência",
     },
     {
+        idLi: "pageParceriasLi",
+        show: "display:none",
         link: "./tabs/parcerias/",
-        dataBsTarget: "#pills-parcerias",
-        ariaControls: "pills-parcerias",
+        dataBsTarget: "#pageParcerias",
+        ariaControls: "pageParcerias",
         name: "Parcerias",
     },
     {
+        idLi: "pageMetasLi",
+        show: "display:none",
         link: "./tabs/metas/",
-        dataBsTarget: "#pills-defMetas",
-        ariaControls: "pills-defMetas",
+        dataBsTarget: "#pageMetas",
+        ariaControls: "pageMetas",
         name: "Definição Metas",
     },
     {
+        idLi: "pageRedesSocialLi",
+        show: "display:none",
         link: "./tabs/redes/",
-        dataBsTarget: "#pills-redesSocial",
-        ariaControls: "pills-redesSocial",
+        dataBsTarget: "#pageRedesSocial",
+        ariaControls: "pageRedesSocial",
         name: "Redes Socias",
     },
     {
+        idLi: "pageGestaoVistaLi",
+        show: "display:none",
         link: "./tabs/gestao/",
-        dataBsTarget: "#pills-gestaoVista",
-        ariaControls: "pills-gestaoVista",
+        dataBsTarget: "#pageGestaoVista",
+        ariaControls: "pageGestaoVista",
         name: "Gestão a Vista",
     },
     {
+        idLi: "pageControleAcaoLi",
+        show: "display:none",
         link: "./tabs/controle/",
-        dataBsTarget: "#pills-controleAcao",
-        ariaControls: "pills-controleAcao",
+        dataBsTarget: "#pageControleAcao",
+        ariaControls: "pageControleAcao",
         name: "Controle de Ações",
     },
 ]
@@ -80,7 +104,7 @@ const btnsEtapas = [
         <ul class="row nav nav-pills nav-pills-app" id="pills-tab" role="tablist">
             {
                 btnsEtapas.map((etapa) => (
-                    <li class="nav-item col-xl-2 col-lg-3 col-md-4 col-sm-6" role="presentation">
+                    <li class="nav-item col-xl-2 col-lg-3 col-md-4 col-sm-6" data-tab={etapa.idLi} role="presentation" style={etapa.show}>
                         <a
                             href={etapa.link}
                             class="nav-link"
@@ -101,7 +125,7 @@ const btnsEtapas = [
 <section class="tab-content p-0 border-0 position-relative">
     {
         btnsEtapas.map((content) => (
-            <article role="tabpanel" class="tab-pane fade" id={content.ariaControls}></article>
+            <article role="tabpanel" class="tab-pane fade" id={content.ariaControls} data-content={content.idLi}></article>
         ))
     }
 </section>
@@ -149,5 +173,19 @@ const btnsEtapas = [
     $(initialTagert).load(initialUrl, function() {
         $(initialTagert).addClass('loaded')
         initialTab.tab('show')
+    })
+</script>
+
+<script is:inline>
+    window.addEventListener('load', () => {
+        const tabPageEquipe = document.querySelector('[data-tab="pageEquipeLi"]');
+        const contentPageEquipe = document.querySelector('[data-content="pageEquipeLi"]');
+
+        if (localStorage.getItem("checkboxEquipe") === "true") {
+            tabPageEquipe.style.display = "block";
+        } else {
+            tabPageEquipe.style.display = "none";
+            contentPageEquipe.classList.remove('active', 'loaded', 'show')
+        }
     })
 </script>
