@@ -11,58 +11,58 @@ const etapas = [
         name: "Eq. Coml QLP",
     },
     {
-        id: "",
+        id: "etapa_treinamentos",
         value: "3",
-        name: "UC/Treinamentos",
+        name: "JC/Treinamentos",
     },
     {
-        id: "",
+        id: "etapa_wiz",
         value: "4",
         name: "Wiz.Member",
     },
     {
-        id: "",
+        id: "etapa_funil",
         value: "5",
         name: "Funil de Vendas",
     },
     {
-        id: "",
+        id: "etapa_passos",
         value: "6",
         name: "5 Passos da Venda",
     },
     {
-        id: "",
+        id: "etapa_analise",
         value: "7",
         name: "Análise Concorrência",
     },
     {
-        id: "",
+        id: "etapa_parcerias",
         value: "8",
         name: "Parcerias",
     },
     {
-        id: "",
+        id: "etapa_metas",
         value: "9",
         name: "Definição Metas",
     },
     {
-        id: "",
+        id: "etapa_redes",
         value: "10",
         name: "Redes Socias",
     },
     {
-        id: "",
+        id: "etapa_gestao",
         value: "11",
         name: "Gestão a Vista",
     },
     {
-        id: "",
-        value: "11",
+        id: "etapa_acoes",
+        value: "12",
         name: "Controle de Ações",
     },
     {
-        id: "",
-        value: "12",
+        id: "etapa_plano",
+        value: "13",
         name: "Plano de Ação Comercial",
     },
 ]
@@ -111,14 +111,35 @@ const etapas = [
 
 <script is:inline>
     document.addEventListener("DOMContentLoaded", function() {
-        const checkboxEquipe = document.getElementById("etapa_equipe");
 
-        //Na marcação do checkbox (change)
-        checkboxEquipe.addEventListener("change", function() {
-            checkboxEquipe.checked ? localStorage.setItem("checkboxEquipe", "true") : localStorage.setItem("checkboxEquipe", "false")
+        const checkboxes = [
+            "etapa_swot",
+            "etapa_equipe",
+            "etapa_treinamentos",
+            "etapa_wiz",
+            "etapa_funil",
+            "etapa_passos",
+            "etapa_analise",
+            "etapa_parcerias",
+            "etapa_metas",
+            "etapa_redes",
+            "etapa_gestao",
+            "etapa_acoes",
+            "etapa_comercial",
+            "etapa_plano",
+        ];
+
+        function handleCheckboxChange(e) {
+            localStorage.setItem(e.target.id, e.target.checked)
+        }
+
+        checkboxes.forEach(id => {
+            const checkbox = document.getElementById(id)
+
+            if(checkbox){
+                checkbox.addEventListener('change', handleCheckboxChange)
+                checkbox.checked = localStorage.getItem(id) === "true"
+            }
         })
-
-        //Regra para manter na localStorage
-        localStorage.getItem("checkboxEquipe") === "true" ? checkboxEquipe.checked = true : checkboxEquipe.checked = false
     })
 </script>
