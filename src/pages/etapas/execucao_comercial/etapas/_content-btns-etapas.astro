@@ -144,8 +144,6 @@ const btnsEtapas = [
         const url = $(this).attr("href")
         const target = $(this).data("bs-target")
 
-        console.log(url, target);
-
         // Verifica se a aba já foi carregada
         if (!$(target).hasClass('loaded')) {
             $(target).load(url, function() {
@@ -174,17 +172,16 @@ const btnsEtapas = [
     })
 
     // Carrega e mostra a aba inicial
-    // const initialTagert = "#pageSwot" //só alterar aqui
-    // const initialTab = $(`[data-bs-target="${initialTagert}"]`)
-    // const initialUrl = initialTab.attr("href");
+    const initialTagert = "#pageSwot" //só alterar aqui
+    const initialTab = $(`[data-bs-target="${initialTagert}"]`)
+    const initialUrl = initialTab.attr("href");
 
-    // $(initialTagert).load(initialUrl, function() {
-    //     $(initialTagert).addClass('loaded')
-    //     initialTab.tab('show')
-    // })
-</script>
+    $(initialTagert).load(initialUrl, function() {
+        $(initialTagert).addClass('loaded')
+        initialTab.tab('show')
+    })
 
-<script is:inline>
+    //Regra das estapas ativadas na localStorage
     window.addEventListener('load', () => {
         const etapas = [
             { key: "etapa_swot",         tabSelector: '[data-tab="pageSwot"]',               contentSelector: '[data-content="pageSwot"]' },
@@ -208,8 +205,9 @@ const btnsEtapas = [
 
             if(tabPage && contentPage){
                 if (localStorage.getItem(etapa.key) === "true") {
-                tabPage.style.display = "block";
-                } else {
+                    tabPage.style.display = "block";
+                }
+                else {
                     tabPage.style.display = "none";
                     contentPage.classList.remove('active', 'loaded', 'show');
                 }

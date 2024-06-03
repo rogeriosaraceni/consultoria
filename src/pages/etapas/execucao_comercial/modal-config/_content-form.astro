@@ -9,11 +9,13 @@ const etapas = [
         id: "etapa_equipe",
         value: "2",
         name: "Eq. Coml QLP",
+        checked: "true"
     },
     {
         id: "etapa_treinamentos",
         value: "3",
         name: "JC/Treinamentos",
+
     },
     {
         id: "etapa_wiz",
@@ -75,7 +77,7 @@ const etapas = [
                 etapas.map(etapa => (
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <label class="form-check-label gap-1">
-                            <input type="checkbox" name="etapa" id={etapa.id} value={etapa.value} data-checkbox="etapas"/>
+                            <input type="checkbox" name="etapa" id={etapa.id} value={etapa.value} data-checkbox="etapas" />
                             <span class="text-nowrap">{etapa.name}</span>
                         </label>
                     </div>
@@ -111,6 +113,9 @@ const etapas = [
 
 <script is:inline>
     document.addEventListener("DOMContentLoaded", function() {
+
+        document.querySelector('#etapa_swot').setAttribute('checked', 'true');
+        document.querySelector('#etapa_swot').setAttribute('disabled', 'true');
 
         const checkboxes = [
             "etapa_swot",
