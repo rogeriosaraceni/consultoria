@@ -133,7 +133,13 @@ const btnsEtapas = [
 <section class="tab-content p-0 border-0 position-relative">
     {
         btnsEtapas.map((content) => (
-            <article role="tabpanel" class="tab-pane fade" id={content.ariaControls} data-content={content.idLi}></article>
+            <article
+                role="tabpanel"
+                class="tab-pane fade"
+                id={content.ariaControls}
+                data-content={content.idLi}
+            >
+            </article>
         ))
     }
 </section>
