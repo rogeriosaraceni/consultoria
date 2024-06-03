@@ -70,7 +70,7 @@ const etapas = [
 ]
 ---
 
-<form method="POST" id="formEtapas" action="../etapas/">
+<form method="POST" id="formEtapas" action="/etapas/execucao_comercial/etapas/">
     <div class="modal-body">
         <div class="row">
             {
@@ -115,7 +115,7 @@ const etapas = [
     document.addEventListener("DOMContentLoaded", function() {
 
         document.querySelector('#etapa_swot').setAttribute('checked', 'true');
-        document.querySelector('#etapa_swot').setAttribute('disabled', 'true');
+        //document.querySelector('#etapa_swot').setAttribute('disabled', 'true');
 
         const checkboxes = [
             "etapa_swot",
