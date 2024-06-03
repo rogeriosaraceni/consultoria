@@ -2,7 +2,7 @@
 const btnsEtapas = [
     {
         idLi: "pageSwot",
-        show: "display:none",
+        show: "display:block",
         link: "./tabs/swot/",
         dataBsTarget: "#pageSwot",
         ariaControls: "pageSwot",
@@ -184,7 +184,7 @@ const btnsEtapas = [
     //Regra das estapas ativadas na localStorage
     window.addEventListener('load', () => {
         const etapas = [
-            { key: "etapa_swot",         tabSelector: '[data-tab="pageSwot"]',               contentSelector: '[data-content="pageSwot"]' },
+            //{ key: "etapa_swot",         tabSelector: '[data-tab="pageSwot"]',               contentSelector: '[data-content="pageSwot"]' },
             { key: "etapa_equipe",       tabSelector: '[data-tab="pageEquipe"]',             contentSelector: '[data-content="pageEquipe"]' },
             { key: "etapa_treinamentos", tabSelector: '[data-tab="pageTreinamentos"]',       contentSelector: '[data-content="pageTreinamentos"]' },
             { key: "etapa_wiz",          tabSelector: '[data-tab="pageWiz"]',                contentSelector: '[data-content="pageWiz"]' },
