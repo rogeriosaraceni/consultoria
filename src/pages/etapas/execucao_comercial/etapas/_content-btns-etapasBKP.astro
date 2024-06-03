@@ -157,13 +157,17 @@ const btnsEtapas = [
         }
 
         //https://datatables.net/examples/api/tabs_and_scrolling.html
+        //corrige ajuste de largura definidas com scroll automatido do datatables, apartir da 2 tab
         $.fn.dataTable.tables({ visible: true, api: true }).columns.adjust()
 
         //https://www.amcharts.com/docs/v4/tutorials/chart-was-not-disposed/
+		//limpa objetos e manipuladores estanciados e corrige os avisos no console quando reabre uma Tab
+		//Para esta tarefa simples, o amCharts 4 vem com uma função global integrada:
 		am4core.options.autoDispose = true
     });
 
     $('a[data-bs-toggle="tab"]').on('show.bs.tab', function (e) {
+        // Inicializa o bootstrap-select para os elementos select dentro da aba
         $('.selectpicker').selectpicker()
     })
 
