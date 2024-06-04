@@ -13,6 +13,10 @@ dataTables-custom - page-link
 /* --------------------------------------------------------------------
 table>thead>tr>th / table>tfoot>tr>th
 -------------------------------------------------------------------- */
+.table>thead>tr>th{
+    text-align: center;
+}
+
 .table>thead>tr>th,
 .table>tfoot>tr>th {
     border-bottom-width: 1px;
