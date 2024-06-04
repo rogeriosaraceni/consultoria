@@ -1,6 +1,4 @@
 ---
-import ContentSelecaoGeUnidade from "./_content-selecao-ge-unidade.astro";
-
 const btnsEtapas = [
     {
         idLi: "pageSwot",
@@ -67,6 +65,14 @@ const btnsEtapas = [
         name: "Parcerias",
     },
     {
+        idLi: "pageCalendarioAcoes",
+        show: "display:none",
+        link: "./tabs/calendario/",
+        dataBsTarget: "#pageCalendarioAcoes",
+        ariaControls: "pageCalendarioAcoes",
+        name: "Calendário de Ações",
+    },
+    {
         idLi: "pageMetas",
         show: "display:none",
         link: "./tabs/metas/",
@@ -80,7 +86,7 @@ const btnsEtapas = [
         link: "./tabs/redes/",
         dataBsTarget: "#pageRedesSocial",
         ariaControls: "pageRedesSocial",
-        name: "Redes Socias",
+        name: "Redes Sociais",
     },
     {
         idLi: "pageGestaoVista",
@@ -132,8 +138,6 @@ const btnsEtapas = [
     </div>
 </div>
 
-<ContentSelecaoGeUnidade />
-
 <section class="tab-content p-0 border-0 position-relative">
     {
         btnsEtapas.map((content) => (
@@ -160,6 +164,7 @@ const btnsEtapas = [
                 // Marca a aba como carregada
                 $(target).addClass('loaded')
                 $(this).tab('show')
+                $('.selectpicker').selectpicker()
             });
         } else {
             // Mostra a aba se já estiver carregada
@@ -173,7 +178,7 @@ const btnsEtapas = [
 		am4core.options.autoDispose = true
     });
 
-    $('a[data-bs-toggle="tab"]').on('show.bs.tab', function (e) {
+    $('a[data-bs-toggle="tab"]').on('show.bs.tab', function () {
         $('.selectpicker').selectpicker()
     })
 
@@ -198,6 +203,7 @@ const btnsEtapas = [
             { key: "etapa_passos",       tabSelector: '[data-tab="pagePassos"]',             contentSelector: '[data-content="pagePassos"]' },
             { key: "etapa_analise",      tabSelector: '[data-tab="pageAnalise"]',            contentSelector: '[data-content="pageAnalise"]' },
             { key: "etapa_parcerias",    tabSelector: '[data-tab="pageParcerias"]',          contentSelector: '[data-content="pageParcerias"]' },
+            { key: "etapa_calendario",   tabSelector: '[data-tab="pageCalendarioAcoes"]',    contentSelector: '[data-content="pageCalendarioAcoes"]' },
             { key: "etapa_metas",        tabSelector: '[data-tab="pageMetas"]',              contentSelector: '[data-content="pageMetas"]' },
             { key: "etapa_redes",        tabSelector: '[data-tab="pageRedesSocial"]',        contentSelector: '[data-content="pageRedesSocial"]' },
             { key: "etapa_gestao",       tabSelector: '[data-tab="pageGestaoVista"]',        contentSelector: '[data-content="pageGestaoVista"]' },
