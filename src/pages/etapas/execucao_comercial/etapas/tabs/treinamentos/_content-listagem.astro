@@ -1,0 +1,88 @@
+<div class="card">
+    <div class="card-body">
+        <div class="title-section">UC/Treinamentos</div>
+
+        <form method="" action="">
+            <table class="table table-bordered table-hover table-fixed" id="tab-datatable-treinamentos" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th style="width: 200px;">Colaborador</th>
+                        <th style="width: 200px;">Trilha de Aprendizagem</th>
+                        <th style="width: 150px;">Percentual de Conclusão</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Nome do Colaborador 1</td>
+                        <td>Trilha 1</td>
+                        <td class="text-center">55%</td>
+                    </tr>
+
+                    <tr>
+                        <td>Nome do Colaborador 2</td>
+                        <td>Trilha 2</td>
+                        <td class="text-center">33%</td>
+                    </tr>
+
+                    <tr>
+                        <td>Nome do Colaborador 3</td>
+                        <td>Trilha 3</td>
+                        <td class="text-center">60%</td>
+                    </tr>
+
+                    <tr>
+                        <td>Nome do Colaborador 4</td>
+                        <td>Trilha 4</td>
+                        <td class="text-center">80%</td>
+                    </tr>
+
+                    <tr>
+                        <td>Nome do Colaborador 5</td>
+                        <td>Trilha 5</td>
+                        <td class="text-center">90%</td>
+                    </tr>
+
+                    <tr>
+                        <td>Nome do Colaborador 6</td>
+                        <td>Trilha 6</td>
+                        <td class="text-center">27%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr>
+
+            <div class="d-flex justify-content-end gap-2">
+                <a href="#" class="btn btn-success btn-icon">
+                    <i class="bi bi-file-earmark-spreadsheet"></i>
+                    <span>Exportar Excel</span>
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script is:inline type="module">
+    $("#tab-datatable-treinamentos").DataTable({
+        scrollX: true,
+        scrollCollapse: true,
+
+        columnDefs: [
+            {
+                targets: "no-sort",
+                orderable: false,
+            },
+        ],
+
+        language: {
+            url: "https://cdn.datatables.net/plug-ins/1.13.4/i18n/pt-BR.json",
+        },
+    });
+
+    $('[data-row="delete"]').on('click', function () {
+        if (!confirm("Você tem certeza que deseja excluir?")) {
+            return false;
+        }
+    });
+</script>
