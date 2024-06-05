@@ -1,15 +1,13 @@
 ---
 import ContentSelecao from "./_content-selecao.astro";
+import ContentFormUpload from './_content-form-upload.astro'
+import ContentSlider from "./_content-slider.astro";
+import ContentListagemUpload from './_content-listagem-upload.astro'
 import ContentListagemGeUnidade from "./_content-listagem-ge-unidade.astro";
 ---
 
 <ContentSelecao />
-
-<div class="card">
-    <div class="card-body">
-        <div class="title-section">Calendário de Ações</div>
-
-    </div>
-</div>
-
+<ContentFormUpload />
+<ContentSlider />
+<ContentListagemUpload />
 <ContentListagemGeUnidade />

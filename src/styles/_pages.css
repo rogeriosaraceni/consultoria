@@ -1,5 +1,7 @@
 /* ////////////////////////////////////////////////////////////////////
 - nav-pills-app
+- upload-progress-bar
+- splide-docs
 
 //////////////////////////////////////////////////////////////////// */
 
@@ -29,4 +31,117 @@ nav-pills-app
 .nav-pills.nav-pills-app .show>.nav-link:hover {
     color: #fff;
     background-color: var(--color-wep-vermelho-vivo)!important;
+}
+
+/* --------------------------------------------------------------------
+upload-progress-bar
+---------------------------------------------------------------------- */
+.upload-progress-bar{
+    position: relative;
+    display: block;
+    margin: 5px 0;
+}
+.upload-progress-bar progress{ width: 100%;}
+.upload-progress-bar p{ font-size: 11px;}
+.upload-progress-bar p#loaded_n_total{ display: none;}
+
+progress.html5[value] {
+    border: none;
+    width: 100%;
+    height: 10px;
+    background-color: whiteSmoke;
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .5) inset;
+    color: royalblue;
+    position: relative;
+    overflow: hidden;
+}
+progress.html5[value]::-webkit-progress-bar {
+    background-color: whiteSmoke;
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .5) inset;
+}
+progress.html5::-webkit-progress-value{
+    background-color: #3498db;
+}
+
+/* --------------------------------------------------------------------
+splide-docs
+---------------------------------------------------------------------- */
+.container-splide-docs{
+    margin: 0 auto;
+    padding: 1rem 2rem 2rem 2rem;
+    width: 1000px;
+}
+
+.container-splide-docs .splide__list {
+    padding: 0 1rem 2rem 1rem!important;
+}
+
+.container-splide-docs .splide__slide{
+    border-radius: 1rem;
+    background-color: #f8f8f8;
+    box-shadow: var(--bs-box-shadow) !important;
+}
+
+.container-splide-docs .splide__slide__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.container-splide-docs .splide__slide a{
+    position: relative;
+    opacity: 0.8;
+    transition: all 0.3s;
+}
+.container-splide-docs .splide__slide a:hover{
+    opacity: 1;
+}
+.container-splide-docs .splide__slide a .btn-zoom{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #fff;
+    font-size: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0.2rem;
+    padding-top: 0.1rem;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.container-splide-docs .splide__slide img {
+    width: 100%;
+    height: 100%;
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+}
+
+.container-splide-docs .splide__slide .panel-actions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    border-radius: 0 0 1rem 1rem;
+    background-color: #eee;
+}
+.container-splide-docs .splide__slide .panel-actions .icon{
+    font-size: 1.2rem;
+    color: rgba(var(--bs-success-rgb));
+}
+
+.container-splide-docs .splide__arrow--prev { left: -1em;}
+.container-splide-docs .splide__arrow--next { right: -1em;}
+
+.container-splide-docs .splide__pagination {
+    bottom: -1.3rem;
 }
