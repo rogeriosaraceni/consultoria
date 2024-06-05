@@ -1,0 +1,90 @@
+---
+const arraySplides = [
+    {
+        link: 'https://images.unsplash.com/flagged/photo-1558963675-94dc9c4a66a9?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        img:  'https://images.unsplash.com/flagged/photo-1558963675-94dc9c4a66a9?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    },
+    {
+        link: 'https://images.unsplash.com/photo-1513128034602-7814ccaddd4e?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        img:  'https://images.unsplash.com/photo-1513128034602-7814ccaddd4e?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    },
+    {
+        link: '/assets/docs/doc.pdf',
+        img:  'https://play-lh.googleusercontent.com/dl4ZuJhfD5xR9m2H-oZ9UcLZwYmGpmWMurPrvTiN831ZWLia9NbrYurXV-32wtOzPmM5',
+    },
+    {
+        link: 'https://images.unsplash.com/photo-1562240020-ce31ccb0fa7d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        img:  'https://images.unsplash.com/photo-1562240020-ce31ccb0fa7d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    },
+]
+---
+
+<div class="card">
+    <div class="card-body">
+
+        <section class="container-splide-docs">
+            <article class="splide splide-default" id="splide-gestao">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        {
+                            arraySplides.map(item => (
+                                <li class="splide__slide">
+                                    <div class="splide__slide__container">
+                                        <a data-fancybox="gallery" href={item.link}>
+                                            <img src={item.img} />
+
+                                            <span class="btn-zoom" data-bs-toggle="tooltip" data-bs-title="Ampliar">
+                                                <i class="bi bi-zoom-in icon"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+
+                                    <div class="panel-actions">
+                                        <a
+                                        data-bs-toggle="tooltip"
+                                        data-bs-title="Download"
+                                        href={item.link} download>
+                                            <i class="bi bi-box-arrow-down icon"></i>
+                                        </a>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+    </div>
+</div>
+
+<script is:inline>
+    new Splide( '#splide-gestao', {
+        gap    : '2rem',
+
+        padding: {
+            left : '2rem',
+            right: '2rem',
+        },
+
+        //type       : 'loop',
+        height     : '17rem',
+        perPage    : 3,
+
+        //rewind : true,
+
+        breakpoints: {
+            800: {
+                perPage: 2,
+            },
+            768: {
+                perPage: 1,
+            },
+        }
+
+    }).mount();
+
+    Fancybox.bind('[data-fancybox="gallery"]', {
+
+    });
+</script>

@@ -1,0 +1,122 @@
+<div class="card">
+    <div class="card-body">
+        <div class="title-section">Gestão a Vista</div>
+
+        <form method="" action="">
+            <label class="d-flex flex-column flex-md-row gap-3">
+                <div class="d-flex flex-column flex-grow-1">
+                    <div class="d-flex align-items-center gap-2">
+                        <span>Anexar Arquivos: </span>
+                        <small>
+                            <span class="small">Formatos (.pdf, .jpeg, .jpg, .png) / 100mb por arquivo / máximo 5 arquivos por upload</span>
+                        </small>
+                    </div>
+
+                    <input
+                        type="file"
+                        name="doc_gestao"
+                        id="docGestao"
+                        multiple
+                        class="form-control"
+                        accept=".doc, .docx, .pdf, .xls, .xlsx, .ppt, .pptx, .jpeg, .jpg, .png"
+                        onchange="uploadFilesGestao()"
+                    >
+                </div>
+            </label>
+
+            <div class="upload-progress-bar">
+                <progress id="progressBar" class="html5" value="0" max="100"></progress>
+                <p id="status"></p>
+                <p id="loaded_n_total"></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script is:inline>
+    //upload
+    let fileInputGestao = document.getElementById("docGestao");
+
+    async function uploadFilesGestao() {
+        const files = fileInputGestao.files;
+
+        // Limpa as mensagens de status se não houver arquivos selecionados
+        if (files.length === 0) {
+            document.getElementById("status").innerHTML = "";
+            document.getElementById("progressBar").value = 0;
+            document.getElementById("loaded_n_total").innerHTML = "";
+            return;
+        }
+
+        //validar
+        if (!validateFiles(files)) {
+            return false;
+        }
+
+        const formData = new FormData();
+        Array.from(files).forEach((file, index) => {
+            formData.append(`documento${index}`, file);
+        });
+
+        try {
+            const urlUpload = "file_upload_parser.php"
+
+            const response = await axios.post(urlUpload, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                },
+                onUploadProgress: progressHandler
+            });
+
+            completeHandler(response.data);
+        } catch (error) {
+            errorHandler(error);
+        }
+    }
+
+    function validateFiles(files) {
+        const extensionsText = `.pdf, .jpeg, .jpg, .png`;
+        const extensions = /(.pdf|.jpeg|.jpg|.png)$/i;
+        const maxSize = 100 * 1024 * 1024; // 100MB
+
+        if (files.length > 5) {
+            alert("Você pode fazer upload de no máximo 5 arquivos.");
+            fileInputGestao.value = "";
+            return false;
+        }
+
+        for (let file of files) {
+            if (!extensions.exec(file.name)) {
+                alert(`O arquivo ${file.name} está fora das extensões permitidas: ${extensionsText}`);
+                fileInputGestao.value = "";
+                return false;
+            }
+
+            if (file.size > maxSize) {
+                alert(`O arquivo ${file.name} é muito grande. O tamanho máximo permitido é 100mb.`);
+                fileInputGestao.value = "";
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    function progressHandler(event) {
+        if (event.lengthComputable) {
+            const percent = (event.loaded / event.total) * 100;
+            document.getElementById("progressBar").value = Math.round(percent);
+            document.getElementById("status").innerHTML = Math.round(percent) + "% carregado... Por favor, aguarde";
+            document.getElementById("loaded_n_total").innerHTML = "Carregado " + event.loaded + " bytes de " + event.total;
+        }
+    }
+
+    function completeHandler(responseText) {
+        document.getElementById("status").innerHTML = responseText;
+        document.getElementById("progressBar").value = 0;
+    }
+
+    function errorHandler(error) {
+        document.getElementById("status").innerHTML = "Upload Falhou: " + error.message;
+    }
+</script>
