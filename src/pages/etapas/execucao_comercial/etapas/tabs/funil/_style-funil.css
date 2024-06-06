@@ -1,0 +1,68 @@
+.funnel-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    width: 100%;
+}
+
+.funnel-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.funnel-row span{
+    position: relative;
+    flex: 1;
+    padding: 0 1rem 0 1rem;
+    text-align: right;
+    text-wrap: nowrap;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.funnel-row span::before{
+    content: '\F287';
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: 400 !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    font-size: 8px;
+    position: absolute;
+    right: 0;
+    bottom: -4px;
+}
+.funnel-row:nth-of-type(1) span::before { color: var(--color-red);}
+.funnel-row:nth-of-type(2) span::before { color: var(--color-orange);}
+.funnel-row:nth-of-type(3) span::before { color: var(--color-yellow);}
+.funnel-row:nth-of-type(4) span::before { color: var(--color-blue);}
+
+.funnel-row .wrapper-input{
+    display: flex;
+    justify-content: center;
+    flex: 0 0 270px;
+}
+
+.funnel-row .content-input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25rem 1rem;
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+.funnel-row .content-input .form-control{
+    border: 0;
+    color: #fff;
+    font-weight: bold;
+    background-color: transparent;
+}
+.funnel-row .content-input .form-control:focus {
+    box-shadow: 0 0 0 .15rem rgba(13, 110, 253, .25);
+}
+.funnel-row:nth-of-type(2) .content-input { max-width: 85%;}
+.funnel-row:nth-of-type(3) .content-input { max-width: 75%;}
+.funnel-row:nth-of-type(4) .content-input { max-width: 65%;}

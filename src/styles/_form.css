@@ -39,8 +39,14 @@ form-control / form-select / bootstrap-select
 .form-control,
 .form-select{
     font-size: 0.9rem;
-    padding: 0.275rem 2.25rem 0.275rem 0.75rem;
     border-radius: var(--app-control-select-border-radius);
+}
+
+.form-control{
+    padding: 0.275rem 0.75rem 0.275rem 0.75rem;
+}
+.form-select{
+    padding: 0.275rem 2.25rem 0.275rem 0.75rem;
 }
 
 /* --------------------------------------------------------------------

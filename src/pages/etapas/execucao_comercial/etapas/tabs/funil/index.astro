@@ -1,6 +1,9 @@
 ---
 import ContentSelecao from "./_content-selecao.astro";
+
 import ContentListagemGeUnidade from "./_content-listagem-ge-unidade.astro";
+import ContentFunil from "./_content-funil.astro";
+import ContentCalendario from "./_content-calendario.astro";
 ---
 
 <ContentSelecao />
@@ -8,6 +11,24 @@ import ContentListagemGeUnidade from "./_content-listagem-ge-unidade.astro";
 <div class="card">
     <div class="card-body">
         <div class="title-section">Funil de Vendas</div>
+
+        <form method="" action="">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6">
+                    <ContentFunil />
+                </div>
+
+                <div class="col-xl-6 col-lg-6">
+                    <ContentCalendario />
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="d-flex justify-content-end gap-2">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </div>
+        </form>
 
     </div>
 </div>
