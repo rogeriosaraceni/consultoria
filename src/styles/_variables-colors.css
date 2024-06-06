@@ -37,6 +37,8 @@ class bg color
     --color-blue: #00c0ff;
     --color-grey: #9fa5a7;
     --color-grey-300: #eee;
+
+    --bg-input-form: rgba(247, 247, 193, 0.15);
 }
 
 /* --------------------------------------------------------------------

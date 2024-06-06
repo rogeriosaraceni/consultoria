@@ -44,6 +44,7 @@ form-control / form-select / bootstrap-select
 
 .form-control{
     padding: 0.275rem 0.75rem 0.275rem 0.75rem;
+    background-color: var(--bg-input-form)
 }
 .form-select{
     padding: 0.275rem 2.25rem 0.275rem 0.75rem;

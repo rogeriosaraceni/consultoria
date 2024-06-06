@@ -87,4 +87,15 @@ const arraySplides = [
     Fancybox.bind('[data-fancybox="gallery"]', {
 
     });
+
+    $('[data-row="delete"]').on('click', function () {
+        if (!confirm("Você tem certeza que deseja excluir?")) {
+            return false;
+        }
+    });
 </script>
+
+
+<!-- <a class="text-secondary fs-5" data-bs-toggle="tooltip" data-bs-title="Del" data-row="delete" href="#">
+    <i class="bi bi-trash icon-tab"></i>
+</a> -->

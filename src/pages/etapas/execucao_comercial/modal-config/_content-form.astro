@@ -104,19 +104,7 @@ const etapas = [
         }).length
     }
 
-    form.addEventListener('submit', function(event) {
-        const valid = verify();
-
-        if (!valid) {
-            event.preventDefault()
-            alert('Selecione ao menos uma opção das Etapas!')
-        }
-    })
-</script>
-
-<script is:inline>
-    document.addEventListener("DOMContentLoaded", function() {
-
+    function addLocalStorage() {
         document.querySelector('#etapa_swot').setAttribute('checked', 'true');
         document.querySelector('#etapa_swot').setAttribute('disabled', 'true');
 
@@ -150,5 +138,16 @@ const etapas = [
                 checkbox.checked = localStorage.getItem(id) === "true"
             }
         })
+    }
+
+    addLocalStorage()
+
+    form.addEventListener('submit', function(event) {
+        const valid = verify();
+
+        if (!valid) {
+            event.preventDefault()
+            alert('Selecione ao menos uma opção das Etapas!')
+        }
     })
 </script>

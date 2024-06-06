@@ -4,6 +4,7 @@
     align-items: center;
     gap: 0.5rem;
     list-style: none;
+    padding: 0;
     width: 100%;
 }
 
@@ -66,3 +67,9 @@
 .funnel-row:nth-of-type(2) .content-input { max-width: 85%;}
 .funnel-row:nth-of-type(3) .content-input { max-width: 75%;}
 .funnel-row:nth-of-type(4) .content-input { max-width: 65%;}
+
+@media(max-width: 680px){
+    .funnel-row .wrapper-input{
+        flex: 0 0 200px;
+    }
+}

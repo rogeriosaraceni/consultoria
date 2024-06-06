@@ -1,55 +1,31 @@
-<style>
-.flatpickr-input.form-control[readonly] {
-    cursor: pointer;
-    background-color: transparent;
-}
+<div class="my-4">
+    <section class="flatpickr-icons" id="daterange2" style="max-width: 350px;">
+        <div class="content-input">
+            <span>Período Selecionado:</span>
+            <input type="text" class="form-control" placeholder="Selecionar Período.." data-input>
+        </div>
 
-.flatpickr-icons{
-    display: flex;
-    align-items: end;
-    width: 100%;
-    max-width: 550px;
-}
-.flatpickr-icons .content-input{
-    flex: 1;
-}
-.flatpickr-icons .content-btns{
-    display: flex;
-    gap: 0.25rem;
-    font-size: 2.3rem;
-    line-height: 1;
-    margin-left: 0.25rem;
-}
-</style>
+        <div class="content-btns">
+            <a class="input-button" data-bs-toggle="tooltip" data-bs-title="Open / Close" data-toggle>
+                <i class="bi bi-calendar4 text-secondary"></i>
+            </a>
 
-<div class="d-flex justify-content-end mt-2">
-        <section class="flatpickr-icons" id="daterange2">
-            <div class="content-input">
-                <span>Período Selecionado:</span>
-                <input type="text" class="form-control" placeholder="Selecionar Período.." data-input>
-            </div>
-
-            <div class="content-btns">
-                <a class="input-button" data-bs-toggle="tooltip" data-bs-title="Open / Close" data-toggle>
-                    <i class="bi bi-calendar4 text-secondary"></i>
-                </a>
-
-                <a class="input-button" data-bs-toggle="tooltip" data-bs-title="Del" data-clear>
-                    <i class="bi bi-x-square text-danger"></i>
-                </a>
-            </div>
-        </section>
+            <a class="input-button" data-bs-toggle="tooltip" data-bs-title="Del" data-clear>
+                <i class="bi bi-x-square text-danger"></i>
+            </a>
+        </div>
+    </section>
 </div>
 
 <script is:inline>
-        flatpickr("#daterange2", {
-            locale: "pt",
-            mode: "range",
+    flatpickr("#daterange2", {
+        locale: "pt",
+        mode: "range",
 
-            wrap: true,
-            dateFormat: "d-m-Y",
-            onChange: function (selectedDates, dateStr, instance) {
-                console.log(selectedDates);
-            }
-        });
+        wrap: true,
+        dateFormat: "d-m-Y",
+        onChange: function (selectedDates, dateStr, instance) {
+            console.log(selectedDates);
+        }
+    });
 </script>
