@@ -1,13 +1,13 @@
 ---
 import ContentSelecao from "./_content-selecao.astro";
+import FunctionFormShowHandler from "../_function-formShowHandler.astro";
+import ContentForm from "./_content-form.astro";
 
 ---
 
 <ContentSelecao />
+<FunctionFormShowHandler />
 
-<div class="card">
-    <div class="card-body">
-        <div class="title-section">Parcerias</div>
-
-    </div>
+<div data-content="parcerias" style="display: none;">
+    <ContentForm />
 </div>

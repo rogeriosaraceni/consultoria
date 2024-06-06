@@ -1,14 +1,13 @@
 ---
 import ContentSelecao from "./_content-selecao.astro";
+import ContentForm from "./_content-form.astro";
+import FunctionFormShowHandler from "../_function-formShowHandler.astro";
 
 ---
 
 <ContentSelecao />
+<FunctionFormShowHandler />
 
-<div class="card">
-    <div class="card-body">
-        <div class="title-section">Wiz.Member</div>
-
-
-    </div>
+<div data-content="wiz" style="display: none;">
+    <ContentForm />
 </div>

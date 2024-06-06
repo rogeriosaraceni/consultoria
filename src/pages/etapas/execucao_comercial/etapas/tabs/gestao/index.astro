@@ -3,9 +3,14 @@ import ContentSelecao from "./_content-selecao.astro";
 import ContentFormUpload from './_content-form-upload.astro'
 import ContentSlider from "./_content-slider.astro";
 import ContentListagemGeUnidade from "./_content-listagem-ge-unidade.astro";
+import FunctionFormShowHandler from "../_function-formShowHandler.astro";
 ---
 
 <ContentSelecao />
-<ContentFormUpload />
-<ContentSlider />
-<ContentListagemGeUnidade />
+<FunctionFormShowHandler />
+
+<div data-content="gestao" style="display: none;">
+    <ContentFormUpload />
+    <ContentSlider />
+    <ContentListagemGeUnidade />
+</div>

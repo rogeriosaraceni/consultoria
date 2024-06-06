@@ -4,26 +4,30 @@ import ContentSelecao from "./_content-selecao.astro";
 import ContentListagemGeUnidade from "./_content-listagem-ge-unidade.astro";
 import ContentCalendario from "./_content-calendario.astro";
 import ContentFunil from "./_content-funil.astro";
+import FunctionFormShowHandler from "../_function-formShowHandler.astro";
 ---
 
 <ContentSelecao />
+<FunctionFormShowHandler />
 
-<div class="card">
-    <div class="card-body">
-        <div class="title-section">Funil de Vendas</div>
+<div data-content="funil" style="display: none;">
+    <div class="card">
+        <div class="card-body">
+            <div class="title-section">Funil de Vendas</div>
 
-        <form method="" action="">
-            <ContentCalendario />
-            <ContentFunil />
+            <form method="" action="">
+                <ContentCalendario />
+                <ContentFunil />
 
-            <hr>
+                <hr>
 
-            <div class="d-flex justify-content-end gap-2">
-                <button type="submit" class="btn btn-primary">Salvar</button>
-            </div>
-        </form>
+                <div class="d-flex justify-content-end gap-2">
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>
+            </form>
 
+        </div>
     </div>
-</div>
 
-<ContentListagemGeUnidade />
+    <ContentListagemGeUnidade />
+</div>

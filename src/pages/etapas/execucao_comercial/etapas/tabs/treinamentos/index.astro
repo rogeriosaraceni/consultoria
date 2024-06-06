@@ -1,7 +1,12 @@
 ---
 import ContentSelecao from "./_content-selecao.astro";
 import ContentListagem from "./_content-listagem.astro";
+import FunctionFormShowHandler from "../_function-formShowHandler.astro";
 ---
 
 <ContentSelecao />
-<ContentListagem />
+<FunctionFormShowHandler />
+
+<div data-content="treinamentos" style="display: none;">
+    <ContentListagem />
+</div>

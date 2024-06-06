@@ -1,0 +1,30 @@
+<script is:inline>
+    function formShowHandler(formElement, contentElement) {
+        const form = document.querySelector(formElement)
+        const content = document.querySelector(contentElement)
+
+        if(form && content){
+            form.addEventListener('submit', (event) => {
+                event.preventDefault()
+                content.style.display = 'block'
+
+                $.fn.dataTable.tables({ visible: true, api: true }).columns.adjust()
+            })
+        }
+    }
+
+    formShowHandler('[data-form="analise"]',      '[data-content="analise"]');
+    formShowHandler('[data-form="calendario"]',   '[data-content="calendario"]');
+    formShowHandler('[data-form="controle"]',     '[data-content="controle"]');
+    formShowHandler('[data-form="equipe"]',       '[data-content="equipe"]');
+    formShowHandler('[data-form="funil"]',        '[data-content="funil"]');
+    formShowHandler('[data-form="gestao"]',       '[data-content="gestao"]');
+    formShowHandler('[data-form="metas"]',        '[data-content="metas"]');
+    formShowHandler('[data-form="parcerias"]',    '[data-content="parcerias"]');
+    formShowHandler('[data-form="passos"]',       '[data-content="passos"]');
+    formShowHandler('[data-form="plano"]',        '[data-content="plano"]');
+    formShowHandler('[data-form="redes"]',        '[data-content="redes"]');
+    formShowHandler('[data-form="swot"]',         '[data-content="swot"]');
+    formShowHandler('[data-form="treinamentos"]', '[data-content="treinamentos"]');
+    formShowHandler('[data-form="wiz"]',          '[data-content="wiz"]');
+</script>

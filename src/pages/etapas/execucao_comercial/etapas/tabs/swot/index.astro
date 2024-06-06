@@ -4,8 +4,13 @@ import ContentSwoat from "./_content-swot.astro";
 import ContentListagemGeUnidade from "./_content-listagem-ge-unidade.astro";
 
 import "./_style.css"
+import FunctionFormShowHandler from "../_function-formShowHandler.astro";
 ---
 
 <ContentSelecao />
-<ContentSwoat />
-<ContentListagemGeUnidade />
+<FunctionFormShowHandler />
+
+<div data-content="swot" style="display: none;">
+    <ContentSwoat />
+    <ContentListagemGeUnidade />
+</div>

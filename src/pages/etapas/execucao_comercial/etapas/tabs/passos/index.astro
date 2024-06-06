@@ -2,8 +2,13 @@
 import ContentSelecao from "./_content-selecao.astro";
 import ContentForm from "./_content-form.astro";
 import ContentListagem from "./_content-listagem.astro";
+import FunctionFormShowHandler from "../_function-formShowHandler.astro";
 ---
 
 <ContentSelecao />
-<ContentForm />
-<ContentListagem />
+<FunctionFormShowHandler />
+
+<div data-content="passos" style="display: none;">
+    <ContentForm />
+    <ContentListagem />
+</div>

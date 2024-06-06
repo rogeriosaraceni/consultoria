@@ -2,8 +2,13 @@
 import ContentSelecao from "./_content-selecao.astro";
 import ContentListagemGeUnidade from "./_content-listagem-ge-unidade.astro";
 import ContentListagemRedeSocial from "./_content-listagem-rede-social.astro";
+import FunctionFormShowHandler from "../_function-formShowHandler.astro";
 ---
 
 <ContentSelecao />
-<ContentListagemRedeSocial />
-<ContentListagemGeUnidade />
+<FunctionFormShowHandler />
+
+<div data-content="redes" style="display: none;">
+    <ContentListagemRedeSocial />
+    <ContentListagemGeUnidade />
+</div>
