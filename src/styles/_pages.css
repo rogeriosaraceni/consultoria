@@ -136,7 +136,6 @@ splide-docs
 }
 .container-splide-docs .splide__slide .panel-actions .icon{
     font-size: 1.2rem;
-    color: rgba(var(--bs-success-rgb));
 }
 
 .container-splide-docs .splide__arrow--prev { left: -1em;}

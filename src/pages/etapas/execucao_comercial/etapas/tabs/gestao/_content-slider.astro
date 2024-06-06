@@ -1,20 +1,24 @@
 ---
-const arraySplides = [
+const arquivosGestao = [
     {
-        link: 'https://images.unsplash.com/flagged/photo-1558963675-94dc9c4a66a9?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        img:  'https://images.unsplash.com/flagged/photo-1558963675-94dc9c4a66a9?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        link: '/assets/images/pages/execucao_comercial/arquivos/1.jpg',
+        img:  '/assets/images/pages/execucao_comercial/arquivos/1.jpg',
+        name: 'arquivo_1',
     },
     {
-        link: 'https://images.unsplash.com/photo-1513128034602-7814ccaddd4e?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        img:  'https://images.unsplash.com/photo-1513128034602-7814ccaddd4e?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        link: '/assets/images/pages/execucao_comercial/arquivos/2.jpg',
+        img:  '/assets/images/pages/execucao_comercial/arquivos/2.jpg',
+        name: 'arquivo_2',
     },
     {
         link: '/assets/docs/doc.pdf',
-        img:  'https://play-lh.googleusercontent.com/dl4ZuJhfD5xR9m2H-oZ9UcLZwYmGpmWMurPrvTiN831ZWLia9NbrYurXV-32wtOzPmM5',
+        img:  '/assets/images/pages/execucao_comercial/arquivos/pdf.jpg',
+        name: 'arquivo_pdf',
     },
     {
-        link: 'https://images.unsplash.com/photo-1562240020-ce31ccb0fa7d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        img:  'https://images.unsplash.com/photo-1562240020-ce31ccb0fa7d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        link: '/assets/images/pages/execucao_comercial/arquivos/3.jpg',
+        img:  '/assets/images/pages/execucao_comercial/arquivos/3.jpg',
+        name: 'arquivo_3',
     },
 ]
 ---
@@ -27,11 +31,11 @@ const arraySplides = [
                 <div class="splide__track">
                     <ul class="splide__list">
                         {
-                            arraySplides.map(item => (
+                            arquivosGestao.map(arquivo => (
                                 <li class="splide__slide">
                                     <div class="splide__slide__container">
-                                        <a data-fancybox="gallery" href={item.link}>
-                                            <img src={item.img} />
+                                        <a data-fancybox="gallery" href={arquivo.link}>
+                                            <img src={arquivo.img} />
 
                                             <span class="btn-zoom" data-bs-toggle="tooltip" data-bs-title="Ampliar">
                                                 <i class="bi bi-zoom-in icon"></i>
@@ -41,10 +45,20 @@ const arraySplides = [
 
                                     <div class="panel-actions">
                                         <a
-                                        data-bs-toggle="tooltip"
-                                        data-bs-title="Download"
-                                        href={item.link} download>
+                                            class="text-primary"
+                                            data-bs-toggle="tooltip"
+                                            data-bs-title="Download"
+                                            href={arquivo.link} download={arquivo.name}>
                                             <i class="bi bi-box-arrow-down icon"></i>
+                                        </a>
+
+                                        <a
+                                            class="text-danger"
+                                            data-bs-toggle="tooltip"
+                                            data-bs-title="Del"
+                                            data-file-del="gestao"
+                                            href="#">
+                                            <i class="bi bi-trash icon"></i>
                                         </a>
                                     </div>
                                 </li>
@@ -86,5 +100,11 @@ const arraySplides = [
 
     Fancybox.bind('[data-fancybox="gallery"]', {
 
+    });
+
+    $('[data-file-del="gestao"]').on('click', function () {
+        if (!confirm("Você tem certeza que deseja excluir?")) {
+            return false;
+        }
     });
 </script>
