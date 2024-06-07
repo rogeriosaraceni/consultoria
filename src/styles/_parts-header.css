@@ -3,9 +3,9 @@
 * - header-app
 ---------------------------------------------------------------------- */
 .page-header {
-    padding-top: 6rem;
-    padding-bottom: 1.25rem;
-    margin-bottom: 1rem;
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0.5rem;
     background-color: var(--color-wep-azul-meia-noite)!important;
 }
 .page-header .page-header-content{
@@ -17,11 +17,11 @@
     align-items: center;
     margin-right: 0.5rem;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     border-radius: 100%;
     background-color: #fff;
-    font-size: 1.85rem;
+    font-size: 1.2rem;
     color: var(--color-wep-azul-meia-noite)!important;
 }
 .page-header .page-header-content .item-title{
@@ -31,9 +31,9 @@
 
 @media (max-width: 992px){
     .page-header .page-header-content .item-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1.55rem;
+        width: 25px;
+        height: 25px;
+        font-size: 1rem;
     }
-    .page-header .page-header-content .item-title{ font-size: 1.2rem;}
+    .page-header .page-header-content .item-title{ font-size: 1.1rem;}
 }
