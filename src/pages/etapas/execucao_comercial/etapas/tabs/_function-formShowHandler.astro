@@ -28,3 +28,11 @@
     formShowHandler('[data-form="treinamentos"]', '[data-content="treinamentos"]');
     formShowHandler('[data-form="wiz"]',          '[data-content="wiz"]');
 </script>
+
+
+<script is:inline>
+    $('[data-btn="prevent"]').on('click', function(event){
+        event.preventDefault()
+        console.log('O botão foi clicado, mas o comportamento padrão foi prevenido.');
+    });
+</script>

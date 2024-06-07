@@ -27,7 +27,7 @@
                                     <input type="text" id="funcao-0" name="funcao-[0]" class="form-control text-center">
                                 </td>
 
-                                <td class="text-center">
+                                <td>
                                     <div class="d-flex justify-content-center">
                                         <div class="d-flex align-items-center justify-content-between gap-1" style="width: 40px">
                                             <button type="button" data-tb-btn="add" class="btn border-0 p-0 fs-5" data-bs-toggle="tooltip" data-bs-title="Add">
@@ -49,81 +49,79 @@
             <hr>
 
             <div class="d-flex justify-content-end gap-2">
-                <button type="submit" class="btn btn-primary">Salvar</button>
+                <button type="submit" class="btn btn-primary" data-btn="prevent">Salvar</button>
             </div>
         </form>
     </div>
 </div>
 
 <script is:inline type="module">
+    const tableBody = $('#myTable tbody');
+    let rowIndex = 1;
 
-        const tableBody = $('#myTable tbody');
-        let rowIndex = 1;
+    // Adicionar uma nova linha
+    function addRow() {
+        const firstRow = tableBody.find('tr:first');
+        const newRow = firstRow.clone();
 
-        // Adicionar uma nova linha
-        function addRow() {
-            const firstRow = tableBody.find('tr:first');
-            const newRow = firstRow.clone();
-
-            newRow.find('input').each(function(index) {
-                $(this).val('');
-                const baseId = $(this).attr('id').split('-')[0];
-                const newId = `${baseId}-${rowIndex}`;
-                const baseName = $(this).attr('name').split('[')[0];
-                const newName = `${baseName}[${rowIndex}]`;
-                $(this).attr('id', newId);
-                $(this).attr('name', newName);
-            });
-
-            newRow.find('[data-tb-btn="del"]').css('visibility', 'visible');
-
-            tableBody.append(newRow);
-            rowIndex++;
-
-            // Reativar tooltip
-            $('[data-bs-toggle="tooltip"]').tooltip();
-
-            updateButtonsVisibility();
-        }
-
-        // Adicionar linha ao pressionar a tecla de seta para baixo
-        $(document).keydown(function(e) {
-            if (e.key === 'ArrowDown') {
-                addRow();
-                tableBody.find('tr:last input:first').focus();
-            }
+        newRow.find('input').each(function(index) {
+            $(this).val('');
+            const baseId = $(this).attr('id').split('-')[0];
+            const newId = `${baseId}-${rowIndex}`;
+            const baseName = $(this).attr('name').split('[')[0];
+            const newName = `${baseName}[${rowIndex}]`;
+            $(this).attr('id', newId);
+            $(this).attr('name', newName);
         });
 
-        // Adicionar evento aos botões "Adicionar" e "Deletar"
-        tableBody.on('click', '[data-tb-btn]', function(e) {
-            if ($(this).data('tb-btn') === 'add') {
-                addRow();
-            } else if ($(this).data('tb-btn') === 'del') {
-                const row = $(this).closest('tr');
+        newRow.find('[data-tb-btn="del"]').css('visibility', 'visible');
 
-                row.find('[data-bs-toggle="tooltip"]').tooltip('dispose');
-                row.remove();
-                updateButtonsVisibility();
-            }
-        });
+        tableBody.append(newRow);
+        rowIndex++;
 
-        // Atualizar a visibilidade dos botões "Adicionar" e "Deletar"
-        function updateButtonsVisibility() {
-            const rows = tableBody.find('tr');
-            const btnsDeleteRow = $('[data-tb-btn="del"]');
-
-            rows.each(function(index) {
-                const addButton = $(this).find('[data-tb-btn="add"]');
-                if (addButton) {
-                    addButton.css('display', (index === rows.length - 1) ? 'inline-block' : 'none');
-                }
-            });
-
-            btnsDeleteRow.each(function(index) {
-                $(this).css('visibility', (index === 0) ? 'hidden' : 'visible');
-            });
-        }
+        // Reativar tooltip
+        $('[data-bs-toggle="tooltip"]').tooltip();
 
         updateButtonsVisibility();
+    }
 
+    // Adicionar linha ao pressionar a tecla de seta para baixo
+    $(document).keydown(function(e) {
+        if (e.key === 'ArrowDown') {
+            addRow();
+            tableBody.find('tr:last input:first').focus();
+        }
+    });
+
+    // Adicionar evento aos botões "Adicionar" e "Deletar"
+    tableBody.on('click', '[data-tb-btn]', function(e) {
+        if ($(this).data('tb-btn') === 'add') {
+            addRow();
+        } else if ($(this).data('tb-btn') === 'del') {
+            const row = $(this).closest('tr');
+
+            row.find('[data-bs-toggle="tooltip"]').tooltip('dispose');
+            row.remove();
+            updateButtonsVisibility();
+        }
+    });
+
+    // Atualizar a visibilidade dos botões "Adicionar" e "Deletar"
+    function updateButtonsVisibility() {
+        const rows = tableBody.find('tr');
+        const btnsDeleteRow = $('[data-tb-btn="del"]');
+
+        rows.each(function(index) {
+            const addButton = $(this).find('[data-tb-btn="add"]');
+            if (addButton) {
+                addButton.css('display', (index === rows.length - 1) ? 'inline-block' : 'none');
+            }
+        });
+
+        btnsDeleteRow.each(function(index) {
+            $(this).css('visibility', (index === 0) ? 'hidden' : 'visible');
+        });
+    }
+
+    updateButtonsVisibility();
 </script>
