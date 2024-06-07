@@ -1,5 +1,3 @@
-console.log('oi');
-
 const form = document.getElementById('formEtapas')
 let checkboxes = document.querySelectorAll('[data-checkbox="etapas"]')
 
