@@ -55,6 +55,10 @@ body.body-login::after {
 	background-color: transparent;
 }
 
+.body-login .form-control {
+    background-color: #fff;
+}
+
 /* --------------------------------------------------------------------
 * - media device-width: 1377px
 * -------------------------------------------------------------------- */
