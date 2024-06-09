@@ -10,7 +10,6 @@
  * - mainAppMarginTop
  * - navigationActive
  * - spinnerBtns
- * - showToasts
  *
  * - Active Functions
  *
@@ -120,27 +119,6 @@ for(const btn of spinnerBtns){
             btn.classList.remove('btn-spinner-disabled')
             btn.querySelector('.btn-spinner').classList.add('d-none')
         }, 3000)
-    })
-}
-
-/** --------------------------------------------------------------------
- * showToasts
---------------------------------------------------------------------- */
-const showToasts = document.querySelectorAll('[data-toast-target]')
-
-for(const item of showToasts){
-    item.addEventListener('click', (event) => {
-        event.preventDefault()
-
-        const target = item.getAttribute('data-toast-target')
-        const toastElement = document.querySelector(`[data-toast-type="${target}"]`)
-
-        if (toastElement) {
-            setTimeout(() => {
-                const toast = new bootstrap.Toast(toastElement);
-                toast.show();
-            }, 3200);
-        }
     })
 }
 
