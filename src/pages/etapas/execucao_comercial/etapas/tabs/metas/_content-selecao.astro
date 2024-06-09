@@ -20,8 +20,7 @@
                 </label>
 
                 <label class="col-xl-3 col-lg-3 col-md-6 col-sm-6">Unidade:
-                    <select id="unidade" name="unidade" class="selectpicker" data-live-search="true" required>
-                        <option value=''></option>
+                    <select id="unidade_metas" name="unidade_metas" class="selectpicker" multiple data-actions-box="true" data-live-search="true" required>
                         <option value='1' selected>Unidade 1</option>
                         <option value='2'>Unidade 2</option>
                         <option value='3'>Unidade 3</option>
@@ -36,3 +35,13 @@
         </form>
     </div>
 </div>
+
+<script is:inline>
+    $('#unidade_metas').on('changed.bs.select', function () {
+        const allOptions      = $('#unidade_metas option').length
+        const selectedOptions = $('#unidade_metas option:selected').length
+        const inputs          = $('[data-input="values"]')
+
+        inputs.prop('readonly', selectedOptions === allOptions)
+    });
+</script>
