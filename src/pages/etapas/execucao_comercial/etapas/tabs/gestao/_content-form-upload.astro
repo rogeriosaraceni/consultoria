@@ -16,7 +16,7 @@
                 <div class="d-flex align-items-center gap-2">
                     <span>Anexar Arquivos: </span>
                     <small>
-                        <span class="small">Formatos (.pdf, .jpeg, .jpg, .png) / 100mb por arquivo / máximo 5 arquivos por upload</span>
+                        <span class="small">Formatos (.pdf, .xlx, .xlsx, .ppt, .pptx, .jpeg, .jpg, .png)</span>
                     </small>
                 </div>
 
@@ -26,7 +26,7 @@
                     id="docGestao"
                     multiple
                     class="form-control"
-                    accept=".doc, .docx, .pdf, .xls, .xlsx, .ppt, .pptx, .jpeg, .jpg, .png"
+                    accept=".pdf, .xlx, .xlsx, .ppt, .pptx, .jpeg, .jpg, .png"
                     onchange="uploadFilesGestao()"
                 >
             </div>
@@ -82,15 +82,15 @@
     }
 
     function validateFiles(files) {
-        const extensionsText = `.pdf, .jpeg, .jpg, .png`;
-        const extensions = /(.pdf|.jpeg|.jpg|.png)$/i;
-        const maxSize = 100 * 1024 * 1024; // 100MB
+        const extensionsText = `.pdf, .xlx, .xlsx, .ppt, .pptx, .jpeg, .jpg, .png`;
+        const extensions = /(.pdf|.xlx|.xlsx|.ppt|.pptx|.jpeg|.jpg|.png)$/i;
+        //const maxSize = 100 * 1024 * 1024; // 100MB
 
-        if (files.length > 5) {
-            alert("Você pode fazer upload de no máximo 5 arquivos.");
-            fileInputGestao.value = "";
-            return false;
-        }
+        // if (files.length > 5) {
+        //     alert("Você pode fazer upload de no máximo 5 arquivos.");
+        //     fileInputGestao.value = "";
+        //     return false;
+        // }
 
         for (let file of files) {
             if (!extensions.exec(file.name)) {
@@ -98,12 +98,11 @@
                 fileInputGestao.value = "";
                 return false;
             }
-
-            if (file.size > maxSize) {
-                alert(`O arquivo ${file.name} é muito grande. O tamanho máximo permitido é 100mb.`);
-                fileInputGestao.value = "";
-                return false;
-            }
+            // if (file.size > maxSize) {
+            //     alert(`O arquivo ${file.name} é muito grande. O tamanho máximo permitido é 100mb.`);
+            //     fileInputGestao.value = "";
+            //     return false;
+            // }
         }
 
         return true;

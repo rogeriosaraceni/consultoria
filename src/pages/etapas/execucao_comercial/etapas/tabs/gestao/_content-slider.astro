@@ -1,24 +1,28 @@
 ---
 const arquivosGestao = [
     {
-        link: '/assets/images/pages/execucao_comercial/arquivos/1.jpg',
-        img:  '/assets/images/pages/execucao_comercial/arquivos/1.jpg',
-        name: 'arquivo_1',
+        link:     '/assets/images/pages/execucao_comercial/arquivos/1.jpg',
+        download: '/assets/images/pages/execucao_comercial/arquivos/1.jpg',
+        img:      '/assets/images/pages/execucao_comercial/arquivos/1.jpg',
+        name:     'arquivo_1',
     },
     {
-        link: '/assets/images/pages/execucao_comercial/arquivos/2.jpg',
-        img:  '/assets/images/pages/execucao_comercial/arquivos/2.jpg',
-        name: 'arquivo_2',
+        link:     '/assets/docs/doc.pdf',
+        download: '/assets/docs/doc.pdf',
+        img:      '/assets/images/pages/execucao_comercial/arquivos/cover-pdf.jpg',
+        name:     'arquivo_pdf',
     },
     {
-        link: '/assets/docs/doc.pdf',
-        img:  '/assets/images/pages/execucao_comercial/arquivos/pdf.jpg',
-        name: 'arquivo_pdf',
+        link:     '/assets/images/pages/execucao_comercial/arquivos/cover-excel.jpg',
+        download: '/assets/docs/doc.xlsx',
+        img:      '/assets/images/pages/execucao_comercial/arquivos/cover-excel.jpg',
+        name:     'arquivo_excel',
     },
     {
-        link: '/assets/images/pages/execucao_comercial/arquivos/3.jpg',
-        img:  '/assets/images/pages/execucao_comercial/arquivos/3.jpg',
-        name: 'arquivo_3',
+        link:     '/assets/images/pages/execucao_comercial/arquivos/cover-powerPoint.jpg',
+        download: '/assets/docs/doc.pptx',
+        img:      '/assets/images/pages/execucao_comercial/arquivos/cover-powerPoint.jpg',
+        name:     'arquivo_pptx',
     },
 ]
 ---
@@ -48,7 +52,7 @@ const arquivosGestao = [
                                             class="text-primary"
                                             data-bs-toggle="tooltip"
                                             data-bs-title="Download"
-                                            href={arquivo.link} download={arquivo.name}>
+                                            href={arquivo.download} download={arquivo.name}>
                                             <i class="bi bi-box-arrow-down icon"></i>
                                         </a>
 
