@@ -106,21 +106,7 @@ const navigationActive = () => {
 /** --------------------------------------------------------------------
  * spinnerBtns
 --------------------------------------------------------------------- */
-const spinnerBtns = document.querySelectorAll('[data-btn="spinner"]')
 
-for(const btn of spinnerBtns){
-    btn.addEventListener('click', (event) => {
-        event.preventDefault()
-
-        btn.classList.add('btn-spinner-disabled')
-        btn.querySelector('.btn-spinner').classList.remove('d-none')
-
-        setTimeout(() => {
-            btn.classList.remove('btn-spinner-disabled')
-            btn.querySelector('.btn-spinner').classList.add('d-none')
-        }, 3000)
-    })
-}
 
 /** --------------------------------------------------------------------
  * Active Functions

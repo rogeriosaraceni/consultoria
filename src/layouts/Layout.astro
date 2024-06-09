@@ -1,8 +1,8 @@
 ---
 import Head from '@includes/Head.astro';
+import Toasts from '@components/Toasts.astro';
 import Footer from '@includes/Footer.astro';
 import BtnScrollToTop from '@components/BtnScrollToTop.astro';
-import Toasts from '@components/Toasts.astro';
 ---
 
 <!DOCTYPE html>
@@ -11,9 +11,9 @@ import Toasts from '@components/Toasts.astro';
 
 	<body>
 		<slot />
+        <Toasts />
 		<Footer />
         <BtnScrollToTop />
-        <Toasts />
 	</body>
 </html>
 

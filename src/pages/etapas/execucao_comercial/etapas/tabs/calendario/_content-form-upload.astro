@@ -11,34 +11,32 @@
             </div>
         </div>
 
-        <form method="" action="">
-            <label class="d-flex flex-column flex-md-row gap-3">
-                <div class="d-flex flex-column flex-grow-1">
-                    <div class="d-flex align-items-center gap-2">
-                        <span>Anexar Arquivos: </span>
-                        <small>
-                            <span class="small">Formatos (.pdf, .jpeg, .jpg, .png) / 100mb por arquivo / máximo 5 arquivos por upload</span>
-                        </small>
-                    </div>
-
-                    <input
-                        type="file"
-                        name="doc_calendario"
-                        id="docCalendario"
-                        multiple
-                        class="form-control"
-                        accept=".doc, .docx, .pdf, .xls, .xlsx, .ppt, .pptx, .jpeg, .jpg, .png"
-                        onchange="uploadFiles()"
-                    >
+        <label class="d-flex flex-column flex-md-row gap-3">
+            <div class="d-flex flex-column flex-grow-1">
+                <div class="d-flex align-items-center gap-2">
+                    <span>Anexar Arquivos: </span>
+                    <small>
+                        <span class="small">Formatos (.pdf, .jpeg, .jpg, .png) / 100mb por arquivo / máximo 5 arquivos por upload</span>
+                    </small>
                 </div>
-            </label>
 
-            <div class="upload-progress-bar">
-                <progress id="progressBar" class="html5" value="0" max="100"></progress>
-                <p id="status"></p>
-                <p id="loaded_n_total"></p>
+                <input
+                    type="file"
+                    name="doc_calendario"
+                    id="docCalendario"
+                    multiple
+                    class="form-control"
+                    accept=".doc, .docx, .pdf, .xls, .xlsx, .ppt, .pptx, .jpeg, .jpg, .png"
+                    onchange="uploadFiles()"
+                >
             </div>
-        </form>
+        </label>
+
+        <div class="upload-progress-bar">
+            <progress id="progressBar" class="html5" value="0" max="100"></progress>
+            <p id="status"></p>
+            <p id="loaded_n_total"></p>
+        </div>
     </div>
 </div>
 
