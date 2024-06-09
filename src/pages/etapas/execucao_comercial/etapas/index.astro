@@ -7,6 +7,7 @@ import BarGerenteConsultor from './_content-bar-gerente-consultor.astro'
 import BtnsEtapas from './_content-btns-etapas.astro'
 import ModalConfig from './modal/config/index.astro';
 import ModalFinalizar from './modal/finalizar/index.astro';
+import Toasts from '@components/Toasts.astro';
 ---
 
 <Layout>
@@ -32,13 +33,10 @@ import ModalFinalizar from './modal/finalizar/index.astro';
             <BtnsEtapas />
             <ModalConfig />
             <ModalFinalizar />
+            <Toasts />
         </section>
     </main>
 </Layout>
-
-<style>
-
-</style>
 
 <!--
 <script is:inline type="module" src="/assets/vendor/amcharts4/core.js"></script>

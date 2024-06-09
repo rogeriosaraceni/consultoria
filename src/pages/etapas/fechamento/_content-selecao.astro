@@ -4,64 +4,7 @@
             <span>Seleção</span>
         </div>
 
-        <form id="form-finalizar" action="/etapas/execucao_comercial/etapas/">
-            <button type="submit" class="btn btn-primary btn-loader" data-btn-loader="button">
-                <span>Finalizar</span>
-                <span data-btn-loader="icon" class="icon">
-                    <img src="/assets/icons/loader.svg">
-                </span>
-            </button>
-        </form>
 
-
-        <div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="d-flex">
-              <div class="toast-body">
-                Hello, world! This is a toast message.
-              </div>
-              <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-          </div>
 
 	</div><!-- card body -->
 </div><!-- card -->
-
-<style>
-    .btn-loader{
-        display: flex;
-        align-items: center;
-        gap: 0.3rem;
-    }
-    .btn-loader .icon{
-        opacity: 0;
-        display: none;
-        transition: 0.3s;
-    }
-    .btn-loader .icon.show{
-        opacity: 1;
-        display: block;
-    }
-    .btn-loader .icon img{
-        width: 24px;
-    }
-</style>
-
-<script is:inline type="module">
-    $('#form-finalizar').on('submit', function(event){
-        event.preventDefault()
-
-        const btnLoader     = document.querySelector('[data-btn-loader="button"]')
-        const btnLoaderIcon = document.querySelector('[data-btn-loader="icon"]')
-
-
-        btnLoader.setAttribute('disabled', true)
-        btnLoaderIcon.classList.add('show')
-
-
-        setTimeout(() => {
-            btnLoader.removeAttribute('disabled')
-            btnLoaderIcon.classList.remove('show')
-
-        }, 9000);
-    })
-</script>

@@ -335,7 +335,6 @@ function numberFormat(number, decimals, dec_point, thousands_sep) {
 /** --------------------------------------------------------------------
  * stringToNumber
 --------------------------------------------------------------------- */
-
 function stringToNumber(value) {
     if (typeof value === 'undefined') {
         return '';
