@@ -154,7 +154,7 @@ const btnsEtapas = [
     }
 </section>
 
-<style>
+<style is:inline>
     .wrapper-sticky-tabs{
         position: sticky;
         top: 75px;
@@ -169,6 +169,13 @@ const btnsEtapas = [
             position: relative;
             top: auto;
         }
+    }
+
+    [data-bs-theme="dark"] {
+        .wrapper-sticky-tabs .card{
+            background-color: #111;
+        }
+
     }
 </style>
 
