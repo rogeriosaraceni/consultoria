@@ -8,11 +8,11 @@ function verify() {
 }
 
 function addLocalStorage() {
-    document.querySelector('#etapa_swot').setAttribute('checked', 'true');
-    document.querySelector('#etapa_swot').setAttribute('disabled', 'true');
+    // document.querySelector('#etapa_swot').setAttribute('checked', 'true');
+    // document.querySelector('#etapa_swot').setAttribute('disabled', 'true');
 
     const checkboxes = [
-        //"etapa_swot",
+        "etapa_swot",
         "etapa_equipe",
         "etapa_treinamentos",
         "etapa_wiz",

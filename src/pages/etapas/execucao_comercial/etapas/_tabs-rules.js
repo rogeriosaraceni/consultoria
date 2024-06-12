@@ -1,5 +1,8 @@
 
 $('a[data-bs-toggle="tab"]').on('click', function (e) {
+
+    console.log('on click');
+
     e.preventDefault()
     const url = $(this).attr("href")
     const target = $(this).data("bs-target")
@@ -27,27 +30,29 @@ $('a[data-bs-toggle="tab"]').on('click', function (e) {
     //am4core.options.autoDispose = true
 });
 
-$('a[data-bs-toggle="tab"]').on('show.bs.tab', function () {
-    $('.selectpicker').selectpicker()
+// $('a[data-bs-toggle="tab"]').on('show.bs.tab', function () {
+//     $('.selectpicker').selectpicker()
 
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-})
+//     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+//     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+//     console.log('on show.bs.tab');
+// })
 
 // Carrega e mostra a aba inicial
-const initialTagert = "#pageSwot" //só alterar aqui
-const initialTab    = $(`[data-bs-target="${initialTagert}"]`)
-const initialUrl    = initialTab.attr("href");
+// const initialTagert = "#pageSwot" //só alterar aqui
+// const initialTab    = $(`[data-bs-target="${initialTagert}"]`)
+// const initialUrl    = initialTab.attr("href");
 
-$(initialTagert).load(initialUrl, function() {
-    $(initialTagert).addClass('loaded')
-    initialTab.tab('show')
-})
+// $(initialTagert).load(initialUrl, function() {
+//     $(initialTagert).addClass('loaded')
+//     initialTab.tab('show')
+// })
 
 //Regra das estapas ativadas na localStorage
 window.addEventListener('load', () => {
     const etapas = [
-      //{ key: "etapa_swot",         tabSelector: '[data-tab="pageSwot"]',               contentSelector: '[data-content="pageSwot"]' },
+        { key: "etapa_swot",         tabSelector: '[data-tab="pageSwot"]',               contentSelector: '[data-content="pageSwot"]' },
         { key: "etapa_equipe",       tabSelector: '[data-tab="pageEquipe"]',             contentSelector: '[data-content="pageEquipe"]' },
         { key: "etapa_treinamentos", tabSelector: '[data-tab="pageTreinamentos"]',       contentSelector: '[data-content="pageTreinamentos"]' },
         { key: "etapa_wiz",          tabSelector: '[data-tab="pageWiz"]',                contentSelector: '[data-content="pageWiz"]' },

@@ -73,8 +73,13 @@ const etapas = [
 ]
 ---
 
-<form id="formEtapas" action="/etapas/execucao_comercial/etapas/">
+<form id="formEtapas" method="" action="/etapas/execucao_comercial/etapas/">
     <div class="modal-body">
+        <label class="form-check-label gap-1">
+            <input type="checkbox" name="etapa" id="" value="" />
+            <span class="text-nowrap fw-bold">Todos</span>
+        </label>
+
         <div class="row">
             {
                 etapas.map(etapa => (

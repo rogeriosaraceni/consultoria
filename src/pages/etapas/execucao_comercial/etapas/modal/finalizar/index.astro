@@ -1,5 +1,5 @@
 ---
-
+import BtnSave from "@components/BtnSave.astro";
 ---
 
 <style is:inline>
@@ -26,20 +26,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
 
-                    <button
-                        id="closeModal"
-                        type="submit"
-                        class="btn btn-primary"
-                        data-btn="spinner"
-                        data-toast-target="cad"
-                    >
-                        <span>Finalizar</span>
-                        <span
-                            class="btn-spinner spinner-border spinner-border-sm d-none"
-                            role="status"
-                            aria-hidden="true">
-                        </span>
-                    </button>
+                    <BtnSave />
                 </div>
             </form>
         </div>
