@@ -154,29 +154,9 @@ const btnsEtapas = [
     }
 </section>
 
-<style is:inline>
-    .wrapper-sticky-tabs{
-        position: sticky;
-        top: 75px;
-        z-index:10;
-    }
-    .wrapper-sticky-tabs .card{
-        background-color: #d0dae4;
-    }
+<script type="module" is:inline>
 
-    @media(max-width: 991px){
-        .wrapper-sticky-tabs{
-            position: relative;
-            top: auto;
-        }
-    }
+</script>
 
-    [data-bs-theme="dark"] {
-        .wrapper-sticky-tabs .card{
-            background-color: #111;
-        }
-
-    }
-</style>
-
-<script src="./_tabs-rules.js"></script>
+<script src="./_script-tabs-rules.js"></script>
+<script src="./_script-localstorage-config.js"></script>

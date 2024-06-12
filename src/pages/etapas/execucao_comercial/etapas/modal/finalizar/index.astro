@@ -1,5 +1,4 @@
 ---
-import BtnSave from "@components/BtnSave.astro";
 ---
 
 <style is:inline>
@@ -16,7 +15,7 @@ import BtnSave from "@components/BtnSave.astro";
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form action="/etapas/execucao_comercial/etapas/">
+            <form action="/etapas/execucao_comercial/etapas/" data-form="spinner-toast">
                 <div class="modal-body">
                     <h4 class="text-center text-orange">
                         <i class="bi bi-file-earmark-check"></i> Você tem certeza que deseja finalizar consultoria!
@@ -26,21 +25,13 @@ import BtnSave from "@components/BtnSave.astro";
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
 
-                    <BtnSave />
+                    <button type="submit" class="btn btn-primary" data-toast-target="cad" data-modal="close">
+                        <span>Salvar</span>
+                        <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                    </button>
                 </div>
             </form>
         </div>
     </div>
 </div>
 
-<script is:inline>
-    document.querySelector('#closeModal').addEventListener('click', (event) => {
-        event.preventDefault()
-
-        setTimeout(() => {
-            const modal = bootstrap.Modal.getInstance(finalizarModal)
-
-            modal.hide()
-        }, 3100)
-    });
-</script>

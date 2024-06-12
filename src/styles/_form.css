@@ -11,7 +11,6 @@ label-clearfix
 list-group-item
 readonly, disabled
 placeholder
-btn-spinner
 
 //////////////////////////////////////////////////////////////////// */
 
@@ -159,11 +158,3 @@ placeholder
 :-ms-input-placeholder { font-size: var(--font-size-placeholder);}
 ::-moz-placeholder { font-size: var(--font-size-placeholder);}
 :-moz-placeholder { font-size: var(--font-size-placeholder);}
-
-/* --------------------------------------------------------------------
-btn-spinner
-* -------------------------------------------------------------------- */
-.btn-spinner-disabled{
-    opacity: 0.8!important;
-    pointer-events: none!important;
-}

@@ -1,9 +1,35 @@
 /* ////////////////////////////////////////////////////////////////////
+- wrapper-sticky-tabs
 - nav-pills-app
 - upload-progress-bar
 - splide-docs
 
 //////////////////////////////////////////////////////////////////// */
+
+/* --------------------------------------------------------------------
+wrapper-sticky-tabs
+---------------------------------------------------------------------- */
+.wrapper-sticky-tabs{
+    position: sticky;
+    top: 75px;
+    z-index:10;
+}
+.wrapper-sticky-tabs .card{
+    background-color: #d0dae4;
+}
+
+@media(max-width: 991px){
+    .wrapper-sticky-tabs{
+        position: relative;
+        top: auto;
+    }
+}
+
+[data-bs-theme="dark"] {
+    .wrapper-sticky-tabs .card{
+        background-color: #111;
+    }
+}
 
 /* --------------------------------------------------------------------
 nav-pills-app

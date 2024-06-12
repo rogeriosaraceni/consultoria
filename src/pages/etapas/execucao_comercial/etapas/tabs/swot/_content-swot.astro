@@ -6,7 +6,7 @@ import BtnSave from '@components/BtnSave.astro';
     <div class="card-body">
         <div class="title-section">Análise SWOT</div>
 
-        <form method="" action="">
+        <form action="" data-form="spinner-toast">
             <div class="table-responsive mb-3">
                 <table class="table table-swot mx-auto mb-1">
                     <tbody>
@@ -74,7 +74,10 @@ import BtnSave from '@components/BtnSave.astro';
             <hr>
 
             <div class="d-flex justify-content-end">
-                <BtnSave />
+                <button type="submit" class="btn btn-primary" data-toast-target="cad">
+                    <span>Salvar</span>
+                    <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                </button>
             </div>
         </form>
     </div>
