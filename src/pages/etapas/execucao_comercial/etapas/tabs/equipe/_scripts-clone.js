@@ -24,6 +24,7 @@ function addRowEquipe() {
 
     tableBodyEquipe.append(newRow)
     rowIndexEquipe++
+    updateButtonsVisibilityEquipe()
 
     // Reativar tooltips
     newRow.find('[data-bs-toggle="tooltip"]').tooltip()
@@ -46,6 +47,24 @@ tableBodyEquipe.on('click', '[data-tb-btn]', function(e) {
         const row = $(this).closest('tr');
         //destroy plugins
         row.find('[data-bs-toggle="tooltip"]').tooltip('dispose');
-        row.remove();
+        row.remove()
+        updateButtonsVisibilityEquipe()
     }
 })
+
+// Atualizar a visibilidade dos botões "Adicionar" e "Deletar"
+function updateButtonsVisibilityEquipe() {
+    const rows = tableBodyEquipe.find('tr');
+    const btnsDeleteRow = $('[data-tb-btn="del"]')
+
+    rows.each(function(index) {
+        const addButton = $(this).find('[data-tb-btn="add"]')
+        if (addButton) {
+            addButton.css('display', (index === rows.length - 1) ? 'inline-block' : 'none')
+        }
+    })
+    btnsDeleteRow.each(function(index) {
+        $(this).css('visibility', (index === 0) ? 'hidden' : 'visible')
+    })
+}
+updateButtonsVisibilityEquipe()
