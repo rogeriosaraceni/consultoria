@@ -1,10 +1,9 @@
 ---
 import ContentSelecao from "./_content-selecao.astro";
-
+import FunctionFormShowHandler from "../_function-formShowHandler.astro";
 import ContentListagemGeUnidade from "./_content-listagem-ge-unidade.astro";
 import ContentCalendario from "./_content-calendario.astro";
 import ContentFunil from "./_content-funil.astro";
-import FunctionFormShowHandler from "../_function-formShowHandler.astro";
 ---
 
 <ContentSelecao />
@@ -15,7 +14,7 @@ import FunctionFormShowHandler from "../_function-formShowHandler.astro";
         <div class="card-body">
             <div class="title-section">Funil de Vendas</div>
 
-            <form method="" action="">
+            <form action="" data-form="spinner-toast">
                 <section class="row">
                     <div class="col-xl-6 col-lg-6">
                         <ContentCalendario />
@@ -33,7 +32,10 @@ import FunctionFormShowHandler from "../_function-formShowHandler.astro";
                 <hr>
 
                 <div class="d-flex justify-content-end gap-2">
-                    <button type="submit" class="btn btn-primary" data-btn="prevent">Salvar</button>
+                    <button type="submit" class="btn btn-primary" data-toast-target="cad">
+                        <span>Salvar</span>
+                        <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                    </button>
                 </div>
             </form>
 

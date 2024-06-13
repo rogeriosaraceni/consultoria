@@ -11,11 +11,11 @@
             </div>
         </div>
 
-        <form method="" action="">
+        <form action="" data-form="spinner-toast">
             <section class="row">
                 <div class="col-xl-6 col-lg-12">
                     <div class="row">
-                        <label class="col-xl-3 col-lg-4 col-md-5 col-sm-6 mb-3">Nome Acessor Comercial:
+                        <label class="col-xl-6 col-lg-7 col-md-8 col-sm-9 mb-3">Nome Acessor Comercial:
                             <input type="text" name="" class="form-control" style="width: 100%; max-width: 395px;">
                         </label>
                     </div>
@@ -138,7 +138,10 @@
             <hr>
 
             <div class="d-flex justify-content-end gap-2">
-                <button type="submit" class="btn btn-primary" data-btn="prevent">Salvar</button>
+                <button type="submit" class="btn btn-primary" data-toast-target="cad">
+                    <span>Salvar</span>
+                    <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                </button>
             </div>
         </form>
     </div>

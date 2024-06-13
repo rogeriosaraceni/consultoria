@@ -1,53 +1,62 @@
-<div class="card">
-    <div class="card-body">
-        <div class="title-section">Análise Concorrência</div>
+<form action="" data-form="spinner-toast">
+    <div class="card">
+        <div class="card-body">
+            <div class="title-section">Análise Concorrência</div>
 
-        <div class="table-responsive">
-            <table class="table table-bordered table-hover table-fixed">
-                <thead>
-                    <tr>
-                        <th style="width: 150px;">Data da Pesquisa</th>
-                        <th style="width: 150px;">Marca do Concorrente</th>
-                        <th style="width: 150px;">Endereço</th>
-                        <th style="width: 150px;">Telefone</th>
-                        <th style="width: 150px;">Distância da Unidade</th>
-                        <th style="width: 150px;">Observação</th>
-                        <th style="width: 150px;">Modalidade</th>
-                        <th style="width: 150px;">promoção Vigente</th>
-                        <th style="width: 150px;">Valores</th>
-                        <th style="width: 150px;">Matrícula</th>
-                        <th style="width: 150px;">Mensalidade</th>
-                        <th style="width: 150px;">Material (VLR Mensal)</th>
-                        <th style="width: 150px;">Atendimento</th>
-                        <th style="width: 150px;">Estrutura</th>
-                    </tr>
-                </thead>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover table-fixed">
+                    <thead>
+                        <tr>
+                            <th style="width: 150px;">Data da Pesquisa</th>
+                            <th style="width: 150px;">Marca do Concorrente</th>
+                            <th style="width: 150px;">Endereço</th>
+                            <th style="width: 150px;">Telefone</th>
+                            <th style="width: 150px;">Distância da Unidade</th>
+                            <th style="width: 150px;">Observação</th>
+                            <th style="width: 150px;">Modalidade</th>
+                            <th style="width: 150px;">promoção Vigente</th>
+                            <th style="width: 150px;">Valores</th>
+                            <th style="width: 150px;">Matrícula</th>
+                            <th style="width: 150px;">Mensalidade</th>
+                            <th style="width: 150px;">Material (VLR Mensal)</th>
+                            <th style="width: 150px;">Atendimento</th>
+                            <th style="width: 150px;">Estrutura</th>
+                        </tr>
+                    </thead>
 
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <hr>
+            <label>Observações:
+                <textarea name="obs_analise" class="form-control" rows="3"></textarea>
+            </label>
 
-        <div class="d-flex justify-content-end gap-2">
-            <button type="submit" class="btn btn-primary" data-btn="prevent">Salvar</button>
+            <hr>
+
+            <div class="d-flex justify-content-end gap-2">
+                <button type="submit" class="btn btn-primary" data-toast-target="cad">
+                    <span>Salvar</span>
+                    <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                </button>
+            </div>
         </div>
     </div>
-</div>
+</form>
