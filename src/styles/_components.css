@@ -1,7 +1,7 @@
 /* ////////////////////////////////////////////////////////////////////
 - btn-spinner-disabled
 - toast-app
--
+- tableJqueryClone
 
 //////////////////////////////////////////////////////////////////// */
 
@@ -26,4 +26,11 @@ toast-app
     align-items: center;
     border: 0;
     --bs-toast-max-width: 650px;
+}
+
+/* --------------------------------------------------------------------
+tableJqueryClone
+* -------------------------------------------------------------------- */
+[data-table="jqueryClone"] tr:first-child [data-tb-btn="del"]{
+    display: none;
 }

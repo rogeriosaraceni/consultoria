@@ -1,9 +1,5 @@
-<style>
-    [data-table="cloneJquery"] tr:first-child [data-tb-btn="del"]{ display: none;}
-</style>
-
 <div class="table-responsive">
-    <table class="table table-bordered table-hover table-fixed" data-table="cloneJquery" id="tableCloneAnalise">
+    <table class="table table-bordered table-hover table-fixed" data-table="jqueryClone" id="tableCloneAnalise">
         <thead>
             <tr>
                 <th style="width: 150px;" rowspan="2">Data da Pesquisa</th>
@@ -64,7 +60,7 @@
                     <input type="text" id="endereco_0" name="endereco_0" class="form-control">
                 </td>
                 <td>
-                    <input type="text" id="telefone_0" name="telefone_0" class="form-control text-center jQueryMask-sp_celphones" placeholder="(00) 0000-0000">
+                    <input type="text" id="telefone_0" name="telefone_0" class="form-control text-center jQueryMask-br_celphones" placeholder="(00) 0000-0000">
                 </td>
                 <td>
                     <input type="text" id="distancia_0" name="distancia_0" class="form-control">
@@ -170,55 +166,4 @@
 </div>
 
 <script is:inline src="/assets/vendor/jquery.mask.min.js"></script>
-
-<script is:inline>
-    const tableBody = $('#tableCloneAnalise tbody')
-    let rowIndex = 1
-
-    // Adicionar uma nova linha
-    function addRow() {
-        const firstRow = tableBody.find('tr:first')
-        const newRow = firstRow.clone()
-
-        newRow.find('input').each(function() {
-            const field = $(this);
-            const name = field.attr("name")
-            const id = field.attr("id")
-
-            if (name) {
-                const newName = name.replace(/_\d+$/, `_${rowIndex}`)
-                field.attr("name", newName)
-            }
-            if (id) {
-                const newId = id.replace(/_\d+$/, `_${rowIndex}`)
-                field.attr("id", newId)
-            }
-        })
-
-        tableBody.append(newRow)
-        rowIndex++
-    }
-
-    // Adicionar linha ao pressionar a tecla de seta para baixo
-    $(document).keydown(function(e) {
-        if (e.key === 'ArrowDown') {
-            addRow()
-            tableBody.find('tr:last input:first').focus()
-        }
-    })
-
-    // Adicionar evento aos botões "Adicionar" e "Deletar"
-    tableBody.on('click', '[data-tb-btn]', function(e) {
-        if ($(this).data('tb-btn') === 'add') {
-            addRow();
-            //reativa plugins
-            $('[data-bs-toggle="tooltip"]').tooltip()
-        }
-        else if ($(this).data('tb-btn') === 'del') {
-            const row = $(this).closest('tr');
-            //destroy plugins
-            row.find('[data-bs-toggle="tooltip"]').tooltip('dispose');
-            row.remove();
-        }
-    })
-</script>
+<script src="./_scripts-clone.js"></script>

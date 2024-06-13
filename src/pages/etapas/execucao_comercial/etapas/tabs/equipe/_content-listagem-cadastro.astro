@@ -8,7 +8,7 @@
         <form action="" data-form="spinner-toast">
             <div class="table-responsive">
                 <div class="table-container">
-                    <table class="table table-bordered table-hover table-fixed text-center" id="tableCloneEquipamento">
+                    <table class="table table-bordered table-hover table-fixed text-center" data-table="jqueryClone" id="tableCloneEquipe">
                         <thead>
                             <tr>
                                 <th style="width: 300px;">Nome do Colaborador</th>
@@ -21,13 +21,13 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <input type="text" id="nome-0" name="nome-[0]" class="form-control">
+                                    <input type="text" id="nome_0" name="nome_0" class="form-control">
                                 </td>
                                 <td>
-                                    <input type="date" id="data-0" name="data-[0]" class="form-control text-center">
+                                    <input type="date" id="data_0" name="data_0" class="form-control text-center">
                                 </td>
                                 <td>
-                                    <input type="text" id="funcao-0" name="funcao-[0]" class="form-control text-center">
+                                    <input type="text" id="funcao_0" name="funcao_0" class="form-control text-center">
                                 </td>
 
                                 <td>
@@ -65,73 +65,4 @@
     </div>
 </div>
 
-<script is:inline type="module">
-    const tableBody = $('#tableCloneEquipamento tbody');
-    let rowIndex = 1;
-
-    // Adicionar uma nova linha
-    function addRow() {
-        const firstRow = tableBody.find('tr:first');
-        const newRow = firstRow.clone();
-
-        newRow.find('input').each(function(index) {
-            $(this).val('');
-            const baseId = $(this).attr('id').split('-')[0];
-            const newId = `${baseId}-${rowIndex}`;
-            const baseName = $(this).attr('name').split('[')[0];
-            const newName = `${baseName}[${rowIndex}]`;
-            $(this).attr('id', newId);
-            $(this).attr('name', newName);
-        });
-
-        newRow.find('[data-tb-btn="del"]').css('visibility', 'visible');
-
-        tableBody.append(newRow);
-        rowIndex++;
-
-        // Reativar tooltip
-        $('[data-bs-toggle="tooltip"]').tooltip();
-
-        updateButtonsVisibility();
-    }
-
-    // Adicionar linha ao pressionar a tecla de seta para baixo
-    $(document).keydown(function(e) {
-        if (e.key === 'ArrowDown') {
-            addRow();
-            tableBody.find('tr:last input:first').focus();
-        }
-    });
-
-    // Adicionar evento aos botões "Adicionar" e "Deletar"
-    tableBody.on('click', '[data-tb-btn]', function(e) {
-        if ($(this).data('tb-btn') === 'add') {
-            addRow();
-        } else if ($(this).data('tb-btn') === 'del') {
-            const row = $(this).closest('tr');
-
-            row.find('[data-bs-toggle="tooltip"]').tooltip('dispose');
-            row.remove();
-            updateButtonsVisibility();
-        }
-    });
-
-    // Atualizar a visibilidade dos botões "Adicionar" e "Deletar"
-    function updateButtonsVisibility() {
-        const rows = tableBody.find('tr');
-        const btnsDeleteRow = $('[data-tb-btn="del"]');
-
-        rows.each(function(index) {
-            const addButton = $(this).find('[data-tb-btn="add"]');
-            if (addButton) {
-                addButton.css('display', (index === rows.length - 1) ? 'inline-block' : 'none');
-            }
-        });
-
-        btnsDeleteRow.each(function(index) {
-            $(this).css('visibility', (index === 0) ? 'hidden' : 'visible');
-        });
-    }
-
-    updateButtonsVisibility();
-</script>
+<script src="./_scripts-clone.js"></script>

@@ -1,68 +1,63 @@
-const tableBody = $('#tableCloneAnalise tbody');
-let rowIndex = 1;
+const tableBody = $('#tableCloneAnalise tbody')
+let rowIndex = 1
 
 // Adicionar uma nova linha
-function addRowAnalise() {
-    const firstRow = tableBody.find('tr:first');
-    const newRow = firstRow.clone();
+function addRow() {
+    const firstRow = tableBody.find('tr:first')
+    const newRow = firstRow.clone()
 
-    newRow.find('input').each(function(index) {
-        $(this).val('');
-        const baseId = $(this).attr('id').split('-')[0];
-        const newId = `${baseId}-${rowIndex}`;
-        const baseName = $(this).attr('name').split('[')[0];
-        const newName = `${baseName}[${rowIndex}]`;
-        $(this).attr('id', newId);
-        $(this).attr('name', newName);
-    });
+    newRow.find('input').each(function() {
+        $(this).val('')
+        const field = $(this);
+        const name = field.attr("name")
+        const id = field.attr("id")
 
-    newRow.find('[data-tb-btn="del"]').css('visibility', 'visible');
+        if (name) {
+            const newName = name.replace(/_\d+$/, `_${rowIndex}`)
+            field.attr("name", newName)
+        }
+        if (id) {
+            const newId = id.replace(/_\d+$/, `_${rowIndex}`)
+            field.attr("id", newId)
+        }
+    })
 
-    tableBody.append(newRow);
-    rowIndex++;
+    tableBody.append(newRow)
+    rowIndex++
 
-    // Reativar outros plugins, se necessário
-    $('[data-bs-toggle="tooltip"]').tooltip();
-
-    updateButtonsVisibilityAnalise();
+    // Reativar tooltips
+    newRow.find('[data-bs-toggle="tooltip"]').tooltip()
+    // Reativar jQueryMask-money
+    newRow.find('.jQueryMask-money').mask('#.##0,00', { reverse: true })
+    // jQueryMask-br_celphones
+    var SPMaskBehavior = function(val) {
+        return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009'
+    },
+    spOptions = {
+        onKeyPress: function(val, e, field, options) {
+            field.mask(SPMaskBehavior.apply({}, arguments), options)
+        }
+    }
+    newRow.find('.jQueryMask-br_celphones').mask(SPMaskBehavior, spOptions)
 }
 
 // Adicionar linha ao pressionar a tecla de seta para baixo
 $(document).keydown(function(e) {
     if (e.key === 'ArrowDown') {
-        addRowAnalise();
-        tableBody.find('tr:last input:first').focus();
+        addRow()
+        tableBody.find('tr:last input:first').focus()
     }
-});
+})
 
 // Adicionar evento aos botões "Adicionar" e "Deletar"
 tableBody.on('click', '[data-tb-btn]', function(e) {
     if ($(this).data('tb-btn') === 'add') {
-        addRowAnalise();
+        addRow();
     }
     else if ($(this).data('tb-btn') === 'del') {
         const row = $(this).closest('tr');
+        //destroy plugins
         row.find('[data-bs-toggle="tooltip"]').tooltip('dispose');
         row.remove();
-        updateButtonsVisibilityAnalise();
     }
-});
-
-// Atualizar a visibilidade dos botões "Adicionar" e "Deletar"
-function updateButtonsVisibilityAnalise() {
-    const rows = tableBody.find('tr');
-    const btnsDeleteRow = $('[data-tb-btn="del"]');
-
-    rows.each(function(index) {
-        const addButton = $(this).find('[data-tb-btn="add"]');
-        if (addButton) {
-            addButton.css('display', (index === rows.length - 1) ? 'inline-block' : 'none');
-        }
-    });
-
-    btnsDeleteRow.each(function(index) {
-        $(this).css('visibility', (index === 0) ? 'hidden' : 'visible');
-    });
-}
-
-updateButtonsVisibilityAnalise();
+})
