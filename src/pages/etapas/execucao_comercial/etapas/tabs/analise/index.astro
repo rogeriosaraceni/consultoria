@@ -9,7 +9,29 @@ import ContentListagemGeUnidade from "./_content-listagem-ge-unidade.astro";
 <FunctionFormShowHandler />
 
 <div data-content="analise" style="display: none;">
-    <ContentCadListagem />
+
+    <form action="" data-form="spinner-toast">
+        <div class="card">
+            <div class="card-body">
+                <div class="title-section">Análise Concorrência</div>
+
+                <ContentCadListagem />
+
+                <label>Observações:
+                    <textarea name="obs_analise" class="form-control" rows="3"></textarea>
+                </label>
+
+                <hr>
+
+                <div class="d-flex justify-content-end gap-2">
+                    <button type="submit" class="btn btn-primary" data-toast-target="cad">
+                        <span>Salvar</span>
+                        <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
 
     <ContentListagemGeUnidade />
 </div>

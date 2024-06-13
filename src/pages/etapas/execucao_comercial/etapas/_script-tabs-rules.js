@@ -18,6 +18,7 @@ $('a[data-bs-toggle="tab"]').on('click', function (e) {
             $('.selectpicker').selectpicker()
             activeTooltips()
             formsSubmitSpinnerToasts()
+            imaskInputs()
         });
     }
     else {

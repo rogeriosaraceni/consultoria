@@ -26,7 +26,7 @@
                             <div id="text-phone">(41) 3385-4554</div>
                         </td>
                         <td>
-                            <input type="text" name="rede_phone" class="form-control text-center jQueryMask-sp_celphones" placeholder="(00) 0000-0000" data-imask="phoneBR">
+                            <input type="text" name="rede_phone" class="form-control text-center" placeholder="(00) 0000-0000" data-imask="phoneBR">
                         </td>
                     </tr>
 
@@ -109,14 +109,6 @@
 </div>
 
 <script is:inline type="module">
-    let imaskPhoneInputs = document.querySelectorAll('input[data-imask="phoneBR"]')
-
-    imaskPhoneInputs.forEach(item => {
-        IMask(item, {
-            mask: "(00) 00000-0000"
-        })
-    })
-
     const formRedes = document.querySelector('#form-redes')
 
     formRedes.addEventListener('submit', (event) => {
