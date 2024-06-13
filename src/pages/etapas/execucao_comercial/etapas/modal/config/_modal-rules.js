@@ -1,19 +1,25 @@
-const form = document.getElementById('formEtapas');
-const selectAllCheckbox = document.getElementById('etapas_All');
-let checkboxes = document.querySelectorAll('[data-checkbox="etapas"]');
+const formEtapasConfig  = document.getElementById('formEtapas')
+const checkboxEtapasAll = document.getElementById('etapas_All')
+let   checkboxesEtapas  = document.querySelectorAll('[data-checkbox="etapas"]')
 
 
-function verify() {
-    return [].filter.call(checkboxes, (checkbox) => checkbox.checked).length;
+function updateCheckboxEtapasAll() {
+    const allChecked = [].every.call(checkboxesEtapas, (checkbox) => checkbox.checked)
+    checkboxEtapasAll.checked = allChecked
+    localStorage.setItem('etapas_All', allChecked)
 }
 
-function updateSelectAllCheckbox() {
-    const allChecked = [].every.call(checkboxes, (checkbox) => checkbox.checked);
-    selectAllCheckbox.checked = allChecked;
-    localStorage.setItem('etapas_All', allChecked);
+function handleChangeCheckboxesEtapasAll() {
+    checkboxesEtapas.forEach(checkbox => {
+        checkbox.checked = checkboxEtapasAll.checked
+        localStorage.setItem(checkbox.id, checkboxEtapasAll.checked)
+    })
 }
 
-function addLocalStorage() {
+checkboxEtapasAll.addEventListener('change', handleChangeCheckboxesEtapasAll)
+
+
+function addEtapasLocalStorage() {
     const checkboxIds = [
         "etapas_All",
         "etapa_swot",
@@ -33,38 +39,34 @@ function addLocalStorage() {
         "etapa_plano",
     ];
 
-    function handleCheckboxChange(e) {
-        localStorage.setItem(e.target.id, e.target.checked);
-        updateSelectAllCheckbox();
+    function handleCheckboxsChange(e) {
+        localStorage.setItem(e.target.id, e.target.checked)
+        updateCheckboxEtapasAll()
     }
 
     checkboxIds.forEach(id => {
-        const checkbox = document.getElementById(id);
+        const checkbox = document.getElementById(id)
         if (checkbox) {
-            checkbox.addEventListener('change', handleCheckboxChange);
-            checkbox.checked = localStorage.getItem(id) === "true";
+            checkbox.addEventListener('change', handleCheckboxsChange)
+            checkbox.checked = localStorage.getItem(id) === "true"
         }
-    });
+    })
 
-    // Update the selectAllCheckbox state on initial load
-    updateSelectAllCheckbox();
+    // Update the checkboxEtapasAll state on initial load
+    updateCheckboxEtapasAll()
 }
 
-function handleSelectAllChange() {
-    checkboxes.forEach(checkbox => {
-        checkbox.checked = selectAllCheckbox.checked;
-        localStorage.setItem(checkbox.id, selectAllCheckbox.checked);
-    });
+
+addEtapasLocalStorage()
+
+//validar o form, para selecionar ao menos 1
+function verifyCheckboxesEtapasConfig() {
+    return [].filter.call(checkboxesEtapas, (checkbox) => checkbox.checked).length
 }
-
-selectAllCheckbox.addEventListener('change', handleSelectAllChange);
-
-addLocalStorage();
-
-form.addEventListener('submit', function(event) {
-    const valid = verify();
+formEtapasConfig.addEventListener('submit', function(event) {
+    const valid = verifyCheckboxesEtapasConfig()
     if (!valid) {
         event.preventDefault();
-        alert('Selecione ao menos uma opção das Etapas!');
+        alert('Selecione ao menos uma opção das Etapas!')
     }
-});
+})
