@@ -1,9 +1,9 @@
-const tableBodyEquipe = $('#tableCloneEquipe tbody')
-let rowIndexEquipe = 1
+const tableBodyParceria = $('#tableCloneParceria tbody')
+let rowIndexParceria = 1
 
 // Adicionar uma nova linha
-function addRowEquipe() {
-    const firstRow = tableBodyEquipe.find('tr:first')
+function addRowParceria() {
+    const firstRow = tableBodyParceria.find('tr:first')
     const newRow = firstRow.clone()
 
     newRow.find('input').each(function() {
@@ -13,48 +13,60 @@ function addRowEquipe() {
         const id = field.attr("id")
 
         if (name) {
-            const newName = name.replace(/_\d+$/, `_${rowIndexEquipe}`)
+            const newName = name.replace(/_\d+$/, `_${rowIndexParceria}`)
             field.attr("name", newName)
         }
         if (id) {
-            const newId = id.replace(/_\d+$/, `_${rowIndexEquipe}`)
+            const newId = id.replace(/_\d+$/, `_${rowIndexParceria}`)
             field.attr("id", newId)
         }
     })
 
-    tableBodyEquipe.append(newRow)
-    rowIndexEquipe++
-    updateButtonsVisibilityEquipe()
+    tableBodyParceria.append(newRow)
+    rowIndexParceria++
+    updateButtonsVisibilityParceria()
 
     // Reativar plugins
     $('[data-bs-toggle="tooltip"]').tooltip()
+    $('.selectpicker').selectpicker()
+    $('.jQueryMask-money').mask('#.##0,00', { reverse: true })
+
+    var SPMaskBehavior = function(val) {
+        return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009'
+    },
+    spOptions = {
+        onKeyPress: function(val, e, field, options) {
+            field.mask(SPMaskBehavior.apply({}, arguments), options)
+        }
+    }
+    $('.jQueryMask-br_celphones').mask(SPMaskBehavior, spOptions)
 }
 
 // Adicionar linha ao pressionar a tecla de seta para baixo
 $(document).keydown(function(e) {
     if (e.key === 'ArrowDown') {
-        addRowEquipe()
-        tableBodyEquipe.find('tr:last input:first').focus()
+        addRowParceria()
+        tableBodyParceria.find('tr:last input:first').focus()
     }
 })
 
 // Adicionar evento aos botões "Adicionar" e "Deletar"
-tableBodyEquipe.on('click', '[data-tb-btn]', function(e) {
+tableBodyParceria.on('click', '[data-tb-btn]', function(e) {
     if ($(this).data('tb-btn') === 'add') {
-        addRowEquipe();
+        addRowParceria();
     }
     else if ($(this).data('tb-btn') === 'del') {
         const row = $(this).closest('tr');
         //destroy plugins
         row.find('[data-bs-toggle="tooltip"]').tooltip('dispose');
         row.remove()
-        updateButtonsVisibilityEquipe()
+        updateButtonsVisibilityParceria()
     }
 })
 
 // Atualizar a visibilidade dos botões "Adicionar" e "Deletar"
-function updateButtonsVisibilityEquipe() {
-    const rows = tableBodyEquipe.find('tr');
+function updateButtonsVisibilityParceria() {
+    const rows = tableBodyParceria.find('tr');
     const btnsDeleteRow = $('[data-tb-btn="del"]')
 
     rows.each(function(index) {
@@ -67,4 +79,4 @@ function updateButtonsVisibilityEquipe() {
         $(this).css('visibility', (index === 0) ? 'hidden' : 'visible')
     })
 }
-updateButtonsVisibilityEquipe()
+updateButtonsVisibilityParceria()

@@ -3,10 +3,10 @@ let rowIndexAnalise = 1
 
 // Adicionar uma nova linha
 function addRowAnalise() {
-    const firstRowAnalise = tableBodyAnalise.find('tr:first')
-    const newRowAnalise = firstRowAnalise.clone()
+    const firstRow = tableBodyAnalise.find('tr:first')
+    const newRow = firstRow.clone()
 
-    newRowAnalise.find('input').each(function() {
+    newRow.find('input').each(function() {
         $(this).val('')
         const field = $(this);
         const name = field.attr("name")
@@ -22,15 +22,14 @@ function addRowAnalise() {
         }
     })
 
-    tableBodyAnalise.append(newRowAnalise)
+    tableBodyAnalise.append(newRow)
     rowIndexAnalise++
     updateButtonsVisibilityAnalise()
 
-    // Reativar tooltips
-    newRowAnalise.find('[data-bs-toggle="tooltip"]').tooltip()
-    // Reativar jQueryMask-money
-    newRowAnalise.find('.jQueryMask-money').mask('#.##0,00', { reverse: true })
-    // jQueryMask-br_celphones
+    // Reativar plugins
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    $('.jQueryMask-money').mask('#.##0,00', { reverse: true })
+
     var SPMaskBehavior = function(val) {
         return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009'
     },
@@ -39,7 +38,7 @@ function addRowAnalise() {
             field.mask(SPMaskBehavior.apply({}, arguments), options)
         }
     }
-    newRowAnalise.find('.jQueryMask-br_celphones').mask(SPMaskBehavior, spOptions)
+    $('.jQueryMask-br_celphones').mask(SPMaskBehavior, spOptions)
 }
 
 // Adicionar linha ao pressionar a tecla de seta para baixo

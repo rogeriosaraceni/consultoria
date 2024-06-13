@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <table class="table table-bordered table-hover table-fixed">
+    <table class="table table-bordered table-hover table-fixed" id="tableCloneParceria">
         <thead>
             <tr>
                 <th style="width: 150px;">Empresa</th>
@@ -7,7 +7,7 @@
                 <th style="width: 150px;">Status da Parceria</th>
                 <th style="width: 150px;">Data da Última Ativação</th>
                 <th style="width: 150px;">Tipo da Parceria</th>
-                <th style="width: 150px;">Público Pontencial</th>
+                <th style="width: 250px;">Público Pontencial</th>
                 <th style="width: 150px;">Beneficiários</th>
                 <th style="width: 150px;">Benefícios</th>
                 <th style="width: 150px;">Data do Ínicio da Parceria</th>
@@ -16,25 +16,99 @@
                 <th style="width: 150px;">Endereço</th>
                 <th style="width: 150px;">Matrículas Fechadas</th>
                 <th style="width: 300px;">Observação</th>
+
+                <th style="width: 70px;">Ações</th>
             </tr>
         </thead>
 
         <tbody>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>
+                    <input type="text" name="empresa_1" id="empresa_1" class="form-control">
+                </td>
+                <td>
+                    <input type="text" name="segmento_1" id="segmento_1" class="form-control">
+                </td>
+
+                <td>
+                    <select name="status_1" id="status_1" class="form-select">
+                        <option value=""></option>
+                        <option value="1">Ativa</option>
+                        <option value="2">Cancelada</option>
+                        <option value="3">Inativa</option>
+                        <option value="4">Nãi Iniciada</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="ultima_ativacao_1" id="ultima_ativacao_1" class="form-control">
+                </td>
+
+                <td>
+                    <select name="tipo_parceria_1" id="tipo_parceria_1" class="form-select">
+                        <option value=""></option>
+                        <option value="1">Desconto</option>
+                        <option value="2">Divulgação de Material Gráfico</option>
+                        <option value="3">Divulgação com Presença Física</option>
+                        <option value="4">Troca de Serviço</option>
+                    </select>
+                </td>
+
+                <td class="position-relative">
+                    <select
+                        name="publico_potencial_1"
+                        id="publico_potencial_1"
+                        class="selectpicker"
+                        data-width="100px"
+                        data-actions-box="true"
+                        data-container=".table-responsive"
+                        multiple
+                    >
+                        <option value="1">Kids</option>
+                        <option value="2">Teens</option>
+                        <option value="3">Adults</option>
+                        <option value="4">On</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="beneficiario_1" id="beneficiario_1" class="form-control">
+                </td>
+                <td>
+                    <input type="text" name="beneficio_1" id="beneficio_1" class="form-control">
+                </td>
+                <td>
+                    <input type="text" name="inicio_parceria_1" id="inicio_parceria_1" class="form-control">
+                </td>
+                <td>
+                    <input type="text" name="responsavel_parceria_1" id="responsavel_parceria_1" class="form-control">
+                </td>
+                <td>
+                    <input type="text" name="telefone_1" id="telefone_1" class="form-control text-center jQueryMask-br_celphones" placeholder="(00) 0000-0000">
+                </td>
+                <td>
+                    <input type="text" name="endereco_1" id="endereco_1" class="form-control">
+                </td>
+                <td>
+                    <input type="text" name="matriculas_fechadas_1" id="matriculas_fechadas_1" class="form-control">
+                </td>
+                <td>
+                    <input type="text" name="observacao_1" id="observacao_1" class="form-control">
+                </td>
+
+                <td>
+                    <div class="d-flex justify-content-center">
+                        <div class="d-flex align-items-center justify-content-between gap-2" style="width: 40px">
+                            <button type="button" data-tb-btn="del" class="btn border-0 p-0 fs-5" data-bs-toggle="tooltip" data-bs-title="Del">
+                                <i class="bi bi-trash text-danger pe-none"></i>
+                            </button>
+
+                            <button type="button" data-tb-btn="add" class="btn border-0 p-0 fs-5" data-bs-toggle="tooltip" data-bs-title="Add">
+                                <i class="bi bi-plus-circle text-success pe-none"></i>
+                            </button>
+                        </div>
+                    </div>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -43,3 +117,6 @@
 <label>Observações:
     <textarea name="obs_analise" class="form-control" rows="3"></textarea>
 </label>
+
+<script is:inline src="/assets/vendor/jquery.mask.min.js"></script>
+<script src="./_scripts-clone.js"></script>
