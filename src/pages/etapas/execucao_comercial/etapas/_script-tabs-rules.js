@@ -8,8 +8,10 @@ $('a[data-bs-toggle="tab"]').on('click', function (e) {
     const target = $(this).data("bs-target")
 
     // Verifica se a aba já foi carregada
-    if (!$(target).hasClass('show')) {
-        $(target).load(url, function() {
+    if (!$(target).hasClass('loaded')) {
+        $(target).load(url, function () {
+            // Marca a aba como carregada
+            $(target).addClass('loaded')
             $(this).tab('show')
 
             //--Inicializa functions quando a tab carrega no mode click
@@ -43,5 +45,6 @@ $('a[data-bs-toggle="tab"]').on('show.bs.tab', function () {
 // const initialUrl    = initialTab.attr("href");
 
 // $(initialTagert).load(initialUrl, function() {
+//     $(initialTagert).addClass('loaded')
 //     initialTab.tab('show')
 // })
