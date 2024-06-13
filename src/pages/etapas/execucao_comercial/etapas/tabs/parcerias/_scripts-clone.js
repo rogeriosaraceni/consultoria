@@ -28,7 +28,7 @@ function addRowParceria() {
 
     // Reativar plugins
     $('[data-bs-toggle="tooltip"]').tooltip()
-    $('.selectpicker').selectpicker()
+    //$('.selectpicker').selectpicker()
     $('.jQueryMask-money').mask('#.##0,00', { reverse: true })
 
     var SPMaskBehavior = function(val) {
