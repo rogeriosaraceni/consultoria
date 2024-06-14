@@ -158,16 +158,6 @@ inputsApp.forEach((item) => {
     });
 });
 
-
-
-// const modal = new bootstrap.Modal('#configModal', {
-//     keyboard: false,
-//     backdrop: 'static'
-// })
-// modal.show();
-
-
-
 /** --------------------------------------------------------------------
  * Active Functions
 --------------------------------------------------------------------- */
