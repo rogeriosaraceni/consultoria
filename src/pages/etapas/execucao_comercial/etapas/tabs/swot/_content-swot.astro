@@ -1,80 +1,55 @@
-<div class="card">
-    <div class="card-body">
-        <div class="title-section">Análise SWOT</div>
+<div class="table-responsive mb-3">
+    <table class="table table-swot mb-1">
+        <tbody>
+            <tr>
+                <td></td>
+                <td>
+                    <div class="name">Fatores Positivos</div>
+                </td>
+                <td>
+                    <div class="name">Fatores Negativos</div>
+                </td>
+            </tr>
 
-        <form action="" data-form="spinner-toast">
-            <div class="table-responsive mb-3">
-                <table class="table table-swot mx-auto mb-1">
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td>
-                                <div class="name">Fatores Positivos</div>
-                            </td>
-                            <td>
-                                <div class="name">Fatores Negativos</div>
-                            </td>
-                        </tr>
+            <tr>
+                <td></td>
+                <td><strong>Strengths:</strong></td>
+                <td><strong>Weaknesses:</strong></td>
+            </tr>
 
-                        <tr>
-                            <td></td>
-                            <td><strong>Strengths:</strong></td>
-                            <td><strong>Weaknesses:</strong></td>
-                        </tr>
+            <tr>
+                <td>
+                    <div class="rotation">
+                        <div class="text-rotation name">Fatores Externos</div>
+                    </div>
+                </td>
+                <td>
+                    <textarea name="fatoresExternosPositivos" class="form-control" required></textarea>
+                </td>
+                <td>
+                    <textarea name="fatoresExternosNegativos" class="form-control" required></textarea>
+                </td>
+            </tr>
 
-                        <tr>
-                            <td>
-                                <div class="rotation">
-                                    <div class="text-rotation name">Fatores Externos</div>
-                                </div>
-                            </td>
-                            <td>
-                                <textarea name="fatoresExternosPositivos" class="form-control" required></textarea>
-                            </td>
-                            <td>
-                                <textarea name="fatoresExternosNegativos" class="form-control" required></textarea>
-                            </td>
-                        </tr>
+            <tr>
+                <td></td>
+                <td><strong>Oportunities:</strong></td>
+                <td><strong>Threats:</strong></td>
+            </tr>
 
-                        <tr>
-                            <td></td>
-                            <td><strong>Oportunities:</strong></td>
-                            <td><strong>Threats:</strong></td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <div class="rotation">
-                                    <div class="text-rotation name">Fatores Internos</div>
-                                </div>
-                            </td>
-                            <td>
-                                <textarea name="fatoresInternosPositivos" class="form-control" required></textarea>
-                            </td>
-                            <td>
-                                <textarea name="fatoresInternosNegativos" class="form-control" required></textarea>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <section class="d-flex flex-column align-items-center">
-                <div class="w-100" style="max-width: 870px; padding-left: 4rem;">
-                    <label>Observações:
-                        <textarea name="obs_swot" class="form-control" rows="4"></textarea>
-                    </label>
-                </div>
-            </section>
-
-            <hr>
-
-            <div class="d-flex justify-content-end">
-                <button type="submit" class="btn btn-primary" data-toast-target="cad">
-                    <span>Salvar</span>
-                    <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
-                </button>
-            </div>
-        </form>
-    </div>
+            <tr>
+                <td>
+                    <div class="rotation">
+                        <div class="text-rotation name">Fatores Internos</div>
+                    </div>
+                </td>
+                <td>
+                    <textarea name="fatoresInternosPositivos" class="form-control" required></textarea>
+                </td>
+                <td>
+                    <textarea name="fatoresInternosNegativos" class="form-control" required></textarea>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

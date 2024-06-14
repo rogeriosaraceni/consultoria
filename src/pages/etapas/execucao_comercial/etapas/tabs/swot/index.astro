@@ -1,7 +1,8 @@
 ---
 import ContentSelecao from "./_content-selecao.astro";
 import FunctionFormShowHandler from "../_function-formShowHandler.astro";
-import ContentSwoat from "./_content-swot.astro";
+import ContentSwot from "./_content-swot.astro";
+import ContentSwotImage from "./_content-swot-image.astro";
 import ContentListagemGeUnidade from "./_content-listagem-ge-unidade.astro";
 
 import "./_style.css"
@@ -11,6 +12,36 @@ import "./_style.css"
 <FunctionFormShowHandler />
 
 <div data-content="swot" style="display: none;">
-    <ContentSwoat />
+    <div class="card">
+        <div class="card-body">
+            <div class="title-section">Análise SWOT</div>
+
+            <form action="" data-form="spinner-toast">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <ContentSwot />
+                    </div>
+
+                    <div class="col-lg-5">
+                        <ContentSwotImage />
+                    </div>
+                </div>
+
+                <label>Observações:
+                    <textarea name="obs_swot" class="form-control" rows="4"></textarea>
+                </label>
+
+                <hr>
+
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary" data-toast-target="cad">
+                        <span>Salvar</span>
+                        <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <ContentListagemGeUnidade />
 </div>
