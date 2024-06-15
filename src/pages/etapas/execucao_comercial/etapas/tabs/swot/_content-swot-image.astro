@@ -1,18 +1,50 @@
 ---
-
+const arrSwots = [
+    {
+        type: 'type-s',
+        sigla: 'S',
+        name: 'Strengths',
+        icon: 'fa-solid fa-dumbbell icon',
+        text: 'Aspectos positivos internos que a organização ou projeto possui e que podem ser controlados. São as características que dão uma vantagem competitiva.',
+    },
+    {
+        type: 'type-w',
+        sigla: 'W',
+        name: 'Weaknesses',
+        icon: 'fa-solid fa-thumbs-down icon',
+        text: 'Aspectos negativos internos que a organização ou projeto possui e que também podem ser controlados. São as áreas onde a organização precisa melhorar.',
+    },
+    {
+        type: 'type-o',
+        sigla: 'O',
+        name: 'Opportunities',
+        icon: 'fa-solid fa-lightbulb icon',
+        text: 'Aspectos positivos externos que a organização ou projeto pode aproveitar. São fatores do ambiente que, se bem aproveitados, podem trazer vantagens.',
+    },
+    {
+        type: 'type-t',
+        sigla: 'T',
+        name: 'Threats',
+        icon: 'fa-solid fa-bomb icon',
+        text: 'Aspectos negativos externos que podem impactar negativamente a organização ou projeto. São fatores do ambiente que estão fora do controle da organização.',
+    },
+]
 ---
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
-
 <ul class="infografico-swot">
-    <li>
-        <strong class="sigla">S</strong>
-        <div class="name-icon">
-            <strong class="name">Strengths</strong>
-            <i class="fa-solid fa-dumbbell icon"></i>
-        </div>
-        <span class="text">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        </span>
-    </li>
+
+    {
+        arrSwots.map( item => (
+            <li class={item.type}>
+                <div class="content">
+                    <strong class="sigla">{item.sigla}</strong>
+                    <div class="name-icon">
+                        <strong class="name">{item.name}</strong>
+                        <i class={item.icon}></i>
+                    </div>
+                </div>
+                <span class="text">{item.text}</span>
+            </li>
+        ))
+    }
 </ul>

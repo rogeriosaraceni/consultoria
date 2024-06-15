@@ -41,5 +41,106 @@
 	-ms-transform: rotate(-90deg);
 }
 
+/* --------------------------------------------------------------------
+* - infografico-swot
+* -------------------------------------------------------------------- */
+.infografico-swot {
+    --bd-radius: 1.4rem;
+    --type-s: #55bec9;
+    --type-w: #f2b143;
+    --type-o: #e65b2e;
+    --type-t: #7f5649;
+}
 
+.infografico-swot{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 
+.infografico-swot li{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: var(--bd-radius);
+    background-color: #e6e6e6;
+}
+.infografico-swot .content{
+    flex: 0 1 250px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.infografico-swot .sigla{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 40px;
+    height: 40px;
+    font-size: var(--bd-radius);
+    border-radius: 50%;
+}
+
+.infografico-swot .name-icon{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: var(--bd-radius);
+    color: #fff;
+
+}
+.infografico-swot .name-icon .name{ font-size: 1rem;}
+.infografico-swot .name-icon .icon{ font-size: 1.4rem;}
+.infografico-swot .text{
+    flex: 1;
+    line-height: 1.1;
+    font-size: 0.8rem;
+}
+
+.infografico-swot li.type-s .sigla    { color: var(--type-s); border: 3px solid var(--type-s);}
+.infografico-swot li.type-s .name-icon{ background-color: var(--type-s);}
+
+.infografico-swot li.type-w .sigla    { color: var(--type-w); border: 3px solid var(--type-w);}
+.infografico-swot li.type-w .name-icon{ background-color: var(--type-w);}
+
+.infografico-swot li.type-o .sigla    { color: var(--type-o); border: 3px solid var(--type-o);}
+.infografico-swot li.type-o .name-icon{ background-color: var(--type-o);}
+
+.infografico-swot li.type-t .sigla    { color: var(--type-t); border: 3px solid var(--type-t);}
+.infografico-swot li.type-t .name-icon{ background-color: var(--type-t);}
+
+@media(max-width: 1400px){
+    .infografico-swot li{
+        flex-direction: column;
+        align-items: normal;
+    }
+    .infografico-swot .content{
+        flex: 0 1 auto;
+    }
+}
+@media(max-width: 1199px){
+    .infografico-swot li{
+        flex-direction: row;
+        align-items: center;
+    }
+    .infografico-swot .content{
+        flex: 0 1 250px;
+    }
+}
+@media(max-width: 680px){
+    .infografico-swot li{
+        flex-direction: column;
+        align-items: normal;
+    }
+    .infografico-swot .content{
+        flex: 0 1 auto;
+    }
+}
