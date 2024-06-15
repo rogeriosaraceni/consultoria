@@ -52,7 +52,13 @@ const footerSocialMedia = [
                     {
                         footerSocialMedia.map((item) => (
                             <li>
-                                <a data-bs-toggle="tooltip" data-bs-title={item.title} target="_blank" href={item.href}>
+                                <a
+                                    data-bs-toggle="tooltip"
+                                    data-bs-title={item.title}
+                                    aria-label={item.title}
+                                    target="_blank"
+                                    href={item.href}
+                                >
                                     <i class={item.icon}></i>
                                 </a>
                             </li>
@@ -73,7 +79,7 @@ const footerSocialMedia = [
                 </p>
 
                 <div class="mx-auto">
-                    <a class="btn btn-primary btn-icon" href="#">
+                    <a class="btn btn-primary btn-icon" href="/contato/">
                         <i class="bi bi-envelope"></i>
                         <span>Contato</span>
                     </a>
