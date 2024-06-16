@@ -1,0 +1,43 @@
+<div class="table-responsive">
+    <table class="table table-bordered table-hover table-fixed" id="tab-datatable-cadastrados-controle" style="width: 100%;">
+        <thead>
+            <tr>
+                <th style="width: 130px;">Tipo de Ação</th>
+                <th style="width: 200px;">Período de Ação</th>
+                <th style="width: 200px;">Dinâmica</th>
+                <th style="width: 150px;">Premiação</th>
+                <th style="width: 150px;">Data de Entrega</th>
+                <th style="width: 150px;">N° do Caso CRM</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script is:inline type="module">
+    $("#tab-datatable-cadastrados-controle").DataTable({
+        scrollX: true,
+        scrollCollapse: true,
+
+        columnDefs: [
+            {
+                targets: "no-sort",
+                orderable: false,
+            },
+        ],
+
+        language: {
+            url: "https://cdn.datatables.net/plug-ins/1.13.4/i18n/pt-BR.json",
+        },
+    });
+</script>

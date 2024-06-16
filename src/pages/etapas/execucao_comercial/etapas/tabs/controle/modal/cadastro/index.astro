@@ -1,0 +1,21 @@
+---
+import ContentForm from "./_content-form.astro";
+---
+
+<style is:inline>
+    .modal.modal-cadastroControleAcoes{ --bs-modal-width: 1200px !important;}
+</style>
+
+<div class="modal modal-cadastroControleAcoes fade" id="modalCadControleAcoes" tabindex="-1" aria-labelledby="modalCadControleAcoesLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-content-app">
+
+            <div class="title-section title-section-buttons">
+                <span>Cadastro Controle de Ações</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <ContentForm />
+        </div>
+    </div>
+</div>
