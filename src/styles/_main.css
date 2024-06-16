@@ -147,7 +147,11 @@ title-section
     transition: height 0.3s, bottom, top ease 0s;
     z-index: 0;
 }
-
+.title-section.title-section-buttons{
+    gap: 0.5rem;
+    align-items: end;
+    justify-content: space-between;
+}
 
 /* --------------------------------------------------------------------
 * - complementary classes

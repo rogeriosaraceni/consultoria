@@ -19,6 +19,7 @@ $('a[data-bs-toggle="tab"]').on('click', function (e) {
             activeTooltips()
             formsSubmitSpinnerToasts()
             imaskInputs()
+            configjQueryMask()
         });
     }
     else {

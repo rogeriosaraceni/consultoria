@@ -1,8 +1,9 @@
 ---
 import ContentSelecao from "./_content-selecao.astro";
 import FunctionFormShowHandler from "../_function-formShowHandler.astro";
-import ContentCadListagem from "./_content-cad-listagem.astro";
+import ContentListagem from "./_content-listagem.astro";
 import ContentListagemGeUnidade from "./_content-listagem-ge-unidade.astro";
+import ModalCadastro from "./modal/cadastro/index.astro";
 ---
 
 <ContentSelecao />
@@ -11,10 +12,23 @@ import ContentListagemGeUnidade from "./_content-listagem-ge-unidade.astro";
 <div data-content="parcerias" style="display: none;">
     <div class="card">
         <div class="card-body">
-            <div class="title-section">Parcerias</div>
+
+            <div class="title-section align-items-end justify-content-between gap-2">
+                <span>Parcerias</span>
+                <div class="d-flex gap-2">
+                    <button type="button" class="btn btn-success btn-icon mb-1" data-bs-toggle="modal" data-bs-target="#modalCadParceria">
+                        <i class="bi bi-plus-circle"></i>
+                        <span>Nova Parceria</span>
+                    </button>
+                </div>
+            </div>
+
+            <ContentListagem />
 
             <form action="" data-form="spinner-toast">
-                <ContentCadListagem />
+                <label>Observações:
+                    <textarea name="obs_analise" class="form-control" rows="3"></textarea>
+                </label>
 
                 <hr>
 
@@ -29,4 +43,5 @@ import ContentListagemGeUnidade from "./_content-listagem-ge-unidade.astro";
     </div>
 
     <ContentListagemGeUnidade />
+    <ModalCadastro />
 </div>

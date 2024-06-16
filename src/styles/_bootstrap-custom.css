@@ -111,28 +111,10 @@ btn
 /* --------------------------------------------------------------------
 * - modal
 ---------------------------------------------------------------------- */
-.modal .close{ outline: none;}
+.modal .btn-close{ outline: none;}
 
 .modal-content-app{
 	padding: 1rem;
-	background-color: #F0F2F5;
-}
-.modal-content-app .modal-header{
-	padding: 0;
-	margin-bottom: 1rem;
-}
-.modal-content-app .modal-header .modal-title{
-	position: relative;
-}
-.modal-content-app .modal-header .modal-title:after {
-	position: absolute;
-	content: "";
-	left: 0;
-	bottom: -2px;
-	width: 30px;
-	height: 0;
-	transition: height 0.3s, bottom, top ease 0s;
-	z-index: 0;
 }
 
 .modal-content-app .modal-body{

@@ -6,11 +6,13 @@
  * - mainAppMarginTop
  * - showCurrentYear
  * - navigationActive
- * - initializeSpinnerButtons
- * - showToasts
  * - fancybox
  * - floatThead
  * - DOMPurif protect xss
+ * - formsSubmitSpinnerToasts
+ * - closeModalIfInside
+ * -
+ * -
  *
  * - Active Functions
  *
@@ -23,6 +25,7 @@ function activeTooltips() {
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 }
+activeTooltips()
 
 /** --------------------------------------------------------------------
  * mainAppMarginTop
@@ -38,6 +41,7 @@ const mainAppMarginTop = () => {
         }
     }
 }
+mainAppMarginTop()
 
 /** --------------------------------------------------------------------
  * showCurrentYear
@@ -51,6 +55,7 @@ const showCurrentYear = () => {
         })
     }
 }
+showCurrentYear()
 
 /** --------------------------------------------------------------------
  * navigationActive
@@ -66,6 +71,42 @@ const navigationActive = () => {
         dropdownParent?.classList.add("active")
     });
 }
+navigationActive()
+
+/** --------------------------------------------------------------------
+ * fancybox
+ * https://fancyapps.com/fancybox/plugins/html/#iframes
+--------------------------------------------------------------------- */
+const fancyboxElement = document.querySelector("[data-fancybox]")
+if (fancyboxElement) {
+    Fancybox.bind("[data-fancybox]", {});
+}
+
+/** --------------------------------------------------------------------
+ * floatThead
+--------------------------------------------------------------------- */
+//const $table = $(".fixThead");
+
+const floatTheadElement = document.querySelector(".fixThead");
+if (floatTheadElement) {
+    $table.floatThead({
+        scrollContainer: function ($table) {
+            return $table.closest(".table-responsive")
+        },
+    })
+}
+
+/** --------------------------------------------------------------------
+ * DOMPurif protect xss
+--------------------------------------------------------------------- */
+const sanitize = (string) => DOMPurify.sanitize(string);
+let inputsApp = document.querySelectorAll(".form-control");
+inputsApp.forEach((item) => {
+    item.addEventListener("change", (e) => {
+        const result = sanitize(e.target.value);
+        console.log(result);
+    });
+});
 
 /** --------------------------------------------------------------------
  * formsSubmitSpinnerToasts
@@ -92,6 +133,7 @@ function handleSpinnerButtonToast(event) {
         btn.querySelector('.btn-spinner').classList.add('d-none')
 
         handleToastsDisplay(btn)
+        clearform(btn)
         closeModalIfInside(btn)
     }, 3000);
 }
@@ -104,7 +146,12 @@ function handleToastsDisplay(btn) {
         toast.show()
     }
 }
-// Fecha o modal se o botão estiver dentro de um modal
+formsSubmitSpinnerToasts()
+
+/** --------------------------------------------------------------------
+ * closeModalIfInside
+ * Fecha o modal se o botão estiver dentro de um modal
+--------------------------------------------------------------------- */
 function closeModalIfInside(btn) {
     if (btn.getAttribute('data-modal') !== 'close') {
         return;
@@ -121,48 +168,12 @@ function closeModalIfInside(btn) {
 }
 
 /** --------------------------------------------------------------------
- * fancybox
- * https://fancyapps.com/fancybox/plugins/html/#iframes
+ * clearForm
+ * limpa form
 --------------------------------------------------------------------- */
-const fancyboxElement = document.querySelector("[data-fancybox]")
-
-if (fancyboxElement) {
-    Fancybox.bind("[data-fancybox]", {});
+function clearform(btn) {
+    if (btn.getAttribute('data-form') === 'clear') {
+        const form = btn.closest('form')
+        form.reset()
+    }
 }
-
-/** --------------------------------------------------------------------
- * floatThead
---------------------------------------------------------------------- */
-//const $table = $(".fixThead");
-
-const floatTheadElement = document.querySelector(".fixThead");
-
-if (floatTheadElement) {
-    $table.floatThead({
-        scrollContainer: function ($table) {
-            return $table.closest(".table-responsive")
-        },
-    })
-}
-
-/** --------------------------------------------------------------------
- * DOMPurif protect xss
---------------------------------------------------------------------- */
-const sanitize = (string) => DOMPurify.sanitize(string);
-
-let inputsApp = document.querySelectorAll(".form-control");
-inputsApp.forEach((item) => {
-    item.addEventListener("change", (e) => {
-        const result = sanitize(e.target.value);
-        console.log(result);
-    });
-});
-
-/** --------------------------------------------------------------------
- * Active Functions
---------------------------------------------------------------------- */
-activeTooltips()
-mainAppMarginTop()
-showCurrentYear()
-navigationActive()
-formsSubmitSpinnerToasts()

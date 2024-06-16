@@ -1,0 +1,112 @@
+<form action="" data-form="spinner-toast">
+    <section class="row">
+        <label class="col-lg-3 col-md-4 col-sm-6">
+            <span>Empresa:</span>
+            <input type="text" name="empresa" id="empresa" class="form-control">
+        </label>
+
+        <label class="col-lg-3 col-md-4 col-sm-6">
+            <span>Segmento:</span>
+            <input type="text" name="segmento" id="segmento" class="form-control">
+        </label>
+
+        <label class="col-lg-3 col-md-4 col-sm-6">
+            <span>Status da Parceria:</span>
+            <select name="status" id="status" class="form-select">
+                <option value=""></option>
+                <option value="1">Ativa</option>
+                <option value="2">Cancelada</option>
+                <option value="3">Inativa</option>
+                <option value="4">Nãi Iniciada</option>
+            </select>
+        </label>
+
+        <label class="col-lg-3 col-md-4 col-sm-6">
+            <span>Data da Última Ativação:</span>
+            <input type="date" name="ultima_ativacao" id="ultima_ativacao" class="form-control">
+        </label>
+
+        <label class="col-lg-3 col-md-4 col-sm-6">
+            <span>Tipo da Parceria:</span>
+            <select name="tipo_parceria" id="tipo_parceria" class="form-select">
+                <option value=""></option>
+                <option value="1">Desconto</option>
+                <option value="2">Divulgação de Material Gráfico</option>
+                <option value="3">Divulgação com Presença Física</option>
+                <option value="4">Troca de Serviço</option>
+            </select>
+        </label>
+
+        <label class="col-lg-3 col-md-4 col-sm-6">
+            <span>Público Pontencial:</span>
+            <select
+                name="publico_potencial"
+                id="publico_potencial"
+                class="selectpicker"
+                data-actions-box="true"
+                multiple
+            >
+                <option value="1">Kids</option>
+                <option value="2">Teens</option>
+                <option value="3">Adults</option>
+                <option value="4">On</option>
+            </select>
+        </label>
+
+        <label class="col-lg-6 col-md-6 col-sm-12">
+            <span>Beneficiários:</span>
+            <input type="text" name="beneficiario" id="beneficiario" class="form-control">
+        </label>
+
+        <label class="col-lg-6 col-md-6 col-sm-12">
+            <span>Benefícios:</span>
+            <input type="text" name="beneficios" id="beneficios" class="form-control">
+        </label>
+
+        <label class="col-lg-3 col-md-4 col-sm-6">
+            <span>Data do Ínicio da Parceria:</span>
+            <input type="date" name="inicio_parceria" id="inicio_parceria" class="form-control">
+        </label>
+
+        <label class="col-lg-3 col-md-4 col-sm-6">
+            <span>Responsável pela Parceria:</span>
+            <input type="text" name="responsavel_parceria" id="responsavel_parceria" class="form-control">
+        </label>
+
+        <label class="col-lg-3 col-md-4 col-sm-6">
+            <span>Telefone:</span>
+            <input type="text" name="telefone" id="telefone" class="form-control text-center jQueryMask-br_celphones" placeholder="(00) 0000-0000">
+        </label>
+
+        <label class="col-lg-6 col-md-8 col-sm-6">
+            <span>Endereço:</span>
+            <input type="text" name="endereco" id="endereco" class="form-control">
+        </label>
+
+        <label class="col-lg-3 col-md-4 col-sm-6">
+            <span>Matrículas Fechadas:</span>
+            <input type="text" name="matriculas_fechadas" id="matriculas_fechadas" class="form-control">
+        </label>
+
+        <label class="col-lg-12 col-md-12 col-sm-12">
+            <span>Observação:</span>
+            <input type="text" name="observacao" id="observacao" class="form-control">
+        </label>
+    </section>
+
+    <hr>
+
+    <div class="d-flex justify-content-end gap-2">
+        <button
+            type="submit"
+            class="btn btn-primary"
+            data-toast-target="cad"
+            data-modal=""
+            data-redirect-tab=""
+            data-form="clear"
+        >
+            <span>Salvar</span>
+            <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+        </button>
+    </div>
+</form>
