@@ -17,6 +17,7 @@ $('a[data-bs-toggle="tab"]').on('click', function (e) {
             //--Inicializa functions quando a tab carrega no mode click
             $('.selectpicker').selectpicker()
             activeTooltips()
+            deleteRow()
             formsSubmitSpinnerToasts()
             imaskInputs()
             configjQueryMask()

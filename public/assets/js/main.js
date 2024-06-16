@@ -9,6 +9,7 @@
  * - fancybox
  * - floatThead
  * - DOMPurif protect xss
+ * - data-row="delete"
  * - formsSubmitSpinnerToasts
  * - closeModalIfInside
  * -
@@ -109,6 +110,18 @@ inputsApp.forEach((item) => {
 });
 
 /** --------------------------------------------------------------------
+ * data-row="delete"
+--------------------------------------------------------------------- */
+function deleteRow() {
+    $('[data-row="delete"]').on('click', function () {
+        if (!confirm("Você tem certeza que deseja excluir?")) {
+            return false;
+        }
+    });
+}
+deleteRow()
+
+/** --------------------------------------------------------------------
  * formsSubmitSpinnerToasts
 --------------------------------------------------------------------- */
 function formsSubmitSpinnerToasts() {
@@ -186,7 +199,6 @@ function closeModalIfInside(btn) {
 
 /** --------------------------------------------------------------------
  * clearForm
- * limpa form
 --------------------------------------------------------------------- */
 function clearform(btn) {
     const form = btn.closest('form')

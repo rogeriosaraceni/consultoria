@@ -1,22 +1,31 @@
 ---
 import ContentSelecao from "./_content-selecao.astro";
 import FunctionFormShowHandler from "../_function-formShowHandler.astro";
-import ContentCadListagem from "./_content-cad-listagem.astro";
+import ContentListagem from "./_content-listagem.astro";
 import ContentListagemGeUnidade from "./_content-listagem-ge-unidade.astro";
+import ModalCadastro from "./modal/cadastro/index.astro";
 ---
 
 <ContentSelecao />
 <FunctionFormShowHandler />
 
 <div data-content="analise" style="display: none;">
+    <div class="card">
+        <div class="card-body">
 
-    <form action="" data-form="spinner-toast">
-        <div class="card">
-            <div class="card-body">
-                <div class="title-section">Análise Concorrência</div>
+            <div class="title-section align-items-end justify-content-between gap-2">
+                <span>Análise Concorrência</span>
+                <div class="d-flex gap-2">
+                    <button type="button" class="btn btn-success btn-icon mb-1" data-bs-toggle="modal" data-bs-target="#modalCadAnalise">
+                        <i class="bi bi-plus-circle"></i>
+                        <span>Nova Análise</span>
+                    </button>
+                </div>
+            </div>
 
-                <ContentCadListagem />
+            <ContentListagem />
 
+            <form action="">
                 <label>Observações:
                     <textarea name="obs_analise" class="form-control" rows="3"></textarea>
                 </label>
@@ -24,14 +33,20 @@ import ContentListagemGeUnidade from "./_content-listagem-ge-unidade.astro";
                 <hr>
 
                 <div class="d-flex justify-content-end gap-2">
-                    <button type="submit" class="btn btn-primary" data-toast-target="cad">
+                    <a class="btn btn-success btn-icon" href="/assets/docs/export.xlsx" download="Export">
+                        <i class="bi bi-file-earmark-spreadsheet"></i>
+                        <span>Exportar Excel</span>
+                    </a>
+
+                    <button type="submit" class="btn btn-primary" data-btn="spinner-toast" data-toast-target="cad">
                         <span>Salvar</span>
                         <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
                     </button>
                 </div>
-            </div>
+            </form>
         </div>
-    </form>
+    </div>
 
     <ContentListagemGeUnidade />
+    <ModalCadastro />
 </div>
