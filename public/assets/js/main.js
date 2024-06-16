@@ -125,6 +125,8 @@ function handleSpinnerButtonToast(event) {
     event.preventDefault()
 
     const btn = event.submitter
+    const activeTab = document.querySelector('.nav-link.active');
+
     btn.classList.add('btn-spinner-disabled');
     btn.querySelector('.btn-spinner').classList.remove('d-none')
 
@@ -135,6 +137,16 @@ function handleSpinnerButtonToast(event) {
         handleToastsDisplay(btn)
         clearform(btn)
         closeModalIfInside(btn)
+
+        //Caso o form esteja dentro de uma TAB, então após o submit vai reativar a mema
+        if (activeTab) {
+            const targetTab = document.querySelector(`[data-bs-target="${activeTab.getAttribute('data-bs-target')}"]`);
+            if (targetTab) {
+                const tab = new bootstrap.Tab(targetTab);
+                tab.show();
+            }
+        }
+
     }, 3000);
 }
 function handleToastsDisplay(btn) {
@@ -146,6 +158,7 @@ function handleToastsDisplay(btn) {
         toast.show()
     }
 }
+
 formsSubmitSpinnerToasts()
 
 /** --------------------------------------------------------------------
