@@ -112,13 +112,17 @@ inputsApp.forEach((item) => {
  * formsSubmitSpinnerToasts
 --------------------------------------------------------------------- */
 function formsSubmitSpinnerToasts() {
-    const forms = document.querySelectorAll('form[data-form="spinner-toast"]')
+    const forms = document.querySelectorAll('form')
 
     for (const form of forms) {
-        // Remove event listeners duplicados
-        form.removeEventListener('submit', handleSpinnerButtonToast)
-        // Adiciona o event listener
-        form.addEventListener('submit', handleSpinnerButtonToast)
+        const submitButton = form.querySelector('button[type="submit"][data-btn="spinner-toast"]');
+
+        if (submitButton) {
+            // Remove event listeners duplicados
+            form.removeEventListener('submit', handleSpinnerButtonToast);
+            // Adiciona o event listener
+            form.addEventListener('submit', handleSpinnerButtonToast);
+        }
     }
 }
 function handleSpinnerButtonToast(event) {
@@ -185,8 +189,7 @@ function closeModalIfInside(btn) {
  * limpa form
 --------------------------------------------------------------------- */
 function clearform(btn) {
-    if (btn.getAttribute('data-form') === 'clear') {
-        const form = btn.closest('form')
-        form.reset()
-    }
+    const form = btn.closest('form')
+    console.log(form);
+    form.reset()
 }
