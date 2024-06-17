@@ -3,18 +3,22 @@ import ContentForm from "./_content-form.astro";
 ---
 
 <style is:inline>
-    .modal.modal-cadastroAnalise{ --bs-modal-width: 1200px !important;}
+    .modal.modal-cadastroAnalise{
+        --bs-modal-width: 1600px !important;
+    }
+    .modal-content.modal-content-app{
+        --bs-modal-bg: #f0f2f5;
+    }
+
+    .modal-content.modal-content-app .card{
+        margin-left: 0!important;
+        margin-right: 0!important;
+    }
 </style>
 
 <div class="modal modal-cadastroAnalise fade" id="modalCadAnalise" tabindex="-1" aria-labelledby="modalCadAnaliseLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content modal-content-app">
-
-            <div class="title-section title-section-buttons">
-                <span>Cadastro Análise Concorrência</span>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-
             <ContentForm />
         </div>
     </div>

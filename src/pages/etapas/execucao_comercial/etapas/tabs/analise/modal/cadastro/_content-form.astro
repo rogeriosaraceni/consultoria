@@ -1,23 +1,177 @@
 <form action="">
-    <section class="row">
-        <label class="col-lg-3 col-md-4 col-sm-6">
-            <span>Data da Pesquisa:</span>
-            <input type="date" name="data_pequisa" id="data_pequisa" class="form-control">
-        </label>
+    <div class="card">
+        <div class="card-body">
+            <div class="title-section title-section-buttons">
+                <span>Cadastro Análise Concorrência</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
 
-        <label class="col-lg-3 col-md-4 col-sm-6">
-            <span>:</span>
+            <section class="row">
+                <label class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                    <span>Data da Pesquisa:</span>
+                    <input type="date" name="data_pequisa" class="form-control" required>
+                </label>
 
-        </label>
+                <label class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                    <span>Marca do Concorrente:</span>
+                    <input type="text" name="marca_concorrente" class="form-control" required>
+                </label>
 
-    </section>
+                <label class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
+                    <span>Endereço:</span>
+                    <input type="text" name="endereco" class="form-control" required>
+                </label>
 
-    <hr>
+                <label class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                    <span>Telefone:</span>
+                    <input type="text" name="telefone" class="form-control text-center" data-imask="phoneBR" placeholder="(00) 0000-0000">
+                </label>
 
-    <div class="d-flex justify-content-end gap-2">
-        <button type="submit" class="btn btn-primary" data-btn="spinner-toast" data-toast-target="cad">
-            <span>Salvar</span>
-            <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
-        </button>
+                <label class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                    <span>Distância da Unidade:</span>
+                    <input type="text" name="distancia" class="form-control" required>
+                </label>
+
+                <label class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
+                    <span>Observação Importante:</span>
+                    <input type="text" name="obs_importante" class="form-control" required>
+                </label>
+
+                <label class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                    <span>Modalidade:</span>
+                    <input type="text" name="modalidade" class="form-control" required>
+                </label>
+
+                <label class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                    <span>Promoção Vigente:</span>
+                    <input type="text" name="promocao_vigente" class="form-control" required>
+                </label>
+            </section>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="title-section">
+                <span>Valores</span>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-fixed">
+                    <thead>
+                        <tr>
+                            <th style="width: 120px;">Valores</th>
+
+                            <th style="width: 120px;">KIDS</th>
+                            <th style="width: 120px;">TEEN</th>
+                            <th style="width: 120px;">ADULTS</th>
+                            <th style="width: 120px;">OTHERS</th>
+                        <tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td class="text-center fw-bold">Matrícula</td>
+
+                            <td>
+                                <input type="text" name="matricula_kids" class="form-control text-end" data-imask="moneyBR" required>
+                            </td>
+                            <td>
+                                <input type="text" name="matricula_teen" class="form-control text-end" data-imask="moneyBR" required>
+                            </td>
+                            <td>
+                                <input type="text" name="matricula_adults" class="form-control text-end" data-imask="moneyBR" required>
+                            </td>
+                            <td>
+                                <input type="text" name="matricula_others" class="form-control text-end" data-imask="moneyBR" required>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-center fw-bold">Mensalidade</td>
+
+                            <td>
+                                <input type="text" name="mensalidade_kids" class="form-control text-end" data-imask="moneyBR" required>
+                            </td>
+                            <td>
+                                <input type="text" name="mensalidade_teen" class="form-control text-end" data-imask="moneyBR" required>
+                            </td>
+                            <td>
+                                <input type="text" name="mensalidade_adults" class="form-control text-end" data-imask="moneyBR" required>
+                            </td>
+                            <td>
+                                <input type="text" name="mensalidade_others" class="form-control text-end" data-imask="moneyBR" required>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-center fw-bold">Material (VLR Mensal)</td>
+
+                            <td>
+                                <input type="text" name="material_kids" class="form-control text-end" data-imask="moneyBR" required>
+                            </td>
+                            <td>
+                                <input type="text" name="material_teen" class="form-control text-end" data-imask="moneyBR" required>
+                            </td>
+                            <td>
+                                <input type="text" name="material_adults" class="form-control text-end" data-imask="moneyBR" required>
+                            </td>
+                            <td>
+                                <input type="text" name="material_others" class="form-control text-end" data-imask="moneyBR" required>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-center fw-bold">Atendimento</td>
+
+                            <td>
+                                <input type="text" name="atendimento_kids" class="form-control" required>
+                            </td>
+                            <td>
+                                <input type="text" name="atendimento_teen" class="form-control" required>
+                            </td>
+                            <td>
+                                <input type="text" name="atendimento_adults" class="form-control" required>
+                            </td>
+                            <td>
+                                <input type="text" name="atendimento_others" class="form-control" required>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-center fw-bold">Estrutura</td>
+
+                            <td>
+                                <input type="text" name="estrutura_kids" class="form-control" required>
+                            </td>
+                            <td>
+                                <input type="text" name="estrutura_teen" class="form-control" required>
+                            </td>
+                            <td>
+                                <input type="text" name="estrutura_adults" class="form-control" required>
+                            </td>
+                            <td>
+                                <input type="text" name="estrutura_others" class="form-control" required>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-end gap-2">
+                <button type="submit" class="btn btn-primary" data-btn="spinner-toast" data-toast-target="cad">
+                    <span>Salvar</span>
+                    <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
     </div>
 </form>
