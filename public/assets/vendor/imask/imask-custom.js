@@ -11,6 +11,10 @@ function imaskPhoneBR() {
         IMask(item, {
             mask: "(00) 00000-0000"
         })
+
+        // item.addEventListener('change', () => {
+        //     console.log(item.value)
+        // })
     })
 }
 
@@ -33,7 +37,7 @@ function imaskMoneyBR() {
             }
         })
 
-        // item.addEventListener('input', () => {
+        // item.addEventListener('change', () => {
         //     console.log(item.value)
         // })
     })
@@ -56,6 +60,10 @@ function imaskMoneyUSD() {
                 }
             }
         })
+
+        // item.addEventListener('change', () => {
+        //     console.log(item.value)
+        // })
     })
 }
 

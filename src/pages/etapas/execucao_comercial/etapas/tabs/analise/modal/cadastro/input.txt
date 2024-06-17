@@ -50,7 +50,7 @@ Others
 <input type="text" id="endereco_0" name="endereco_0" class="form-control">
 
 
-<input type="text" id="telefone_0" name="telefone_0" class="form-control text-center jQueryMask-br_celphones" placeholder="(00) 0000-0000">
+<input type="text" id="telefone_0" name="telefone_0" class="form-control text-center" data-imask="moneyBR" placeholder="(00) 0000-0000">
 
 
 <input type="text" id="distancia_0" name="distancia_0" class="form-control">
@@ -67,44 +67,44 @@ Others
 
 
 
-<input type="text" id="matricula_kids_0" name="matricula_kids_0" class="form-control text-center jQueryMask-money">
+<input type="text" id="matricula_kids_0" name="matricula_kids_0" class="form-control text-center" data-imask="moneyBR">
 
 
-<input type="text" id="matricula_teens_0" name="matricula_teens_0" class="form-control text-center jQueryMask-money">
+<input type="text" id="matricula_teens_0" name="matricula_teens_0" class="form-control text-center" data-imask="moneyBR">
 
 
-<input type="text" id="matricula_adults_0" name="matricula_adults_0" class="form-control text-center jQueryMask-money">
+<input type="text" id="matricula_adults_0" name="matricula_adults_0" class="form-control text-center" data-imask="moneyBR">
 
 
-<input type="text" id="matricula_others_0" name="matricula_others_0" class="form-control text-center jQueryMask-money">
-
-
-
-
-<input type="text" id="mensalidade_kids_0" name="mensalidade_kids_0" class="form-control text-center jQueryMask-money">
-
-
-<input type="text" id="mensalidade_teens_0" name="mensalidade_teens_0" class="form-control text-center jQueryMask-money">
-
-
-<input type="text" id="mensalidade_adults_0" name="mensalidade_adults_0" class="form-control text-center jQueryMask-money">
-
-
-<input type="text" id="mensalidade_others_0" name="mensalidade_others_0" class="form-control text-center jQueryMask-money">
+<input type="text" id="matricula_others_0" name="matricula_others_0" class="form-control text-center" data-imask="moneyBR">
 
 
 
 
-<input type="text" id="material_kids_0" name="material_kids_0" class="form-control text-center jQueryMask-money">
+<input type="text" id="mensalidade_kids_0" name="mensalidade_kids_0" class="form-control text-center" data-imask="moneyBR">
 
 
-<input type="text" id="material_teens_0" name="material_teens_0" class="form-control text-center jQueryMask-money">
+<input type="text" id="mensalidade_teens_0" name="mensalidade_teens_0" class="form-control text-center" data-imask="moneyBR">
 
 
-<input type="text" id="material_adults_0" name="material_adults_0" class="form-control text-center jQueryMask-money">
+<input type="text" id="mensalidade_adults_0" name="mensalidade_adults_0" class="form-control text-center" data-imask="moneyBR">
 
 
-<input type="text" id="material_others_0" name="material_others_0" class="form-control text-center jQueryMask-money">
+<input type="text" id="mensalidade_others_0" name="mensalidade_others_0" class="form-control text-center" data-imask="moneyBR">
+
+
+
+
+<input type="text" id="material_kids_0" name="material_kids_0" class="form-control text-center" data-imask="moneyBR">
+
+
+<input type="text" id="material_teens_0" name="material_teens_0" class="form-control text-center" data-imask="moneyBR">
+
+
+<input type="text" id="material_adults_0" name="material_adults_0" class="form-control text-center" data-imask="moneyBR">
+
+
+<input type="text" id="material_others_0" name="material_others_0" class="form-control text-center" data-imask="moneyBR">
 
 
 
