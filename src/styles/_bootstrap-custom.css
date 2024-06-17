@@ -116,16 +116,21 @@ btn
 .modal-content-app{
 	padding: 1rem;
 }
-
 .modal-content-app .modal-body{
 	padding-left: 0;
 	padding-right: 0;
 }
-
 .modal-content-app .modal-footer{
 	padding-left: 0;
 	padding-right: 0;
 	padding-bottom: 0;
+}
+.modal-content.modal-content-app{
+    --bs-modal-bg: #f0f2f5;
+}
+.modal-content.modal-content-app .card{
+    margin-left: 0!important;
+    margin-right: 0!important;
 }
 
 .modal-max{

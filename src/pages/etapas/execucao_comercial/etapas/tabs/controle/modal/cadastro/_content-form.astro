@@ -1,42 +1,76 @@
 <form action="">
-    <section class="row">
-        <label class="col-lg-3 col-md-4 col-sm-6">
-            <span>Tipo de Ação:</span>
-            <input type="text" name="tipo_acao" id="tipo_acao" class="form-control">
-        </label>
+    <div class="card">
+        <div class="card-body">
+            <div class="title-section title-section-buttons">
+                <span>Cadastro Controle de Ações</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
 
-        <label class="col-lg-3 col-md-4 col-sm-6">
-            <span>Período de Ação:</span>
+            <section class="row">
+                <label class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                    <span>Tipo de Ação:</span>
+                    <select name="tipo_acao" class="form-control" required>
+                        <option value=""></option>
+                        <option value="1">Voucher</option>
+                        <option value="2">Brinde</option>
+                        <option value="3">Rebate</option>
+                        <option value="4">Outro</option>
+                    </select>
+                </label>
 
-        </label>
+                <label class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                    <span>Período de Ação:</span>
+                    <section id="periodo_acao">
+                        <div class="content-input">
+                            <input type="text" class="form-control" required data-input>
+                        </div>
+                    </section>
+                </label>
 
-        <label class="col-lg-3 col-md-4 col-sm-6">
-            <span>Dinâmica:</span>
+                <label class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                    <span>Dinâmica:</span>
+                    <input type="text" name="dinamica" class="form-control" required>
+                </label>
 
-        </label>
+                <label class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                    <span>Premiação:</span>
+                    <input type="text" name="premiacao" class="form-control text-end" data-imask="moneyBR" required>
+                </label>
 
-        <label class="col-lg-3 col-md-4 col-sm-6">
-            <span>Premiação:</span>
+                <label class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                    <span>Data de Entrega:</span>
+                    <input type="date" name="data_entrega" class="form-control" required>
+                </label>
 
-        </label>
+                <label class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                    <span>N° do Caso CRM:</span>
+                    <input type="text" name="numero_caso_crm" class="form-control text-center" required>
+                </label>
+            </section>
+        </div>
+    </div>
 
-        <label class="col-lg-3 col-md-4 col-sm-6">
-            <span>Data de Entrega:</span>
-
-        </label>
-
-        <label class="col-lg-3 col-md-4 col-sm-6">
-            <span>N° do Caso CRM:</span>
-
-        </label>
-    </section>
-
-    <hr>
-
-    <div class="d-flex justify-content-end gap-2">
-        <button type="submit" class="btn btn-primary" data-btn="spinner-toast" data-toast-target="cad">
-            <span>Salvar</span>
-            <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
-        </button>
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-end gap-2">
+                <button type="submit" class="btn btn-primary" data-btn="spinner-toast" data-toast-target="cad">
+                    <span>Salvar</span>
+                    <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
     </div>
 </form>
+
+<script is:inline>
+    flatpickr("#periodo_acao", {
+        locale: "pt",
+        mode: "range",
+
+        wrap: true,
+        dateFormat: "d-m-Y",
+        onChange: function (selectedDates, dateStr, instance) {
+            console.log(selectedDates);
+        }
+    });
+</script>

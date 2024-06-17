@@ -1,6 +1,6 @@
 .flatpickr-input.form-control[readonly] {
     cursor: pointer;
-    background-color: transparent;
+    background-color: var(--bg-input-form);
 }
 
 .flatpickr-icons{
