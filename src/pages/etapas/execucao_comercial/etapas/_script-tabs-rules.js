@@ -20,7 +20,6 @@ $('a[data-bs-toggle="tab"]').on('click', function (e) {
             deleteRow()
             formsSubmitSpinnerToasts()
             imaskInputs()
-            configjQueryMask()
         });
     }
     else {
