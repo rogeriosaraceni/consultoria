@@ -1,0 +1,143 @@
+<style>
+    [data-select="status"]{
+        --status-concluido: #55e9cc;
+        --status-andamento: #f8c46a;
+        --status-atrasado:  #fa7a87;
+        --status-parado:    #ddd9d9;
+    }
+</style>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover table-fixed" id="tab-datatable-pdca" style="width: 100%;">
+        <thead>
+            <tr>
+                <th style="width: 200px;">Etapa</th>
+                <th style="width: 200px;">Oque</th>
+                <th style="width: 200px;">Como</th>
+                <th style="width: 200px;">Quem</th>
+                <th style="width: 200px;">Prazo</th>
+                <th style="width: 200px;">Data Criação</th>
+                <th style="width: 200px;">Usuário</th>
+
+                <th style="width: 200px;">Status</th>
+
+                <th style="width: 070px;" class="no-sort">Edit</th>
+                <th style="width: 070px;" class="no-sort">Del</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+                <td>
+                    <select name="status" class="form-select text-center" data-select="status">
+                        <option value="" class="text-black bg-white"></option>
+                        <option value="1" style="background-color: var(--status-concluido)">Concluído</option>
+                        <option value="2" style="background-color: var(--status-andamento)">Em andamento</option>
+                        <option value="3" style="background-color: var(--status-atrasado)">Atrasado</option>
+                        <option value="4" style="background-color: var(--status-parado)">Parado</option>
+                    </select>
+                </td>
+
+                <td class="text-center">
+                    <a
+                        class="text-secondary fs-5"
+                        data-bs-toggle="tooltip"
+                        data-bs-title="Edit"
+                        data-fancybox
+                        data-type="iframe"
+                        data-width="1200"
+                        data-height="100%"
+                        class="btn btn-light border mb-1"
+                        href="../etapas/popups/pdca/"
+                    >
+                        <i class="bi bi-pencil-square"></i>
+                    </a>
+                </td>
+
+                <td class="text-center">
+                    <a class="text-secondary fs-5" data-bs-toggle="tooltip" data-bs-title="Del" data-row="delete" href="#">
+                        <i class="bi bi-trash icon-tab"></i>
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+                <td>
+                    <select name="status" class="form-select text-center" data-select="status">
+                        <option value="" class="text-black bg-white"></option>
+                        <option value="1" style="background-color: var(--status-concluido)">Concluído</option>
+                        <option value="2" style="background-color: var(--status-andamento)">Em andamento</option>
+                        <option value="3" style="background-color: var(--status-atrasado)">Atrasado</option>
+                        <option value="4" style="background-color: var(--status-parado)">Parado</option>
+                    </select>
+                </td>
+
+                <td class="text-center">
+                    <a
+                        class="text-secondary fs-5"
+                        data-bs-toggle="tooltip"
+                        data-bs-title="Edit"
+                        data-fancybox
+                        data-type="iframe"
+                        data-width="1200"
+                        data-height="100%"
+                        class="btn btn-light border mb-1"
+                        href="../etapas/popups/pdca/"
+                    >
+                        <i class="bi bi-pencil-square"></i>
+                    </a>
+                </td>
+
+                <td class="text-center">
+                    <a class="text-secondary fs-5" data-bs-toggle="tooltip" data-bs-title="Del" data-row="delete" href="#">
+                        <i class="bi bi-trash icon-tab"></i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script is:inline type="module">
+    $("#tab-datatable-pdca").DataTable({
+        scrollX: true,
+        scrollCollapse: true,
+
+        columnDefs: [
+            {
+                targets: "no-sort",
+                orderable: false,
+            },
+        ],
+
+        language: {
+            url: "https://cdn.datatables.net/plug-ins/1.13.4/i18n/pt-BR.json",
+        },
+    });
+
+    $('[data-select="status"]').change(function() {
+        var current = $(this).val();
+
+        if (current === '')  { $(this).css({"background-color":'#ffffff', "color":'#67757c'})}
+        if (current === '1') { $(this).css({"background-color":'var(--status-concluido)'})}
+        if (current === '2') { $(this).css({"background-color":'var(--status-andamento)'})}
+        if (current === '3') { $(this).css({"background-color":'var(--status-atrasado)'})}
+        if (current === '4') { $(this).css({"background-color":'var(--status-parado)'})}
+    });
+</script>

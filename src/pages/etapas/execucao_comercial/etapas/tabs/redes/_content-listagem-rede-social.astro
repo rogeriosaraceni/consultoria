@@ -11,92 +11,94 @@ import ButtonPDCA from "@components/ButtonPDCA.astro"
         </div>
 
         <form action="" data-form="spinner-toast" id="form-redes">
-            <table class="table table-bordered table-hover table-fixed">
-                <thead>
-                    <tr>
-                        <th style="width: 200px;">Rede Social</th>
-                        <th style="width: 200px;">Dados</th>
-                        <th style="width: 200px;">Atualizar Dados</th>
-                    </tr>
-                </thead>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover table-fixed">
+                    <thead>
+                        <tr>
+                            <th style="width: 200px;">Rede Social</th>
+                            <th style="width: 200px;">Dados</th>
+                            <th style="width: 200px;">Atualizar Dados</th>
+                        </tr>
+                    </thead>
 
-                <tbody>
-                    <tr>
-                        <td>
-                            <div class="d-flex aling-items-center gap-2">
-                                <i class="bi bi-whatsapp"></i>
-                                <span>WhatsApp Bussines</span>
-                            </div>
-                        </td>
-                        <td class="text-center">
-                            <div id="text-phone">(41) 3385-4554</div>
-                        </td>
-                        <td>
-                            <input type="text" name="rede_phone" class="form-control text-center" data-imask="phoneBR" placeholder="(00) 0000-0000">
-                        </td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="d-flex aling-items-center gap-2">
+                                    <i class="bi bi-whatsapp"></i>
+                                    <span>WhatsApp Bussines</span>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <div id="text-phone">(41) 3385-4554</div>
+                            </td>
+                            <td>
+                                <input type="text" name="rede_phone" class="form-control text-center" data-imask="phoneBR" placeholder="(00) 0000-0000">
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td>
-                            <div class="d-flex aling-items-center gap-2">
-                                <i class="bi bi-facebook"></i>
-                                <span>Facebook</span>
-                            </div>
-                        </td>
-                        <td class="text-center">
-                            <a id="" href="https://www.facebook.com/wizard.oficial" target="_blank">https://www.facebook.com/wizard.oficial</a>
-                        </td>
-                        <td>
-                            <input type="url" name="rede_" class="form-control text-center">
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex aling-items-center gap-2">
+                                    <i class="bi bi-facebook"></i>
+                                    <span>Facebook</span>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <a id="" href="https://www.facebook.com/wizard.oficial" target="_blank">https://www.facebook.com/wizard.oficial</a>
+                            </td>
+                            <td>
+                                <input type="url" name="rede_" class="form-control text-center">
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td>
-                            <div class="d-flex aling-items-center gap-2">
-                                <i class="bi bi-instagram"></i>
-                                <span>Instagram</span>
-                            </div>
-                        </td>
-                        <td class="text-center">
-                            <a id="" href="https://www.instagram.com/wizardbrasil.oficial/" target="_blank">https://www.instagram.com/wizardbrasil.oficial/</a>
-                        </td>
-                        <td>
-                            <input type="url" name="rede_" class="form-control text-center">
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex aling-items-center gap-2">
+                                    <i class="bi bi-instagram"></i>
+                                    <span>Instagram</span>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <a id="" href="https://www.instagram.com/wizardbrasil.oficial/" target="_blank">https://www.instagram.com/wizardbrasil.oficial/</a>
+                            </td>
+                            <td>
+                                <input type="url" name="rede_" class="form-control text-center">
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td>
-                            <div class="d-flex aling-items-center gap-2">
-                                <i class="bi bi-globe"></i>
-                                <span>Subsite da Escola</span>
-                            </div>
-                        </td>
-                        <td class="text-center">
-                            <a id="" href="https://www.wizard.com.br/" target="_blank">https://www.wizard.com.br/</a>
-                        </td>
-                        <td>
-                            <input type="url" name="rede_" class="form-control text-center">
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex aling-items-center gap-2">
+                                    <i class="bi bi-globe"></i>
+                                    <span>Subsite da Escola</span>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <a id="" href="https://www.wizard.com.br/" target="_blank">https://www.wizard.com.br/</a>
+                            </td>
+                            <td>
+                                <input type="url" name="rede_" class="form-control text-center">
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td>
-                            <div class="d-flex aling-items-center gap-2">
-                                <i class="bi bi-google"></i>
-                                <span>Google meu Negócio</span>
-                            </div>
-                        </td>
-                        <td class="text-center">
-                            <a id="" href="https://workspace.google.com" target="_blank">https://workspace.google.com</a>
-                        </td>
-                        <td>
-                            <input type="url" name="rede_" class="form-control text-center">
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                        <tr>
+                            <td>
+                                <div class="d-flex aling-items-center gap-2">
+                                    <i class="bi bi-google"></i>
+                                    <span>Google meu Negócio</span>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <a id="" href="https://workspace.google.com" target="_blank">https://workspace.google.com</a>
+                            </td>
+                            <td>
+                                <input type="url" name="rede_" class="form-control text-center">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
             <label>Observações:
                 <textarea name="obs_redes" class="form-control" rows="2"></textarea>
