@@ -78,10 +78,15 @@ navigationActive()
  * fancybox
  * https://fancyapps.com/fancybox/plugins/html/#iframes
 --------------------------------------------------------------------- */
-const fancyboxElement = document.querySelector("[data-fancybox]")
-if (fancyboxElement) {
-    Fancybox.bind("[data-fancybox]", {});
+function activeFancybox() {
+    const fancyboxElement = document.querySelector("[data-fancybox]")
+    if (fancyboxElement) {
+        Fancybox.bind("[data-fancybox]", {});
+    }
+
+    //console.log('ativado fancybox');
 }
+activeFancybox()
 
 /** --------------------------------------------------------------------
  * floatThead
