@@ -1,6 +1,7 @@
 ---
 import Head from '@includes/Head.astro';
 import ContentForm from './_content-form.astro';
+import ContentListagem from './_content-listagem.astro';
 ---
 
 <!DOCTYPE html>
@@ -8,12 +9,7 @@ import ContentForm from './_content-form.astro';
     <Head />
 
     <body class="body-popup">
-        <div class="card">
-            <div class="card-body">
-                <div class="title-section">PDCA</div>
-
-                <ContentForm />
-            </div><!-- card body -->
-        </div><!-- card -->
+        <ContentForm />
+        <ContentListagem />
     </body>
 </html>

@@ -1,0 +1,81 @@
+<div class="card">
+    <div class="card-body">
+        <div class="title-section">
+            <span class="title">Listagem</span>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-fixed" id="tab-datatable-cad-pdca" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th style="width: 200px;">Oque</th>
+                        <th style="width: 200px;">Data Criação</th>
+                        <th style="width: 200px;">Prazo</th>
+
+                        <th style="width: 070px;" class="no-sort">Edit</th>
+                        <th style="width: 070px;" class="no-sort">Del</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                        <td class="text-center">
+                            <a
+                                class="text-secondary fs-5"
+                                data-bs-toggle="tooltip"
+                                data-bs-title="Edit"
+                                href="#"
+                            >
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
+                        </td>
+
+                        <td class="text-center">
+                            <a
+                                class="text-secondary fs-5"
+                                data-bs-toggle="tooltip"
+                                data-bs-title="Del"
+                                data-row="delete" href="#"
+                            >
+                                <i class="bi bi-trash icon-tab"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div><!-- card body -->
+</div><!-- card -->
+
+<script is:inline type="module">
+    $("#tab-datatable-cad-pdca").DataTable({
+        scrollX: true,
+        scrollCollapse: true,
+
+        columnDefs: [
+            {
+                targets: "no-sort",
+                orderable: false,
+            },
+        ],
+
+        language: {
+            url: "https://cdn.datatables.net/plug-ins/1.13.4/i18n/pt-BR.json",
+        },
+    });
+
+    $('[data-select="status"]').change(function() {
+        var current = $(this).val();
+
+        if (current === '')  { $(this).css({"background-color":'#ffffff', "color":'#67757c'})}
+        if (current === '1') { $(this).css({"background-color":'var(--status-concluido)'})}
+        if (current === '2') { $(this).css({"background-color":'var(--status-andamento)'})}
+        if (current === '3') { $(this).css({"background-color":'var(--status-atrasado)'})}
+        if (current === '4') { $(this).css({"background-color":'var(--status-parado)'})}
+    });
+</script>
+
