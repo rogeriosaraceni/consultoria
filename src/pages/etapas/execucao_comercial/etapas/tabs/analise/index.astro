@@ -4,6 +4,7 @@ import FunctionFormShowHandler from "../_function-formShowHandler.astro";
 import ContentListagem from "./_content-listagem.astro";
 import ContentListagemGeUnidade from "./_content-listagem-ge-unidade.astro";
 import ModalCadastro from "./modal/cadastro/index.astro";
+import ButtonPDCA from "@components/ButtonPDCA.astro";
 ---
 
 <ContentSelecao />
@@ -12,15 +13,15 @@ import ModalCadastro from "./modal/cadastro/index.astro";
 <div data-content="analise" style="display: none;">
     <div class="card">
         <div class="card-body">
+            <div class="title-section title-section-buttons">
+                <span class="title">Análise Concorrência</span>
 
-            <div class="title-section align-items-end justify-content-between gap-2">
-                <span>Análise Concorrência</span>
-                <div class="d-flex gap-2">
-                    <button type="button" class="btn btn-success btn-icon mb-1" data-bs-toggle="modal" data-bs-target="#modalCadAnalise">
-                        <i class="bi bi-plus-circle"></i>
-                        <span>Nova Análise</span>
-                    </button>
-                </div>
+                <button type="button" class="btn btn-success btn-icon mb-1" data-bs-toggle="modal" data-bs-target="#modalCadAnalise">
+                    <i class="bi bi-plus-circle"></i>
+                    <span>Nova Análise</span>
+                </button>
+
+                <ButtonPDCA />
             </div>
 
             <ContentListagem />

@@ -1,8 +1,14 @@
-<!-- <script is:inline type="module" src="/assets/vendor/jquery.mask.min.js"></script> -->
+---
+import ButtonPDCA from "@components/ButtonPDCA.astro"
+---
 
 <div class="card">
     <div class="card-body">
-        <div class="title-section">Redes Sociais</div>
+        <div class="title-section title-section-buttons">
+            <span class="title">Redes Sociais</span>
+
+            <ButtonPDCA />
+        </div>
 
         <form action="" data-form="spinner-toast" id="form-redes">
             <table class="table table-bordered table-hover table-fixed">

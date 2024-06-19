@@ -150,7 +150,10 @@ title-section
 .title-section.title-section-buttons{
     gap: 0.5rem;
     align-items: end;
-    justify-content: space-between;
+}
+.title-section.title-section-buttons span,
+.title-section.title-section-buttons span.title{
+    flex: 1;
 }
 
 /* --------------------------------------------------------------------

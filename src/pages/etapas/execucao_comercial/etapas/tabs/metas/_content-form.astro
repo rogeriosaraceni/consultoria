@@ -1,3 +1,7 @@
+---
+import ButtonPDCA from "@components/ButtonPDCA.astro";
+---
+
 <style is:inline>
     .indicator-values{
         display: flex;
@@ -18,7 +22,11 @@
 
 <div class="card">
     <div class="card-body">
-        <div class="title-section">Definição Metas</div>
+        <div class="title-section title-section-buttons">
+            <span class="title">Definição Metas</span>
+
+            <ButtonPDCA />
+        </div>
 
         <form action="">
             <div class="table-responsive">

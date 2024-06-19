@@ -1,14 +1,18 @@
+---
+import ButtonPDCA from "@components/ButtonPDCA.astro";
+---
+
 <div class="card">
     <div class="card-body">
-        <div class="title-section align-items-end justify-content-between gap-2">
-            <span>5 Passos da Venda</span>
+        <div class="title-section title-section-buttons">
+            <span class="title">5 Passos da Venda</span>
 
-            <div class="d-flex gap-2">
-                <a class="btn btn-secondary btn-icon mb-1" href="/assets/docs/5passos.pdf" download="5_passos_da_venda">
-                    <i class="bi bi-file-earmark-arrow-down"></i>
-                    <span>5 Passos da Venda</span>
-                </a>
-            </div>
+            <a class="btn btn-secondary btn-icon mb-1" href="/assets/docs/5passos.pdf" download="5_passos_da_venda">
+                <i class="bi bi-file-earmark-arrow-down"></i>
+                <span>5 Passos da Venda</span>
+            </a>
+
+            <ButtonPDCA />
         </div>
 
         <form action="">

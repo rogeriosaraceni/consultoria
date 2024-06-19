@@ -4,6 +4,7 @@ import FunctionFormShowHandler from "../_function-formShowHandler.astro";
 import ContentListagemGeUnidade from "./_content-listagem-ge-unidade.astro";
 import ContentCalendario from "./_content-calendario.astro";
 import ContentFunil from "./_content-funil.astro";
+import ButtonPDCA from "@components/ButtonPDCA.astro";
 ---
 
 <ContentSelecao />
@@ -12,7 +13,10 @@ import ContentFunil from "./_content-funil.astro";
 <div data-content="funil" style="display: none;">
     <div class="card">
         <div class="card-body">
-            <div class="title-section">Funil de Vendas</div>
+            <div class="title-section title-section-buttons">
+                <span class="title">Funil de Vendas</span>
+                <ButtonPDCA />
+            </div>
 
             <form action="">
                 <section class="row">

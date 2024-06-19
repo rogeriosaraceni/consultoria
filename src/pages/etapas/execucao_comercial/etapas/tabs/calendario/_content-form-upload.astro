@@ -1,14 +1,18 @@
+---
+import ButtonPDCA from "@components/ButtonPDCA.astro";
+---
+
 <div class="card">
     <div class="card-body">
-        <div class="title-section align-items-end justify-content-between gap-2">
-            <span>Calendário de Ações</span>
+        <div class="title-section title-section-buttons">
+            <span class="title">Calendário de Ações</span>
 
-            <div class="d-flex gap-2">
-                <a class="btn btn-secondary btn-icon mb-1" href="/assets/docs/modelo.xlsx" download="modelo">
-                    <i class="bi bi-download"></i>
-                    <span>Baixar Modelo</span>
-                </a>
-            </div>
+            <a class="btn btn-secondary btn-icon mb-1" href="/assets/docs/modelo.xlsx" download="modelo">
+                <i class="bi bi-download"></i>
+                <span>Baixar Modelo</span>
+            </a>
+
+            <ButtonPDCA />
         </div>
 
         <label class="d-flex flex-column flex-md-row gap-3">

@@ -4,6 +4,7 @@ import FunctionFormShowHandler from "../_function-formShowHandler.astro";
 import ContentSwot from "./_content-swot.astro";
 import ContentSwotImage from "./_content-swot-image.astro";
 import ContentListagemGeUnidade from "./_content-listagem-ge-unidade.astro";
+import ButtonPDCA from "@components/ButtonPDCA.astro";
 
 import "./_style.css"
 ---
@@ -14,7 +15,10 @@ import "./_style.css"
 <div data-content="swot" style="display: none;">
     <div class="card">
         <div class="card-body">
-            <div class="title-section">Análise SWOT</div>
+            <div class="title-section title-section-buttons">
+                <span class="title">Análise SWOT</span>
+                <ButtonPDCA />
+            </div>
 
             <form action="">
                 <div class="row">
