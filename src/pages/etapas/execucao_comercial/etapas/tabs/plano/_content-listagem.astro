@@ -1,12 +1,3 @@
-<style>
-    [data-select="status"]{
-        --status-concluido: #55e9cc;
-        --status-andamento: #f8c46a;
-        --status-atrasado:  #fa7a87;
-        --status-parado:    #ddd9d9;
-    }
-</style>
-
 <div class="table-responsive">
     <table class="table table-bordered table-hover table-fixed" id="tab-datatable-pdca" style="width: 100%;">
         <thead>
@@ -37,7 +28,7 @@
                 <td></td>
 
                 <td>
-                    <select name="status" class="form-select text-center" data-select="status">
+                    <select name="status" class="form-select text-center status-select-color" data-select-status="colors">
                         <option value="" class="text-black bg-white"></option>
                         <option value="1" style="background-color: var(--status-concluido)">Concluído</option>
                         <option value="2" style="background-color: var(--status-andamento)">Em andamento</option>
@@ -78,8 +69,8 @@
                 <td></td>
 
                 <td>
-                    <select name="status" class="form-select text-center" data-select="status">
-                        <option value="" class="text-black bg-white"></option>
+                    <select name="status" class="form-select text-center status-select-color" data-select-status="colors">
+                        <option value=""  style="background-color: var(--status-vazio);"></option>
                         <option value="1" style="background-color: var(--status-concluido)">Concluído</option>
                         <option value="2" style="background-color: var(--status-andamento)">Em andamento</option>
                         <option value="3" style="background-color: var(--status-atrasado)">Atrasado</option>
@@ -112,6 +103,16 @@
     </table>
 </div>
 
+<style>
+    .status-select-color{
+        --status-vazio:     #ffffff;
+        --status-concluido: #55e9cc;
+        --status-andamento: #f8c46a;
+        --status-atrasado:  #fa7a87;
+        --status-parado:    #ddd9d9;
+    }
+</style>
+
 <script is:inline type="module">
     $("#tab-datatable-pdca").DataTable({
         scrollX: true,
@@ -129,13 +130,21 @@
         },
     });
 
-    $('[data-select="status"]').change(function() {
-        var current = $(this).val();
-
-        if (current === '')  { $(this).css({"background-color":'#ffffff', "color":'#67757c'})}
-        if (current === '1') { $(this).css({"background-color":'var(--status-concluido)'})}
-        if (current === '2') { $(this).css({"background-color":'var(--status-andamento)'})}
-        if (current === '3') { $(this).css({"background-color":'var(--status-atrasado)'})}
-        if (current === '4') { $(this).css({"background-color":'var(--status-parado)'})}
-    });
+    function statusSelectColors(item) {
+        const current = item.value
+        const statusColors = {
+            '' : {'background-color': 'var(--status-vazio)'},
+            '1': {'background-color': 'var(--status-concluido)'},
+            '2': {'background-color': 'var(--status-andamento)'},
+            '3': {'background-color': 'var(--status-atrasado)'},
+            '4': {'background-color': 'var(--status-parado)'}
+        };
+        const styles = statusColors[current] || statusColors[''];
+        Object.assign(item.style, styles)
+    }
+    const selectsStatus = document.querySelectorAll('[data-select-status="colors"]')
+    selectsStatus.forEach(item => { statusSelectColors(item)})
+    selectsStatus.forEach(item => {
+        item.addEventListener('change', function() { statusSelectColors(this)})
+    })
 </script>
