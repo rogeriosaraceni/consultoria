@@ -1,16 +1,16 @@
 <div class="table-responsive">
-    <table class="table table-bordered table-hover table-fixed" id="tab-datatable-pdca" style="width: 100%;">
+    <table class="table table-bordered table-hover table-fixed text-center" id="tab-datatable-pdca" style="width: 100%;">
         <thead>
             <tr>
-                <th style="width: 200px;">Etapa</th>
-                <th style="width: 200px;">O que</th>
-                <th style="width: 200px;">Como</th>
-                <th style="width: 200px;">Quem</th>
-                <th style="width: 200px;">Prazo</th>
-                <th style="width: 200px;">Data Criação</th>
-                <th style="width: 200px;">Usuário</th>
+                <th style="width: 150px;">Etapa</th>
+                <th style="width: 250px;">O que</th>
+                <th style="width: 250px;">Como</th>
+                <th style="width: 130px;">Quem</th>
+                <th style="width: 100px;">Prazo</th>
+                <th style="width: 130px;">Data Criação</th>
+                <th style="width: 130px;">Usuário</th>
 
-                <th style="width: 200px;">Status</th>
+                <th style="width: 170px;">Status</th>
 
                 <th style="width: 070px;" class="no-sort">Edit</th>
                 <th style="width: 070px;" class="no-sort">Del</th>
@@ -19,18 +19,18 @@
 
         <tbody>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>Análise Swot</td>
+                <td>Melhorar pontos fracos descrito no Swot</td>
+                <td>Melhorando os processos internos com a equipe</td>
+                <td>Ana Cristina</td>
+                <td>20/7/2024</td>
+                <td>21/6/2024</td>
+                <td>Paulo</td>
 
                 <td>
                     <select name="status" class="form-select text-center status-select-color" data-select-status="colors">
                         <option value="" class="text-black bg-white"></option>
-                        <option value="1" style="background-color: var(--status-concluido)">Concluído</option>
+                        <option value="1" style="background-color: var(--status-concluido)" selected>Concluído</option>
                         <option value="2" style="background-color: var(--status-andamento)">Em andamento</option>
                         <option value="3" style="background-color: var(--status-atrasado)">Atrasado</option>
                         <option value="4" style="background-color: var(--status-parado)">Parado</option>
@@ -60,13 +60,95 @@
             </tr>
 
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>Equipe Comercial</td>
+                <td>Resolver problema da quantidade de consultores</td>
+                <td>Buscando consolidar o quadro da equipe de consultor</td>
+                <td>Natália</td>
+                <td>14/8/2024</td>
+                <td>21/6/2024</td>
+                <td>Pedro</td>
+
+                <td>
+                    <select name="status" class="form-select text-center status-select-color" data-select-status="colors">
+                        <option value=""  style="background-color: var(--status-vazio);"></option>
+                        <option value="1" style="background-color: var(--status-concluido)">Concluído</option>
+                        <option value="2" style="background-color: var(--status-andamento)" selected>Em andamento</option>
+                        <option value="3" style="background-color: var(--status-atrasado)">Atrasado</option>
+                        <option value="4" style="background-color: var(--status-parado)">Parado</option>
+                    </select>
+                </td>
+
+                <td class="text-center">
+                    <a
+                        class="text-secondary fs-5"
+                        data-bs-toggle="tooltip"
+                        data-bs-title="Edit"
+                        data-fancybox
+                        data-type="iframe"
+                        data-width="1600"
+                        data-height="95%"
+                        href="../etapas/popups/pdca/"
+                    >
+                        <i class="bi bi-pencil-square"></i>
+                    </a>
+                </td>
+
+                <td class="text-center">
+                    <a class="text-secondary fs-5" data-bs-toggle="tooltip" data-bs-title="Del" data-row="delete" href="#">
+                        <i class="bi bi-trash icon-tab"></i>
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Redes Sociais</td>
+                <td>Melhorar o conteúdo no facebook</td>
+                <td>Postando conteúdo melhores e mais bem trabalhados, com informções mais precisas</td>
+                <td>Vanessa</td>
+                <td>13/9/2024</td>
+                <td>21/6/2024</td>
+                <td>João</td>
+
+                <td>
+                    <select name="status" class="form-select text-center status-select-color" data-select-status="colors">
+                        <option value=""  style="background-color: var(--status-vazio);"></option>
+                        <option value="1" style="background-color: var(--status-concluido)">Concluído</option>
+                        <option value="2" style="background-color: var(--status-andamento)">Em andamento</option>
+                        <option value="3" style="background-color: var(--status-atrasado)" selected>Atrasado</option>
+                        <option value="4" style="background-color: var(--status-parado)">Parado</option>
+                    </select>
+                </td>
+
+                <td class="text-center">
+                    <a
+                        class="text-secondary fs-5"
+                        data-bs-toggle="tooltip"
+                        data-bs-title="Edit"
+                        data-fancybox
+                        data-type="iframe"
+                        data-width="1600"
+                        data-height="95%"
+                        href="../etapas/popups/pdca/"
+                    >
+                        <i class="bi bi-pencil-square"></i>
+                    </a>
+                </td>
+
+                <td class="text-center">
+                    <a class="text-secondary fs-5" data-bs-toggle="tooltip" data-bs-title="Del" data-row="delete" href="#">
+                        <i class="bi bi-trash icon-tab"></i>
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Gestão a Vista</td>
+                <td>Definir um modelo padrão de apresentação</td>
+                <td>Buscando em outras unidades um melhor padrão de exibição do gestão a vista</td>
+                <td>Rodrigo</td>
+                <td>25/6/2024</td>
+                <td>21/6/2024</td>
+                <td>Cláudio</td>
 
                 <td>
                     <select name="status" class="form-select text-center status-select-color" data-select-status="colors">
@@ -74,7 +156,7 @@
                         <option value="1" style="background-color: var(--status-concluido)">Concluído</option>
                         <option value="2" style="background-color: var(--status-andamento)">Em andamento</option>
                         <option value="3" style="background-color: var(--status-atrasado)">Atrasado</option>
-                        <option value="4" style="background-color: var(--status-parado)">Parado</option>
+                        <option value="4" style="background-color: var(--status-parado)" selected>Parado</option>
                     </select>
                 </td>
 
