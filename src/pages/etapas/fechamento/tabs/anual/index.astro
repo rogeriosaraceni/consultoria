@@ -1,0 +1,28 @@
+---
+import ContentSelecao from "./_content-selecao.astro";
+import FunctionFormShowHandler from "../_function-formShowHandler.astro";
+
+import Matricula from "./_content-matricula.astro";
+import Rematricula from "./_content-rematricula.astro";
+import AlunosAtivos from "./_content-alunos-ativos.astro";
+import Estrategia from "./_content-estrategia.astro";
+---
+
+<ContentSelecao />
+<FunctionFormShowHandler />
+
+<div data-content="anual" style="display: none;">
+    <form action="">
+        <Matricula />
+        <Rematricula />
+        <AlunosAtivos />
+        <Estrategia />
+
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary" data-btn="spinner-toast" data-toast-target="cad">
+                <span>Salvar</span>
+                <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+            </button>
+        </div>
+    </form>
+</div>

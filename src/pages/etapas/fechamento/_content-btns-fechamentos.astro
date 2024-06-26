@@ -1,0 +1,58 @@
+---
+const btnsFechamentos = [
+    {
+        idLi: "pageAnual",
+        link: "./tabs/anual/",
+        dataBsTarget: "#pageAnual",
+        ariaControls: "pageAnual",
+        name: "Fechamento Anual",
+    },
+
+]
+---
+
+<section class="wrapper-sticky-tabs">
+    <div class="card">
+        <div class="card-body">
+            <ul class="row nav nav-pills nav-pills-app" id="pills-tab" role="tablist">
+                {
+                    btnsFechamentos.map((fechamento) => (
+                        <li class="nav-item col-xl-2 col-lg-3 col-md-4 col-sm-6" data-tab={fechamento.idLi} role="presentation">
+                            <a
+                                href={fechamento.link}
+                                class="nav-link"
+                                data-bs-target={fechamento.dataBsTarget}
+                                aria-controls={fechamento.ariaControls}
+                                role="tab"
+                                data-bs-toggle="tab"
+                            >
+                                {fechamento.name}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="tab-content p-0 border-0 position-relative">
+    {
+        btnsFechamentos.map((content) => (
+            <article
+                role="tabpanel"
+                class="tab-pane fade"
+                id={content.ariaControls}
+                data-content={content.idLi}
+            >
+            </article>
+        ))
+    }
+</section>
+
+<script src="./_script-tabs-rules.js"></script>
+
+<script is:inline src="/assets/vendor/amcharts4/core.js"></script>
+<script is:inline src="/assets/vendor/amcharts4/charts.js"></script>
+<script is:inline src="/assets/vendor/amcharts4/animated.js"></script>
+<script is:inline src="/assets/vendor/amcharts4/locales/pt_BR.js"></script>

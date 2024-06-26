@@ -1,0 +1,299 @@
+<div class="card">
+    <div class="card-body">
+        <div class="title-section title-section-buttons">
+            <span class="title">Matrícula</span>
+        </div>
+
+        <section class="row">
+            <div class="col-lg-7">
+                <div id="chartdiv-fechamento-anual" style="height: 600px;"></div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="d-flex flex-column h-100">
+                    <div id="chartdiv-fechamento-anual-comparacao" class="mb-3" style="height: 400px;"></div>
+
+                    <label style="height: 200px;">
+                        <textarea
+                        id=""
+                        class="form-control h-100"
+                        placeholder="DESTAQUE: (NOME UNIDADE) e (NOME UNIDADE), performando, respectivamente, XX% e XX% acima do LY.
+Performance do grupo acima do LY, mas muito por conta da inauguração de (NOME UNIDADE) em XX/XX. Fechamento do ano com atingimento de XX% do LY e XX% da carta-meta."></textarea>
+                    </label>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script is:inline>
+    const colorAnoAtual = "#128c82"
+    const colorAnoAnterior = "#dddddd"
+
+    am4core.ready(function () {
+        am4core.useTheme(am4themes_animated);
+
+        const chart = am4core.create("chartdiv-fechamento-anual", am4charts.XYChart);
+        chart.padding(0, 0, 0, 0);
+        chart.language.locale = am4lang_pt_BR;
+
+        // Disable amChart Logo
+        if (chart.logo) {
+            chart.logo.disabled = true;
+        }
+
+        chart.data = [
+            {
+                category: 'Dezembro',
+                anoAtual: 80,
+                anoAnterior: 170,
+            },
+            {
+                category: 'Novembro',
+                anoAtual: 480,
+                anoAnterior: 560,
+            },
+            {
+                category: 'Outubro',
+                anoAtual: 290,
+                anoAnterior: 400,
+            },
+            {
+                category: 'Setembro',
+                anoAtual: 310,
+                anoAnterior: 380,
+            },
+            {
+                category: 'Agosto',
+                anoAtual: 450,
+                anoAnterior: 550,
+            },
+            {
+                category: 'Julho',
+                anoAtual: 460,
+                anoAnterior: 550,
+            },
+            {
+                category: 'Junho',
+                anoAtual: 310,
+                anoAnterior: 380,
+            },
+            {
+                category: 'Maio',
+                anoAtual: 400,
+                anoAnterior: 440,
+            },
+            {
+                category: 'Abril',
+                anoAtual: 350,
+                anoAnterior: 400,
+            },
+            {
+                category: 'Março',
+                anoAtual: 600,
+                anoAnterior: 800,
+            },
+            {
+                category: 'Fevereiro',
+                anoAtual: 580,
+                anoAnterior: 570,
+            },
+            {
+                category: 'Janeiro',
+                anoAtual: 780,
+                anoAnterior: 790,
+            },
+        ]
+
+        const categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+        categoryAxis.renderer.grid.template.location =  0;
+        categoryAxis.dataFields.category = "category";
+        categoryAxis.renderer.minGridDistance =  1;
+        categoryAxis.renderer.inversed = true;
+        categoryAxis.renderer.grid.template.disabled = true;
+
+        const valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
+        valueAxis.min =  0;
+        valueAxis.renderer.labels.template.disabled = true;
+        valueAxis.renderer.grid.template.disabled = true;
+
+        function createSeries(valueField, name, color) {
+            const series = chart.series.push(new am4charts.ColumnSeries());
+            series.dataFields.categoryY = "category";
+            series.dataFields.valueX = valueField;
+            series.name = name;
+            series.columns.template.tooltipText = "Ano {name}\n {valueX}";
+            series.columns.template.fill = color;
+            series.columns.template.strokeWidth = 0;
+            series.columns.template.strokeOpacity = 0;
+            series.columns.template.column.cornerRadiusBottomRight = 10;
+            series.columns.template.column.cornerRadiusTopRight = 10;
+            series.columns.template.column.fillOpacity = 1;
+
+            // Valores em colunas superiores
+            const bullet = series.bullets.push(new am4charts.LabelBullet());
+            bullet.label.text = "{valueX}";
+            bullet.label.fill = am4core.color("#000");
+            bullet.label.strokeWidth = 2;
+            bullet.label.dy = 0;
+            bullet.label.dx = -20;
+            bullet.label.fontSize = 11;
+
+            return series;
+        }
+
+        createSeries('anoAtual', '2023', am4core.color(colorAnoAtual));
+        createSeries('anoAnterior', '2022', am4core.color(colorAnoAnterior));
+
+         // Add legend
+        chart.legend = new am4charts.Legend();
+        chart.legend.labels.template.maxWidth = 100;
+        chart.legend.labels.template.truncate = true;
+        chart.legend.labels.template.wrap = true;
+
+        const markerTemplate = chart.legend.markers.template;
+        markerTemplate.width = 15;
+        markerTemplate.height = 15;
+    })
+
+
+    am4core.ready(function () {
+        am4core.useTheme(am4themes_animated);
+
+        const chart = am4core.create('chartdiv-fechamento-anual-comparacao', am4charts.XYChart)
+
+        // Disable amChart Logo
+        if(chart.logo){ chart.logo.disabled = true;}
+        chart.maskBullets = false;
+        chart.padding(20, 0, 0, 0);
+        chart.language.locale = am4lang_pt_BR;
+
+        chart.data = [
+            {
+                category: '1 Semestre',
+                anoAnterior: 915,
+                anoAtual: 1057,
+            },
+            {
+                category: '2 Semestre',
+                anoAnterior: 630,
+                anoAtual: 529,
+            },
+            {
+                category: 'FY',
+                anoAnterior: 1545,
+                anoAtual: 1586,
+            },
+        ]
+
+        const xAxis = chart.xAxes.push(new am4charts.CategoryAxis())
+        xAxis.dataFields.category = 'category'
+        xAxis.renderer.cellStartLocation = 0.1;
+        xAxis.renderer.cellEndLocation = 0.9;
+        xAxis.renderer.minGridDistance = 10; //força mostrar colunas
+        xAxis.renderer.grid.template.location = 0;
+        xAxis.renderer.grid.template.disabled = true; //Retirando as linhas Horizontais
+
+        const yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        yAxis.min = 0;
+        yAxis.renderer.grid.template.disabled = true; //Retirando as linhas Verticais
+        yAxis.renderer.labels.template.disabled = true;
+
+        function createSeries(value, name, color) {
+            const series = chart.series.push(new am4charts.ColumnSeries())
+            series.dataFields.valueY = value;
+            series.dataFields.categoryX = 'category';
+            series.name = name;
+            series.events.on("hidden", carrangeColumns);
+            series.events.on("shown", carrangeColumns);
+            series.columns.template.fill = color;
+            series.columns.template.strokeWidth = 0;
+            series.columns.template.column.cornerRadiusTopLeft = 3;
+            series.columns.template.column.cornerRadiusTopRight = 3;
+            series.columns.template.tooltipText = "{name}\n {categoryX}: {valueY}";
+
+            //values in top columns
+            const bullet = series.bullets.push(new am4charts.LabelBullet())
+            bullet.interactionsEnabled = false
+            bullet.label.truncate = false;
+            bullet.label.verticalCenter = "bottom";
+            bullet.label.horizontalCenter = "middle";
+            bullet.label.rotation = 0;
+            bullet.dy = 0
+            bullet.dx = 0
+            bullet.fontSize = 11;
+            bullet.label.text = '{valueY}';
+            bullet.label.fill = am4core.color('#000');
+
+            return series;
+        }
+
+        // Configure xAxis label
+        const label = xAxis.renderer.labels.template;
+        label.fontSize = 12;
+        label.truncate = true;
+        label.wrap = true;
+        label.rotation = 0;
+        label.horizontalCenter = "middle";
+        label.verticalCenter = "middle";
+        label.tooltipText = "{category}";
+
+        createSeries('anoAnterior', '2022', am4core.color(colorAnoAnterior));
+        createSeries('anoAtual', '2023', am4core.color(colorAnoAtual));
+
+        // Configure legend
+        chart.legend = new am4charts.Legend()
+        chart.legend.position = "bottom";
+        chart.legend.paddingBottom = 0;
+        chart.legend.fontSize = 12;
+        chart.legend.labels.template.maxWidth = 100;
+        chart.legend.labels.template.truncate = true;
+        chart.legend.labels.template.wrap = true;
+
+        // Configure marker legend
+        const markerTemplate = chart.legend.markers.template;
+        markerTemplate.width = 15;
+        markerTemplate.height = 15;
+
+        function carrangeColumns() {
+            const series = chart.series.getIndex(0);
+
+            const w = 1 - xAxis.renderer.cellStartLocation - (1 - xAxis.renderer.cellEndLocation);
+            if (series.dataItems.length > 1) {
+                const x0 = xAxis.getX(series.dataItems.getIndex(0), "categoryX");
+                const x1 = xAxis.getX(series.dataItems.getIndex(1), "categoryX");
+                const delta = ((x1 - x0) / chart.series.length) * w;
+
+                if (am4core.isNumber(delta)) {
+                    const middle = chart.series.length / 2;
+
+                    let newIndex = 0;
+                    chart.series.each(function(series) {
+                        if (!series.isHidden && !series.isHiding) {
+                            series.dummyData = newIndex;
+                            newIndex++;
+                        }
+                        else {
+                            series.dummyData = chart.series.indexOf(series);
+                        }
+                    })
+                    const visibleCount = newIndex;
+                    const newMiddle = visibleCount / 2;
+
+                    chart.series.each(function(series) {
+                        const trueIndex = chart.series.indexOf(series);
+                        const newIndex = series.dummyData;
+
+                        const dx = (newIndex - trueIndex + middle - newMiddle) * delta
+
+                        series.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+                        series.bulletsContainer.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+                    })
+                }
+            }
+        }
+
+
+
+    })
+</script>

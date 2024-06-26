@@ -1,0 +1,24 @@
+<script is:inline>
+    function formShowHandler(formElement, contentElement) {
+        const form = document.querySelector(formElement)
+        const content = document.querySelector(contentElement)
+
+        if(form && content){
+            form.addEventListener('submit', (event) => {
+                event.preventDefault()
+                content.style.display = 'block'
+
+                $.fn.dataTable.tables({ visible: true, api: true }).columns.adjust()
+            })
+        }
+    }
+
+    formShowHandler('[data-form="anual"]', '[data-content="anual"]');
+</script>
+
+<script is:inline>
+    $('[data-btn="prevent"]').on('click', function(event){
+        event.preventDefault()
+        console.log('O botão foi clicado, mas o comportamento padrão foi prevenido.');
+    });
+</script>
