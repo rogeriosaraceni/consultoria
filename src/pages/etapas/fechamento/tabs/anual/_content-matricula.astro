@@ -1,3 +1,10 @@
+<style is:inline>
+    .tooltip-400 .tooltip-inner {
+        max-width: 400px;
+        text-align: left;
+    }
+</style>
+
 <div class="card">
     <div class="card-body">
         <div class="title-section title-section-buttons">
@@ -13,13 +20,26 @@
                 <div class="d-flex flex-column h-100">
                     <div id="chartdiv-fechamento-anual-comparacao" class="mb-3" style="height: 400px;"></div>
 
-                    <label style="height: 200px;">
-                        <textarea
-                        id=""
-                        class="form-control h-100"
-                        placeholder="DESTAQUE: (NOME UNIDADE) e (NOME UNIDADE), performando, respectivamente, XX% e XX% acima do LY.
+                    <div>
+                        <label
+                            id="modelo-anual-tooltip"
+                            class="d-inline-flex gap-2 mb-0 fw-bold"
+                            data-bs-toggle="tooltip"
+                            data-bs-html="true"
+                            data-bs-title="DESTAQUE: (NOME UNIDADE) e (NOME UNIDADE), performando, respectivamente, XX% e XX% acima do LY.<br><br>Performance do grupo acima do LY, mas muito por conta da inauguração de (NOME UNIDADE) em XX/XX.<br><br>Fechamento do ano com atingimento de XX% do LY e XX% da carta-meta."
+                        >
+                            <i class="bi bi-info-circle fs-6"></i>
+                            <span>Modelo de preenchimento</span>
+                        </label>
+
+                        <label style="height: 130px;">
+                            <textarea
+                            id=""
+                            class="form-control h-100"
+                            placeholder="DESTAQUE: (NOME UNIDADE) e (NOME UNIDADE), performando, respectivamente, XX% e XX% acima do LY.
 Performance do grupo acima do LY, mas muito por conta da inauguração de (NOME UNIDADE) em XX/XX. Fechamento do ano com atingimento de XX% do LY e XX% da carta-meta."></textarea>
-                    </label>
+                        </label>
+                    </div>
                 </div>
             </div>
         </section>
@@ -27,8 +47,10 @@ Performance do grupo acima do LY, mas muito por conta da inauguração de (NOME 
 </div>
 
 <script is:inline>
-    const colorAnoAtual = "#128c82"
-    const colorAnoAnterior = "#dddddd"
+    const tooltipModeloAnual = document.getElementById('modelo-anual-tooltip')
+    tooltipModeloAnual.addEventListener('shown.bs.tooltip', () => {
+        document.querySelector('.tooltip').classList.add('tooltip-400');
+    });
 
     am4core.ready(function () {
         am4core.useTheme(am4themes_animated);
@@ -142,8 +164,8 @@ Performance do grupo acima do LY, mas muito por conta da inauguração de (NOME 
             return series;
         }
 
-        createSeries('anoAtual', '2023', am4core.color(colorAnoAtual));
-        createSeries('anoAnterior', '2022', am4core.color(colorAnoAnterior));
+        createSeries('anoAtual', '2023', am4core.color(colorGreen));
+        createSeries('anoAnterior', '2022', am4core.color(colorGrey));
 
          // Add legend
         chart.legend = new am4charts.Legend();
@@ -155,7 +177,6 @@ Performance do grupo acima do LY, mas muito por conta da inauguração de (NOME 
         markerTemplate.width = 15;
         markerTemplate.height = 15;
     })
-
 
     am4core.ready(function () {
         am4core.useTheme(am4themes_animated);
@@ -238,8 +259,8 @@ Performance do grupo acima do LY, mas muito por conta da inauguração de (NOME 
         label.verticalCenter = "middle";
         label.tooltipText = "{category}";
 
-        createSeries('anoAnterior', '2022', am4core.color(colorAnoAnterior));
-        createSeries('anoAtual', '2023', am4core.color(colorAnoAtual));
+        createSeries('anoAnterior', '2022', am4core.color(colorGrey));
+        createSeries('anoAtual', '2023', am4core.color(colorGreen));
 
         // Configure legend
         chart.legend = new am4charts.Legend()
@@ -292,8 +313,5 @@ Performance do grupo acima do LY, mas muito por conta da inauguração de (NOME 
                 }
             }
         }
-
-
-
     })
 </script>

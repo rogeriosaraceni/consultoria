@@ -1,7 +1,39 @@
+<style is:inline>
+    .tooltip-600 .tooltip-inner {
+        max-width: 600px;
+        text-align: left;
+    }
+</style>
+
 <div class="card">
     <div class="card-body">
         <div class="title-section title-section-buttons">
             <span class="title">Estratégia (Ano Seguinte)</span>
         </div>
+
+        <label
+            id="modelo-anual-estrategia-tooltip"
+            class="d-inline-flex gap-2 mb-0 fw-bold"
+            data-bs-toggle="tooltip"
+            data-bs-html="true"
+            data-bs-title="Discursar aqui quais serão os pontos focais do próximo ano: expansão, foco no time comercial, reestruturação de lideranças, suprir GAPs pedagógicos, investimento em MKT, manutenção do time e expansão no WIP/WizardON, etc.<br><br>Breve resumo do encerramento do ano, qual o percentual de atingimento dos alunos ativos, o que contribuiu para entrega ou não do resultado. Quais pontos de melhoria, etc."
+        >
+            <i class="bi bi-info-circle fs-6"></i>
+            <span>Modelo de preenchimento</span>
+        </label>
+        <label style="height: 100px;">
+            <textarea
+            id=""
+            class="form-control h-100"
+            placeholder="Discursar aqui quais serão os pontos focais do próximo ano: expansão, foco no time comercial, reestruturação de lideranças, suprir GAPs pedagógicos, investimento em MKT, manutenção do time e expansão no WIP/WizardON, etc.
+Breve resumo do encerramento do ano, qual o percentual de atingimento dos alunos ativos, o que contribuiu para entrega ou não do resultado. Quais pontos de melhoria, etc."></textarea>
+        </label>
     </div>
 </div>
+
+<script is:inline>
+    const tooltipModeloAnualEstrategia = document.getElementById('modelo-anual-estrategia-tooltip')
+    tooltipModeloAnualEstrategia.addEventListener('shown.bs.tooltip', () => {
+        document.querySelector('.tooltip').classList.add('tooltip-600');
+    });
+</script>

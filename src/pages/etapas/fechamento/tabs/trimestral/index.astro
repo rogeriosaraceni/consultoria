@@ -2,30 +2,13 @@
 import ContentSelecao from "./_content-selecao.astro";
 import FunctionFormShowHandler from "../_function-formShowHandler.astro";
 
-import Matricula from "./_content-matricula.astro";
-import Rematricula from "./_content-rematricula.astro";
-import AlunosAtivos from "./_content-alunos-ativos.astro";
-import Estrategia from "./_content-estrategia.astro";
 ---
 
 <ContentSelecao />
 <FunctionFormShowHandler />
 
-<div data-content="anual" style="display: none;">
+<div data-content="trimestral" style="display: none;">
     <form action="">
-        <Matricula />
-
-        <section class="row">
-            <div class="col-lg-6">
-                <Rematricula />
-            </div>
-
-            <div class="col-lg-6">
-                <AlunosAtivos />
-            </div>
-        </section>
-
-        <Estrategia />
 
         <div class="card">
             <div class="card-body">

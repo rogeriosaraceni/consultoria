@@ -12,7 +12,8 @@
  * - data-row="delete"
  * - formsSubmitSpinnerToasts
  * - closeModalIfInside
- * -
+ * - color charts
+
  * -
  *
  * - Active Functions
@@ -210,3 +211,9 @@ function clearform(btn) {
     console.log(form);
     form.reset()
 }
+
+/** --------------------------------------------------------------------
+ * color charts
+--------------------------------------------------------------------- */
+const colorGreen = "#128c82"
+const colorGrey  = "#dddddd"
