@@ -32,8 +32,18 @@ initTooltips()
 function initPopovers() {
     const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
     const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    return popoverList
 }
-initPopovers()
+// Variável global para armazenar os popovers
+let popovers = [];
+
+function clearPopovers() {
+    if (popovers.length > 0) {
+        popovers.forEach(popover => popover.dispose());
+        //console.log('Popovers destruídos:', popovers);
+    }
+    popovers = [];
+}
 
 /** --------------------------------------------------------------------
  * mainAppMarginTop

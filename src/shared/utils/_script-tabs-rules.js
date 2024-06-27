@@ -7,6 +7,8 @@ $('a[data-bs-toggle="tab"]').on('click', function (e) {
     const url = $(this).attr("href")
     const target = $(this).data("bs-target")
 
+    clearPopovers()
+
     // Verifica se a aba já foi carregada
     if (!$(target).hasClass('loaded')) {
         $(target).load(url, function () {
@@ -17,7 +19,7 @@ $('a[data-bs-toggle="tab"]').on('click', function (e) {
             //--Inicializa functions quando a tab carrega no mode click
             $('.selectpicker').selectpicker()
             initTooltips()
-            initPopovers()
+            popovers = initPopovers();
             initFancybox()
             initDeleteRow()
             formsSubmitSpinnerToasts()
