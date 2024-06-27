@@ -6,7 +6,7 @@
     data-bs-container="body"
     data-bs-html="true"
     data-bs-placement="top"
-    data-bs-custom-class="popover-app-modelo popover-800"
+    data-bs-custom-class="popover-app-modelo popover-900"
 >
     <i class="bi bi-info-circle"></i>
     <span>Modelo de preenchimento</span>
@@ -18,10 +18,23 @@
 
 <script is:inline>
     const semestralMatriculaModeloText = `
-        (INSERIR AQUI O NOME DE 01 UNIDADE) e (INSERIR AQUI O NOME DE 01 UNIDADE) crescendo e performando acima da média do grupo.<br>
-        (INSERIR AQUI O NOME DE 01 UNIDADE) performando em linha com relação o LY.<br>
-        GAP negativo de (Nº) matrículas, atingindo XX% do resultado do primeiro semestre de (ANO ATUAL).<br><br>
-        Carta Desafio 2º trimestre (editável): XXX meta e XXX realizado: GAP de -XXX matrículas.
+        <div class="info-modelos">
+            <p>
+                <i class="info">(INSERIR AQUI O NOME DE 01 UNIDADE)</i> e <i class="info">(INSERIR AQUI O NOME DE 01 UNIDADE)</i> crescendo e performando acima da média do grupo.
+            </p>
+
+            <p>
+                <i class="info">(INSERIR AQUI O NOME DE 01 UNIDADE)</i> performando em linha com relação o LY.
+            </p>
+
+            <p>
+                GAP negativo de <i class="info">(Nº)</i> matrículas, atingindo <i class="info">XX%</i> do resultado do primeiro semestre de <i class="info">(ANO ATUAL)</i>.
+            </p>
+
+            <p>
+                Carta Desafio <i class="info">2º trimestre (editável)</i>: <i class="info">XXX</i> meta e <i class="info">XXX</i> realizado: GAP de <i class="info">-XXX</i> matrículas.
+            </p>
+        </div>
     `
     document.querySelector('#semestralMatriculaModelo').setAttribute('data-bs-content', semestralMatriculaModeloText)
 </script>
