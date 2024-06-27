@@ -1,0 +1,28 @@
+<button
+    type="button"
+    id="semestralMatriculaModelo"
+    class="btn btn-light border py-0 px-1 mb-1 d-flex align-items-center gap-2"
+    data-bs-toggle="popover"
+    data-bs-container="body"
+    data-bs-html="true"
+    data-bs-placement="top"
+    data-bs-custom-class="popover-app-modelo popover-800"
+>
+    <i class="bi bi-info-circle"></i>
+    <span>Modelo de preenchimento</span>
+</button>
+
+<label style="height: 130px;">
+    <textarea name="" class="form-control h-100"></textarea>
+</label>
+
+<script is:inline>
+    const semestralMatriculaModeloText = `
+        (INSERIR AQUI O NOME DE 01 UNIDADE) e (INSERIR AQUI O NOME DE 01 UNIDADE) crescendo e performando acima da média do grupo.<br>
+        (INSERIR AQUI O NOME DE 01 UNIDADE) performando em linha com relação o LY.<br>
+        GAP negativo de (Nº) matrículas, atingindo XX% do resultado do primeiro semestre de (ANO ATUAL).<br><br>
+        Carta Desafio 2º trimestre (editável): XXX meta e XXX realizado: GAP de -XXX matrículas.
+    `
+    document.querySelector('#semestralMatriculaModelo').setAttribute('data-bs-content', semestralMatriculaModeloText)
+</script>
+

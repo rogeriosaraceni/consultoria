@@ -1,0 +1,102 @@
+<div id="chartdiv-fechamento-semestral" style="height: 400px;"></div>
+
+<script is:inline>
+    am4core.ready(function () {
+        am4core.useTheme(am4themes_animated);
+
+        const chart = am4core.create("chartdiv-fechamento-semestral", am4charts.XYChart);
+
+        chart.maskBullets = false;
+        chart.padding(0, 0, 0, 0);
+        chart.language.locale = am4lang_pt_BR;
+        if(chart.logo){ chart.logo.disabled = true;}
+
+        chart.data = [
+            {
+                category: '1º semestre (92%)',
+                anoAtual: 730,
+                anoAnterior: 795,
+            },
+            {
+                category: 'Junho',
+                anoAtual: 310,
+                anoAnterior: 380,
+            },
+            {
+                category: 'Maio',
+                anoAtual: 400,
+                anoAnterior: 440,
+            },
+            {
+                category: 'Abril',
+                anoAtual: 350,
+                anoAnterior: 400,
+            },
+            {
+                category: 'Março',
+                anoAtual: 310,
+                anoAnterior: 380,
+            },
+            {
+                category: 'Fevereiro',
+                anoAtual: 350,
+                anoAnterior: 400,
+            },
+            {
+                category: 'Janeiro',
+                anoAtual: 350,
+                anoAnterior: 400,
+            },
+        ]
+
+        const categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+        categoryAxis.renderer.grid.template.location =  0;
+        categoryAxis.dataFields.category = "category";
+        categoryAxis.renderer.minGridDistance =  1;
+        categoryAxis.renderer.inversed = true;
+        categoryAxis.renderer.grid.template.disabled = true;
+
+        const valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
+        valueAxis.min =  0;
+        valueAxis.renderer.labels.template.disabled = true;
+        valueAxis.renderer.grid.template.disabled = true;
+
+        function createSeries(valueField, name, color) {
+            const series = chart.series.push(new am4charts.ColumnSeries());
+            series.dataFields.categoryY = "category";
+            series.dataFields.valueX = valueField;
+            series.name = name;
+            series.columns.template.tooltipText = "Ano {name}\n {valueX}";
+            series.columns.template.fill = color;
+            series.columns.template.strokeWidth = 0;
+            series.columns.template.strokeOpacity = 0;
+            series.columns.template.column.cornerRadiusBottomRight = 5;
+            series.columns.template.column.cornerRadiusTopRight = 5;
+            series.columns.template.column.fillOpacity = 1;
+
+            // Valores em colunas superiores
+            const bullet = series.bullets.push(new am4charts.LabelBullet());
+            bullet.label.text = "{valueX}";
+            bullet.label.fill = am4core.color("#000");
+            bullet.label.strokeWidth = 2;
+            bullet.label.dy = 0;
+            bullet.label.dx = -20;
+            bullet.label.fontSize = 11;
+
+            return series;
+        }
+
+        createSeries('anoAtual', '2023', am4core.color(colorGreen));
+        createSeries('anoAnterior', '2022', am4core.color(colorGrey));
+
+         // Add legend
+        chart.legend = new am4charts.Legend();
+        chart.legend.labels.template.maxWidth = 100;
+        chart.legend.labels.template.truncate = true;
+        chart.legend.labels.template.wrap = true;
+
+        const markerTemplate = chart.legend.markers.template;
+        markerTemplate.width = 15;
+        markerTemplate.height = 15;
+    })
+</script>
