@@ -12,7 +12,7 @@
             data-bs-container="body"
             data-bs-html="true"
             data-bs-placement="top"
-            data-bs-custom-class="popover-app-modelo popover-800"
+            data-bs-custom-class="popover-app-modelo popover-1200"
         >
             <i class="bi bi-info-circle"></i>
             <span>Modelo de preenchimento</span>
@@ -26,64 +26,67 @@
 
 <script is:inline>
     const semestralMatriculaEstrategiaModeloText = `
+        <div class="info-modelos">
+            <p>
+                <i class="fw-bold">INVESTIMENTO EM TRADE MKT</i><br>
+                <i class="info">R$  XXX,XX</i> investidos em: <i class="info">(INSERIR AQUI OS VEÍCULOS INVESTIDOS)</i>,
+                durante <i class="info">XX</i> meses, para todas as praças do grupo.
+            </p>
 
+            <p>
+                <i class="fw-bold">PILOTO COMERCIAL + VOUCHERS & BRINDES</i><br>
+                <i class="info">R$ XX,XX</i> com incentivos pontuais de Ifood, Americanas e outros vouchers para engajamento do time comercial e aceleração nas matrículas.<br>
+                Além de ações pontuais em parceria com os franqueados para incentivos comerciais de rebate.<br>
+                Piloto <i class="info">(INSERIR AQUI O DESCRITIVO DE PILOTOS E/OU AÇÕES REALIZADAS)</i>.
+            </p>
+
+            <p>
+                <i class="fw-bold">FUPs, REUNIÕES MENSAIS & VISITAS</i><br>
+                Realização de <i class="info">XX</i> FUPs <i class="info">(INSERIR AQUI A PERIODICIDADE)</i>,
+                com duração de <i class="info">1h</i>, para toda a liderança comercial.<br>
+                <i class="info">XX</i> Reuniões Mensais para planejamento estratégico de metas de matrícula, alunos ativos e rematrícula/retenção.
+                <i class="info">XX</i> dias de visita presencial nas unidades de <i class="info">(INSERIR AQUI O NOME DAS UNIDADES)</i>.
+            </p>
+
+            <p>
+                <i class="fw-bold">TREINAMENTOS</i><br>
+                <i class="info">XX</i> hora de Desdobramento/Treinamento <i class="info">Presencial/Online</i> para todo time
+                comercial e Adm sobre <i class="info">(INSERIR AQUI O TEMA DO TREINAMENTO)</i>,
+                focando nos GAPs do grupo: <i class="info">(INSERIR AQUI QUAIS OS GAPS DO GRUPO/UNIDADE)</i>.
+            </p>
+
+            <p>
+                <i class="fw-bold">INVESTIMENTO EM TRADE MKT</i><br>
+                <i class="info">CASO HA JA, INSERIR AQUI QUAIS INVESTIMENTOS SERÃO REALIZADOS.</i>
+            </p>
+
+            <p>
+                <i class="fw-bold">PILOTO COMERCIAL + VOUCHERS</i><br>
+                Continuidade das ações pontuais de vouchers, brindes e rebates com a equipe comercial (desafios semanais, quinzenais, etc.).
+            </p>
+
+            <p>
+                <i class="fw-bold">FUPs, REUNIÕES MENSAIS & VISITAS</i><br>
+                Continuidade dos FUPs <i class="info">(INSERIR AQUI A PERIODICIDADE)</i>, com duração de <i class="info">1h</i> com toda a liderança comercial.<br>
+                Teremos em média, mais <i class="info">XX</i> FUPs no 2º semestre. Continuidade no acompanhamento do <i class="info">Business Plan (CASO HA JA)</i> e
+                realização das <i class="info">Reuniões Mensais</i>.<br>
+                Planejamento para realização de mais <i class="info">XX</i> visitas presenciais nos meses de <i class="info">XXXXX</i> e <i class="info">XXXXXX</i>.
+            </p>
+
+            <p>
+                <i class="fw-bold">TREINAMENTOS</i><br>
+                Treinamento sobre <i class="info">(INSERIR AQUI O TEMA DO TREINAMENTO)</i>, no dia <i class="info">XXX</i> – carga horária de <i class="info">XXh</i>.
+                <i class="info">XXXXX</i> nas unidades do grupo, nos dias <i class="info">(DIA)</i> e <i class="info">(DIA)</i> de <i class="info">(MÊS)</i>,
+                com a condução do <i class="info">nosso consultor de Sell Out</i>.<br>
+                Carga horária com cerca de <i class="info">XXh</i> por dia e temas relacionados a <i class="info">(INSERIR AQUI O TEMA DO TREINAMENTO)</i> para <i class="info">(INSERIR AQUI O PÚBLICO ALVO)</i>.
+            </p>
+
+            <p>
+                <i class="fw-bold">PESQUISA SATISFAÇÃO</i><br>
+                Atuar de forma antecipada e ativa para captação de mais respondentes. Tivemos ao todo  <i class="info">XXX</i> respostas,
+                cerca de <i class="info">XX%</i> do total da nossa base de alunos, precisamos atuar de forma mais eficaz.
+            </p>
+        </div>
     `
     document.querySelector('#semestralMatriculaEstrategiaModelo').setAttribute('data-bs-content', semestralMatriculaEstrategiaModeloText)
 </script>
-
-
-
-<div class="lh-1">
-    <p class="mb-3">
-        <i class="fw-bold">INVESTIMENTO EM TRADE MKT</i><br>
-        <i class="text-warning">R$  <i class="text-warning">XXX</i>,XX</i> investidos em: (INSERIR AQUI OS VEÍCULOS INVESTIDOS), durante <i class="text-warning">XX</i> meses, para todas as praças do grupo.
-    </p>
-
-    <p class="mb-3">
-        <i class="fw-bold">PILOTO COMERCIAL + VOUCHERS & BRINDES</i><br>
-        R$ XX,XX com incentivos pontuais de Ifood, Americanas e outros vouchers para engajamento do time comercial e aceleração nas matrículas. Além de ações pontuais em parceria com os franqueados para incentivos comerciais de rebate. Piloto (INSERIR AQUI O DESCRITIVO DE PILOTOS E/OU AÇÕES REALIZADAS).
-    </p>
-
-    <p class="mb-3">
-        <i class="fw-bold">FUPs, REUNIÕES MENSAIS & VISITAS</i><br>
-        Realização de <i class="text-warning">XX</i> FUPs (INSERIR AQUI A PERIODICIDADE), com duração de 1h, para toda a liderança comercial. <i class="text-warning">XX</i> Reuniões Mensais para planejamento estratégico de metas de matrícula, alunos ativos e rematrícula/retenção. <i class="text-warning">XX</i> dias de visita presencial nas unidades de (INSERIR AQUI O NOME DAS UNIDADES).
-    </p>
-
-    <p class="mb-3">
-        <i class="fw-bold">TREINAMENTOS</i><br>
-        <i class="text-warning">XX</i> hora de Desdobramento/Treinamento Presencial/Online para todo time comercial e Adm sobre (INSERIR AQUI O TEMA DO TREINAMENTO), focando nos GAPs do grupo: (INSERIR AQUI QUAIS OS GAPS DO GRUPO/UNIDADE).
-    </p>
-
-    <p class="mb-3">
-        <i class="fw-bold">INVESTIMENTO EM TRADE MKT</i><br>
-        CASO HA JA, INSERIR AQUI QUAIS INVESTIMENTOS SERÃO REALIZADOS.
-    </p>
-
-    <p class="mb-3">
-        <i class="fw-bold">PILOTO COMERCIAL + VOUCHERS</i><br>
-        Continuidade das ações pontuais de vouchers, brindes e rebates com a equipe comercial (desafios semanais, quinzenais, etc.).
-    </p>
-
-    <p class="mb-3">
-        <i class="fw-bold">FUPs, REUNIÕES MENSAIS & VISITAS</i><br>
-        Continuidade dos FUPs (INSERIR AQUI A PERIODICIDADE), com duração de 1h com toda a liderança comercial. Teremos em média, mais <i class="text-warning">XX</i> FUPs no 2º semestre. Continuidade no acompanhamento do Business Plan (CASO HA JA) e realização das Reuniões Mensais. Planejamento para realização de mais <i class="text-warning">XX</i> visitas presenciais nos meses de <i class="text-warning">XXXXX</i> e <i class="text-warning"><i class="text-warning">XXXXX</i>X</i>.
-    </p>
-
-    <p class="mb-3">
-        <i class="fw-bold">TREINAMENTOS</i><br>
-        Treinamento sobre (INSERIR AQUI O TEMA DO TREINAMENTO), no dia  <i class="text-warning">XXX</i>X – carga horária de XXh. <i class="text-warning">XXXXX</i> nas unidades do grupo, nos dias (DIA) e (DIA) de (MÊS), com a condução do nosso consultor de Sell Out. Carga horária com cerca de XXh por dia e temas relacionados a (INSERIR AQUI O TEMA DO TREINAMENTO) para (INSERIR AQUI O PÚBLICO ALVO).
-    </p>
-
-    <p class="mb-3">
-        <i class="fw-bold">PESQUISA SATISFAÇÃO</i><br>
-        Atuar de forma antecipada e ativa para captação de mais respondentes. Tivemos ao todo  <i class="text-warning">XXX</i> respostas, cerca de XX% do total da nossa base de alunos, precisamos atuar de forma mais eficaz.
-    </p>
-
-    <p class="mb-3">
-        <i class="fw-bold">ATINGIR DE <i class="text-warning">XXXXX</i> ALUNOS ATIVOS NO GRUPO ATÉ (MÊS) DE (ANO).</i><br>
-    </p>
-
-    <p class="mb-3">
-        <i class="fw-bold">ENTREGA DE  <i class="text-warning">XXX</i> MATRÍCULAS NO 2º SEMESTRE. Sendo:  <i class="text-warning">XXX</i> GAP (1º e 2º trimestres) e  <i class="text-warning">XXX</i> (carta desafio 3º e 4º trimestres).</i>
-    </p>
-</div>

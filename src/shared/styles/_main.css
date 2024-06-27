@@ -163,9 +163,13 @@ title-section
 .popover-app-modelo{
     --bs-popover-body-padding-x: 0.5rem;
     --bs-popover-body-padding-y: .5rem;
-    --bs-popover-bg: #6c757d;
+    --bs-popover-bg: #444;
     --bs-popover-body-color: #fff;
 }
+
+.info-modelos{ line-height: 1.1;}
+.info-modelos p{ margin-bottom: 0.5rem;}
+.info-modelos .info{ color: #ffc000}
 
 /* --------------------------------------------------------------------
 * - complementary classes

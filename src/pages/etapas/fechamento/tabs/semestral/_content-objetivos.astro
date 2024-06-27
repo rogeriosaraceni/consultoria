@@ -1,0 +1,41 @@
+<div class="card">
+    <div class="card-body">
+        <div class="title-section title-section-buttons">
+            <span class="title">Objetivos</span>
+        </div>
+
+        <button
+            type="button"
+            id="semestralObjetivosEstrategiaModelo"
+            class="btn btn-light border py-0 px-1 mb-1 d-flex align-items-center gap-2"
+            data-bs-toggle="popover"
+            data-bs-container="body"
+            data-bs-html="true"
+            data-bs-placement="top"
+            data-bs-custom-class="popover-app-modelo popover-900"
+        >
+            <i class="bi bi-info-circle"></i>
+            <span>Modelo de preenchimento</span>
+        </button>
+
+        <label style="height: 130px;">
+            <textarea name="" class="form-control h-100"></textarea>
+        </label>
+    </div>
+</div>
+
+<script is:inline>
+    const semestralObjetivosEstrategiaModeloText = `
+        <div class="info-modelos">
+            <p>
+                <i class="fw-bold">ATINGIR DE <i class="info">XXXXX</i> ALUNOS ATIVOS NO GRUPO ATÉ <i class="info">(MÊS)</i> DE <i class="info">(ANO)</i>.</i><br>
+            </p>
+
+            <p>
+                <i class="fw-bold">ENTREGA DE  <i class="info">XXX</i> MATRÍCULAS NO <i class="info">2º SEMESTRE</i>.
+                Sendo: <i class="info">XXX</i> GAP <i class="info">(1º e 2º trimestres)</i> e <i class="info">XXX (carta desafio 3º e 4º trimestres).</i>
+            </p>
+        </div>
+    `
+    document.querySelector('#semestralObjetivosEstrategiaModelo').setAttribute('data-bs-content', semestralObjetivosEstrategiaModeloText)
+</script>
