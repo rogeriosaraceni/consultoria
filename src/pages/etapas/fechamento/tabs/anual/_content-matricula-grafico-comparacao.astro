@@ -1,45 +1,10 @@
-<div class="card">
-    <div class="card-body">
-        <div class="title-section align-items-end justify-content-between gap-2">
-            <span>Matrícula</span>
-        </div>
-
-        <section class="row">
-            <div class="col-lg-4">
-                <div id="chartdiv-fechamento-mensal-matricula" style="height: 400px;"></div>
-            </div>
-
-            <div class="col-lg-8">
-                <div>
-                    <label
-                        class="d-inline-flex gap-2 mb-0 fw-bold"
-                        data-bs-toggle="tooltip"
-                        data-bs-html="true"
-                        data-bs-custom-class="tooltip-600"
-                        data-bs-title="(INSERIR AQUI O NOME DE 01 UNIDADE) e (INSERIR AQUI O NOME DE 01 UNIDADE) crescendo e performando acima da média do grupo.<br>(INSERIR AQUI O NOME DE 01 UNIDADE) performando em linha com relação o LY.<br>GAP negativo de (Nº) matrículas, atingindo XX% do resultado do primeiro semestre de (ANO ATUAL).<br><br>Carta Desafio 1º trimestre (editável): XXX meta e XXX realizado: GAP de -XXX matrículas."
-                    >
-                        <i class="bi bi-info-circle fs-6"></i>
-                        <span>Modelo de preenchimento</span>
-                    </label>
-
-                    <label style="height: 130px;">
-                        <textarea
-                        id=""
-                        class="form-control h-100"
-                        placeholder="DESTAQUE: (NOME UNIDADE) e (NOME UNIDADE), performando, respectivamente, XX% e XX% acima do LY.
-Performance do grupo acima do LY, mas muito por conta da inauguração de (NOME UNIDADE) em XX/XX. Fechamento do ano com atingimento de XX% do LY e XX% da carta-meta."></textarea>
-                    </label>
-                </div>
-
-            </div>
-    </div>
-</div>
+<div id="chartdiv-fechamento-anual-comparacao" style="height: 400px;"></div>
 
 <script is:inline>
     am4core.ready(function () {
         am4core.useTheme(am4themes_animated);
 
-        const chart = am4core.create('chartdiv-fechamento-mensal-matricula', am4charts.XYChart)
+        const chart = am4core.create('chartdiv-fechamento-anual-comparacao', am4charts.XYChart)
 
         chart.maskBullets = false;
         chart.padding(30, 0, 0, 0);
@@ -48,9 +13,19 @@ Performance do grupo acima do LY, mas muito por conta da inauguração de (NOME 
 
         chart.data = [
             {
-                category: 'Janeiro',
-                anoAnterior: 773,
-                anoAtual: 762,
+                category: '1 Semestre',
+                anoAnterior: 915,
+                anoAtual: 1057,
+            },
+            {
+                category: '2 Semestre',
+                anoAnterior: 630,
+                anoAtual: 529,
+            },
+            {
+                category: 'FY',
+                anoAnterior: 1545,
+                anoAtual: 1586,
             },
         ]
 

@@ -1,26 +1,29 @@
-<div class="card">
-    <div class="card-body">
-        <div class="title-section align-items-end justify-content-between gap-2">
-            <span>Plano de Ação</span>
-        </div>
-
-        <label
-            class="d-inline-flex gap-2 mb-0 fw-bold"
-            data-bs-toggle="tooltip"
-            data-bs-html="true"
-            data-bs-custom-class="tooltip-600"
-            data-bs-title="Discursar aqui quais serão os pontos focais do próximo mês: se serão realizadas consultorias (se sim), quantas e em qual formato, se serão presencial ou online.<br>Qual será o foco no time comercial/pedagógico. Quais os GAPs de matrícula e ações que serão realizadas para buscar as metas, etc."
-        >
-            <i class="bi bi-info-circle fs-6"></i>
-            <span>Modelo de preenchimento</span>
-        </label>
-
-        <label style="height: 100px;">
-            <textarea
-            name="fechamento_mensal_matricula_preenchimento"
-            class="form-control h-100"
-            placeholder="Discursar aqui quais serão os pontos focais do próximo mês: se serão realizadas consultorias (se sim), quantas e em qual formato, se serão presencial ou online.
-Qual será o foco no time comercial/pedagógico. Quais os GAPs de matrícula e ações que serão realizadas para buscar as metas, etc."></textarea>
-        </label>
-    </div>
+<div class="title-section align-items-end justify-content-between gap-2">
+    <span>Plano de Ação</span>
 </div>
+
+<button
+    type="button"
+    id="mensalPlanoModelo"
+    class="btn btn-light border py-0 px-1 mb-1 d-flex align-items-center gap-2"
+    data-bs-toggle="popover"
+    data-bs-container="body"
+    data-bs-html="true"
+    data-bs-placement="top"
+    data-bs-custom-class="popover-app-modelo popover-800"
+>
+    <i class="bi bi-info-circle"></i>
+    <span>Modelo de preenchimento</span>
+</button>
+
+<label style="height: 130px;">
+    <textarea name="" class="form-control h-100"></textarea>
+</label>
+
+<script is:inline>
+    const mensalPlanoModeloText = `
+        Discursar aqui quais serão os pontos focais do próximo mês: se serão realizadas consultorias (se sim), quantas e em qual formato, se serão presencial ou online.
+        Qual será o foco no time comercial/pedagógico. Quais os GAPs de matrícula e ações que serão realizadas para buscar as metas, etc.
+    `
+    document.querySelector('#mensalPlanoModelo').setAttribute('data-bs-content', mensalPlanoModeloText)
+</script>

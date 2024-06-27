@@ -1,32 +1,33 @@
-<style is:inline>
-    .tooltip-600 .tooltip-inner {
-        max-width: 600px;
-        text-align: left;
-    }
-</style>
-
 <div class="card">
     <div class="card-body">
         <div class="title-section title-section-buttons">
             <span class="title">Estratégia (Ano Seguinte)</span>
         </div>
 
-        <label
-            class="d-inline-flex gap-2 mb-0 fw-bold"
-            data-bs-toggle="tooltip"
+        <button
+            type="button"
+            id="anualMatriculaEstrategiaModelo"
+            class="btn btn-light border py-0 px-1 mb-1 d-flex align-items-center gap-2"
+            data-bs-toggle="popover"
+            data-bs-container="body"
             data-bs-html="true"
-            data-bs-custom-class="tooltip-600"
-            data-bs-title="Discursar aqui quais serão os pontos focais do próximo ano: expansão, foco no time comercial, reestruturação de lideranças, suprir GAPs pedagógicos, investimento em MKT, manutenção do time e expansão no WIP/WizardON, etc.<br><br>Breve resumo do encerramento do ano, qual o percentual de atingimento dos alunos ativos, o que contribuiu para entrega ou não do resultado. Quais pontos de melhoria, etc."
+            data-bs-placement="top"
+            data-bs-custom-class="popover-app-modelo popover-800"
         >
-            <i class="bi bi-info-circle fs-6"></i>
+            <i class="bi bi-info-circle"></i>
             <span>Modelo de preenchimento</span>
-        </label>
-        <label style="height: 100px;">
-            <textarea
-            id=""
-            class="form-control h-100"
-            placeholder="Discursar aqui quais serão os pontos focais do próximo ano: expansão, foco no time comercial, reestruturação de lideranças, suprir GAPs pedagógicos, investimento em MKT, manutenção do time e expansão no WIP/WizardON, etc.
-Breve resumo do encerramento do ano, qual o percentual de atingimento dos alunos ativos, o que contribuiu para entrega ou não do resultado. Quais pontos de melhoria, etc."></textarea>
+        </button>
+
+        <label style="height: 130px;">
+            <textarea name="" class="form-control h-100"></textarea>
         </label>
     </div>
 </div>
+
+<script is:inline>
+    const anualMatriculaEstrategiaModeloText = `
+        Discursar aqui quais serão os pontos focais do próximo ano: expansão, foco no time comercial, reestruturação de lideranças, suprir GAPs pedagógicos, investimento em MKT, manutenção do time e expansão no WIP/WizardON, etc.<br><br>
+        Breve resumo do encerramento do ano, qual o percentual de atingimento dos alunos ativos, o que contribuiu para entrega ou não do resultado. Quais pontos de melhoria, etc.
+    `
+    document.querySelector('#anualMatriculaEstrategiaModelo').setAttribute('data-bs-content', anualMatriculaEstrategiaModeloText)
+</script>

@@ -2,7 +2,8 @@
 import ContentSelecao from "./_content-selecao.astro";
 import FunctionFormShowHandler from "src/shared/utils/_function-formShowHandler.astro";
 
-import Matricula from "./_content-matricula.astro";
+import MatriculaGrafico from "./_content-matricula-grafico.astro";
+import MatriculaPreenchimento from "./_content-matricula-preenchimento.astro";
 import PlanoAcao from "./_content-plano-acao.astro";
 ---
 
@@ -11,8 +12,25 @@ import PlanoAcao from "./_content-plano-acao.astro";
 
 <div data-content="mensal" style="display: none;">
     <form action="">
-        <Matricula />
-        <PlanoAcao />
+        <div class="card">
+            <div class="card-body">
+                <div class="title-section title-section-buttons">
+                    <span class="title">Matrícula</span>
+                </div>
+
+                <section class="row">
+                    <div class="col-xl-4 col-lg-4">
+                        <MatriculaGrafico />
+                    </div>
+
+                    <div class="col-xl-8 col-lg-8">
+                        <MatriculaPreenchimento />
+                        <hr>
+                        <PlanoAcao />
+                    </div>
+                </section>
+            </div>
+        </div>
 
         <div class="card">
             <div class="card-body">

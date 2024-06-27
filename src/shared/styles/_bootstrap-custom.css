@@ -10,6 +10,7 @@ page-item .active/disabled
 tab-content
 hr
 custom tooltips
+custom popover
 //////////////////////////////////////////////////////////////////// */
 
 /* --------------------------------------------------------------------
@@ -183,27 +184,19 @@ hr { opacity: 0.12;}
 /* --------------------------------------------------------------------
 * - custom tooltips
 ---------------------------------------------------------------------- */
-.tooltip-300 .tooltip-inner {
-    max-width: 300px;
-    text-align: left;
-}
-.tooltip-400 .tooltip-inner {
-    max-width: 400px;
-    text-align: left;
-}
-.tooltip-500 .tooltip-inner {
-    max-width: 500px;
-    text-align: left;
-}
-.tooltip-600 .tooltip-inner {
-    max-width: 600px;
-    text-align: left;
-}
-.tooltip-700 .tooltip-inner {
-    max-width: 700px;
-    text-align: left;
-}
-.tooltip-800 .tooltip-inner {
-    max-width: 800px;
-    text-align: left;
-}
+.tooltip-300 .tooltip-inner { max-width: 300px;}
+.tooltip-400 .tooltip-inner { max-width: 400px;}
+.tooltip-500 .tooltip-inner { max-width: 500px;}
+.tooltip-600 .tooltip-inner { max-width: 600px;}
+.tooltip-700 .tooltip-inner { max-width: 700px;}
+.tooltip-800 .tooltip-inner { max-width: 800px;}
+
+/* --------------------------------------------------------------------
+* - custom popover
+---------------------------------------------------------------------- */
+.popover-300 { --bs-popover-max-width: 300px;}
+.popover-400 { --bs-popover-max-width: 400px;}
+.popover-500 { --bs-popover-max-width: 500px;}
+.popover-600 { --bs-popover-max-width: 600px;}
+.popover-700 { --bs-popover-max-width: 700px;}
+.popover-800 { --bs-popover-max-width: 800px;}

@@ -2,7 +2,9 @@
 import ContentSelecao from "./_content-selecao.astro";
 import FunctionFormShowHandler from "src/shared/utils/_function-formShowHandler.astro";
 
-import Matricula from "./_content-matricula.astro";
+import MatriculaGrafico from "./_content-matricula-grafico.astro";
+import MatriculaGraficoComparacao from "./_content-matricula-grafico-comparacao.astro";
+import MatriculaPreenchimento from "./_content-matricula-preenchimento.astro";
 import Rematricula from "./_content-rematricula.astro";
 import AlunosAtivos from "./_content-alunos-ativos.astro";
 import Estrategia from "./_content-estrategia.astro";
@@ -13,7 +15,24 @@ import Estrategia from "./_content-estrategia.astro";
 
 <div data-content="anual" style="display: none;">
     <form action="">
-        <Matricula />
+        <div class="card">
+            <div class="card-body">
+                <div class="title-section title-section-buttons">
+                    <span class="title">Matrícula</span>
+                </div>
+
+                <section class="row">
+                    <div class="col-lg-7">
+                        <MatriculaGrafico />
+                    </div>
+
+                    <div class="col-lg-5">
+                        <MatriculaGraficoComparacao />
+                        <MatriculaPreenchimento />
+                    </div>
+                </section>
+            </div>
+        </div>
 
         <section class="row">
             <div class="col-lg-6">

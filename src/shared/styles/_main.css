@@ -6,6 +6,7 @@ link
 scrollbar
 title-app
 title-section
+popover-app
 
 complementary classes
 //////////////////////////////////////////////////////////////////// */
@@ -154,6 +155,16 @@ title-section
 .title-section.title-section-buttons span,
 .title-section.title-section-buttons span.title{
     flex: 1;
+}
+
+/* --------------------------------------------------------------------
+* - popover-app
+---------------------------------------------------------------------- */
+.popover-app-modelo{
+    --bs-popover-body-padding-x: 0.5rem;
+    --bs-popover-body-padding-y: .5rem;
+    --bs-popover-bg: #6c757d;
+    --bs-popover-body-color: #fff;
 }
 
 /* --------------------------------------------------------------------
