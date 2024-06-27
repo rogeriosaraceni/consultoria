@@ -16,9 +16,9 @@ $('a[data-bs-toggle="tab"]').on('click', function (e) {
 
             //--Inicializa functions quando a tab carrega no mode click
             $('.selectpicker').selectpicker()
-            activeTooltips()
-            activeFancybox()
-            deleteRow()
+            initTooltips()
+            initFancybox()
+            initDeleteRow()
             formsSubmitSpinnerToasts()
             imaskInputs()
             somenteNumero(e)
@@ -39,7 +39,7 @@ $('a[data-bs-toggle="tab"]').on('click', function (e) {
 $('a[data-bs-toggle="tab"]').on('show.bs.tab', function () {
     //--Inicializa functions quando a tab vem ativada por default no mode show
     //$('.selectpicker').selectpicker()
-    //activeTooltips()
+    //initTooltips()
     //formsSubmitSpinnerToasts()
 })
 

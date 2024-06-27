@@ -9,6 +9,7 @@ nav-tabs
 page-item .active/disabled
 tab-content
 hr
+custom tooltips
 //////////////////////////////////////////////////////////////////// */
 
 /* --------------------------------------------------------------------
@@ -178,3 +179,31 @@ btn
 * - hr
 ---------------------------------------------------------------------- */
 hr { opacity: 0.12;}
+
+/* --------------------------------------------------------------------
+* - custom tooltips
+---------------------------------------------------------------------- */
+.tooltip-300 .tooltip-inner {
+    max-width: 300px;
+    text-align: left;
+}
+.tooltip-400 .tooltip-inner {
+    max-width: 400px;
+    text-align: left;
+}
+.tooltip-500 .tooltip-inner {
+    max-width: 500px;
+    text-align: left;
+}
+.tooltip-600 .tooltip-inner {
+    max-width: 600px;
+    text-align: left;
+}
+.tooltip-700 .tooltip-inner {
+    max-width: 700px;
+    text-align: left;
+}
+.tooltip-800 .tooltip-inner {
+    max-width: 800px;
+    text-align: left;
+}

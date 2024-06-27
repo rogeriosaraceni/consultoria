@@ -12,10 +12,10 @@
         </div>
 
         <label
-            id="modelo-anual-estrategia-tooltip"
             class="d-inline-flex gap-2 mb-0 fw-bold"
             data-bs-toggle="tooltip"
             data-bs-html="true"
+            data-bs-custom-class="tooltip-600"
             data-bs-title="Discursar aqui quais serão os pontos focais do próximo ano: expansão, foco no time comercial, reestruturação de lideranças, suprir GAPs pedagógicos, investimento em MKT, manutenção do time e expansão no WIP/WizardON, etc.<br><br>Breve resumo do encerramento do ano, qual o percentual de atingimento dos alunos ativos, o que contribuiu para entrega ou não do resultado. Quais pontos de melhoria, etc."
         >
             <i class="bi bi-info-circle fs-6"></i>
@@ -30,10 +30,3 @@ Breve resumo do encerramento do ano, qual o percentual de atingimento dos alunos
         </label>
     </div>
 </div>
-
-<script is:inline>
-    const tooltipModeloAnualEstrategia = document.getElementById('modelo-anual-estrategia-tooltip')
-    tooltipModeloAnualEstrategia.addEventListener('shown.bs.tooltip', () => {
-        document.querySelector('.tooltip').classList.add('tooltip-600');
-    });
-</script>

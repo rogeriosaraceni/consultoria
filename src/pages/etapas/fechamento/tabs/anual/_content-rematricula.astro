@@ -13,13 +13,11 @@
         am4core.useTheme(am4themes_animated);
 
         const chart = am4core.create("chartdiv-fechamento-anual-rematricula", am4charts.XYChart);
+
+        chart.maskBullets = false;
         chart.padding(0, 0, 0, 0);
         chart.language.locale = am4lang_pt_BR;
-
-        // Disable amChart Logo
-        if (chart.logo) {
-            chart.logo.disabled = true;
-        }
+        if(chart.logo){ chart.logo.disabled = true;}
 
         chart.data = [
             {

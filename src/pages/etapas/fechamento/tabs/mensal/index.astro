@@ -2,6 +2,8 @@
 import ContentSelecao from "./_content-selecao.astro";
 import FunctionFormShowHandler from "src/shared/utils/_function-formShowHandler.astro";
 
+import Matricula from "./_content-matricula.astro";
+import PlanoAcao from "./_content-plano-acao.astro";
 ---
 
 <ContentSelecao />
@@ -9,6 +11,8 @@ import FunctionFormShowHandler from "src/shared/utils/_function-formShowHandler.
 
 <div data-content="mensal" style="display: none;">
     <form action="">
+        <Matricula />
+        <PlanoAcao />
 
         <div class="card">
             <div class="card-body">

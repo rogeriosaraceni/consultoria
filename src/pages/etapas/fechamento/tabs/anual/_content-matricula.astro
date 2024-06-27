@@ -1,10 +1,3 @@
-<style is:inline>
-    .tooltip-400 .tooltip-inner {
-        max-width: 400px;
-        text-align: left;
-    }
-</style>
-
 <div class="card">
     <div class="card-body">
         <div class="title-section title-section-buttons">
@@ -22,10 +15,10 @@
 
                     <div>
                         <label
-                            id="modelo-anual-tooltip"
                             class="d-inline-flex gap-2 mb-0 fw-bold"
                             data-bs-toggle="tooltip"
                             data-bs-html="true"
+                            data-bs-custom-class="tooltip-600"
                             data-bs-title="DESTAQUE: (NOME UNIDADE) e (NOME UNIDADE), performando, respectivamente, XX% e XX% acima do LY.<br><br>Performance do grupo acima do LY, mas muito por conta da inauguração de (NOME UNIDADE) em XX/XX.<br><br>Fechamento do ano com atingimento de XX% do LY e XX% da carta-meta."
                         >
                             <i class="bi bi-info-circle fs-6"></i>
@@ -34,7 +27,7 @@
 
                         <label style="height: 130px;">
                             <textarea
-                            id=""
+                            name="fechamento_anual_matricula_preenchimento"
                             class="form-control h-100"
                             placeholder="DESTAQUE: (NOME UNIDADE) e (NOME UNIDADE), performando, respectivamente, XX% e XX% acima do LY.
 Performance do grupo acima do LY, mas muito por conta da inauguração de (NOME UNIDADE) em XX/XX. Fechamento do ano com atingimento de XX% do LY e XX% da carta-meta."></textarea>
@@ -47,22 +40,15 @@ Performance do grupo acima do LY, mas muito por conta da inauguração de (NOME 
 </div>
 
 <script is:inline>
-    const tooltipModeloAnual = document.getElementById('modelo-anual-tooltip')
-    tooltipModeloAnual.addEventListener('shown.bs.tooltip', () => {
-        document.querySelector('.tooltip').classList.add('tooltip-400');
-    });
-
     am4core.ready(function () {
         am4core.useTheme(am4themes_animated);
 
         const chart = am4core.create("chartdiv-fechamento-anual", am4charts.XYChart);
+
+        chart.maskBullets = false;
         chart.padding(0, 0, 0, 0);
         chart.language.locale = am4lang_pt_BR;
-
-        // Disable amChart Logo
-        if (chart.logo) {
-            chart.logo.disabled = true;
-        }
+        if(chart.logo){ chart.logo.disabled = true;}
 
         chart.data = [
             {
@@ -183,11 +169,10 @@ Performance do grupo acima do LY, mas muito por conta da inauguração de (NOME 
 
         const chart = am4core.create('chartdiv-fechamento-anual-comparacao', am4charts.XYChart)
 
-        // Disable amChart Logo
-        if(chart.logo){ chart.logo.disabled = true;}
         chart.maskBullets = false;
-        chart.padding(20, 0, 0, 0);
+        chart.padding(30, 0, 0, 0);
         chart.language.locale = am4lang_pt_BR;
+        if(chart.logo){ chart.logo.disabled = true;}
 
         chart.data = [
             {

@@ -2,10 +2,11 @@
 
 /** ////////////////////////////////////////////////////////////////////
  *
- * - activeTooltips
+ * - initTooltips
+ * - initPopovers
  * - mainAppMarginTop
  * - showCurrentYear
- * - navigationActive
+ * - initNavigationsActive
  * - fancybox
  * - floatThead
  * - DOMPurif protect xss
@@ -13,21 +14,26 @@
  * - formsSubmitSpinnerToasts
  * - closeModalIfInside
  * - color charts
-
  * -
- *
- * - Active Functions
- *
 --------------------------------------------------------------------- */
 
 /** --------------------------------------------------------------------
- * activeTooltips
+ * initTooltips
 --------------------------------------------------------------------- */
-function activeTooltips() {
+function initTooltips() {
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 }
-activeTooltips()
+initTooltips()
+
+/** --------------------------------------------------------------------
+ * initPopovers
+--------------------------------------------------------------------- */
+function initPopovers() {
+    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+    const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+}
+initPopovers()
 
 /** --------------------------------------------------------------------
  * mainAppMarginTop
@@ -60,9 +66,9 @@ const showCurrentYear = () => {
 showCurrentYear()
 
 /** --------------------------------------------------------------------
- * navigationActive
+ * initNavigationsActive
 --------------------------------------------------------------------- */
-const navigationActive = () => {
+const initNavigationsActive = () => {
     const currentUrl = window.location.pathname;
     const navLinks = document.querySelectorAll(`.navbar-nav .nav-item a[href$="${currentUrl}"]`)
 
@@ -73,13 +79,13 @@ const navigationActive = () => {
         dropdownParent?.classList.add("active")
     });
 }
-navigationActive()
+initNavigationsActive()
 
 /** --------------------------------------------------------------------
  * fancybox
  * https://fancyapps.com/fancybox/plugins/html/#iframes
 --------------------------------------------------------------------- */
-function activeFancybox() {
+function initFancybox() {
     const fancyboxElement = document.querySelector("[data-fancybox]")
     if (fancyboxElement) {
         Fancybox.bind("[data-fancybox]", {});
@@ -87,13 +93,11 @@ function activeFancybox() {
 
     //console.log('ativado fancybox');
 }
-activeFancybox()
+initFancybox()
 
 /** --------------------------------------------------------------------
  * floatThead
 --------------------------------------------------------------------- */
-//const $table = $(".fixThead");
-
 const floatTheadElement = document.querySelector(".fixThead");
 if (floatTheadElement) {
     $table.floatThead({
@@ -118,14 +122,14 @@ inputsApp.forEach((item) => {
 /** --------------------------------------------------------------------
  * data-row="delete"
 --------------------------------------------------------------------- */
-function deleteRow() {
+function initDeleteRow() {
     $('[data-row="delete"]').on('click', function () {
         if (!confirm("Você tem certeza que deseja excluir?")) {
             return false;
         }
     });
 }
-deleteRow()
+initDeleteRow()
 
 /** --------------------------------------------------------------------
  * formsSubmitSpinnerToasts
