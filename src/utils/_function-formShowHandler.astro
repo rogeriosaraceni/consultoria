@@ -13,6 +13,7 @@
         }
     }
 
+    //Etapas Execução Comercial
     formShowHandler('[data-form="analise"]',      '[data-content="analise"]');
     formShowHandler('[data-form="calendario"]',   '[data-content="calendario"]');
     formShowHandler('[data-form="controle"]',     '[data-content="controle"]');
@@ -27,11 +28,11 @@
     formShowHandler('[data-form="swot"]',         '[data-content="swot"]');
     formShowHandler('[data-form="treinamentos"]', '[data-content="treinamentos"]');
     formShowHandler('[data-form="wiz"]',          '[data-content="wiz"]');
-</script>
 
-<script is:inline>
-    $('[data-btn="prevent"]').on('click', function(event){
-        event.preventDefault()
-        console.log('O botão foi clicado, mas o comportamento padrão foi prevenido.');
-    });
+
+    //Fechamento
+    formShowHandler('[data-form="anual"]',     '[data-content="anual"]');
+    formShowHandler('[data-form="semestral"]', '[data-content="semestral"]');
+    formShowHandler('[data-form="trimestral"]','[data-content="trimestral"]');
+    formShowHandler('[data-form="mensal"]',    '[data-content="mensal"]');
 </script>
