@@ -1,0 +1,94 @@
+<div class="card">
+    <div class="card-body">
+        <div class="title-section title-section-buttons">
+            <span class="title">Alunos Ativos</span>
+        </div>
+
+        <div id="chartdiv-fechamento-trimestral-alunos-ativos" style="height: 200px;"></div>
+    </div>
+</div>
+
+<script is:inline>
+    am4core.ready(function () {
+        am4core.useTheme(am4themes_animated);
+
+        const chart = am4core.create("chartdiv-fechamento-trimestral-alunos-ativos", am4charts.XYChart);
+
+        chart.maskBullets = false;
+        chart.padding(40, 0, 0, 0);
+        chart.language.locale = am4lang_pt_BR;
+        if(chart.logo){ chart.logo.disabled = true;}
+
+        const data = [
+            {
+                "mes": "jan",
+                "Valores": 2.147,
+            },
+            {
+                "mes": "mar",
+                "Valores": 2.185,
+            },
+            {
+                "mes": "jun",
+                "Valores": 2.335,
+            },
+            {
+                "mes": "set",
+                "Valores": 2.520,
+            },
+            {
+                "mes": "dez",
+                "Valores": 2.600,
+            },
+        ];
+
+        /* Create axes */
+        const categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+        categoryAxis.dataFields.category = "mes";
+        categoryAxis.renderer.minGridDistance = 30;
+        categoryAxis.renderer.grid.template.disabled = false;
+        categoryAxis.renderer.labels.template.rotation = 0;
+        categoryAxis.renderer.labels.template.verticalCenter = "middle";
+        categoryAxis.renderer.labels.template.horizontalCenter = "left";
+        categoryAxis.renderer.ticks.template.disabled = false;
+        categoryAxis.renderer.ticks.template.strokeOpacity = 0;
+
+        /* Create value axis */
+        const valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        valueAxis.renderer.labels.template.disabled = true;
+        valueAxis.renderer.grid.template.disabled = true;
+
+        function createLineWithBullets(field, name, dasharray, color) {
+            const lineSeries = chart.series.push(new am4charts.LineSeries());
+            lineSeries.name = name;
+            lineSeries.dataFields.valueY = field;
+            lineSeries.dataFields.categoryX = "mes";
+            lineSeries.stroke = color;
+            lineSeries.strokeWidth =  3;
+            //lineSeries.strokeDasharray = dasharray;
+            lineSeries.tensionX =  0.7;
+
+            const bullet = lineSeries.bullets.push(new am4core.Circle());
+            bullet.radius = 6;
+            bullet.fill = am4core.color("#fff");
+            bullet.strokeWidth = 9;
+            bullet.tooltipText = "{mes}\n {valueY}";
+
+            const labelBullet = lineSeries.bullets.push(new am4charts.LabelBullet());
+            labelBullet.label.text = "{valueY}";
+            labelBullet.label.fontSize = 16;
+            labelBullet.label.verticalCenter = "bottom";
+            labelBullet.label.dy = -10;
+        }
+
+        createLineWithBullets("Valores", "Valores", "3,3", am4core.color(colorGreen));
+
+        // chart.legend = new am4charts.Legend();
+
+        // const markerTemplate = chart.legend.markers.template;
+        // markerTemplate.width = 15;
+        // markerTemplate.height = 15;
+
+        chart.data = data;
+    });
+</script>

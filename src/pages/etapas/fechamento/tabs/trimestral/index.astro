@@ -2,6 +2,11 @@
 import ContentSelecao from "./_content-selecao.astro";
 import FunctionFormShowHandler from "src/shared/utils/_function-formShowHandler.astro";
 
+import MatriculaGrafico from "./_content-matricula-grafico.astro";
+import MatriculaPreenchimento from "./_content-matricula-preenchimento.astro";
+import Rematricula from "./_content-rematricula.astro";
+import AlunosAtivos from "./_content-alunos-ativos.astro";
+import Plano from "./_content-plano-acao.astro";
 ---
 
 <ContentSelecao />
@@ -9,6 +14,35 @@ import FunctionFormShowHandler from "src/shared/utils/_function-formShowHandler.
 
 <div data-content="trimestral" style="display: none;">
     <form action="">
+        <div class="card">
+            <div class="card-body">
+                <div class="title-section title-section-buttons">
+                    <span class="title">Matrícula</span>
+                </div>
+
+                <section class="row">
+                    <div class="col-lg-7">
+                        <MatriculaGrafico />
+                    </div>
+
+                    <div class="col-lg-5">
+                        <MatriculaPreenchimento />
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <section class="row">
+            <div class="col-lg-6">
+                <Rematricula />
+            </div>
+
+            <div class="col-lg-6">
+                <AlunosAtivos />
+            </div>
+        </section>
+
+        <Plano />
 
         <div class="card">
             <div class="card-body">
