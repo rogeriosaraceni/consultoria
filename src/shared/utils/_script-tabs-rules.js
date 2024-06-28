@@ -7,7 +7,8 @@ $('a[data-bs-toggle="tab"]').on('click', function (e) {
     const url = $(this).attr("href")
     const target = $(this).data("bs-target")
 
-    clearPopovers()
+    closePopovers()
+    popovers = initPopovers()
 
     // Verifica se a aba já foi carregada
     if (!$(target).hasClass('loaded')) {
@@ -19,7 +20,7 @@ $('a[data-bs-toggle="tab"]').on('click', function (e) {
             //--Inicializa functions quando a tab carrega no mode click
             $('.selectpicker').selectpicker()
             initTooltips()
-            popovers = initPopovers();
+            popovers = initPopovers()
             initFancybox()
             initDeleteRow()
             formsSubmitSpinnerToasts()
@@ -36,14 +37,11 @@ $('a[data-bs-toggle="tab"]').on('click', function (e) {
     $.fn.dataTable.tables({ visible: true, api: true }).columns.adjust()
 
     //https://www.amcharts.com/docs/v4/tutorials/chart-was-not-disposed/
-    //am4core.options.autoDispose = true
+    am4core.options.autoDispose = true
 });
 
 $('a[data-bs-toggle="tab"]').on('show.bs.tab', function () {
     //--Inicializa functions quando a tab vem ativada por default no mode show
-    //$('.selectpicker').selectpicker()
-    //initTooltips()
-    //formsSubmitSpinnerToasts()
 })
 
 // Carrega e mostra a aba inicial

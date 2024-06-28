@@ -34,15 +34,18 @@ function initPopovers() {
     const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
     return popoverList
 }
-// Variável global para armazenar os popovers
-let popovers = [];
+initPopovers()
 
-function clearPopovers() {
+// Variável global para armazenar os popovers
+let popovers = []
+
+// Para fechar popovers abertos, quando mudar de tab com Ajax
+function closePopovers() {
     if (popovers.length > 0) {
-        popovers.forEach(popover => popover.dispose());
-        //console.log('Popovers destruídos:', popovers);
+        popovers.forEach(popover => popover.dispose())
+        //console.log('Popovers destruídos:', popovers)
     }
-    popovers = [];
+    popovers = []
 }
 
 /** --------------------------------------------------------------------
