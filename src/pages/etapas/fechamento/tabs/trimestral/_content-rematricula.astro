@@ -44,7 +44,7 @@
         valueAxis.renderer.labels.template.disabled = true;
         valueAxis.renderer.grid.template.disabled = true;
 
-        function createSeries(valueField, name, color) {
+        function createSeries(valueField, name, color, colorText) {
             const series = chart.series.push(new am4charts.ColumnSeries());
             series.dataFields.categoryY = "category";
             series.dataFields.valueX = valueField;
@@ -60,7 +60,7 @@
             // Valores em colunas superiores
             const bullet = series.bullets.push(new am4charts.LabelBullet());
             bullet.label.text = "{valueX}";
-            bullet.label.fill = am4core.color("#000");
+            bullet.label.fill = colorText;
             bullet.label.strokeWidth = 2;
             bullet.label.dy = 0;
             bullet.label.dx = -20;
@@ -70,7 +70,7 @@
         }
 
         createSeries('rematricular', 'Alunos a rematricular', am4core.color(colorGrey));
-        createSeries('rematriculados', 'Alunos rematriculados', am4core.color(colorMidnightBlue));
+        createSeries('rematriculados', 'Alunos rematriculados', am4core.color(colorMidnightBlue), am4core.color("#fff"));
 
          // Add legend
         chart.legend = new am4charts.Legend();
