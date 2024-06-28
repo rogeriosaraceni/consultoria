@@ -18,9 +18,20 @@
 
 <script is:inline>
     const anualMatriculaModeloText = `
-        DESTAQUE: (NOME UNIDADE) e (NOME UNIDADE), performando, respectivamente, XX% e XX% acima do LY.<br>
-        Performance do grupo acima do LY, mas muito por conta da inauguração de (NOME UNIDADE) em XX/XX.<br>
-        Fechamento do ano com atingimento de XX% do LY e XX% da carta-meta.
+        <div class="info-modelos">
+            <p>
+                DESTAQUE: <i class="info">(NOME UNIDADE)</i> e <i class="info">(NOME UNIDADE)</i>, performando, respectivamente,
+                <i class="info">XX%</i> e <i class="info">XX%</i> acima do LY.
+            </p>
+
+            <p>
+                Performance do grupo acima do LY, mas muito por conta da inauguração de <i class="info">(NOME UNIDADE)</i> em <i class="info">XX/XX</i>.
+            </p>
+
+            <p>
+                Fechamento do ano com atingimento de <i class="info">XX%</i> do LY e <i class="info">XX%</i> da carta-meta.
+            </p>
+        </div>
     `
     document.querySelector('#anualMatriculaModelo').setAttribute('data-bs-content', anualMatriculaModeloText)
 </script>

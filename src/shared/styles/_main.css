@@ -169,7 +169,10 @@ title-section
 
 .info-modelos{ line-height: 1.1;}
 .info-modelos p{ margin-bottom: 0.5rem;}
-.info-modelos .info{ color: #ffc000}
+.info-modelos.info,
+.info-modelos .info{
+    color: #ffc000;
+}
 
 /* --------------------------------------------------------------------
 * - complementary classes
