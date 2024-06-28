@@ -1,3 +1,19 @@
+---
+const meses = [
+    { mes: 'Fev'},
+    { mes: 'Mar'},
+    { mes: 'Abr'},
+    { mes: 'Maio'},
+    { mes: 'Juh'},
+    { mes: 'Jul'},
+    { mes: 'Ago'},
+    { mes: 'Set'},
+    { mes: 'Out'},
+    { mes: 'Nov'},
+    { mes: 'Dez'},
+]
+---
+
 <div class="card">
     <div class="card-body">
         <div class="title-section">Listagem</div>
@@ -17,8 +33,8 @@
 
                     <tbody>
                         <tr>
-                            <td rowspan="2">DC00049211</td>
-                            <td>1</td>
+                            <td rowspan="12">DC00049211</td>
+                            <td>Jan</td>
 
                             <td class="text-center">
                                 <a class="text-secondary fs-5" data-bs-toggle="tooltip" data-bs-title="Edit" href="">
@@ -33,25 +49,28 @@
                             </td>
                         </tr>
 
-                        <tr>
-                            <td>2</td>
+                        {
+                            meses.map(item => (
+                                <tr>
+                                    <td>{item.mes}</td>
 
-                            <td class="text-center">
-                                <a class="text-secondary fs-5" data-bs-toggle="tooltip" data-bs-title="Edit" href="">
-                                    <i class="bi bi-pencil-square"></i>
-                                </a>
-                            </td>
+                                    <td class="text-center">
+                                        <a class="text-secondary fs-5" data-bs-toggle="tooltip" data-bs-title="Edit" href="">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </a>
+                                    </td>
 
-                            <td class="text-center">
-                                <a class="text-secondary fs-5" data-bs-toggle="tooltip" data-bs-title="Del" data-row="delete" href="#">
-                                    <i class="bi bi-trash icon-tab"></i>
-                                </a>
-                            </td>
-                        </tr>
+                                    <td class="text-center">
+                                        <a class="text-secondary fs-5" data-bs-toggle="tooltip" data-bs-title="Del" data-row="delete" href="#">
+                                            <i class="bi bi-trash icon-tab"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            ))
+                        }
                     </tbody>
                 </table>
             </div>
         </form>
     </div>
 </div>
-
