@@ -168,6 +168,11 @@ title-section
     --bs-popover-body-color: #fff;
 }
 
+.popover-app-modelo .popover-header {
+    text-align: right;
+    cursor: pointer;
+}
+
 .info-modelos{ line-height: 1.1;}
 .info-modelos p{ margin-bottom: 0.5rem;}
 .info-modelos.info,
