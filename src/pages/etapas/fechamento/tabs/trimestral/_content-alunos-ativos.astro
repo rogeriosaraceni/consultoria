@@ -27,14 +27,17 @@
             {
                 "mes": "mar",
                 "Valores": 2185,
+                "lineDash": "4",
             },
             {
                 "mes": "jun",
                 "Valores": 2335,
+                "lineDash": "4",
             },
             {
                 "mes": "set",
                 "Valores": 2520,
+                "lineDash": "4",
             },
             {
                 "mes": "dez",
@@ -58,15 +61,15 @@
         valueAxis.renderer.labels.template.disabled = true;
         valueAxis.renderer.grid.template.disabled = true;
 
-        function createLineWithBullets(field, name, dasharray, color) {
+        function createLineWithBullets(field, name, color) {
             const lineSeries = chart.series.push(new am4charts.LineSeries());
             lineSeries.name = name;
             lineSeries.dataFields.valueY = field;
             lineSeries.dataFields.categoryX = "mes";
             lineSeries.stroke = color;
             lineSeries.strokeWidth =  3;
-            //lineSeries.strokeDasharray = dasharray;
-            lineSeries.tensionX =  0.7;
+            lineSeries.propertyFields.strokeDasharray = "lineDash";
+            lineSeries.tensionX =  1;
 
             const bullet = lineSeries.bullets.push(new am4core.Circle());
             bullet.radius = 6;
@@ -81,14 +84,7 @@
             labelBullet.label.dy = -10;
         }
 
-        createLineWithBullets("Valores", "Valores", "3,3", am4core.color(colorMidnightBlue));
-
-        // chart.legend = new am4charts.Legend();
-
-        // const markerTemplate = chart.legend.markers.template;
-        // markerTemplate.width = 15;
-        // markerTemplate.height = 15;
-
+        createLineWithBullets("Valores", "Valores", am4core.color(colorMidnightBlue));
         chart.data = data;
     });
 </script>
