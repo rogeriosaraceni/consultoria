@@ -9,72 +9,133 @@
 </div>
 
 <script is:inline>
-    am4core.ready(function () {
-        am4core.useTheme(am4themes_animated);
+    function initializeChartSemestralAlunosAtivos() {
+        am4core.ready(function () {
+            am4core.useTheme(am4themes_animated);
 
-        const chart = am4core.create("chartdiv-fechamento-semestral-alunos-ativos", am4charts.XYChart);
+            const chart = am4core.create("chartdiv-fechamento-semestral-alunos-ativos", am4charts.XYChart);
 
-        chart.maskBullets = false;
-        chart.padding(40, 0, 0, 0);
-        chart.language.locale = am4lang_pt_BR;
-        if(chart.logo){ chart.logo.disabled = true;}
+            chart.maskBullets = false;
+            chart.padding(40, 0, 0, 0);
+            chart.language.locale = am4lang_pt_BR;
+            if (chart.logo) {
+                chart.logo.disabled = true;
+            }
 
-        const data = [
-            {
-                "mes": "jan",
-                "valores": 2147,
-            },
-            {
-                "mes": "jun",
-                "valores": 2235,
-                "lineDash": "4",
-            },
-            {
-                "mes": "nov",
-                "valores": 2600,
-            },
-        ];
+            const data = [
+                {
+                    "mes": "jan",
+                    "valores": 2147
+                },
+                {
+                    "mes": "jun",
+                    "valores": 2235,
+                    "lineDash": "4"
+                },
+                {
+                    "mes": "dez",
+                    "valores": 2600
+                }
+            ];
 
-        /* Create axes */
-        const categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-        categoryAxis.dataFields.category = "mes";
-        categoryAxis.renderer.minGridDistance = 30;
-        categoryAxis.renderer.grid.template.disabled = false;
-        categoryAxis.renderer.labels.template.rotation = 0;
-        categoryAxis.renderer.labels.template.verticalCenter = "middle";
-        categoryAxis.renderer.labels.template.horizontalCenter = "left";
-        categoryAxis.renderer.ticks.template.disabled = false;
-        categoryAxis.renderer.ticks.template.strokeOpacity = 0;
+            // Calculando as diferenças percentuais automaticamente
+            for (let i = 1; i < data.length; i++) {
+                const previousValue = data[i - 1].valores;
+                const currentValue = data[i].valores;
+                const percentChange = ((currentValue - previousValue) / previousValue) * 100;
+                data[i].percentChange = percentChange.toFixed(1) + "%";
+            }
 
-        /* Create value axis */
-        const valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-        valueAxis.renderer.labels.template.disabled = true;
-        valueAxis.renderer.grid.template.disabled = true;
+            /* Create axes */
+            const categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+            categoryAxis.dataFields.category = "mes";
+            categoryAxis.renderer.minGridDistance = 30;
+            categoryAxis.renderer.grid.template.disabled = false;
+            categoryAxis.renderer.labels.template.rotation = 0;
+            categoryAxis.renderer.labels.template.verticalCenter = "middle";
+            categoryAxis.renderer.labels.template.horizontalCenter = "left";
+            categoryAxis.renderer.ticks.template.disabled = false;
+            categoryAxis.renderer.ticks.template.strokeOpacity = 0;
 
-        function createLineWithBullets(field, name, color) {
-            const lineSeries = chart.series.push(new am4charts.LineSeries());
-            lineSeries.name = name;
-            lineSeries.dataFields.valueY = field;
-            lineSeries.dataFields.categoryX = "mes";
-            lineSeries.stroke = color;
-            lineSeries.strokeWidth =  3;
-            lineSeries.propertyFields.strokeDasharray = "lineDash";
-            lineSeries.tensionX =  0.4;
+            /* Create value axis */
+            const valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+            valueAxis.renderer.labels.template.disabled = true;
+            valueAxis.renderer.grid.template.disabled = true;
 
-            const bullet = lineSeries.bullets.push(new am4core.Circle());
-            bullet.radius = 6;
-            bullet.fill = am4core.color("#fff");
-            bullet.strokeWidth = 9;
-            bullet.tooltipText = "{mes}\n {valueY}";
+            function createLineWithBullets(field, name, color) {
+                const lineSeries = chart.series.push(new am4charts.LineSeries());
+                lineSeries.name = name;
+                lineSeries.dataFields.valueY = field;
+                lineSeries.dataFields.categoryX = "mes";
+                lineSeries.stroke = color;
+                lineSeries.strokeWidth = 3;
+                lineSeries.propertyFields.strokeDasharray = "lineDash";
+                lineSeries.tensionX = 1;
 
-            const labelBullet = lineSeries.bullets.push(new am4charts.LabelBullet());
-            labelBullet.label.text = "{valueY}";
-            labelBullet.label.fontSize = 16;
-            labelBullet.label.verticalCenter = "bottom";
-            labelBullet.label.dy = -10;
-        }
+                const bullet = lineSeries.bullets.push(new am4core.Circle());
+                bullet.radius = 6;
+                bullet.fill = am4core.color("#fff");
+                bullet.strokeWidth = 9;
+                bullet.tooltipText = "{mes}\n {valueY}";
 
-        createLineWithBullets("valores", "valores", am4core.color(colorMidnightBlue));
-        chart.data = data;
-    });
+                const labelBullet = lineSeries.bullets.push(new am4charts.LabelBullet());
+                labelBullet.label.text = "{valueY}";
+                labelBullet.label.fontSize = 16;
+                labelBullet.label.verticalCenter = "bottom";
+                labelBullet.label.dy = -10;
+            }
+
+            function calculatePercentagePosition(chart) {
+                let chartWidth = chart.pixelWidth;
+                return chartWidth / 1.45 / 2 / 2;
+            }
+
+            function updatePercentageLabels() {
+                const percentagePosition = calculatePercentagePosition(chart);
+                chart.series.each(function (series) {
+                    if (series instanceof am4charts.LineSeries && series.dataFields.valueY === "percentPos") {
+                        series.bullets.each(function (bullet) {
+                            if (bullet instanceof am4charts.LabelBullet) {
+                                bullet.dx = -percentagePosition;
+                            }
+                        });
+                    }
+                });
+            }
+
+            function createPercentageLabels(data) {
+                const percentSeries = chart.series.push(new am4charts.LineSeries());
+                percentSeries.dataFields.valueY = "percentPos";
+                percentSeries.dataFields.categoryX = "mes";
+                percentSeries.strokeWidth = 0;
+                percentSeries.fillOpacity = 0;
+
+                const labelBullet = percentSeries.bullets.push(new am4charts.LabelBullet());
+                labelBullet.label.text = "{percentChange}";
+                labelBullet.label.fontSize = 14;
+                labelBullet.label.fill = am4core.color("#FFA500"); // Cor laranja para o percentual
+            }
+
+            createLineWithBullets("valores", "valores", am4core.color(colorMidnightBlue));
+
+            // Calculando as posições percentuais e adicionando ao array de dados
+            for (let i = 1; i < data.length; i++) {
+                const previousValue = data[i - 1].valores;
+                const currentValue = data[i].valores;
+                const percentChange = data[i].percentChange;
+                const middleValue = (previousValue + currentValue) / 1.9;
+
+                if (percentChange) {
+                    data[i].percentPos = middleValue;
+                }
+            }
+
+            createPercentageLabels(data);
+            chart.data = data;
+
+            // Adiciona o event listener para redimensionamento
+            window.addEventListener('resize', updatePercentageLabels);
+            updatePercentageLabels(); // Atualiza as posições inicialmente
+        });
+    }
 </script>
