@@ -232,6 +232,6 @@ function clearform(btn) {
 /** --------------------------------------------------------------------
  * color charts
 --------------------------------------------------------------------- */
-const colorMidnightBlue= "#003057"
-const colorGreen = "#128c82"
-const colorGrey = "#dddddd"
+// const colorMidnightBlue= "#003057"
+// const colorGreen = "#128c82"
+// const colorGrey = "#dddddd"

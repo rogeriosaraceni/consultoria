@@ -1,0 +1,86 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Nav from '@includes/Nav/Nav.astro';
+import PageHeader from 'src/shared/components/PageHeader.astro';
+
+import Breadcrumb from '../_content-breadcrumb.astro';
+import BtnsFechamentos from '../_content-btns-fechamentos.astro';
+
+import ContentSelecao from "./_content-selecao.astro";
+import MatriculaGrafico from "./_content-matricula-grafico.astro";
+import MatriculaPreenchimento from "./_content-matricula-preenchimento.astro";
+import Rematricula from "./_content-rematricula.astro";
+import AlunosAtivos from "./_content-alunos-ativos.astro";
+import Estrategia from "./_content-estrategia.astro";
+import Objetivos from "./_content-objetivos.astro";
+import ContentListagem from "./_content-listagem.astro";
+---
+
+<Layout>
+    <Nav />
+
+    <PageHeader
+        icon='bi bi-files',
+        name='Fechamento'
+    />
+
+    <main class="main-app">
+        <section class="container-fluid">
+            <Breadcrumb />
+            <BtnsFechamentos />
+
+            <ContentSelecao />
+
+            <form action="">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="title-section title-section-buttons">
+                            <span class="title">Matrícula</span>
+                        </div>
+
+                        <section class="row">
+                            <div class="col-lg-7">
+                                <MatriculaGrafico />
+                            </div>
+
+                            <div class="col-lg-5">
+                                <MatriculaPreenchimento />
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <section class="row">
+                    <div class="col-lg-6">
+                        <Rematricula />
+                    </div>
+
+                    <div class="col-lg-6">
+                        <AlunosAtivos />
+                    </div>
+
+                    <div class="col-lg-6">
+                        <Estrategia />
+                    </div>
+
+                    <div class="col-lg-6">
+                        <Objetivos />
+                    </div>
+                </section>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn-primary" data-btn="spinner-toast" data-toast-target="cad">
+                                <span>Salvar</span>
+                                <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <ContentListagem />
+        </section>
+    </main>
+</Layout>
