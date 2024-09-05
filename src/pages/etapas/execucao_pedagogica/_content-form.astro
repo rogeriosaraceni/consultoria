@@ -38,6 +38,58 @@
             <section class="row">
                 <div class="col-xl-3 col-lg-4 col-md-5 col-sm-6">
                     <div class="flex flex-colunm">
+                        <span>Possui alunos online (Wizard at home)?</span>
+
+                        <div class="d-flex gap-3">
+                            <label class="form-check-label gap-1">
+                                <input
+                                    type="radio"
+                                    name="alunos_online_home"
+                                    id=""
+                                    value="0" onclick="handleYesNo('alunos_online_home', 'quantos_alunos_online_home')"
+                                />
+                                <span class="text-nowrap fw-bold">sim</span>
+                            </label>
+
+                            <label class="form-check-label gap-1">
+                                <input
+                                    type="radio"
+                                    name="alunos_online_home"
+                                    id=""
+                                    value="1"
+                                    onclick="handleYesNo('alunos_online_home', 'quantos_alunos_online_home')"
+                                />
+                                <span class="text-nowrap fw-bold">não</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <label style="max-width: 200px; display: none;" id="quantos_alunos_online_home">
+                    <span>Quantos?</span>
+                    <input type="number" name="" class="form-control">
+                </label>
+
+<script is:inline>
+    function handleYesNo(name, quantos){
+        const selectedRadio = document.querySelector('input[name="alunos_online_home"]:checked');
+
+        if (selectedRadio === 0) {
+            console.log('0');
+        } else {
+            console.log('1');
+        }
+
+
+    }
+</script>
+
+
+
+
+
+                <div class="col-xl-3 col-lg-4 col-md-5 col-sm-6">
+                    <div class="flex flex-colunm">
                         <label>
                             <span>Possui alunos online (Wizard at home)?</span>
                             <select name="alunos_online_home" class="form-select">
@@ -93,6 +145,3 @@
     </div>
 </form>
 
-<script is:inline>
-
-</script>
