@@ -1,0 +1,122 @@
+<form method="POST" action="">
+    <div class="card">
+        <div class="card-body">
+            <div class="title-section title-section-buttons">
+                <span class="title">Próxima Consultoria</span>
+            </div>
+
+            <section class="row">
+                <label class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-7">
+                    <span>Tipo Consultoria:</span>
+                    <select name="" class="form-select" id="tipo-consultoria">
+                        <option></option>
+                        <option value="1">Semana Pedagógica</option>
+                        <option value="2">Reunião Regional Pedagóg</option>
+                        <option value="3">Road Show</option>
+                        <option value="4">Encontro de Franqueados</option>
+                        <option value="5">Ação Específica (outros)</option>
+                    </select>
+                </label>
+            </section>
+
+            <section class="row" id="blocoRestante" style="display: none;">
+                <label class="col-xxl-3 col-xl-4 col-lg-6">
+                    <span>Data:</span>
+                    <input type="date" name="" class="form-control">
+                </label>
+
+                <label class="col-xxl-3 col-xl-4 col-lg-6">
+                    <span>Tema/Assunto:</span>
+                    <input type="text" name="" class="form-control">
+                </label>
+
+                <label class="col-xxl-12">
+                    <span>Lista de participantes com identificação de função/participante e unidade representada:</span>
+                    <textarea name="" class="form-control" rows="2"></textarea>
+                </label>
+
+                <label class="col-xxl-4 col-xl-6 col-lg-6">
+                    <span>Apresentação feita:</span>
+                    <input type="file" name="" class="form-control">
+                </label>
+
+                <label class="col-xxl-4 col-xl-6 col-lg-6">
+                    <span>Anexar arquivo da apresentação:</span>
+                    <input type="file" name="" class="form-control">
+                </label>
+            </section>
+
+            <section class="row" id="blocoAcaoEspecifica" style="display: none;">
+                <label class="col-xxl-3 col-xl-4 col-lg-6">
+                    <span>Data:</span>
+                    <input type="date" name="" class="form-control">
+                </label>
+
+                <label class="col-xxl-3 col-xl-4 col-lg-6">
+                    <span>Tema/Assunto:</span>
+                    <input type="text" name="" class="form-control">
+                </label>
+
+                <label class="col-xxl-12">
+                    <span>Escola(s) participante(s):</span>
+                    <textarea name="" class="form-control" rows="2"></textarea>
+                </label>
+
+                <label class="col-xxl-4 col-xl-6 col-lg-6">
+                    <span>Materiais utilizados:</span>
+                    <input type="file" name="" class="form-control">
+                </label>
+
+                <label class="col-xxl-4 col-xl-6 col-lg-6">
+                    <span>Anexar arquivo da apresentação:</span>
+                    <input type="file" name="" class="form-control">
+                </label>
+            </section>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-end">
+                <button
+                    type="submit"
+                    name="action"
+                    value="cad"
+                    class="btn btn-primary"
+                    data-btn="spinner"
+                >
+                    <span>Salvar</span>
+                    <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script is:inline>
+    $(document).ready(function () {
+        $('#tipo-consultoria').on('change', handleTipoconsultoria)
+        handleTipoconsultoria()
+    })
+
+    function handleTipoconsultoria(){
+        const targetValue = $('#tipo-consultoria').val()
+        const restante = $('#blocoRestante');
+        const acao = $('#blocoAcaoEspecifica');
+        const inputs = "input, textarea, select"
+
+        if(targetValue == 5){
+            restante.hide('fast').find(inputs).val('')
+            acao.show('fast')
+        }
+        else if( targetValue > 0 && targetValue < 5){
+            acao.hide('fast').find(inputs).val('')
+            restante.show('fast')
+        }
+        else{
+            acao.hide('fast').find(inputs).val('')
+            restante.hide('fast').find(inputs).val('')
+        }
+    }
+</script>

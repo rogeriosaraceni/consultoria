@@ -1,0 +1,242 @@
+<form method="POST" action="">
+    <div class="card">
+        <div class="card-body">
+            <div class="title-section title-section-buttons">
+                <span class="title">Gestão</span>
+            </div>
+
+            <section class="row">
+                <label class="col-xxl-4 col-xl-4 col-lg-6 col-md-12">
+                    <span>A unidade possui Coordenador(a) Pedagógico(a)?</span>
+                    <select name="" class="form-select" data-type="no" data-selectID="1">
+                        <option></option>
+                        <option value="1">Sim</option>
+                        <option value="0">Não</option>
+                    </select>
+                </label>
+
+                <div class="col-xxl-8 col-xl-8 col-lg-12" style="display: none;" data-content-resp="1">
+                    <section class="row">
+                        <label class="col-xxl-4 col-xl-5 col-lg-6 col-md-6">
+                            <span>Quem lidera o pedagógico?</span>
+                            <select name="" class="form-select" id="lidera_pedagogico">
+                                <option></option>
+                                <option value="1">Franqueado(a)</option>
+                                <option value="2">Assistente de coordenação</option>
+                                <option value="3">Professor(a) sênior</option>
+                                <option value="4">Ninguém</option>
+                            </select>
+                        </label>
+
+                        <label class="col-xxl-7 col-xl-7 col-lg-6 col-md-6" style="display: none;" id="dedicado_pedagogico">
+                            <span>Ele(a) está completamente dedicado(a) ao Pedagógico?</span>
+                            <select name="" class="form-select">
+                                <option></option>
+                                <option value="1">Sim</option>
+                                <option value="0">Não</option>
+                            </select>
+                        </label>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <section class="row">
+                <label class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                    <span>A unidade possui Assistente de Coordenação?</span>
+                    <select name="" class="form-select">
+                         <option></option>
+                        <option value="1">Sim</option>
+                        <option value="2">Não</option>
+                    </select>
+                </label>
+
+                <label class="col-xl-8 col-lg-12 col-md-12 col-sm-12">
+                    <span>Descreva sua rotina (sob perspectiva de coordenação pedagógica):</span>
+                    <textarea name="" id="" class="form-control" rows="2"></textarea>
+                </label>
+            </section>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <section class="row">
+                <label class="col-xxl-2 col-xl-3 col-lg-4 col-md-5 col-sm-12">
+                    <span>Coordenador dá aulas?</span>
+                    <select name="" class="form-select">
+                         <option></option>
+                        <option value="1">Sim</option>
+                        <option value="2">Não</option>
+                    </select>
+                </label>
+
+                <div class="col-xxl-10 col-xl-9 col-lg-8 col-md- col-sm-12" content-resp="">
+                    <div class="d-flex flex-wrap gap-3">
+                        <label>
+                            <span>Quantas turmas?</span>
+                            <input type="number" name="" class="form-control">
+                        </label>
+
+                        <label>
+                            <span>Quantas alunos?</span>
+                            <input type="number" name="" class="form-control">
+                        </label>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <section class="row">
+                <label class="col-md-6">
+                    <span>Principais dores da Equipe Pedagógica (sob perspectiva da coordenação)?</span>
+                    <textarea name="" id="" class="form-control" rows="2"></textarea>
+                </label>
+
+                <label class="col-md-6">
+                    <span>Como é feito o feedback com os professores?</span>
+                    <textarea name="" id="" class="form-control" rows="2"></textarea>
+                </label>
+            </section>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <section class="row">
+                <label class="col-xxl-3 col-xl-6 col-lg-6 col-md-6">
+                    <span>Quantas aulas foram assistidas no último mês?</span>
+                    <input type="number" name="" class="form-control">
+                </label>
+
+                <label class="col-xxl-3 col-xl-6 col-lg-6 col-md-6">
+                    <span>Anexo:</span>
+                    <input type="file" name="" class="form-control">
+                </label>
+
+                <label class="col-xxl-3 col-xl-6 col-lg-6 col-md-6">
+                    <span>Consultor assistiu aula?</span>
+                    <select name="" class="form-select" data-type="yes" data-selectID="2">
+                        <option></option>
+                        <option value="1">Sim</option>
+                        <option value="0">Não</option>
+                    </select>
+                </label>
+
+                <label class="col-xxl-3 col-xl-6 col-lg-6 col-md-6" style="display: none;" data-content-resp="2">
+                    <span>Anexar relatório de observação de aula:</span>
+                    <input type="file" name="" class="form-control">
+                </label>
+            </section>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-end">
+                <button
+                    type="submit"
+                    name="action"
+                    value="cad"
+                    class="btn btn-primary"
+                    data-btn="spinner"
+                >
+                    <span>Salvar</span>
+                    <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script is:inline>
+    $(document).ready(function () {
+        $('[data-type="no"]').each(function () {
+            const selectID = $(this).attr("data-selectID")
+            $(this).on("change", function () {handleChangeNo(selectID)})
+            handleChangeNo(selectID)
+        })
+    })
+
+    function handleChangeNo(selectID) {
+        const selectItem = $(`select[data-selectID="${selectID}"]`)
+        const contentResp = $(`[data-content-resp="${selectID}"]`)
+        const response = contentResp.find("input, select")
+
+        if (selectItem.length) {
+            const isValid = selectItem.val() === "0" //nao
+
+            if (!isValid || selectItem.val() === "") {
+                contentResp.hide();
+                response.each(function () {
+                    if ($(this).is("input")) {
+                        $(this).val("")
+                    }
+                    else if ($(this).is("select")) {
+                        $(this).prop("selectedIndex", 0)
+                    }
+                })
+            } else {
+                contentResp.show()
+            }
+        }
+    }
+
+    $(document).ready(function () {
+        handleChangeLideraPedagogico()
+        $('#lidera_pedagogico').on('change', handleChangeLideraPedagogico)
+    })
+
+    function handleChangeLideraPedagogico() {
+        const lideraPedagogico = $('#lidera_pedagogico')
+        const dedicadoPedagogico = $('#dedicado_pedagogico')
+
+        if (lideraPedagogico.val() === "1") {
+            dedicadoPedagogico.show()
+        } else {
+            dedicadoPedagogico.hide()
+            dedicadoPedagogico.find('select').prop('selectedIndex', 0)
+        }
+    }
+</script>
+
+
+<script is:inline>
+    $(document).ready(function () {
+        $('[data-type="yes"]').each(function () {
+            const selectID = $(this).attr("data-selectID")
+            $(this).on("change", function () {handleChangeYes(selectID)})
+            handleChangeYes(selectID)
+        })
+    })
+
+    function handleChangeYes(selectID) {
+        const selectItem = $(`select[data-selectID="${selectID}"]`)
+        const contentResp = $(`[data-content-resp="${selectID}"]`)
+        const response = contentResp.find("input, select")
+
+        if (selectItem.length) {
+            const isValid = selectItem.val() === "1" //sim
+
+            if (!isValid || selectItem.val() === "") {
+                contentResp.hide('fast');
+                response.each(function () {
+                    if ($(this).is("input")) {
+                        $(this).val("")
+                    }
+                    else if ($(this).is("select")) {
+                        $(this).prop("selectedIndex", 0)
+                    }
+                })
+            } else {
+                contentResp.show('fast')
+            }
+        }
+    }
+</script>

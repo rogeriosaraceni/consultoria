@@ -1,0 +1,69 @@
+<section class="wrapper-sticky-tabs">
+    <div class="card">
+        <div class="card-body">
+            <ul class="row nav nav-pills nav-pills-app" id="pills-tab" role="tablist">
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/etapas/execucao_pedagogica/consultoria/estrutura/" class="nav-link">
+                        Estrutura
+                    </a>
+                </li>
+
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/etapas/execucao_pedagogica/consultoria/gestao/" class="nav-link">
+                        Gestão
+                    </a>
+                </li>
+
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/etapas/execucao_pedagogica/consultoria/dados/" class="nav-link">
+                        Dados
+                    </a>
+                </li>
+
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/etapas/execucao_pedagogica/consultoria/assessments/" class="nav-link">
+                        Assessments
+                    </a>
+                </li>
+
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/etapas/execucao_pedagogica/consultoria/treinamentos/" class="nav-link">
+                        Treinamentos
+                    </a>
+                </li>
+
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/etapas/execucao_pedagogica/consultoria/pesquisa/" class="nav-link">
+                        Pesquisa de Satisfação
+                    </a>
+                </li>
+
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/etapas/execucao_pedagogica/consultoria/observacoes/" class="nav-link">
+                        Observações
+                    </a>
+                </li>
+
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/etapas/execucao_pedagogica/consultoria/proxima/" class="nav-link">
+                        Próxima Consultoria
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<script is:inline>
+    window.addEventListener('load', () => {
+        function navLinkTabsActive() {
+            const currentUrl = window.location.pathname
+            const navLinks = $(`#pills-tab a[href="${currentUrl}"]`)
+
+            if (navLinks) {
+                navLinks.addClass('active')
+            }
+        }
+        navLinkTabsActive()
+    })
+</script>

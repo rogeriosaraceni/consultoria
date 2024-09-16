@@ -1,0 +1,25 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Nav from '@includes/Nav/Nav.astro';
+import PageHeader from 'src/shared/components/PageHeader.astro';
+import ContentForm from './_content-form.astro';
+import Breadcrumb from '../_breadcrumb.astro';
+import ContentBtns from '../_content-btns.astro';
+---
+
+<Layout>
+    <Nav />
+
+    <PageHeader
+        icon='bi bi-easel2',
+        name='Execução Pedagógica'
+    />
+
+    <main class="main-app">
+        <section class="container-fluid">
+            <Breadcrumb />
+            <ContentBtns />
+            <ContentForm />
+        </section>
+    </main>
+</Layout>

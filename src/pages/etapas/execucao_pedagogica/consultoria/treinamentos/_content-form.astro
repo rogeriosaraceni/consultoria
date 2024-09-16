@@ -1,0 +1,281 @@
+<form method="POST" action="">
+    <div class="card">
+        <div class="card-body">
+            <div class="title-section title-section-buttons">
+                <span class="title">Treinamentos</span>
+            </div>
+
+            <section class="row">
+                <label class="col-xxl-2 col-xl-3 col-lg-4 col-md-4 col-sm-5">
+                    <span>Faz WTDC?</span>
+                    <select name="" class="form-select" data-type="yesNo" data-selectID="WTDC">
+                        <option></option>
+                        <option value="1">Sim</option>
+                        <option value="0">Não</option>
+                    </select>
+                </label>
+
+                <div style="display: none;" data-content-resp="yes-WTDC">
+                    <section class="row">
+                        <label class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
+                            <span>Qual foi a data do último?</span>
+                            <input type="date" name="" class="form-control">
+                        </label>
+
+                        <label class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
+                            <span>Quantos participantes?</span>
+                            <input type="number" name="" class="form-control">
+                        </label>
+
+                        <label class="col-xxl-3 col-xl-4 col-lg-4 col-md-12">
+                            <span>Qual foi o tema do último?</span>
+                            <input type="text" name="" class="form-control">
+                        </label>
+                    </section>
+
+                    <section class="row">
+                        <label class="col-xxl-3 col-xl-4 col-lg-6 col-md-6">
+                            <span>Qual será a data do próximo?</span>
+                            <input type="date" name="" class="form-control">
+                        </label>
+
+                        <label class="col-xxl-3 col-xl-4 col-lg-6 col-md-6">
+                            <span>Qual a expectativa do número de participantes?</span>
+                            <input type="number" name="" class="form-control">
+                        </label>
+
+                        <label class="col-xxl-3 col-xl-4 col-lg-12 col-md-12">
+                            <span>Qual será o tema do próximo?</span>
+                            <input type="text" name="" class="form-control">
+                        </label>
+                    </section>
+                </div>
+
+                <div style="display: none;" data-content-resp="no-WTDC">
+                    <section class="row">
+                        <label class="col-xxl-3 col-xl-4 col-lg-6 col-md-6">
+                            <span>Qual será a data do próximo?</span>
+                            <input type="date" name="" class="form-control">
+                        </label>
+
+                        <label class="col-xxl-3 col-xl-4 col-lg-6 col-md-6">
+                            <span>Qual a expectativa do número de participantes?</span>
+                            <input type="number" name="" class="form-control">
+                        </label>
+
+                        <label class="col-xxl-3 col-xl-4 col-lg-12 col-md-12">
+                            <span>Qual será o tema do próximo?</span>
+                            <input type="text" name="" class="form-control">
+                        </label>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <section class="row">
+                <label class="col-xxl-2 col-xl-4 col-lg-6 col-md-6 col-sm-7">
+                    <span>Sobre Universidade Corporativa:</span>
+                    <select name="" class="form-select" data-type="yesNo" data-selectID="universidade">
+                        <option></option>
+                        <option value="1">Sim</option>
+                        <option value="0">Não</option>
+                    </select>
+                </label>
+
+                <div style="display: none;" data-content-resp="yes-universidade">
+                    <section class="row">
+                        <label class="col-xxl-5 col-xl-6 col-lg-7 col-md-8">
+                            <span>Toda a equipe pedagógica possui acesso a Universidade Corporativa?</span>
+                            <select name="" class="form-select" data-type="yesNo" data-selectID="acessoUniversidade">
+                                <option></option>
+                                <option value="1">Sim</option>
+                                <option value="0">Não</option>
+                            </select>
+                        </label>
+
+                        <label class="col-xxl-2 col-xl-3 col-lg-4 col-md-4" style="display: none;" data-content-resp="no-acessoUniversidade">
+                            <span>Qual o prazo para inserção?</span>
+                            <input type="text" name="" class="form-control">
+                        </label>
+                    </section>
+
+                    <section class="row">
+                        <label class="col-xxl-5 col-xl-6 col-lg-7 col-md-8">
+                            <span>Toda a equipe pedagógica está com as trilhas obrigatórias concluídas?</span>
+                            <select name="" class="form-select" data-type="yesNo" data-selectID="trilhasObrigatorias">
+                                <option></option>
+                                <option value="1">Sim</option>
+                                <option value="0">Não</option>
+                            </select>
+                        </label>
+
+                        <label class="col-xxl-2 col-xl-3 col-lg-4 col-md-4" style="display: none;" data-content-resp="no-trilhasObrigatorias">
+                            <span>Qual o prazo para conclusão?</span>
+                            <input type="text" name="" class="form-control">
+                        </label>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <section class="row">
+                <label class="col-xxl-2 col-xl-4 col-lg-6 col-md-6 col-sm-7">
+                    <span>Bônus Universidade Corporativa:</span>
+                    <select name="" class="form-select" data-type="yesNo" data-selectID="bonusUniversidade">
+                        <option></option>
+                        <option value="1">Sim</option>
+                        <option value="0">Não</option>
+                    </select>
+                </label>
+
+                <div style="display: none;" data-content-resp="yes-bonusUniversidade">
+                    <section class="row">
+                        <label class="col-xxl-7 col-xl-8 col-lg-9 col-md-10">
+                            <span>Durante a consultoria, foi indicado algum curso da UC que não consta nas trilhas obrigatórias?</span>
+                            <select name="" class="form-select" data-type="yesNo" data-selectID="indicadoCurso">
+                                <option></option>
+                                <option value="1">Sim</option>
+                                <option value="0">Não</option>
+                            </select>
+                        </label>
+
+                        <label class="col-xxl-12" style="display: none;" data-content-resp="yes-indicadoCurso">
+                            <span>Qual ou quais?</span>
+                            <textarea name="" class="form-control" rows="2"></textarea>
+                        </label>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <section class="row">
+                <label class="col-xxl-3 col-xl-3 col-lg-4 col-md-6">
+                    <span>Unidade assiste WizTips?</span>
+                    <select name="" class="form-select">
+                        <option></option>
+                        <option value="1">Sim</option>
+                        <option value="0">Não</option>
+                    </select>
+                </label>
+
+                <label class="col-xxl-8 col-xl-9 col-lg-12 col-md-12">
+                    <span>Unidade participa de reuniões/treinamentos presenciais ou online promovidos pela Regional e/ou pela franqueadora?</span>
+                    <select name="" class="form-select">
+                        <option></option>
+                        <option value="1">Sim</option>
+                        <option value="0">Não</option>
+                    </select>
+                </label>
+            </section>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-end">
+                <button
+                    type="submit"
+                    name="action"
+                    value="cad"
+                    class="btn btn-primary"
+                    data-btn="spinner"
+                >
+                    <span>Salvar</span>
+                    <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script is:inline>
+    $(document).ready(function () {
+        $('[data-type="yesNo"]').each(function () {
+            const selectID = $(this).attr("data-selectID")
+            $(this).on("change", function () {handleChangeYesNo(selectID)})
+            handleChangeYesNo(selectID)
+        })
+    })
+
+    function handleChangeYesNo(selectID) {
+        const selectItem = $(`select[data-selectID="${selectID}"]`)
+
+        const contentRespYes = $(`[data-content-resp="yes-${selectID}"]`)
+        const contentRespNo  = $(`[data-content-resp="no-${selectID}"]`)
+
+        //const response = contentResp.find("input, select")
+
+        const isYes = selectItem.val() === "1"
+        const isNo  = selectItem.val() === "0"
+
+        contentRespYes.hide('fast')
+        contentRespNo.hide('fast')
+
+        if(isYes){
+            contentRespNo.hide('fast')
+            contentRespYes.show('fast')
+        }
+        if(isNo){
+            contentRespYes.hide('fast')
+            contentRespNo.show('fast')
+        }
+    }
+</script>
+
+
+
+
+<!-- <script is:inline>
+    $(document).ready(function () {
+        $('#tipo-consultoria').on('change', handleTipoconsultoria)
+        handleTipoconsultoria()
+    })
+
+    function handleTipoconsultoria(){
+        const targetValue = $('#tipo-consultoria').val()
+        const restante = $('#blocoRestante');
+        const acao = $('#blocoAcaoEspecifica');
+        const inputs = "input, textarea, select"
+
+        if(targetValue == 5){
+            restante.hide('fast').find(inputs).val('')
+            acao.show('fast')
+        }
+        else if( targetValue > 0 && targetValue < 5){
+            acao.hide('fast').find(inputs).val('')
+            restante.show('fast')
+        }
+        else{
+            acao.hide('fast').find(inputs).val('')
+            restante.hide('fast').find(inputs).val('')
+        }
+    }
+</script> -->
+
+
+<!-- // if (selectItem.length) {
+    //     const isValid = selectItem.val() === "1" //sim
+
+    //     if (!isValid || selectItem.val() === "") {
+    //         contentResp.hide();
+    //         response.each(function () {
+    //             if ($(this).is("input")) {
+    //                 $(this).val("")
+    //             }
+    //             else if ($(this).is("select")) {
+    //                 $(this).prop("selectedIndex", 0)
+    //             }
+    //         })
+    //     } else {
+    //         contentResp.show()
+    //     }
+    // } -->

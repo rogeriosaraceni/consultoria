@@ -1,0 +1,106 @@
+<form method="POST" action="">
+    <div class="card">
+        <div class="card-body">
+            <div class="title-section title-section-buttons">
+                <span class="title">Pesquisa de Satisfação</span>
+            </div>
+
+            <strong>Sobre Pesquisa de Satisfação:</strong>
+            <section class="row">
+                <label class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
+                    <span>Quantas respostas a escola tem?</span>
+                    <input type="number" name="" class="form-control" value="">
+                </label>
+
+                <label class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
+                    <span>Qual é o percentual de respondentes?</span>
+                    <input type="text" name="" class="form-control" value="" data-imask="percent">
+                </label>
+
+                <label class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
+                    <span>Qual é o NPS?</span>
+                    <input type="number" name="" class="form-control" value="">
+                </label>
+            </section>
+        </div>
+    </div>
+
+    <script is:inline>
+        function imaskPercent() {
+            let inputs = document.querySelectorAll('input[data-imask="percent"]')
+
+            inputs.forEach(item => {
+                IMask(item, {
+                    mask: '',
+
+                    mask: 'd %',
+                    lazy: false,
+                    expose: true,
+
+                    blocks: {
+                        d: {
+                            mask: Number,
+                            expose: true,
+                        },
+                    },
+                })
+
+                item.addEventListener('change', () => {
+                    console.log(item.value)
+                })
+            })
+        }
+        imaskPercent()
+    </script>
+
+
+    <div class="card">
+        <div class="card-body">
+            <strong>Metas:</strong>
+            <section class="row">
+                <label class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
+                    <span>Qual é a meta de respostas do próximo mês</span>
+                    <input type="number" name="" class="form-control" value="">
+                </label>
+
+                <label class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
+                    <span>Qual é a meta de NPS do próximo mês</span>
+                    <input type="number" name="" class="form-control" value="">
+                </label>
+            </section>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <section class="row">
+                <label class="col-xl-6">
+                    <span>Que melhorias foram feitas na escola a partir das respostas na pesquisa?</span>
+                    <textarea name="" id="" class="form-control" rows="2"></textarea>
+                </label>
+
+                <label class="col-xl-6">
+                    <span>Quais os principais desafios de aplicação?</span>
+                    <textarea name="" id="" class="form-control" rows="2"></textarea>
+                </label>
+            </section>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-end">
+                <button
+                    type="submit"
+                    name="action"
+                    value="cad"
+                    class="btn btn-primary"
+                    data-btn="spinner"
+                >
+                    <span>Salvar</span>
+                    <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

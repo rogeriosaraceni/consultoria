@@ -1,0 +1,164 @@
+<form method="POST" action="">
+    <div class="card">
+        <div class="card-body">
+            <div class="title-section title-section-buttons">
+                <span class="title">Estrutura</span>
+            </div>
+
+            <section class="row">
+                <label class="col-xl-3 col-lg-4 col-md-5 col-sm-6">
+                    <span>Quantos alunos ativos na unidade?</span>
+                    <input
+                        type="text"
+                        name=""
+                        class="form-control"
+                        value="500"
+                        readonly
+                    />
+                </label>
+
+                <label class="col-xl-4 col-lg-5 col-md-8 col-sm-12">
+                    <span>Sua escola é mais CONNECTIONS ou INTERACTIVE?</span>
+                    <div class="d-flex gap-1">
+                        <input
+                            type="text"
+                            name=""
+                            class="form-control"
+                            value="200"
+                            readonly
+                        />
+                        <input
+                            type="text"
+                            name=""
+                            class="form-control"
+                            value="100"
+                            readonly
+                        />
+                    </div>
+                </label>
+
+                <label class="col-xl-5 col-lg-7 col-md-9 col-sm-12">
+                    <span
+                        >Quem lança os dados dos alunos no sistema homologado
+                        Sponte?</span
+                    >
+                    <select name="" class="selectpicker" multiple>
+                        <option value="1">Professores</option>
+                        <option value="2">Recepção</option>
+                        <option value="3">Coordenação</option>
+                        <option value="4">Assistentes</option>
+                        <option value="5">Outros</option>
+                    </select>
+                </label>
+            </section>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <section class="row">
+                <label class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-7">
+                    <span>Possui alunos online (Wizard at home)?</span>
+                    <select
+                        name=""
+                        class="form-select"
+                        data-type="yes"
+                        data-selectID="1"
+                    >
+                        <option></option>
+                        <option value="1">Sim</option>
+                        <option value="0">Não</option>
+                    </select>
+                </label>
+
+                <label
+                    class="col-xxl-2 col-xl-3 col-lg-4 col-md-6 col-sm-5"
+                    style="display: none;"
+                    data-content-resp="1"
+                >
+                    <span>Quantos?</span>
+                    <input type="number" name="" class="form-control" />
+                </label>
+            </section>
+
+            <section class="row">
+                <label class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-7">
+                    <span>Possui alunos online (Wizard On)?</span>
+                    <select
+                        name=""
+                        class="form-select"
+                        data-type="yes"
+                        data-selectID="2"
+                    >
+                        <option></option>
+                        <option value="1">Sim</option>
+                        <option value="0">Não</option>
+                    </select>
+                </label>
+
+                <label
+                    class="col-xxl-2 col-xl-3 col-lg-4 col-md-6 col-sm-5"
+                    style="display: none;"
+                    data-content-resp="2"
+                >
+                    <span>Quantos?</span>
+                    <input type="number" name="" class="form-control" />
+                </label>
+            </section>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-end">
+                <button
+                    type="submit"
+                    name="action"
+                    value="cad"
+                    class="btn btn-primary"
+                    data-btn="spinner"
+                >
+                    <span>Salvar</span>
+                    <span
+                        class="btn-spinner spinner-border spinner-border-sm d-none"
+                        role="status"
+                        aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script is:inline>
+    $(document).ready(function () {
+        $('[data-type="yes"]').each(function () {
+            const selectID = $(this).attr("data-selectID")
+            $(this).on("change", function () {handleChangeYes(selectID)})
+            handleChangeYes(selectID)
+        })
+    })
+
+    function handleChangeYes(selectID) {
+        const selectItem = $(`select[data-selectID="${selectID}"]`)
+        const contentResp = $(`[data-content-resp="${selectID}"]`)
+        const response = contentResp.find("input, select")
+
+        if (selectItem.length) {
+            const isValid = selectItem.val() === "1" //sim
+
+            if (!isValid || selectItem.val() === "") {
+                contentResp.hide('fast');
+                response.each(function () {
+                    if ($(this).is("input")) {
+                        $(this).val("")
+                    }
+                    else if ($(this).is("select")) {
+                        $(this).prop("selectedIndex", 0)
+                    }
+                })
+            } else {
+                contentResp.show('fast')
+            }
+        }
+    }
+</script>
